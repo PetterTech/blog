@@ -27,14 +27,18 @@ The regex I ended up with is this one: ^.\*(?=.{12,})(?=.\*\d)(?=.\*[a-z])(?=.\
 
 Now that we have our regex we can simple throw the one-liner into a while loop:
 
-<pre lang="PowerShell">while ($pass -notmatch "^.*(?=.{12,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$") {
+ ```
+ while ($pass -notmatch "^.*(?=.{12,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$") {
  $pass = -join ('abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%&*#'.ToCharArray() | Get-Random -count 12)
- }</pre>
+ } 
+ ```
 
 This means that as long as the password created doesn&#8217;t comply with the regex, it creates a new one.
 
 And guess what? It can also be written as a one-liner:
 
-<pre lang="PowerShell">while ($pass -notmatch "^.*(?=.{12,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$") {$pass = -join ('abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%&*#'.ToCharArray() | Get-Random -count 12)}</pre>
+ ```
+ while ($pass -notmatch "^.*(?=.{12,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$") {$pass = -join ('abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%&*#'.ToCharArray() | Get-Random -count 12)} 
+ ```
 
 Not exactly a simple one-liner, but a one-liner still 🙂

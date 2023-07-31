@@ -12,7 +12,7 @@ After he confirmed that the script worked as planned I decided to make a functio
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ After he confirmed that the script worked as planned I decided to make a functio
   "keywords": [
     "active directory", "function", "Get-MembersInADGroups", "Powershell"
   ],
-  "articleBody": "A friend of mine asked me a couple of days ago if I knew a way to gather users who are members of given groups. I thought to myself “Hmm, challenge accepted!” and started writing a small powershell script.\nAfter he confirmed that the script worked as planned I decided to make a function of it (Yes, I know it has been a lot of them on this blog lately).\nThe function accepts two parameters: GroupNames and Filelocation. In addition there is an optional switch called KeepCSV.\nRest of the function isn’t that interesting, if you want to use it you can always consult the help (get-help get-membersinadgroups) that I actually have created 🙂\nHeres the code:\nPS: the function requires that you already have loaded the Active Directory module in powershell\n",
-  "wordCount" : "132",
+  "articleBody": "A friend of mine asked me a couple of days ago if I knew a way to gather users who are members of given groups. I thought to myself “Hmm, challenge accepted!” and started writing a small powershell script.\nAfter he confirmed that the script worked as planned I decided to make a function of it (Yes, I know it has been a lot of them on this blog lately).\nThe function accepts two parameters: GroupNames and Filelocation. In addition there is an optional switch called KeepCSV.\nRest of the function isn’t that interesting, if you want to use it you can always consult the help (get-help get-membersinadgroups) that I actually have created 🙂\nHeres the code:\nfunction Get-MembersInADGroups { Param ( [parameter(Mandatory=$True)][string[]]$GroupNames, [parameter(Mandatory=$True)][string[]]$Filelocation, [switch]$KeepCSV ) Get-ADGroup -LDAPFilter \"(name=$GroupNames)\" | export-csv $FileLocationtemp.csv -NoTypeInformation $groups = Import-Csv $FileLocationtemp.csv $groups | ForEach-Object { $groupname = $_.SamAccountname Get-ADGroupMember -Identity $_.SamAccountName | select-object name,samaccountname | Out-File $Filelocation$groupname.txt -Encoding utf8 } if ($KeepCSV) { Write-Host \"CSV file is now saved as $filelocationtemp.csv\" } Else { Remove-Item $FileLocationtemp.csv } \u0026lt;# .Synopsis Gathers members in given group(s) and puts the result in txt files .Description This function will gather all users in the group(s) you specify and write a txt file for each group containing the users who are member of that group. The function accepts wildcards in group name .Parameter Groupnames This parameter defines what group(s) to look for .Parameter FileLocation This parameter defines where the output files should be saved .Parameter KeepCSV Defining this switch will not delete the temp.csv file containing the groups which are polled .Example Get-MembersInADGroups -GroupNames some_group -Filelocation c:test This command will poll Active Directory for the members of some_group and write a file called some_group.txt in c:test .Example Get-MembersInADGroups -GroupNames some_group* -Filelocation c:test This command will poll Active Directory for members of groups whose name begins with some_group and write a txt file for each of them in c:test .Link http://cloud.kemta.net #\u003e } PS: the function requires that you already have loaded the Active Directory module in powershell\n",
+  "wordCount" : "338",
   "inLanguage": "en",
   "datePublished": "2012-09-13T12:02:13Z",
   "dateModified": "2012-09-13T12:02:13Z",
@@ -186,9 +186,52 @@ After he confirmed that the script worked as planned I decided to make a functio
 The function accepts two parameters: GroupNames and Filelocation. In addition there is an optional switch called KeepCSV.<br>
 Rest of the function isn’t that interesting, if you want to use it you can always consult the help (get-help get-membersinadgroups) that I actually have created 🙂</p>
 <p>Heres the code:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>PS: the function requires that you already have loaded the Active Directory module in powershell</p>
+<pre tabindex="0"><code>function Get-MembersInADGroups
+ {
+ Param
+ (
+ [parameter(Mandatory=$True)][string[]]$GroupNames,
+ [parameter(Mandatory=$True)][string[]]$Filelocation,
+ [switch]$KeepCSV
+ )
+ Get-ADGroup -LDAPFilter &#34;(name=$GroupNames)&#34; | export-csv $FileLocationtemp.csv -NoTypeInformation
+
+ $groups = Import-Csv $FileLocationtemp.csv
+
+ $groups | ForEach-Object {
+ $groupname = $_.SamAccountname
+ Get-ADGroupMember -Identity $_.SamAccountName | select-object name,samaccountname | Out-File $Filelocation$groupname.txt -Encoding utf8
+ }
+ if ($KeepCSV)
+    {
+    Write-Host &#34;CSV file is now saved as $filelocationtemp.csv&#34;
+    }
+ Else
+    {
+    Remove-Item $FileLocationtemp.csv
+    }
+ &amp;lt;#
+ .Synopsis
+ Gathers members in given group(s) and puts the result in txt files
+ .Description
+ This function will gather all users in the group(s) you specify and write a txt file for each group containing the users who are member of that group. The function accepts wildcards in group name
+ .Parameter Groupnames
+ This parameter defines what group(s) to look for
+ .Parameter FileLocation
+ This parameter defines where the output files should be saved
+ .Parameter KeepCSV
+ Defining this switch will not delete the temp.csv file containing the groups which are polled
+ .Example
+ Get-MembersInADGroups -GroupNames some_group -Filelocation c:test
+ This command will poll Active Directory for the members of some_group and write a file called some_group.txt in c:test
+ .Example
+ Get-MembersInADGroups -GroupNames some_group* -Filelocation c:test
+ This command will poll Active Directory for members of groups whose name begins with some_group and write a txt file for each of them in c:test
+ .Link
+ http://cloud.kemta.net
+ #&gt;
+ } 
+</code></pre><p>PS: the function requires that you already have loaded the Active Directory module in powershell</p>
 
 
   </div>

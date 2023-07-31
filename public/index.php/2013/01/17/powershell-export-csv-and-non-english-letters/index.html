@@ -12,7 +12,7 @@ Working in Norway with users from all the Nordic countries means that we have a 
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/17/powershell-export-csv-and-non-english-letters/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ Working in Norway with users from all the Nordic countries means that we have a 
   "keywords": [
     "Encoding", "Export-Csv", "Powershell", "Unicode"
   ],
-  "articleBody": "The Export-Csv cmdlet is a really nice tool if you want to gather info from e.g. Active Directory that you later want to import to Excel. But as you might have noticed it doesn’t play well with non-English letters.\nWorking in Norway with users from all the Nordic countries means that we have a lot of users i Active Directory who have non-English letters in their names (æ ø å ö ä and so on). Unless you specify which encoding Export-Csv should use they will show in the csv as ?.\nThe magical switch to Export-Csv is -encoding. E.g. for us we would use unicode as encoding as this will export the Nordic letters:\n",
-  "wordCount" : "114",
+  "articleBody": "The Export-Csv cmdlet is a really nice tool if you want to gather info from e.g. Active Directory that you later want to import to Excel. But as you might have noticed it doesn’t play well with non-English letters.\nWorking in Norway with users from all the Nordic countries means that we have a lot of users i Active Directory who have non-English letters in their names (æ ø å ö ä and so on). Unless you specify which encoding Export-Csv should use they will show in the csv as ?.\nThe magical switch to Export-Csv is -encoding. E.g. for us we would use unicode as encoding as this will export the Nordic letters:\nExport-Csv \u0026lt;filename\u0026gt; -Encoding unicode ",
+  "wordCount" : "118",
   "inLanguage": "en",
   "datePublished": "2013-01-17T12:06:53Z",
   "dateModified": "2013-01-17T12:06:53Z",
@@ -184,7 +184,7 @@ Working in Norway with users from all the Nordic countries means that we have a 
   <div class="post-content"><p>The Export-Csv cmdlet is a really nice tool if you want to gather info from e.g. Active Directory that you later want to import to Excel. But as you might have noticed it doesn’t play well with non-English letters.</p>
 <p>Working in Norway with users from all the Nordic countries means that we have a lot of users i Active Directory who have non-English letters in their names (æ ø å ö ä and so on). Unless you specify which encoding Export-Csv should use they will show in the csv as ?.</p>
 <p>The magical switch to Export-Csv is -encoding. E.g. for us we would use unicode as encoding as this will export the Nordic letters:</p>
-<!-- raw HTML omitted -->
+<p><code>Export-Csv &amp;lt;filename&amp;gt; -Encoding unicode </code></p>
 <p> </p>
 <p> </p>
 <p> </p>

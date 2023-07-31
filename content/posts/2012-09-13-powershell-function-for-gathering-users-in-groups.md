@@ -23,7 +23,8 @@ Rest of the function isn&#8217;t that interesting, if you want to use it you can
 
 Heres the code:
 
-<pre lang="Powershell">function Get-MembersInADGroups
+```
+function Get-MembersInADGroups
  {
  Param
  (
@@ -67,6 +68,7 @@ Heres the code:
  .Link
  http://cloud.kemta.net
  #>
- }</pre>
+ } 
+```
 
 PS: the function requires that you already have loaded the Active Directory module in powershell

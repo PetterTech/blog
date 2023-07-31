@@ -8,11 +8,11 @@
 <title>Powershell: Write-Progress, a step-by-step guide | PetterTech</title>
 <meta name="keywords" content="guide, Powershell, write-progress">
 <meta name="description" content="For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
-This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.">
+Write-Progress -Activity &#34;Something&#34; -Status &#34;Something else&#34; -CurrentOperation &#34;thinking&#34; -PercentComplete 30 This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -59,7 +59,7 @@ This will show a quick progress bar stating that “Something” is going on, th
     </style>
 </noscript><meta property="og:title" content="Powershell: Write-Progress, a step-by-step guide" />
 <meta property="og:description" content="For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
-This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there." />
+Write-Progress -Activity &#34;Something&#34; -Status &#34;Something else&#34; -CurrentOperation &#34;thinking&#34; -PercentComplete 30 This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-01-15T12:55:36+00:00" />
@@ -68,7 +68,7 @@ This will show a quick progress bar stating that “Something” is going on, th
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Powershell: Write-Progress, a step-by-step guide"/>
 <meta name="twitter:description" content="For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
-This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there."/>
+Write-Progress -Activity &#34;Something&#34; -Status &#34;Something else&#34; -CurrentOperation &#34;thinking&#34; -PercentComplete 30 This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there."/>
 
 
 <script type="application/ld+json">
@@ -97,12 +97,12 @@ This will show a quick progress bar stating that “Something” is going on, th
   "@type": "BlogPosting",
   "headline": "Powershell: Write-Progress, a step-by-step guide",
   "name": "Powershell: Write-Progress, a step-by-step guide",
-  "description": "For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:\nThis will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.",
+  "description": "For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:\nWrite-Progress -Activity \u0026#34;Something\u0026#34; -Status \u0026#34;Something else\u0026#34; -CurrentOperation \u0026#34;thinking\u0026#34; -PercentComplete 30 This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.",
   "keywords": [
     "guide", "Powershell", "write-progress"
   ],
-  "articleBody": "For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:\nThis will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there. I mean, look at this for example:\nI’m sure that if I had a stronger background in programming and/or scripting I could have figured it out quite easily (for what it’s worth: I understand the code now 😉 ). But since I haven’t really been scripting before Powershell came along I just sat there scratching my head.\nSo let’s write a simpler guide!\nLet’s start by explaining a briefly how Write-Progress works:\nIf you type the command in your Powershell console it will display the progress bar, but it will disappear again in a split second.\nIf you put your Write-Progress snippet in a script, the progress bar will be displayed until another Write-Progress snippet comes along, or until the script finishes.\nThe basic usage of Write-Progress is, as I wrote further up, something like this:\nThat will create an output looking something like this:\nIt’s also quite easy to create a child progress bar by using the Id and ParentId parameters:\nThis will create an output looking something like this:\nCool ey?\nNow, this is all fine and dandy as a starting point, and you CAN use write-progress this way in your scripts, but thats not exactly a dynamic way of doing it.\nOften in your script you will have one or more foreach loops. Those are a great place to put your write-progress snippet and have PercentComplete and perhaps even Status or CurrentOperation filled out automagically.\nFirst off we will need some data to parse through, I like to use Get-Process for that:\nThen we create a variable for our progress and set it to 1:\nThis way PercentComplete will start at 1, you’ll see why in a bit.\nNow we can create our foreach loop (I assume you know how they work):\nThis Write-Progress line will show Activity as “Sleeping”, the status will be the name of the process and currentoperation will be the ID of the process. Percentagecomplete will the correct progress (since $progress++ will increment $progress by 1 for each time the loop runs).\nStart-Sleep is only there to delay the operation, so you can actually see whats going on.\nSo the final result will be:\nAnd it will look something like this:\nComments?\n",
-  "wordCount" : "442",
+  "articleBody": "For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:\nWrite-Progress -Activity \"Something\" -Status \"Something else\" -CurrentOperation \"thinking\" -PercentComplete 30 This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there. I mean, look at this for example:\n$wmiQuery = \"Select name from win32_service where state = 'running'\" $colItems = Get-WmiObject -Query $wmiQuery For($i = 1; $i -le $colItems.count; $i++) { Write-Progress -Activity \"Gathering Services\" -status \"Found Service $i\" ` -percentComplete ($i / $colItems.count*100)} $colItems | Select name I’m sure that if I had a stronger background in programming and/or scripting I could have figured it out quite easily (for what it’s worth: I understand the code now 😉 ). But since I haven’t really been scripting before Powershell came along I just sat there scratching my head.\nSo let’s write a simpler guide!\nLet’s start by explaining a briefly how Write-Progress works:\nIf you type the command in your Powershell console it will display the progress bar, but it will disappear again in a split second.\nIf you put your Write-Progress snippet in a script, the progress bar will be displayed until another Write-Progress snippet comes along, or until the script finishes.\nThe basic usage of Write-Progress is, as I wrote further up, something like this:\nWrite-Progress -Activity \"Something\" -Status \"Something else\" -CurrentOperation \"thinking\" -PercentComplete 30 That will create an output looking something like this:\nIt’s also quite easy to create a child progress bar by using the Id and ParentId parameters:\nWrite-Progress -Activity Something -Status \"Something else\" -CurrentOperation Thinking -PercentComplete 30 -Id 1 Write-Progress -Activity \"Another thing\" -Status \"Something different\" -CurrentOperation Sleeping -PercentComplete 30 -Id 2 -ParentId 1 This will create an output looking something like this:\nCool ey?\nNow, this is all fine and dandy as a starting point, and you CAN use write-progress this way in your scripts, but thats not exactly a dynamic way of doing it.\nOften in your script you will have one or more foreach loops. Those are a great place to put your write-progress snippet and have PercentComplete and perhaps even Status or CurrentOperation filled out automagically.\nFirst off we will need some data to parse through, I like to use Get-Process for that:\n$data = Get-Process Then we create a variable for our progress and set it to 1:\n$progress = 1 This way PercentComplete will start at 1, you’ll see why in a bit.\nNow we can create our foreach loop (I assume you know how they work):\n$data | foreach { Write-Progress -Activity Sleeping -Status $_.ProcessName -CurrentOperation $_.Id -PercentComplete ($progress/$data.count*100) -Id 1 Start-Sleep -Milliseconds 50 $progress++ } This Write-Progress line will show Activity as “Sleeping”, the status will be the name of the process and currentoperation will be the ID of the process. Percentagecomplete will the correct progress (since $progress++ will increment $progress by 1 for each time the loop runs).\nStart-Sleep is only there to delay the operation, so you can actually see whats going on.\nSo the final result will be:\n$progress = 1 $data = Get-Process $data | foreach { Write-Progress -Activity Sleeping -Status $_.ProcessName -CurrentOperation $_.Id -PercentComplete ($progress/$data.count*100) -Id 1 Start-Sleep -Milliseconds 50 $progress++ } And it will look something like this:\nComments?\n",
+  "wordCount" : "581",
   "inLanguage": "en",
   "datePublished": "2014-01-15T12:55:36Z",
   "dateModified": "2014-01-15T12:55:36Z",
@@ -182,41 +182,53 @@ This will show a quick progress bar stating that “Something” is going on, th
 </div>
   </header> 
   <div class="post-content"><p>For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:</p>
-<!-- raw HTML omitted -->
-<p>This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there. I mean, look at this for example:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>I’m sure that if I had a stronger background in programming and/or scripting I could have figured it out quite easily (for what it’s worth: I understand the code now 😉 ). But since I haven’t really been scripting before Powershell came along I just sat there scratching my head.</p>
+<pre tabindex="0"><code>Write-Progress -Activity &#34;Something&#34; -Status &#34;Something else&#34; -CurrentOperation &#34;thinking&#34; -PercentComplete 30 
+</code></pre><p>This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there. I mean, look at this for example:</p>
+<pre tabindex="0"><code>$wmiQuery = &#34;Select name from win32_service where state = &#39;running&#39;&#34;
+$colItems = Get-WmiObject -Query $wmiQuery
+For($i = 1; $i -le $colItems.count; $i++)
+{ Write-Progress -Activity &#34;Gathering Services&#34; -status &#34;Found Service $i&#34; `
+-percentComplete ($i / $colItems.count*100)}
+$colItems | Select name 
+</code></pre><p>I’m sure that if I had a stronger background in programming and/or scripting I could have figured it out quite easily (for what it’s worth: I understand the code now 😉 ). But since I haven’t really been scripting before Powershell came along I just sat there scratching my head.</p>
 <p>So let’s write a simpler guide!</p>
 <p>Let’s start by explaining a briefly how Write-Progress works:<br>
 If you type the command in your Powershell console it will display the progress bar, but it will disappear again in a split second.<br>
 If you put your Write-Progress snippet in a script, the progress bar will be displayed until another Write-Progress snippet comes along, or until the script finishes.</p>
 <p>The basic usage of Write-Progress is, as I wrote further up, something like this:</p>
-<!-- raw HTML omitted -->
-<p>That will create an output looking something like this:</p>
+<pre tabindex="0"><code>Write-Progress -Activity &#34;Something&#34; -Status &#34;Something else&#34; -CurrentOperation &#34;thinking&#34; -PercentComplete 30 
+</code></pre><p>That will create an output looking something like this:</p>
 <!-- raw HTML omitted -->
 <p>It’s also quite easy to create a child progress bar by using the Id and ParentId parameters:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>This will create an output looking something like this:</p>
+<pre tabindex="0"><code>Write-Progress -Activity Something -Status &#34;Something else&#34; -CurrentOperation Thinking -PercentComplete 30 -Id 1
+Write-Progress -Activity &#34;Another thing&#34; -Status &#34;Something different&#34; -CurrentOperation Sleeping -PercentComplete 30 -Id 2 -ParentId 1 
+</code></pre><p>This will create an output looking something like this:</p>
 <!-- raw HTML omitted -->
 <p>Cool ey?</p>
 <p>Now, this is all fine and dandy as a starting point, and you CAN use write-progress this way in your scripts, but thats not exactly a dynamic way of doing it.<br>
 Often in your script you will have one or more foreach loops. Those are a great place to put your write-progress snippet and have PercentComplete and perhaps even Status or CurrentOperation filled out automagically.</p>
 <p>First off we will need some data to parse through, I like to use Get-Process for that:</p>
-<!-- raw HTML omitted -->
-<p>Then we create a variable for our progress and set it to 1:</p>
-<!-- raw HTML omitted -->
-<p>This way PercentComplete will start at 1, you’ll see why in a bit.</p>
+<pre tabindex="0"><code>$data = Get-Process 
+</code></pre><p>Then we create a variable for our progress and set it to 1:</p>
+<pre tabindex="0"><code>$progress = 1 
+</code></pre><p>This way PercentComplete will start at 1, you’ll see why in a bit.</p>
 <p>Now we can create our foreach loop (I assume you know how they work):</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>This Write-Progress line will show Activity as “Sleeping”, the status will be the name of the process and currentoperation will be the ID of the process. Percentagecomplete will the correct progress (since $progress++ will increment $progress by 1 for each time the loop runs).<br>
+<pre tabindex="0"><code>$data | foreach {
+Write-Progress -Activity Sleeping -Status $_.ProcessName -CurrentOperation $_.Id -PercentComplete ($progress/$data.count*100) -Id 1
+Start-Sleep -Milliseconds 50
+$progress++
+} 
+</code></pre><p>This Write-Progress line will show Activity as “Sleeping”, the status will be the name of the process and currentoperation will be the ID of the process. Percentagecomplete will the correct progress (since $progress++ will increment $progress by 1 for each time the loop runs).<br>
 Start-Sleep is only there to delay the operation, so you can actually see whats going on.</p>
 <p>So the final result will be:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>And it will look something like this:</p>
+<pre tabindex="0"><code>$progress = 1
+$data = Get-Process
+$data | foreach {
+Write-Progress -Activity Sleeping -Status $_.ProcessName -CurrentOperation $_.Id -PercentComplete ($progress/$data.count*100) -Id 1
+Start-Sleep -Milliseconds 50
+$progress++
+} 
+</code></pre><p>And it will look something like this:</p>
 <!-- raw HTML omitted -->
 <p>Comments?</p>
 

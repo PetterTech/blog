@@ -138,7 +138,7 @@
   </header>
   <div class="entry-content">
     <p>If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
-This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
+cmd /c pause | out-null This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
 The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed)....</p>
   </div>
   <footer class="entry-footer"><span title='2012-09-10 13:57:52 +0000 +0000'>September 10, 2012</span>&nbsp;·&nbsp;nerenther</footer>
@@ -184,7 +184,7 @@ There’s probably a good explanation for this, but I still feel that it is horr
     <p>Yesterday I was given a relatively easy task: find out who or what has a given email address.
 As this was within our own Exchange organization it proved to be quite simple:
 You can achieve the goal with a simple one-liner:
-But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
+get-recipient -ResultSize unlimited | where {$_.emailaddresses -match &#34;email@address.com&#34;} But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
   </div>
   <footer class="entry-footer"><span title='2012-08-28 10:41:15 +0000 +0000'>August 28, 2012</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Function for locating an email address" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/"></a>
@@ -239,7 +239,7 @@ Microsoft have provided you with a script for balancing these databases, Redistr
   <div class="entry-content">
     <p>The redirect function in IIS 7 and 7.5 is in my experience pretty buggy. More often than not it will send the visitor into an eternal redirect loop.
 Because of that I have used this simple html code for redirecting, instead of using the built in function in IIS.
-Use it at your own will, I’m just posting it so I know where to find it the next time I need it 🙂</p>
+Use it at your own will, I’m just posting it so I know where to find it the next time I need it 🙂...</p>
   </div>
   <footer class="entry-footer"><span title='2012-02-27 07:55:57 +0000 +0000'>February 27, 2012</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Redirecting a webpage using html" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/27/redirecting-a-webpage-using-html/"></a>

@@ -12,7 +12,7 @@ The major issue with using the PSA is that it doesn’t stick around to see if t
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/11/12/ucsd-passing-multiple-arguments-to-start-job-while-using-the-cisco-powershell-agent/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ The major issue with using the PSA is that it doesn’t stick around to see if t
   "keywords": [
     "powercli", "Powershell", "PSA", "start-job", "UCS Director"
   ],
-  "articleBody": "While the Cisco PowerShell Agent (PSA) that can be used in UCS Director isn’t exactly perfect, it can still be put to good use. As long as you now how to use it properly 😉\nThe major issue with using the PSA is that it doesn’t stick around to see if the commands/script was successful or not. As long as it delivered the commands successfully, it’s happy and your workflow will continue to the next step.\nJon Hildebrand describes a nice way around this in one of his blog posts: http://snoopj.wordpress.com/2014/11/05/cisco-powershell-agent-service-and-vmware-vum-powercli/\nUsing his approach, I was able get the PSA to stick around until the job finishes. However, I ran into a challenge when I wanted to pass multiple arguments to start-job. The solution I came up with was declaring the UCSD inputs I wanted to use as powershell variables in the script, before calling the start-job cmdlet. So the commands/script input looks like this:\nIn case you are wondering, this task is for setting annotations on a vm in vCenter.\nThe powershell script I am calling is pretty simple:\n",
-  "wordCount" : "180",
+  "articleBody": "While the Cisco PowerShell Agent (PSA) that can be used in UCS Director isn’t exactly perfect, it can still be put to good use. As long as you now how to use it properly 😉\nThe major issue with using the PSA is that it doesn’t stick around to see if the commands/script was successful or not. As long as it delivered the commands successfully, it’s happy and your workflow will continue to the next step.\nJon Hildebrand describes a nice way around this in one of his blog posts: http://snoopj.wordpress.com/2014/11/05/cisco-powershell-agent-service-and-vmware-vum-powercli/\nUsing his approach, I was able get the PSA to stick around until the job finishes. However, I ran into a challenge when I wanted to pass multiple arguments to start-job. The solution I came up with was declaring the UCSD inputs I wanted to use as powershell variables in the script, before calling the start-job cmdlet. So the commands/script input looks like this:\n$vm = \"${custom_getVMDetails_7494.vmName}\" $annotation = \"${Annotation}\" $annotationvalue = \"${AnnotationValue}\" Start-Job -FilePath \"C:\\Powershell\\Annotate-VM.ps1\" -ArgumentList $vm,$annotation,$annotationvalue | Wait-Job In case you are wondering, this task is for setting annotations on a vm in vCenter.\nThe powershell script I am calling is pretty simple:\nParam ( [Parameter(Mandatory=$True,Position=0)][string]$VM, [Parameter(Mandatory=$True,Position=1)][string]$Annotation, [Parameter(Mandatory=$True,Position=2)][string]$AnnotationValue ) Add-PSSnapin vmware* Connect-VIServer Set-Annotation -Entity $VM -CustomAttribute \"$($Annotation)\" -Value \"$($AnnotationValue)\" Disconnect-VIServer -Confirm:$false ",
+  "wordCount" : "214",
   "inLanguage": "en",
   "datePublished": "2014-11-12T12:21:03Z",
   "dateModified": "2014-11-12T12:21:03Z",
@@ -185,13 +185,22 @@ The major issue with using the PSA is that it doesn’t stick around to see if t
 <p>The major issue with using the PSA is that it doesn’t stick around to see if the commands/script was successful or not. As long as it delivered the commands successfully, it’s happy and your workflow will continue to the next step.</p>
 <p>Jon Hildebrand describes a nice way around this in one of his blog posts: <!-- raw HTML omitted --><a href="http://snoopj.wordpress.com/2014/11/05/cisco-powershell-agent-service-and-vmware-vum-powercli/">http://snoopj.wordpress.com/2014/11/05/cisco-powershell-agent-service-and-vmware-vum-powercli/</a><!-- raw HTML omitted --></p>
 <p>Using his approach, I was able get the PSA to stick around until the job finishes. However, I ran into a challenge when I wanted to pass multiple arguments to start-job. The solution I came up with was declaring the UCSD inputs I wanted to use as powershell variables in the script, before calling the start-job cmdlet. So the commands/script input looks like this:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>In case you are wondering, this task is for setting annotations on a vm in vCenter.<br>
+<pre tabindex="0"><code>$vm = &#34;${custom_getVMDetails_7494.vmName}&#34;
+$annotation = &#34;${Annotation}&#34;
+$annotationvalue = &#34;${AnnotationValue}&#34;
+Start-Job -FilePath &#34;C:\Powershell\Annotate-VM.ps1&#34; -ArgumentList $vm,$annotation,$annotationvalue | Wait-Job 
+</code></pre><p>In case you are wondering, this task is for setting annotations on a vm in vCenter.<br>
 The powershell script I am calling is pretty simple:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
+<pre tabindex="0"><code>Param (
+[Parameter(Mandatory=$True,Position=0)][string]$VM,
+[Parameter(Mandatory=$True,Position=1)][string]$Annotation,
+[Parameter(Mandatory=$True,Position=2)][string]$AnnotationValue
+)
+Add-PSSnapin vmware*
+Connect-VIServer
+Set-Annotation -Entity $VM -CustomAttribute &#34;$($Annotation)&#34; -Value &#34;$($AnnotationValue)&#34;
+Disconnect-VIServer  -Confirm:$false 
+</code></pre>
 
   </div>
 

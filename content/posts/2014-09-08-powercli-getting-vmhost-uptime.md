@@ -20,8 +20,9 @@ tags:
 ---
 I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
 
-<pre lang="Powershell">Get-View  -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N="UptimeDays"; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}}
-</pre>
+ ```
+ Get-View  -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N="UptimeDays"; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}}
+ ```
 
 However, I wasn&#8217;t completely satisfied by the the output or the ease of use.  
 So today I went back and rewrote the code and made a function of it.  
@@ -29,7 +30,8 @@ Instead of using the ToString and Substring methods I went for the built-in clas
 
 Anyways, here&#8217;s the function I came up with:
 
-<pre lang="Powershell">function Get-VMHostUptime
+ ```
+ function Get-VMHostUptime
     {
         [CmdletBinding()]
             Param (
@@ -72,7 +74,7 @@ Anyways, here&#8217;s the function I came up with:
   http://cloud.kemta.net
  #>
 }
-</pre>
+ ```
 
 You can use it in a couple of different ways, as documented in its help section (get-help get-vmhostuptime -expamples). But if you provide no input to it, it will generate an output like this:
 

@@ -14,9 +14,8 @@
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/</guid>
       <description>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
-However, I wasn’t completely satisfied by the the output or the ease of use.
-So today I went back and rewrote the code and made a function of it.
-Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round.</description>
+Get-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&amp;#34;UptimeDays&amp;#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it.</description>
     </item>
     
   </channel>

@@ -43,7 +43,7 @@ Activate Database Copy…</description>
       <description>Yesterday I was given a relatively easy task: find out who or what has a given email address.
 As this was within our own Exchange organization it proved to be quite simple:
 You can achieve the goal with a simple one-liner:
-But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:</description>
+get-recipient -ResultSize unlimited | where {$_.emailaddresses -match &amp;#34;email@address.com&amp;#34;} But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:</description>
     </item>
     
     <item>
@@ -78,8 +78,7 @@ Creates OUs Creates users Creates security groups Creates distribution groups Cr
 Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
 Remember to run Windows update prior to the installation.
 Start powershell as administrator and type:
-First we need to install all of the prerequisites:
-We also need to set the NetTcpPortSharing service to automatic start, the command for this is:</description>
+import-module servermanager First we need to install all of the prerequisites:</description>
     </item>
     
     <item>
@@ -89,7 +88,8 @@ We also need to set the NetTcpPortSharing service to automatic start, the comman
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/</guid>
       <description>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
-Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</description>
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
+Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept </description>
     </item>
     
     <item>
@@ -100,8 +100,7 @@ Heres a powershell command to enable it on all the Room Mailboxes in an exchange
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/18/editing-permissions-on-all-mailboxes-in-one-command-exchange-20102007/</guid>
       <description>If you have some sort of 3rd-party application that needs access to all of your mailboxes, it can be a pain to set the permissions on all of your mailboxes.
 Except if you use this nice little powershell command:
-What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.
-You can of course change the -AccessRights setting to your liking, e.</description>
+Get-Mailbox -ResultSize unlimited | Add-MailboxPermission -User admin -AccessRights FullAccess -InheritanceType all What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.</description>
     </item>
     
     <item>

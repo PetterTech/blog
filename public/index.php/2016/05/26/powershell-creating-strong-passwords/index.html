@@ -13,7 +13,7 @@ The only issue I saw with that one-liner was that the passwords it creates do no
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2016/05/26/powershell-creating-strong-passwords/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ The only issue I saw with that one-liner was that the passwords it creates do no
   "keywords": [
     "password", "Powershell", "regex"
   ],
-  "articleBody": "A tweet from @JanEgilRing caught my eye this morning, it was showing how you can use powershell to create passwords. The link in the tweet pointed here: http://powershell.com/cs/blogs/tips/archive/2016/05/23/one-liner-random-password-generator.aspx\nSeeing that line and realizing how simple it was, it got me thinking on how I could implement this in my scripts.\nThe only issue I saw with that one-liner was that the passwords it creates do not necessarily comply with high complexity rules.\nSo, how can we approve on this?\nFirstly, we need to create a regex that we can use to validate that the password created complies with our rules.\nIn our environment this means 12 characters, uppercase, lowercase and either a number or special character.\nThe regex I ended up with is this one: ^.*(?=.{12,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^\u0026+=]).*$\n(which I found here: https://nilangshah.wordpress.com/2007/06/26/password-validation-via-regular-expression/ )\nNow that we have our regex we can simple throw the one-liner into a while loop:\nThis means that as long as the password created doesn’t comply with the regex, it creates a new one.\nAnd guess what? It can also be written as a one-liner:\nNot exactly a simple one-liner, but a one-liner still 🙂\n",
-  "wordCount" : "188",
+  "articleBody": "A tweet from @JanEgilRing caught my eye this morning, it was showing how you can use powershell to create passwords. The link in the tweet pointed here: http://powershell.com/cs/blogs/tips/archive/2016/05/23/one-liner-random-password-generator.aspx\nSeeing that line and realizing how simple it was, it got me thinking on how I could implement this in my scripts.\nThe only issue I saw with that one-liner was that the passwords it creates do not necessarily comply with high complexity rules.\nSo, how can we approve on this?\nFirstly, we need to create a regex that we can use to validate that the password created complies with our rules.\nIn our environment this means 12 characters, uppercase, lowercase and either a number or special character.\nThe regex I ended up with is this one: ^.*(?=.{12,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^\u0026+=]).*$\n(which I found here: https://nilangshah.wordpress.com/2007/06/26/password-validation-via-regular-expression/ )\nNow that we have our regex we can simple throw the one-liner into a while loop:\nwhile ($pass -notmatch \"^.*(?=.{12,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^\u0026+=]).*$\") { $pass = -join ('abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%\u0026*#'.ToCharArray() | Get-Random -count 12) } This means that as long as the password created doesn’t comply with the regex, it creates a new one.\nAnd guess what? It can also be written as a one-liner:\nwhile ($pass -notmatch \"^.*(?=.{12,})(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^\u0026+=]).*$\") {$pass = -join ('abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%\u0026*#'.ToCharArray() | Get-Random -count 12)} Not exactly a simple one-liner, but a one-liner still 🙂\n",
+  "wordCount" : "214",
   "inLanguage": "en",
   "datePublished": "2016-05-26T10:40:20Z",
   "dateModified": "2016-05-26T10:40:20Z",
@@ -193,12 +193,13 @@ In our environment this means 12 characters, uppercase, lowercase and either a n
 The regex I ended up with is this one: ^.*(?=.{12,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&amp;+=]).*$<br>
 (which I found here: <!-- raw HTML omitted --><a href="https://nilangshah.wordpress.com/2007/06/26/password-validation-via-regular-expression/">https://nilangshah.wordpress.com/2007/06/26/password-validation-via-regular-expression/</a><!-- raw HTML omitted --> )</p>
 <p>Now that we have our regex we can simple throw the one-liner into a while loop:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>This means that as long as the password created doesn’t comply with the regex, it creates a new one.</p>
+<pre tabindex="0"><code>while ($pass -notmatch &#34;^.*(?=.{12,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&amp;+=]).*$&#34;) {
+$pass = -join (&#39;abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%&amp;*#&#39;.ToCharArray() | Get-Random -count 12)
+} 
+</code></pre><p>This means that as long as the password created doesn’t comply with the regex, it creates a new one.</p>
 <p>And guess what? It can also be written as a one-liner:</p>
-<!-- raw HTML omitted -->
-<p>Not exactly a simple one-liner, but a one-liner still 🙂</p>
+<pre tabindex="0"><code>while ($pass -notmatch &#34;^.*(?=.{12,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&amp;+=]).*$&#34;) {$pass = -join (&#39;abcdefghkmnrstuvwxyzABCDEFGHKLMNPRSTUVWXYZ23456789$%&amp;*#&#39;.ToCharArray() | Get-Random -count 12)} 
+</code></pre><p>Not exactly a simple one-liner, but a one-liner still 🙂</p>
 
 
   </div>

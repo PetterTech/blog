@@ -12,7 +12,7 @@ After some googling I came up with a rather extensive script, it is a little mor
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/23/setting-ntfs-permissions-using-powershell/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ After some googling I came up with a rather extensive script, it is a little mor
   "keywords": [
     "microsoft", "ntfs", "Permissions", "Powershell"
   ],
-  "articleBody": "I am currently working on a script similar to the Mass import of users in Active Direcory post I published earlier (as promised 🙂 ). In the new script I wanted to only use powershell, so I had to find a way to set ntfs permissions using powershell. After all, the cacls way is pretty outdated.\nAfter some googling I came up with a rather extensive script, it is a little more complicated than I wanted but here goes:\nWhat it does it set the default permissions (in win7) that are inherited, in addition to full controll for “testuser”, on the folder c:test.\nYou can download the script here\nNext step is to get this into an foreach loop…\n",
-  "wordCount" : "119",
+  "articleBody": "I am currently working on a script similar to the Mass import of users in Active Direcory post I published earlier (as promised 🙂 ). In the new script I wanted to only use powershell, so I had to find a way to set ntfs permissions using powershell. After all, the cacls way is pretty outdated.\nAfter some googling I came up with a rather extensive script, it is a little more complicated than I wanted but here goes:\n$acl = Get-Acl c:test $acl.SetAccessRuleProtection($True, $False) $rule = New-Object System.Security.AccessControl.FileSystemAccessRule(\"Administrators\",\"FullControl\", \"ContainerInherit, ObjectInherit\", \"None\", \"Allow\") $acl.AddAccessRule($rule) (\"SYSTEM\",\"FullControl\", \"ContainerInherit, ObjectInherit\", \"None\", \"Allow\") $acl.AddAccessRule($rule) $rule = New-Object System.Security.AccessControl.FileSystemAccessRule(\"testuser\",\"FullControl\", \"ContainerInherit, ObjectInherit\", \"None\", \"Allow\") $acl.AddAccessRule($rule) $rule = New-Object System.Security.AccessControl.FileSystemAccessRule(\"Users\",\"Read\", \"ContainerInherit, ObjectInherit\", \"None\", \"Allow\") $acl.AddAccessRule($rule) Set-Acl c:test $acl Get-Acl c:test | format-list What it does it set the default permissions (in win7) that are inherited, in addition to full controll for “testuser”, on the folder c:test.\nYou can download the script here\nNext step is to get this into an foreach loop…\n",
+  "wordCount" : "165",
   "inLanguage": "en",
   "datePublished": "2011-09-23T11:19:28Z",
   "dateModified": "2011-09-23T11:19:28Z",
@@ -183,9 +183,22 @@ After some googling I came up with a rather extensive script, it is a little mor
   </header> 
   <div class="post-content"><p>I am currently working on a script similar to the <!-- raw HTML omitted -->Mass import of users in Active Direcory<!-- raw HTML omitted --> post I published earlier (as promised 🙂 ). In the new script I wanted to only use powershell, so I had to find a way to set ntfs permissions using powershell. After all, the cacls way is pretty outdated.</p>
 <p>After some googling I came up with a rather extensive script, it is a little more complicated than I wanted but here goes:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>What it does it set the default permissions (in win7) that are inherited, in addition to full controll for “testuser”, on the folder c:test.</p>
+<pre tabindex="0"><code>$acl = Get-Acl c:test
+$acl.SetAccessRuleProtection($True, $False)
+
+$rule = New-Object System.Security.AccessControl.FileSystemAccessRule(&#34;Administrators&#34;,&#34;FullControl&#34;, &#34;ContainerInherit, ObjectInherit&#34;, &#34;None&#34;, &#34;Allow&#34;)
+$acl.AddAccessRule($rule)
+(&#34;SYSTEM&#34;,&#34;FullControl&#34;, &#34;ContainerInherit, ObjectInherit&#34;, &#34;None&#34;, &#34;Allow&#34;)
+$acl.AddAccessRule($rule)
+$rule = New-Object System.Security.AccessControl.FileSystemAccessRule(&#34;testuser&#34;,&#34;FullControl&#34;, &#34;ContainerInherit, ObjectInherit&#34;, &#34;None&#34;, &#34;Allow&#34;)
+$acl.AddAccessRule($rule)
+$rule = New-Object System.Security.AccessControl.FileSystemAccessRule(&#34;Users&#34;,&#34;Read&#34;, &#34;ContainerInherit, ObjectInherit&#34;, &#34;None&#34;, &#34;Allow&#34;)
+$acl.AddAccessRule($rule)
+
+Set-Acl c:test $acl
+
+Get-Acl c:test | format-list
+</code></pre><p>What it does it set the default permissions (in win7) that are inherited, in addition to full controll for “testuser”, on the folder c:test.</p>
 <p>You can download the script <!-- raw HTML omitted -->here<!-- raw HTML omitted --></p>
 <p>Next step is to get this into an <em>foreach</em> loop…</p>
 

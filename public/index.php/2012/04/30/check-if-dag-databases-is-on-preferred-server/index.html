@@ -12,7 +12,7 @@ Microsoft have provided you with a script for balancing these databases, Redistr
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/04/30/check-if-dag-databases-is-on-preferred-server/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ Microsoft have provided you with a script for balancing these databases, Redistr
   "keywords": [
     "DAG", "Exchange", "microsoft", "Powershell"
   ],
-  "articleBody": "If you are using DAG in exchange 2010 for high availability on your mailboxes there may be one thing you might have noticed, the databases can fail over to a less preferred server at any time without you noticing.\nMicrosoft have provided you with a script for balancing these databases, RedistributeActiveDatabases.ps1. With this script you can activate the databases on their preferred server again. But how do you know when they have failed over?\nThat has been an issue for us for some time now. None of our monitoring solutions were able to detect this, so I decided to write a simple powershell script for this.\nThe script uses the RedistributeActiveDatabases.ps1 script to check how many, if any, databases is mounted on a less preferred server. If more than 0 databases is mounted on a less preferred server it sends a mail to a given mail address with how many databases is on a less preferred server.\nWe run this script as a scheduled task on one of our hub transport servers, but you can run it on any server/computer that has exchange management tools installed. It has really helped us so far, so heres the script:\n",
-  "wordCount" : "197",
+  "articleBody": "If you are using DAG in exchange 2010 for high availability on your mailboxes there may be one thing you might have noticed, the databases can fail over to a less preferred server at any time without you noticing.\nMicrosoft have provided you with a script for balancing these databases, RedistributeActiveDatabases.ps1. With this script you can activate the databases on their preferred server again. But how do you know when they have failed over?\nThat has been an issue for us for some time now. None of our monitoring solutions were able to detect this, so I decided to write a simple powershell script for this.\nThe script uses the RedistributeActiveDatabases.ps1 script to check how many, if any, databases is mounted on a less preferred server. If more than 0 databases is mounted on a less preferred server it sends a mail to a given mail address with how many databases is on a less preferred server.\nWe run this script as a scheduled task on one of our hub transport servers, but you can run it on any server/computer that has exchange management tools installed. It has really helped us so far, so heres the script:\n#Add the needed exchange snapin add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010 #Navigate to the exchange script repository cd \"C:Program FilesMicrosoftExchange ServerV14Scripts\" #Gather info on how many databases is on a less preferred server $result = .RedistributeActiveDatabases.ps1 -dagname dag01 -ShowDatabaseCurrentActives #Turn the results into a number $count = $result | Select-Object IsOnMostPreferredCopy | Select-String False | Measure-Object #Turn the number into a format that fits nicely into the mail (only for looks :)) $body = $count.count | out-string #Sends mail if there is databases that are mounted on less preferred server if ($count.Count -gt 0) {send-mailmessage -smtpserver 'hub transport server' -to some@recipient.com,some.other@recipient -from some@mailaddress.com -subject \"DAG unbalanced\" -Body \"The following number of databases is not on their prefered server: $body\"} ",
+  "wordCount" : "312",
   "inLanguage": "en",
   "datePublished": "2012-04-30T10:35:57Z",
   "dateModified": "2012-04-30T10:35:57Z",
@@ -186,9 +186,25 @@ Microsoft have provided you with a script for balancing these databases, Redistr
 <p>That has been an issue for us for some time now. None of our monitoring solutions were able to detect this, so I decided to write a simple powershell script for this.</p>
 <p>The script uses the RedistributeActiveDatabases.ps1 script to check how many, if any, databases is mounted on a less preferred server. If more than 0 databases is mounted on a less preferred server it sends a mail to a given mail address with how many databases is on a less preferred server.</p>
 <p>We run this script as a scheduled task on one of our hub transport servers, but you can run it on any server/computer that has exchange management tools installed. It has really helped us so far, so heres the script:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre tabindex="0"><code>#Add the needed exchange snapin
+add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010
 
+#Navigate to the exchange script repository
+cd &#34;C:Program FilesMicrosoftExchange ServerV14Scripts&#34;
+
+#Gather info on how many databases is on a less preferred server
+$result = .RedistributeActiveDatabases.ps1 -dagname dag01 -ShowDatabaseCurrentActives
+
+#Turn the results into a number
+$count = $result | Select-Object IsOnMostPreferredCopy | Select-String False | Measure-Object
+
+#Turn the number into a format that fits nicely into the mail (only for looks :))
+$body = $count.count | out-string
+
+#Sends mail if there is databases that are mounted on less preferred server
+if ($count.Count -gt 0)
+{send-mailmessage -smtpserver &#39;hub transport server&#39; -to some@recipient.com,some.other@recipient -from some@mailaddress.com -subject &#34;DAG unbalanced&#34; -Body &#34;The following number of databases is not on their prefered server: $body&#34;} 
+</code></pre>
 
   </div>
 

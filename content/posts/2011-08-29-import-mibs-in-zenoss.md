@@ -28,10 +28,14 @@ The last step is to import the MIB into Zenoss.
 To do this you first need to log in on the server running Zenoss, preferably as zenoss (default password is zenoss).  
 Then run the following command:
 
-<pre>/usr/local/zenoss/zenoss/bin/zenmib run &lt;path to MIB file&gt;</pre>
+ ```
+ /usr/local/zenoss/zenoss/bin/zenmib run &lt;path to MIB file&gt; 
+ ```
 
 Note: This example is for a default Debian installation, if you are using other distros you need to adapt the path. For the virtual appliance the command would be:
 
-<pre>/opt/zenoss/bin/zenmib run &lt;path to MIB file&gt;</pre>
+ ```
+ /opt/zenoss/bin/zenmib run &lt;path to MIB file&gt; 
+ ```
 
  [1]: http://www.oidview.com/mibs/detail.html

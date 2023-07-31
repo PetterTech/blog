@@ -34,4 +34,6 @@ Then you are good to go. If you want to allow more ip-addresses to relay, you ca
 
 And, as always, here&#8217;s the nerdy way of doing it in powershell:
 
-<pre>New-ReceiveConnector -Name "Anonymous" -Usage Custom -PermissionGroups AnonymousUsers -Bindings 0.0.0.0:25 -RemoteIpRanges &lt;ip of printer&gt; -server &lt;name of your server&gt;</pre>
+ ```
+ New-ReceiveConnector -Name "Anonymous" -Usage Custom -PermissionGroups AnonymousUsers -Bindings 0.0.0.0:25 -RemoteIpRanges &lt;ip of printer&gt; -server &lt;name of your server&gt; 
+ ```

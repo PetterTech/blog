@@ -13,7 +13,7 @@ The requirements for this script is the Active Directory module and permission t
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/16/simple-script-for-adding-user-photo-in-active-directory/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ The requirements for this script is the Active Directory module and permission t
   "keywords": [
     "active directory", "Powershell", "script"
   ],
-  "articleBody": "It’s been a while since I posted here so I thought it might be time to add some content.\nThis script is a simple script that adds a photo to a user’s active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).\nThe requirements for this script is the Active Directory module and permission to edit a user object in Active Directory\nThe script:\n",
-  "wordCount" : "76",
+  "articleBody": "It’s been a while since I posted here so I thought it might be time to add some content.\nThis script is a simple script that adds a photo to a user’s active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).\nThe requirements for this script is the Active Directory module and permission to edit a user object in Active Directory\nThe script:\n#Imports the Active Directory module Import-Module active* #Asks the user for a filename $photopath = Read-Host \"Please input filepath and filename\" #Converts the users input to an object $file = Get-Item \"$photopath\" #Calculates the filesize $filesize = $file.length/1KB #If the file is largers than 12KB you get a message stating that the file is too large #If the file is smaller than 12KB it asks for a username and imports the file to Active Directory if ($filesize -gt 12) { Write-Host \"Filesize to large, shrink it to under 12KB and try again\" } else { $user = Read-Host \"Please input username\" $photo = [byte[]](get-content $file -Encoding byte) Set-ADUser $user -Replace @{thumbnailPhoto=$photo} Write-host \"All done\" } cmd /c pause | out-null ",
+  "wordCount" : "196",
   "inLanguage": "en",
   "datePublished": "2012-08-16T12:24:00Z",
   "dateModified": "2012-08-16T12:24:00Z",
@@ -188,9 +188,33 @@ The requirements for this script is the Active Directory module and permission t
 <p>This script is a simple script that adds a photo to a user’s active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).</p>
 <p>The requirements for this script is the Active Directory module and permission to edit a user object in Active Directory</p>
 <p>The script:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre tabindex="0"><code>#Imports the Active Directory module
+Import-Module active*
 
+#Asks the user for a filename
+$photopath = Read-Host &#34;Please input filepath and filename&#34;
+
+#Converts the users input to an object
+$file = Get-Item &#34;$photopath&#34;
+
+#Calculates the filesize
+$filesize = $file.length/1KB
+
+#If the file is largers than 12KB you get a message stating that the file is too large
+#If the file is smaller than 12KB it asks for a username and imports the file to Active Directory
+if ($filesize -gt 12)
+{
+Write-Host &#34;Filesize to large, shrink it to under 12KB and try again&#34;
+}
+else {
+$user = Read-Host &#34;Please input username&#34;
+$photo = [byte[]](get-content $file -Encoding byte)
+Set-ADUser $user -Replace @{thumbnailPhoto=$photo}
+Write-host &#34;All done&#34;
+}
+
+cmd /c pause | out-null 
+</code></pre>
 
   </div>
 

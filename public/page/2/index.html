@@ -132,9 +132,8 @@
   </header>
   <div class="entry-content">
     <p>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
-However, I wasn’t completely satisfied by the the output or the ease of use.
-So today I went back and rewrote the code and made a function of it.
-Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round....</p>
+Get-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it....</p>
   </div>
   <footer class="entry-footer"><span title='2014-09-08 07:26:38 +0000 +0000'>September 8, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting vmhost uptime" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/"></a>
@@ -161,8 +160,7 @@ However, I haven’t found a good way to get a neat list of which VMs need to ha
   <div class="entry-content">
     <p>Next in the series on getting alarms is getting datastore alarms.
 Again, the code is pretty similar:
-And the output is pretty similar:
-The function code is this:</p>
+$Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate $FaultyDatastores = $Datastores | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $progress = 1 $report = @() if ($FaultyDatastores -ne $null) { foreach ($FaultyDatastore in $FaultyDatastores) { foreach ($TriggeredAlarm in $FaultyDatastore.TriggeredAlarmstate) { Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyDatastore.Name)&#34; -PercentComplete ($progress/$FaultyDatastores.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.Entity.ToString() $alarmID = $TriggeredAlarm....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-31 10:16:36 +0000 +0000'>August 31, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting datastore alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/"></a>
@@ -176,10 +174,7 @@ The function code is this:</p>
   <div class="entry-content">
     <p>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
 Here’s the code:
-And the output will look something like this:
-As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
-Anyways, here’s the function code:
-The output will be the same, but since it’s a function you can manipulate the data further....</p>
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyCluster.Name)&#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-30 08:21:59 +0000 +0000'>August 30, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting cluster alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/"></a>
@@ -193,8 +188,7 @@ The output will be the same, but since it’s a function you can manipulate the 
   <div class="entry-content">
     <p>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
-The output will look something like this:
-And here’s the function code:</p>
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-29 07:41:13 +0000 +0000'>August 29, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting host alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/"></a>
@@ -208,7 +202,7 @@ And here’s the function code:</p>
   <div class="entry-content">
     <p>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 So here’s the the script for retrieving vm alarms:
-This will provide an output like this:...</p>
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-28 06:42:12 +0000 +0000'>August 28, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting vm alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/"></a>
@@ -248,7 +242,7 @@ One way to get that overview is by using VAMT (http://technet.microsoft.com/en-u
   <div class="entry-content">
     <p>A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.
 After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
-And sure enough, we were seeing response times in the range of 5-7 seconds....</p>
+Measure-Command {Resolve-DnsName google.com -DnsOnly -Type A -NoHostsFile -server x.x.x.x} And sure enough, we were seeing response times in the range of 5-7 seconds....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-15 08:39:40 +0000 +0000'>August 15, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Powershell: Measuring latency on DNS queries" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/"></a>

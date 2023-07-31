@@ -164,7 +164,7 @@ One way to get that overview is by using VAMT (http://technet.microsoft.com/en-u
   <div class="entry-content">
     <p>A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.
 After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
-And sure enough, we were seeing response times in the range of 5-7 seconds....</p>
+Measure-Command {Resolve-DnsName google.com -DnsOnly -Type A -NoHostsFile -server x.x.x.x} And sure enough, we were seeing response times in the range of 5-7 seconds....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-15 08:39:40 +0000 +0000'>August 15, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Powershell: Measuring latency on DNS queries" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/"></a>
@@ -190,7 +190,7 @@ Win&#43;R – SLUI 4</p>
   </header>
   <div class="entry-content">
     <p>For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
-This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there....</p>
+Write-Progress -Activity &#34;Something&#34; -Status &#34;Something else&#34; -CurrentOperation &#34;thinking&#34; -PercentComplete 30 This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there....</p>
   </div>
   <footer class="entry-footer"><span title='2014-01-15 12:55:36 +0000 +0000'>January 15, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Powershell: Write-Progress, a step-by-step guide" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/"></a>

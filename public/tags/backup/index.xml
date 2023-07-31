@@ -15,8 +15,7 @@
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/</guid>
       <description>This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
 Anyway, heres my script:
-I guess a little explanation is required.
-The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination.</description>
+robocopy c:users&amp;amp;lt;username&amp;amp;gt; &amp;amp;lt;destination&amp;amp;gt; /MIR /XD templates start-menu &amp;#34;local settings&amp;#34; appdata &amp;#34;internal video&amp;#34; cookies &amp;#34;my music&amp;#34; &amp;#34;my pictures&amp;#34; &amp;#34;my documents&amp;#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&amp;amp;lt;log destination&amp;amp;gt; I guess a little explanation is required.</description>
     </item>
     
   </channel>

@@ -21,7 +21,8 @@ Robert van den Nieuwendijk has a nice post on how to use PowerCLI to find VMs th
 But, as always, I prefer to make a function of these kind of things. A function is much easier to remember than a bunch of parameters and cmdlets.  
 So here&#8217;s the code for a function that will search through the vCentre for VMs that need disk consolidation:
 
-<pre lang="Powershell">function Start-Consolidation
+ ```
+function Start-Consolidation
 {
     [CmdletBinding()]
         Param (
@@ -59,6 +60,6 @@ So here&#8217;s the code for a function that will search through the vCentre for
  .Link
   http://cloud.kemta.net
  #>
-</pre>
+ ```
 
 Any input is much appreciated 🙂

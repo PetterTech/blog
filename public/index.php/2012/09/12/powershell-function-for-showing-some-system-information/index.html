@@ -13,7 +13,7 @@ If the KeepTempFile parameter is used the temp file is saved in the users profil
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/powershell-function-for-showing-some-system-information/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ If the KeepTempFile parameter is used the temp file is saved in the users profil
   "keywords": [
     "function", "parameter", "Powershell", "Show-Debug", "switch", "system information", "wmi"
   ],
-  "articleBody": "This is a function I created just because I wanted to toy around with Powershell and get-wmiobject. Also, this is my first function where I made it possible to use a switch parameter.\nWhat the function does is gather some system information using get-wmiobject. The info is written to a temp file and then shown using out-gridview.\nIf the KeepTempFile parameter is used the temp file is saved in the users profile, if not it is deleted after the function finishes.\nHeres the code:\n",
-  "wordCount" : "84",
+  "articleBody": "This is a function I created just because I wanted to toy around with Powershell and get-wmiobject. Also, this is my first function where I made it possible to use a switch parameter.\nWhat the function does is gather some system information using get-wmiobject. The info is written to a temp file and then shown using out-gridview.\nIf the KeepTempFile parameter is used the temp file is saved in the users profile, if not it is deleted after the function finishes.\nHeres the code:\nfunction Show-Debug { Param( [switch]$KeepTempFile ) $tempfile = \"$env:userprofilepstempfile.txt\" New-Item $tempfile -ItemType file -Force Get-WmiObject -Class Win32_ComputerSystem |fl Manufacturer,Model,Name,Domain,PrimaryOwnerName | Out-File $tempfile -Append Get-WmiObject -class \"Win32_BIOS\" -namespace \"rootCIMV2\" -computername localhost | fl BIOSVersion,Serialnumber,Status | Out-File $tempfile -Append Get-WmiObject Win32_OperatingSystem | fl @{Expression={$_.Caption};Label=\"OS Name\"},SerialNumber,OSArchitecture,Version | Out-File $tempfile -Append Get-WmiObject Win32_PhysicalMemory | ft Tag,Capacity,Speed | Out-File $tempfile -Append Get-WmiObject Win32_Processor | fl DeviceID,Manufacturer,Caption,Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed,CurrentClockSpeed,L2CacheSize,L3CacheSize,Status | Out-File $tempfile -Append Get-Content $tempfile | Out-GridView if ($KeepTempFile){ Write-Host \"Log file is now saved as $tempfile\" } Else { Remove-Item $tempfile } \u0026lt;# .Synopsis Show some information about your computer .Description This function will create a txt file which will be populated with some information from wmi. It will then show the info to the user and delete the file .Parameter KeepTempFile Setting this parameter will keep the txt file with all info .Example Show-Debug Gathers info and show it on screen .Link http://cloud.kemta.net #\u003e } ",
+  "wordCount" : "233",
   "inLanguage": "en",
   "datePublished": "2012-09-12T09:32:24Z",
   "dateModified": "2012-09-12T09:32:24Z",
@@ -188,9 +188,40 @@ If the KeepTempFile parameter is used the temp file is saved in the users profil
 <p>What the function does is gather some system information using get-wmiobject. The info is written to a temp file and then shown using out-gridview.<br>
 If the KeepTempFile parameter is used the temp file is saved in the users profile, if not it is deleted after the function finishes.</p>
 <p>Heres the code:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
+<pre tabindex="0"><code>function Show-Debug
+ {
+ Param(
+ [switch]$KeepTempFile
+ )
+ $tempfile = &#34;$env:userprofilepstempfile.txt&#34;
+ New-Item $tempfile -ItemType file -Force
+ Get-WmiObject -Class Win32_ComputerSystem |fl Manufacturer,Model,Name,Domain,PrimaryOwnerName | Out-File $tempfile -Append
+ Get-WmiObject -class &#34;Win32_BIOS&#34; -namespace &#34;rootCIMV2&#34; -computername localhost | fl BIOSVersion,Serialnumber,Status | Out-File $tempfile -Append
+ Get-WmiObject Win32_OperatingSystem | fl @{Expression={$_.Caption};Label=&#34;OS Name&#34;},SerialNumber,OSArchitecture,Version | Out-File $tempfile -Append
+ Get-WmiObject Win32_PhysicalMemory | ft Tag,Capacity,Speed | Out-File $tempfile -Append
+ Get-WmiObject Win32_Processor | fl DeviceID,Manufacturer,Caption,Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed,CurrentClockSpeed,L2CacheSize,L3CacheSize,Status | Out-File $tempfile -Append
+ Get-Content $tempfile | Out-GridView
+ if ($KeepTempFile){
+ Write-Host &#34;Log file is now saved as $tempfile&#34;
+ }
+ Else {
+ Remove-Item $tempfile
+ }
+ &amp;lt;#
+ .Synopsis
+ Show some information about your computer
+ .Description
+ This function will create a txt file which will be populated with some information from wmi. It will then show the info to the user and delete the file
+ .Parameter KeepTempFile
+ Setting this parameter will keep the txt file with all info
+ .Example
+ Show-Debug
+ Gathers info and show it on screen
+ .Link
+ http://cloud.kemta.net
+ #&gt;
+ } 
+</code></pre>
 
   </div>
 

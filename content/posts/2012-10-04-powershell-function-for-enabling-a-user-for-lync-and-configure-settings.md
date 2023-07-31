@@ -90,7 +90,7 @@ wp-syntax-cache-content:
      .Link
       http://cloud.kemta.net
      #&gt;</span>
-    <span style="color: #000000;">&#125;</span></pre></td></tr></table><p class="theCode" style="display:none;">function Enable-LyncUser {
+    <span style="color: #000000;">&#125;</span> ```</td></tr></table><p class="theCode" style="display:none;">function Enable-LyncUser {
     [CmdletBinding()]
      Param (
      [parameter(Mandatory=$True)][string]$Identity,
@@ -199,7 +199,8 @@ The difference is that this function will use the default settings only if nothi
 
 Here&#8217;s the code:
 
-<pre lang="Powershell">function Enable-LyncUser {
+```
+function Enable-LyncUser {
 [CmdletBinding()]
  Param (
  [parameter(Mandatory=$True)][string]$Identity,
@@ -282,7 +283,8 @@ Write-Host "The user may now log in to Lync as $($SipAddress.SipAddress.substrin
  .Link
   http://cloud.kemta.net
  #>
-}</pre>
+} 
+```
 
 &nbsp;
 

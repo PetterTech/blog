@@ -13,7 +13,7 @@ Use it at your own will, I’m just posting it so I know where to find it the ne
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/27/redirecting-a-webpage-using-html/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ Use it at your own will, I’m just posting it so I know where to find it the ne
   "keywords": [
     "html", "iis", "microsoft"
   ],
-  "articleBody": "The redirect function in IIS 7 and 7.5 is in my experience pretty buggy. More often than not it will send the visitor into an eternal redirect loop.\nBecause of that I have used this simple html code for redirecting, instead of using the built in function in IIS.\nUse it at your own will, I’m just posting it so I know where to find it the next time I need it 🙂\n",
-  "wordCount" : "73",
+  "articleBody": "The redirect function in IIS 7 and 7.5 is in my experience pretty buggy. More often than not it will send the visitor into an eternal redirect loop.\nBecause of that I have used this simple html code for redirecting, instead of using the built in function in IIS.\nUse it at your own will, I’m just posting it so I know where to find it the next time I need it 🙂\nSome title You are now beeing forwarded to https://some.domain\u003e\nIf you are not forwarded automatically, click the above link. ",
+  "wordCount" : "104",
   "inLanguage": "en",
   "datePublished": "2012-02-27T07:55:57Z",
   "dateModified": "2012-02-27T07:55:57Z",
@@ -187,9 +187,23 @@ Use it at your own will, I’m just posting it so I know where to find it the ne
   <div class="post-content"><p>The redirect function in IIS 7 and 7.5 is in my experience pretty buggy. More often than not it will send the visitor into an eternal redirect loop.</p>
 <p>Because of that I have used this simple html code for redirecting, instead of using the built in function in IIS.</p>
 <p>Use it at your own will, I’m just posting it so I know where to find it the next time I need it 🙂</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre tabindex="0"><code>
 
+&lt;head&gt;
+  &lt;title&gt;
+    Some title
+  &lt;/title&gt;
+   
+  
+  &lt;meta HTTP-EQUIV=&#34;Refresh&#34;
+ CONTENT=&#34;1; URL=https://some.domain.com/&#34; /&gt;
+  
+  &lt;head&gt;
+    
+     You are now beeing forwarded to &lt;a href=&#34;https://some.domain&#34;&gt;https://some.domain&gt;&lt;/a&gt;&lt;br /&gt;
+     If you are not forwarded automatically, click the above link.
+    &lt;/html&gt; 
+</code></pre>
 
   </div>
 

@@ -21,8 +21,12 @@ Easy-peasy and a pretty short post&#8230;
 
 To get all vm&#8217;s with iso mounted:
 
-<pre>Get-VM | Get-CDDrive | select @{N="VM";E="Parent"},IsoPath | where {$_.IsoPath -ne $null}</pre>
+ ```
+Get-VM | Get-CDDrive | select @{N="VM";E="Parent"},IsoPath | where {$_.IsoPath -ne $null} 
+```
 
 Then, to dismount those:
 
-<pre>Get-VM | Get-CDDrive | where {$_.IsoPath -ne $null} | Set-CDDrive -NoMedia -Confirm:$False</pre>
+ ```
+Get-VM | Get-CDDrive | where {$_.IsoPath -ne $null} | Set-CDDrive -NoMedia -Confirm:$False 
+```

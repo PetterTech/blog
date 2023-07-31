@@ -92,7 +92,7 @@ Creates OUs Creates users Creates security groups Creates distribution groups Cr
       <description>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.
 Here’s the script in all its glory:
-You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</description>
+$UI = (Get-Host).UI.RawUI $UI.WindowTitle = &amp;#34;Enable lync user&amp;#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool.</description>
     </item>
     
     <item>
@@ -105,8 +105,7 @@ You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/script
 Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
 Remember to run Windows update prior to the installation.
 Start powershell as administrator and type:
-First we need to install all of the prerequisites:
-We also need to set the NetTcpPortSharing service to automatic start, the command for this is:</description>
+import-module servermanager First we need to install all of the prerequisites:</description>
     </item>
     
     <item>
@@ -127,8 +126,7 @@ After some googling I came up with a rather extensive script, it is a little mor
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/</guid>
       <description>This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
 Anyway, heres my script:
-I guess a little explanation is required.
-The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination.</description>
+robocopy c:users&amp;amp;lt;username&amp;amp;gt; &amp;amp;lt;destination&amp;amp;gt; /MIR /XD templates start-menu &amp;#34;local settings&amp;#34; appdata &amp;#34;internal video&amp;#34; cookies &amp;#34;my music&amp;#34; &amp;#34;my pictures&amp;#34; &amp;#34;my documents&amp;#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&amp;amp;lt;log destination&amp;amp;gt; I guess a little explanation is required.</description>
     </item>
     
     <item>
@@ -138,7 +136,8 @@ The first part, robocopy c:users tells robocopy what to copy where. /MIR indicat
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/</guid>
       <description>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
-Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</description>
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
+Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept </description>
     </item>
     
     <item>
@@ -172,8 +171,7 @@ You can use the default Libraries as a starting point, or you can create a new o
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/18/editing-permissions-on-all-mailboxes-in-one-command-exchange-20102007/</guid>
       <description>If you have some sort of 3rd-party application that needs access to all of your mailboxes, it can be a pain to set the permissions on all of your mailboxes.
 Except if you use this nice little powershell command:
-What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.
-You can of course change the -AccessRights setting to your liking, e.</description>
+Get-Mailbox -ResultSize unlimited | Add-MailboxPermission -User admin -AccessRights FullAccess -InheritanceType all What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.</description>
     </item>
     
     <item>

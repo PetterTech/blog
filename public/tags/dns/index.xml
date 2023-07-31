@@ -15,7 +15,7 @@
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/</guid>
       <description>A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.
 After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
-And sure enough, we were seeing response times in the range of 5-7 seconds.</description>
+Measure-Command {Resolve-DnsName google.com -DnsOnly -Type A -NoHostsFile -server x.x.x.x} And sure enough, we were seeing response times in the range of 5-7 seconds.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@ And sure enough, we were seeing response times in the range of 5-7 seconds.</des
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/</guid>
       <description>I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
 First we need to to save our domains in an array:
-Then we send that array into a foreach loop:</description>
+$domains = @(&amp;#34;domainA.com&amp;#34;, &amp;#34;domainB.com&amp;#34;, &amp;#34;domainC.com&amp;#34;) Then we send that array into a foreach loop:</description>
     </item>
     
     <item>

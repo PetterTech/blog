@@ -13,7 +13,7 @@ Disclaimer: The examples below will vary somewhat in how I do certain things, si
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2017/06/15/powershell-and-the-hpe-3par-rest-api/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ Disclaimer: The examples below will vary somewhat in how I do certain things, si
   "keywords": [
     "3PAR", "boot lun", "HPE 3PAR", "Invoke-RestMethod", "Powershell", "REST"
   ],
-  "articleBody": "Lately, I’ve had the pleasure of using Powershell to automate some of the basic tasks we do on our HPE 3PAR systems: creating volumes, adding them to volume sets, exporting them and so on.\nSince my experience with REST APIs was rather limited it was quite daunting at first but once you get the hang of how REST works and the Invoke-RestMethod cmdlet it’s really not that bad.\nDisclaimer: The examples below will vary somewhat in how I do certain things, simply because I had to learn all this from scratch. Hence, the first examples will sometimes do things “less correct” than the later examples since this also was quite the learning curve for me.\nThe first step in doing anything with the REST API will always be to create a session key. If you’re not familiar with APIs, think of a session key as username and password combined into one string. You will need to add the session key to every REST call you do later on in order to authenticate yourself.\nTo create a session key from powershell you can use the following line:\nThis will store you session key in the $key variable which you will need to add to the header of future REST calls.\nKeep in mind that each session key is valid for 15 minutes by default, but you should always delete it after each use.\nTo delete a session key you can use the following line, given that your key is still stored in $key:\nNow that you have your session key you can start to do some more interesting stuff, like creating a volume:\nThe above example will create a datastore named “3parDatastore01” in the cpg named “SSD_r5” with 2TB of space and dedupe enabled. As you can see our session key is passed in the header as X-HP3PAR-WSAPI-SessionKey.\nIf your well versed in JSON and powershell you can probably tell that I’m not 🙂\nThe body you’re sending in the REST call is supposed to be formatted as a JSON object and in the above example I’m creating the JSON object manually by building it up as a string. In a later example I’ll show a more “correct” way to do it.\nThe next step will usually be to export the volume or to add it to a volume set. Let’s look at an example where I add a volume to an existing volume set:\nAgain, I’m building the JSON object as a string here instead of doing it the correct way.\nThe above example will add the volume called “3parDatastore01” (which we created in the previous example) to the existing volumeset called “testVVSet”. If you already have exported the volume set to a host or host set it is now available for the host(s) to use.\nThe next step for me now was to query the created volume since I had to find the wwn of the volume. There are two ways I have done this: By querying all volumes and by querying a single volume.\nTo query all volumes you can use this line:\nTo query a single volume you can use this line:\nYou can also build a query directly in the uri you’re accessing by adding ?query=”” after /volumes. Here’s an example from HPE’s own guide:\nOf course, you can also do filtering in powershell if you’re more comfortable with that (I know I am) but then you will have wasted computing power on both the SAN and the machine you’re running powershell on 😉\nIf you are not using volume sets and exporting those to hosts, the next logical step would be to export the newly created volume to a host or hostset. To export a volume to a single host you can do something like this:\nNotice the difference in the way I format the body? This is the more correct way to do it, creating a hashtable and converting it to JSON with ConvertTo-Json.\nI also create the header before the Invoke-RestMethod line here.\nThe example above will export 3parDatastore01 to esx01 with a lun id of 255.\nLastly, I would like to provide you with an example on how we create our boot luns. This is an extract of a powershell function I wrote, in the original function there’s a lot more automation, error handling and logging but I removed it here for the sake of readability.\nThe key thing here is the policy (oneHost) that we set on the volume when we create it. This prevents the bootlun being exported to additional hosts.\nSources:\nHPE 3PAR API doc: http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c03606339\n",
-  "wordCount" : "767",
+  "articleBody": "Lately, I’ve had the pleasure of using Powershell to automate some of the basic tasks we do on our HPE 3PAR systems: creating volumes, adding them to volume sets, exporting them and so on.\nSince my experience with REST APIs was rather limited it was quite daunting at first but once you get the hang of how REST works and the Invoke-RestMethod cmdlet it’s really not that bad.\nDisclaimer: The examples below will vary somewhat in how I do certain things, simply because I had to learn all this from scratch. Hence, the first examples will sometimes do things “less correct” than the later examples since this also was quite the learning curve for me.\nThe first step in doing anything with the REST API will always be to create a session key. If you’re not familiar with APIs, think of a session key as username and password combined into one string. You will need to add the session key to every REST call you do later on in order to authenticate yourself.\nTo create a session key from powershell you can use the following line:\n$key = (Invoke-RestMethod -Method post -Uri \"http://\u0026lt;3PAR ip/hostname\u0026gt;:8008/api/v1/credentials\" -Body '{\"user\":\"\u0026lt;username\u0026gt;\",\"password\":\"\u0026lt;password\u0026gt;\"}' -ContentType 'application/json').key This will store you session key in the $key variable which you will need to add to the header of future REST calls.\nKeep in mind that each session key is valid for 15 minutes by default, but you should always delete it after each use.\nTo delete a session key you can use the following line, given that your key is still stored in $key:\nInvoke-RestMethod -Method delete -Uri \"http://\u0026lt;3PAR ip/hostname\u0026gt;:8008/api/v1/credentials/$($key)\" -Headers @{'Accept'='application/json'} Now that you have your session key you can start to do some more interesting stuff, like creating a volume:\n$body = '{\"name\":\"' $body = $body + \"3parDatastore01\" $body = $body + '\",\"cpg\":\"SSD_r5\",\"sizeMiB\":2097152,\"tdvv\":true}' Invoke-RestMethod -Method Post -Uri \"http://\u0026lt;3PAR ip/hostname\u0026gt;:8008/api/v1/volumes\" -Headers @{'X-HP3PAR-WSAPI-SessionKey'=$key} -ContentType application/json -Body $body The above example will create a datastore named “3parDatastore01” in the cpg named “SSD_r5” with 2TB of space and dedupe enabled. As you can see our session key is passed in the header as X-HP3PAR-WSAPI-SessionKey.\nIf your well versed in JSON and powershell you can probably tell that I’m not 🙂\nThe body you’re sending in the REST call is supposed to be formatted as a JSON object and in the above example I’m creating the JSON object manually by building it up as a string. In a later example I’ll show a more “correct” way to do it.\nThe next step will usually be to export the volume or to add it to a volume set. Let’s look at an example where I add a volume to an existing volume set:\n$body = '{\"action\":1,\"setmembers\":[\"' $body = $body + \"3parDatastore01\" $body = $body + '\"]}' Invoke-RestMethod -Method Put -Uri \"http://\u0026lt;3PAR ip/hostname\u0026gt;:8008/api/v1/volumesets/testVVSet\" -Headers @{'X-HP3PAR-WSAPI-SessionKey'=$key} -ContentType application/json -Body $body Again, I’m building the JSON object as a string here instead of doing it the correct way.\nThe above example will add the volume called “3parDatastore01” (which we created in the previous example) to the existing volumeset called “testVVSet”. If you already have exported the volume set to a host or host set it is now available for the host(s) to use.\nThe next step for me now was to query the created volume since I had to find the wwn of the volume. There are two ways I have done this: By querying all volumes and by querying a single volume.\nTo query all volumes you can use this line:\nInvoke-RestMethod -Method get -Uri \"http://\u0026lt;3PAR ip/hostname\u0026gt;:8008/api/v1/volumes\" -Headers @{'X-HP3PAR-WSAPI-SessionKey'=$key} -ContentType \"application/json\" To query a single volume you can use this line:\nInvoke-RestMethod -Method get -Uri \"http://\u0026lt;3PAR ip/hostname\u0026gt;:8008/api/v1/volumes/\u0026lt;volumename\u0026gt;\" -Headers @{'X-HP3PAR-WSAPI-SessionKey'=$key} -ContentType \"application/json\" You can also build a query directly in the uri you’re accessing by adding ?query=”” after /volumes. Here’s an example from HPE’s own guide:\nhttps://\u0026lt;storage_system\u0026gt;:8080/api/v1/volumes?query=”wwn EQ value1 OR wwn EQ value2 OR userCPG EQ value3 OR snapCPG EQ value4 OR wwn EQ valueN” Of course, you can also do filtering in powershell if you’re more comfortable with that (I know I am) but then you will have wasted computing power on both the SAN and the machine you’re running powershell on 😉\n$volume = Invoke-RestMethod -Method get -Uri \"http://\u0026lt;3PAR ip/hostname\u0026gt;:8008/api/v1/volumes/3parDatastore01\" -Headers @{'X-HP3PAR-WSAPI-SessionKey'=$key} -ContentType \"application/json\" $wwn = \"naa.\" + ($volume.members).wwn Get-VMHostStorage \u0026lt;esxHost\u0026gt; -RescanAllHba Start-Sleep -Seconds 10 New-Datastore -VMHost \u0026lt;esxHost\u0026gt; -Name \"3parDatastore01\" -Path $wwn.ToLower() -Vmfs -FileSystemVersion \"5\" If you are not using volume sets and exporting those to hosts, the next logical step would be to export the newly created volume to a host or hostset. To export a volume to a single host you can do something like this:\n$Header = @{} $Header.Add(\"accept\",\"application/json\") $Header.Add(\"x-hp3par-wsapi-sessionkey\",$key) $Body = @{ \"lun\" = 255 \"volumeName\" = \"3parDatastore01\" \"hostname\" = \"esx01\" } Invoke-RestMethod -Method Post -Uri http://\u0026lt;3PAR ip/hostname\u0026gt;:8008/api/v1/vluns -Headers $header -Body ($Body | ConvertTo-Json) -ContentType \"application/json\" Notice the difference in the way I format the body? This is the more correct way to do it, creating a hashtable and converting it to JSON with ConvertTo-Json.\nI also create the header before the Invoke-RestMethod line here.\nThe example above will export 3parDatastore01 to esx01 with a lun id of 255.\nLastly, I would like to provide you with an example on how we create our boot luns. This is an extract of a powershell function I wrote, in the original function there’s a lot more automation, error handling and logging but I removed it here for the sake of readability.\n$3PARHostname = \"3Par01\" $ESXiHostname = \"newEsxi01\" $3PARcred = @{ user=\"fakeUser\" password=\"fakePassword\" } $APIkey = (Invoke-RestMethod -Method Post -Uri \"http://$($3PARHostname):8008/api/v1/credentials\" -Body ($3PARcred | ConvertTo-Json) -ContentType 'application/json').key $Header = @{} $Header.Add(\"accept\",\"application/json\") $Header.Add(\"x-hp3par-wsapi-sessionkey\",$APIkey) $Body = @{ \"tdvv\" = $true \"cpg\" = \"SSD_r5\" \"name\" = \"$($ESXiHostname)\" \"sizeMiB\" = 10240 \"policies\" = @{ oneHost = $true } } Invoke-RestMethod -Method Post -Uri http://$($3PARHostname):8008/api/v1/volumes -Headers $Header -Body ($Body | ConvertTo-Json) -ContentType \"application/json\" Clear-Variable Body $Body = @{ \"lun\" = 255 \"volumeName\" = \"$($ESXiHostname)\" \"hostname\" = \"$($ESXiHostname)\" } Invoke-RestMethod -Method Post -Uri http://$($3PARHostname):8008/api/v1/vluns -Headers $header -Body ($Body | ConvertTo-Json) -ContentType \"application/json\" ``` The key thing here is the policy (oneHost) that we set on the volume when we create it. This prevents the bootlun being exported to additional hosts. Sources: HPE 3PAR API doc: http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c03606339 ",
+  "wordCount" : "1039",
   "inLanguage": "en",
   "datePublished": "2017-06-15T12:01:01Z",
   "dateModified": "2017-06-15T12:01:01Z",
@@ -189,47 +189,96 @@ Disclaimer: The examples below will vary somewhat in how I do certain things, si
 <p><em>Disclaimer: The examples below will vary somewhat in how I do certain things, simply because I had to learn all this from scratch. Hence, the first examples will sometimes do things “less correct” than the later examples since this also was quite the learning curve for me.</em></p>
 <p>The first step in doing anything with the REST API will always be to create a session key. If you’re not familiar with APIs, think of a session key as username and password combined into one string. You will need to add the session key to every REST call you do later on in order to authenticate yourself.<br>
 To create a session key from powershell you can use the following line:</p>
-<!-- raw HTML omitted -->
-<p>This will store you session key in the $key variable which you will need to add to the header of future REST calls.</p>
+<pre tabindex="0"><code>$key = (Invoke-RestMethod -Method post -Uri &#34;http://&amp;lt;3PAR ip/hostname&amp;gt;:8008/api/v1/credentials&#34; -Body &#39;{&#34;user&#34;:&#34;&amp;lt;username&amp;gt;&#34;,&#34;password&#34;:&#34;&amp;lt;password&amp;gt;&#34;}&#39; -ContentType &#39;application/json&#39;).key 
+</code></pre><p>This will store you session key in the $key variable which you will need to add to the header of future REST calls.</p>
 <p>Keep in mind that each session key is valid for 15 minutes by default, but you should always delete it after each use.</p>
 <p>To delete a session key you can use the following line, given that your key is still stored in $key:</p>
-<!-- raw HTML omitted -->
-<p>Now that you have your session key you can start to do some more interesting stuff, like creating a volume:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The above example will create a datastore named “3parDatastore01” in the cpg named “SSD_r5” with 2TB of space and dedupe enabled. As you can see our session key is passed in the header as X-HP3PAR-WSAPI-SessionKey.</p>
+<pre tabindex="0"><code>Invoke-RestMethod -Method delete -Uri &#34;http://&amp;lt;3PAR ip/hostname&amp;gt;:8008/api/v1/credentials/$($key)&#34; -Headers @{&#39;Accept&#39;=&#39;application/json&#39;} 
+</code></pre><p>Now that you have your session key you can start to do some more interesting stuff, like creating a volume:</p>
+<pre tabindex="0"><code>$body = &#39;{&#34;name&#34;:&#34;&#39;
+$body = $body + &#34;3parDatastore01&#34;
+$body = $body + &#39;&#34;,&#34;cpg&#34;:&#34;SSD_r5&#34;,&#34;sizeMiB&#34;:2097152,&#34;tdvv&#34;:true}&#39;
+
+Invoke-RestMethod -Method Post -Uri &#34;http://&amp;lt;3PAR ip/hostname&amp;gt;:8008/api/v1/volumes&#34; -Headers @{&#39;X-HP3PAR-WSAPI-SessionKey&#39;=$key} -ContentType application/json -Body $body 
+</code></pre><p>The above example will create a datastore named “3parDatastore01” in the cpg named “SSD_r5” with 2TB of space and dedupe enabled. As you can see our session key is passed in the header as X-HP3PAR-WSAPI-SessionKey.</p>
 <p><em>If your well versed in JSON and powershell you can probably tell that I’m not 🙂</em><br>
 <em>The body you’re sending in the REST call is supposed to be formatted as a JSON object and in the above example I’m creating the JSON object manually by building it up as a string. In a later example I’ll show a more “correct” way to do it.</em></p>
 <p>The next step will usually be to export the volume or to add it to a volume set. Let’s look at an example where I add a volume to an existing volume set:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p><em>Again, I’m building the JSON object as a string here instead of doing it the correct way.</em></p>
+<pre tabindex="0"><code>$body = &#39;{&#34;action&#34;:1,&#34;setmembers&#34;:[&#34;&#39;
+$body = $body + &#34;3parDatastore01&#34;
+$body = $body + &#39;&#34;]}&#39;
+Invoke-RestMethod -Method Put -Uri &#34;http://&amp;lt;3PAR ip/hostname&amp;gt;:8008/api/v1/volumesets/testVVSet&#34; -Headers @{&#39;X-HP3PAR-WSAPI-SessionKey&#39;=$key} -ContentType application/json -Body $body 
+</code></pre><p><em>Again, I’m building the JSON object as a string here instead of doing it the correct way.</em></p>
 <p>The above example will add the volume called “3parDatastore01” (which we created in the previous example) to the existing volumeset called “testVVSet”. If you already have exported the volume set to a host or host set it is now available for the host(s) to use.</p>
 <p>The next step for me now was to query the created volume since I had to find the wwn of the volume. There are two ways I have done this: By querying all volumes and by querying a single volume.<br>
 To query all volumes you can use this line:</p>
+<pre tabindex="0"><code>Invoke-RestMethod -Method get -Uri &#34;http://&amp;lt;3PAR ip/hostname&amp;gt;:8008/api/v1/volumes&#34; -Headers @{&#39;X-HP3PAR-WSAPI-SessionKey&#39;=$key} -ContentType &#34;application/json&#34; 
+</code></pre><p>To query a single volume you can use this line:</p>
+<pre tabindex="0"><code>Invoke-RestMethod -Method get -Uri &#34;http://&amp;lt;3PAR ip/hostname&amp;gt;:8008/api/v1/volumes/&amp;lt;volumename&amp;gt;&#34; -Headers @{&#39;X-HP3PAR-WSAPI-SessionKey&#39;=$key} -ContentType &#34;application/json&#34; 
+</code></pre><p>You can also build a query directly in the uri you’re accessing by adding ?query=”<!-- raw HTML omitted -->” after /volumes. Here’s an example from HPE’s own guide:</p>
+<pre tabindex="0"><code>https://&amp;lt;storage_system&amp;gt;:8080/api/v1/volumes?query=”wwn EQ value1 OR wwn EQ value2 OR userCPG EQ value3 OR snapCPG EQ value4 OR wwn EQ valueN” 
+</code></pre><p>Of course, you can also do filtering in powershell if you’re more comfortable with that (I know I am) but then you will have wasted computing power on both the SAN and the machine you’re running powershell on 😉</p>
 <!-- raw HTML omitted -->
-<p>To query a single volume you can use this line:</p>
-<!-- raw HTML omitted -->
-<p>You can also build a query directly in the uri you’re accessing by adding ?query=”<!-- raw HTML omitted -->” after /volumes. Here’s an example from HPE’s own guide:</p>
-<!-- raw HTML omitted -->
-<p>Of course, you can also do filtering in powershell if you’re more comfortable with that (I know I am) but then you will have wasted computing power on both the SAN and the machine you’re running powershell on 😉</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre tabindex="0"><code>$volume = Invoke-RestMethod -Method get -Uri &#34;http://&amp;lt;3PAR ip/hostname&amp;gt;:8008/api/v1/volumes/3parDatastore01&#34; -Headers @{&#39;X-HP3PAR-WSAPI-SessionKey&#39;=$key} -ContentType &#34;application/json&#34;
+$wwn = &#34;naa.&#34; + ($volume.members).wwn
+Get-VMHostStorage &amp;lt;esxHost&amp;gt; -RescanAllHba
+Start-Sleep -Seconds 10
+New-Datastore -VMHost &amp;lt;esxHost&amp;gt; -Name &#34;3parDatastore01&#34; -Path $wwn.ToLower() -Vmfs -FileSystemVersion &#34;5&#34; 
+</code></pre><!-- raw HTML omitted -->
 <p>If you are not using volume sets and exporting those to hosts, the next logical step would be to export the newly created volume to a host or hostset. To export a volume to a single host you can do something like this:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p><em>Notice the difference in the way I format the body? This is the more correct way to do it, creating a hashtable and converting it to JSON with ConvertTo-Json.</em><br>
+<pre tabindex="0"><code>$Header = @{}
+$Header.Add(&#34;accept&#34;,&#34;application/json&#34;)
+$Header.Add(&#34;x-hp3par-wsapi-sessionkey&#34;,$key)
+$Body = @{
+&#34;lun&#34; = 255
+&#34;volumeName&#34; = &#34;3parDatastore01&#34;
+&#34;hostname&#34; = &#34;esx01&#34;
+}
+Invoke-RestMethod -Method Post -Uri http://&amp;lt;3PAR ip/hostname&amp;gt;:8008/api/v1/vluns -Headers $header -Body ($Body | ConvertTo-Json) -ContentType &#34;application/json&#34; 
+</code></pre><p><em>Notice the difference in the way I format the body? This is the more correct way to do it, creating a hashtable and converting it to JSON with ConvertTo-Json.</em><br>
 <em>I also create the header before the Invoke-RestMethod line here.</em></p>
 <p>The example above will export 3parDatastore01 to esx01 with a lun id of 255.</p>
 <p>Lastly, I would like to provide you with an example on how we create our boot luns. This is an extract of a powershell function I wrote, in the original function there’s a lot more automation, error handling and logging but I removed it here for the sake of readability.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The key thing here is the policy (oneHost) that we set on the volume when we create it. This prevents the bootlun being exported to additional hosts.</p>
-<p>Sources:<br>
-HPE 3PAR API doc: <!-- raw HTML omitted --><a href="http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c03606339">http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c03606339</a><!-- raw HTML omitted --></p>
+<pre tabindex="0"><code>$3PARHostname = &#34;3Par01&#34;
+$ESXiHostname = &#34;newEsxi01&#34;
+$3PARcred = @{
+user=&#34;fakeUser&#34;
+password=&#34;fakePassword&#34;
+}
 
+$APIkey = (Invoke-RestMethod -Method Post -Uri &#34;http://$($3PARHostname):8008/api/v1/credentials&#34; -Body ($3PARcred | ConvertTo-Json) -ContentType &#39;application/json&#39;).key
+
+$Header = @{}
+$Header.Add(&#34;accept&#34;,&#34;application/json&#34;)
+$Header.Add(&#34;x-hp3par-wsapi-sessionkey&#34;,$APIkey)
+
+$Body = @{
+&#34;tdvv&#34; = $true
+&#34;cpg&#34; = &#34;SSD_r5&#34;
+&#34;name&#34; = &#34;$($ESXiHostname)&#34;
+&#34;sizeMiB&#34; = 10240
+&#34;policies&#34; = @{
+oneHost = $true
+}
+}
+
+Invoke-RestMethod -Method Post -Uri http://$($3PARHostname):8008/api/v1/volumes -Headers $Header -Body ($Body | ConvertTo-Json) -ContentType &#34;application/json&#34;
+
+Clear-Variable Body
+
+$Body = @{
+&#34;lun&#34; = 255
+&#34;volumeName&#34; = &#34;$($ESXiHostname)&#34;
+&#34;hostname&#34; = &#34;$($ESXiHostname)&#34;
+}
+
+Invoke-RestMethod -Method Post -Uri http://$($3PARHostname):8008/api/v1/vluns -Headers $header -Body ($Body | ConvertTo-Json) -ContentType &#34;application/json&#34; ```
+
+The key thing here is the policy (oneHost) that we set on the volume when we create it. This prevents the bootlun being exported to additional hosts.
+
+Sources:  
+HPE 3PAR API doc: &lt;a href=&#34;http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c03606339&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=c03606339&lt;/a&gt;
+</code></pre>
 
   </div>
 

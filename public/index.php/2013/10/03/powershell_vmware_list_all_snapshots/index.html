@@ -13,7 +13,7 @@ The vsphere console doesn’t provide this info so I had to turn to PowerCLI to 
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ The vsphere console doesn’t provide this info so I had to turn to PowerCLI to 
   "keywords": [
     "date created", "get-snapshot", "get-vm", "powercli", "Powershell", "size", "snapshot", "vmware"
   ],
-  "articleBody": "It’s been a while since last update, again, so I figured I should at least provide something..\nI recently started in a new job, and one of the first things I looked into was the amount of snapshots in our vmware environments. Not surprisingly there was a lot of snapshots, and very few of them had any hints of when they were taken and why.\nThe vsphere console doesn’t provide this info so I had to turn to PowerCLI to get the info I needed. PowerCLI is really just a snap-in to powershell so I felt right at home 🙂\nAfter you start PowerCLI, you need to first connect to your vcenter server:\nYou will be promted for username and password for vcenter. After powershell has connected to the vcenter server, all you need to is run this one-liner:\nThis will return a list of all vm’s, their snapshots, size of the snapshots and the date the snapshot was taken.\n",
-  "wordCount" : "160",
+  "articleBody": "It’s been a while since last update, again, so I figured I should at least provide something..\nI recently started in a new job, and one of the first things I looked into was the amount of snapshots in our vmware environments. Not surprisingly there was a lot of snapshots, and very few of them had any hints of when they were taken and why.\nThe vsphere console doesn’t provide this info so I had to turn to PowerCLI to get the info I needed. PowerCLI is really just a snap-in to powershell so I felt right at home 🙂\nAfter you start PowerCLI, you need to first connect to your vcenter server:\nConnect-VIServer \u0026lt;vcenter server\u0026gt; You will be promted for username and password for vcenter. After powershell has connected to the vcenter server, all you need to is run this one-liner:\nGet-VM | Get-Snapshot | Select VM,Name,@{N=\"SizeGB\";E={@([math]::Round($_.SizeGB))}},Created This will return a list of all vm’s, their snapshots, size of the snapshots and the date the snapshot was taken.\n",
+  "wordCount" : "169",
   "inLanguage": "en",
   "datePublished": "2013-10-03T10:27:41Z",
   "dateModified": "2013-10-03T10:27:41Z",
@@ -188,10 +188,10 @@ The vsphere console doesn’t provide this info so I had to turn to PowerCLI to 
 <p>I recently started in a new job, and one of the first things I looked into was the amount of snapshots in our vmware environments. Not surprisingly there was a lot of snapshots, and very few of them had any hints of when they were taken and why.</p>
 <p>The vsphere console doesn’t provide this info so I had to turn to PowerCLI to get the info I needed. PowerCLI is really just a snap-in to powershell so I felt right at home 🙂</p>
 <p>After you start PowerCLI, you need to first connect to your vcenter server:</p>
-<!-- raw HTML omitted -->
-<p>You will be promted for username and password for vcenter. After powershell has connected to the vcenter server, all you need to is run this one-liner:</p>
-<!-- raw HTML omitted -->
-<p>This will return a list of all vm’s, their snapshots, size of the snapshots and the date the snapshot was taken.</p>
+<pre tabindex="0"><code>Connect-VIServer &amp;lt;vcenter server&amp;gt; 
+</code></pre><p>You will be promted for username and password for vcenter. After powershell has connected to the vcenter server, all you need to is run this one-liner:</p>
+<pre tabindex="0"><code>Get-VM | Get-Snapshot | Select VM,Name,@{N=&#34;SizeGB&#34;;E={@([math]::Round($_.SizeGB))}},Created 
+</code></pre><p>This will return a list of all vm’s, their snapshots, size of the snapshots and the date the snapshot was taken.</p>
 
 
   </div>

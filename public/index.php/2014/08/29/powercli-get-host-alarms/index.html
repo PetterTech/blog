@@ -9,12 +9,11 @@
 <meta name="keywords" content="alarms, function, get-vmhostalarms, powercli, Powershell, vmware">
 <meta name="description" content="Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
-The output will look something like this:
-And here’s the function code:">
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -62,8 +61,7 @@ And here’s the function code:">
 </noscript><meta property="og:title" content="PowerCLI: Getting host alarms" />
 <meta property="og:description" content="Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
-The output will look something like this:
-And here’s the function code:" />
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-08-29T07:41:13+00:00" />
@@ -73,8 +71,7 @@ And here’s the function code:" />
 <meta name="twitter:title" content="PowerCLI: Getting host alarms"/>
 <meta name="twitter:description" content="Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
-The output will look something like this:
-And here’s the function code:"/>
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost."/>
 
 
 <script type="application/ld+json">
@@ -103,12 +100,12 @@ And here’s the function code:"/>
   "@type": "BlogPosting",
   "headline": "PowerCLI: Getting host alarms",
   "name": "PowerCLI: Getting host alarms",
-  "description": "Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂\nThe code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:\nThe output will look something like this:\nAnd here’s the function code:",
+  "description": "Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂\nThe code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:\n$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne \u0026#34;{}\u0026#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost.",
   "keywords": [
     "alarms", "function", "get-vmhostalarms", "powercli", "Powershell", "vmware"
   ],
-  "articleBody": "Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂\nThe code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:\nThe output will look something like this:\nAnd here’s the function code:\n",
-  "wordCount" : "52",
+  "articleBody": "Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂\nThe code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:\n$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne \"{}\"} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost.TriggeredAlarmstate) { Write-Progress -Activity \"Gathering alarms\" -Status \"Working on $($FaultyVMHost.Name)\" -PercentComplete ($progress/$FaultyVMHosts.count*100) -Id 1 -ErrorAction SilentlyContinue $alarmID = $TriggeredAlarm.Alarm.ToString() $object = New-Object PSObject Add-Member -InputObject $object NoteProperty VMHost $FaultyVMHost.Name Add-Member -InputObject $object NoteProperty TriggeredAlarms (\"$(Get-AlarmDefinition -Id $alarmID)\") $report += $object } $progress++ } } Write-Progress -Activity \"Gathering alarms\" -Status \"All done\" -Completed -Id 1 -ErrorAction SilentlyContinue $report | Where-Object {$_.TriggeredAlarms -ne \"\"} The output will look something like this:\nAnd here’s the function code:\nfunction Get-VMHostAlarms { $VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne \"{}\"} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost.TriggeredAlarmstate) { Write-Progress -Activity \"Gathering alarms\" -Status \"Working on $($FaultyVMHost.Name)\" -PercentComplete ($progress/$FaultyVMHosts.count*100) -Id 1 -ErrorAction SilentlyContinue $alarmID = $TriggeredAlarm.Alarm.ToString() $object = New-Object PSObject Add-Member -InputObject $object NoteProperty VMHost $FaultyVMHost.Name Add-Member -InputObject $object NoteProperty TriggeredAlarms (\"$(Get-AlarmDefinition -Id $alarmID)\") $report += $object } $progress++ } } Write-Progress -Activity \"Gathering alarms\" -Status \"All done\" -Completed -Id 1 -ErrorAction SilentlyContinue $report | Where-Object {$_.TriggeredAlarms -ne \"\"} \u0026lt;# .Synopsis Lists all triggered VMHost alarms that haven't been acknowledged .Description Outputs a list of VMHosts and the unacknowledged alarms they have triggered .Example Get-VMHostAlarms Outputs a list of VMHosts and the unacknowledged alarms they have triggered .Link http://cloud.kemta.net #\u003e } ",
+  "wordCount" : "289",
   "inLanguage": "en",
   "datePublished": "2014-08-29T07:41:13Z",
   "dateModified": "2014-08-29T07:41:13Z",
@@ -189,14 +186,67 @@ And here’s the function code:"/>
   </header> 
   <div class="post-content"><p>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂<br>
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The output will look something like this:</p>
+<pre tabindex="0"><code>$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate
+$FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;}
+
+$progress = 1
+$report = @()
+if ($FaultyVMHosts -ne $null) {
+   foreach ($FaultyVMHost in $FaultyVMHosts) {
+       foreach ($TriggeredAlarm in $FaultyVMHost.TriggeredAlarmstate) {
+           Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyVMHost.Name)&#34; -PercentComplete ($progress/$FaultyVMHosts.count*100) -Id 1 -ErrorAction SilentlyContinue
+           $alarmID = $TriggeredAlarm.Alarm.ToString()
+           $object = New-Object PSObject
+           Add-Member -InputObject $object NoteProperty VMHost $FaultyVMHost.Name
+           Add-Member -InputObject $object NoteProperty TriggeredAlarms (&#34;$(Get-AlarmDefinition -Id $alarmID)&#34;)
+           $report += $object
+           }
+       $progress++
+       }
+   }
+Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;All done&#34; -Completed -Id 1 -ErrorAction SilentlyContinue
+
+$report | Where-Object {$_.TriggeredAlarms -ne &#34;&#34;} 
+</code></pre><p>The output will look something like this:</p>
 <p><a href="http://cloud.kemta.net/wp-uploads/get-vmhostalarms.png"><!-- raw HTML omitted --></a></p>
 <p>And here’s the function code:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p> </p>
+<pre tabindex="0"><code>function Get-VMHostAlarms
+{
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate
+$FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;}
+
+$progress = 1
+$report = @()
+if ($FaultyVMHosts -ne $null) {
+   foreach ($FaultyVMHost in $FaultyVMHosts) {
+       foreach ($TriggeredAlarm in $FaultyVMHost.TriggeredAlarmstate) {
+           Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyVMHost.Name)&#34; -PercentComplete ($progress/$FaultyVMHosts.count*100) -Id 1 -ErrorAction SilentlyContinue
+           $alarmID = $TriggeredAlarm.Alarm.ToString()
+           $object = New-Object PSObject
+           Add-Member -InputObject $object NoteProperty VMHost $FaultyVMHost.Name
+           Add-Member -InputObject $object NoteProperty TriggeredAlarms (&#34;$(Get-AlarmDefinition -Id $alarmID)&#34;)
+           $report += $object
+           }
+       $progress++
+       }
+   }
+Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;All done&#34; -Completed -Id 1 -ErrorAction SilentlyContinue
+
+$report | Where-Object {$_.TriggeredAlarms -ne &#34;&#34;}
+
+&amp;lt;#
+.Synopsis
+ Lists all triggered VMHost alarms that haven&#39;t been acknowledged
+.Description
+ Outputs a list of VMHosts and the unacknowledged alarms they have triggered
+.Example
+ Get-VMHostAlarms
+ Outputs a list of VMHosts and the unacknowledged alarms they have triggered
+.Link
+ http://cloud.kemta.net
+#&gt;
+} 
+</code></pre><p> </p>
 
 
   </div>

@@ -33,7 +33,8 @@ There are a few things we need to get this done:
 
 First off, the powershell script:
 
-<pre lang="Powershell">Param (
+ ```
+ Param (
  [Parameter(Mandatory=$True,Position=0)][string]$Cluster
  )
 #Add the vmware snapin
@@ -57,7 +58,8 @@ foreach ($vmhost in $vmhosts) {
 Disconnect-VIServer drt01srv003 -Confirm:$false
 
 #Comma separaing the array and returning it to console
-return $hostarray -join ","</pre>
+return $hostarray -join "," 
+```
 
 The comments should be pretty explanatory, but in essence it connects to vCenter, grabs the name of the esxi hosts in the given cluster and then returns them comma separated.  
 This works fine and dandy in a powershell console, but the output from the powershell task will look rather different, we&#8217;ll look at that in a second. Secondly, the powershell task kicking off the script:
@@ -80,7 +82,8 @@ The beauty of doing it like this is that you can create any kind of output type 
 
 And then the script:
 
-<pre lang="Javascript">importPackage(com.cloupia.lib.util);
+```
+importPackage(com.cloupia.lib.util);
 importPackage(java.util);
 
 var xml = input.xml;
@@ -103,7 +106,8 @@ logger.addDebug("After removing first characters: "+parsedString);
 parsedString = parsedString.slice(0,-10);
 logger.addDebug("After removing last characters: "+parsedString);
 
-output.parsedString = parsedString;</pre>
+output.parsedString = parsedString; 
+```
 
 When using the custom task in a workflow I map the input to the output from the powershell task:
 

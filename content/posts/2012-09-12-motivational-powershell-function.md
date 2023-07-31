@@ -15,7 +15,8 @@ tags:
 ---
 If you are ever in need of some motivation, here is a very simple Powershell function for that:
 
-<pre lang="PowerShell">function Motivate-Me
+ ```
+function Motivate-Me
  {
  $motivator = Get-Random -Minimum 1 -Maximum 5
  if ($motivator -eq 1)
@@ -39,6 +40,7 @@ If you are ever in need of some motivation, here is a very simple Powershell fun
  .Link
  http://cloud.kemta.net
  #>
- }</pre>
+ } 
+```
 
 Now all you need to do is write Motivate-Me in the powershell window to receive some inspirational words 🙂

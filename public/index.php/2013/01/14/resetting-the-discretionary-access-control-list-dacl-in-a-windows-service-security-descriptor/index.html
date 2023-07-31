@@ -13,7 +13,7 @@ Download PsExec (a tool in PsTools), which among other things allow you to run
 <meta name="author" content="ricmik">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/14/resetting-the-discretionary-access-control-list-dacl-in-a-windows-service-security-descriptor/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ Download PsExec (a tool in PsTools), which among other things allow you to run
   "keywords": [
     "2008R2", "Access List", "ACL", "DACL", "PsExec", "PsTools", "registry", "Windows Server"
   ],
-  "articleBody": "OpenService FAILED 5: Access is denied. — “Oh crap!” If you ever see this error and need to reset the DACL on a Windows service, let’s say in case you (or someone else) accidentally deletes it, or configure it to something that prevents you from reading it’s security settings, this might do the trick:\nFirst of all, get a cup of coffee.\nDownload PsExec (a tool in PsTools), which among other things allow you to run commands as the “local system” account.\nFind out what the real name of the service is by looking in the following registry key:\nThe real name (not the display name) of the service is the name of the key itself.\nStart a Command Prompt (cmd) window as administrator.\nStart a new cmd session as the system account:\nNow it’s time to set a new DACL, this is done by using the command “sc sdset” followed by the service name and the new security descriptor using SDDL-format (Security Descriptor Definition Language). If you are unsure what parameters to use here, you can either run “sc sdshow” on another service that most likely are configured the same way as the service you are changing were, or try the command in the example below.\nThe command below will give access to Local System (SY), Built-in administrators (BA), Interactively logged-on user (IU) and Service logon user (SU).\nYou should be looking at the relieving message: [SC] SetServiceObjectSecurity SUCCESS\nNow, enjoy your coffee 😉\n–ricmik\n",
-  "wordCount" : "246",
+  "articleBody": "OpenService FAILED 5: Access is denied. — “Oh crap!” If you ever see this error and need to reset the DACL on a Windows service, let’s say in case you (or someone else) accidentally deletes it, or configure it to something that prevents you from reading it’s security settings, this might do the trick:\nFirst of all, get a cup of coffee.\nDownload PsExec (a tool in PsTools), which among other things allow you to run commands as the “local system” account.\nFind out what the real name of the service is by looking in the following registry key:\nHKLMSYSTEMCurrentControlSetServices The real name (not the display name) of the service is the name of the key itself.\nStart a Command Prompt (cmd) window as administrator.\nStart a new cmd session as the system account:\nPsExec.exe /s cmd Now it’s time to set a new DACL, this is done by using the command “sc sdset” followed by the service name and the new security descriptor using SDDL-format (Security Descriptor Definition Language). If you are unsure what parameters to use here, you can either run “sc sdshow” on another service that most likely are configured the same way as the service you are changing were, or try the command in the example below.\nThe command below will give access to Local System (SY), Built-in administrators (BA), Interactively logged-on user (IU) and Service logon user (SU).\nsc sdset service_name D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU) You should be looking at the relieving message: [SC] SetServiceObjectSecurity SUCCESS\nNow, enjoy your coffee 😉\n–ricmik\n",
+  "wordCount" : "254",
   "inLanguage": "en",
   "datePublished": "2013-01-14T12:00:42Z",
   "dateModified": "2013-01-14T12:00:42Z",
@@ -189,15 +189,15 @@ Download PsExec (a tool in PsTools), which among other things allow you to run
 <p>First of all, get a cup of coffee.</p>
 <p>Download PsExec (a tool in <a href="http://technet.microsoft.com/en-us/sysinternals/bb896649.aspx">PsTools</a>), which among other things allow you  to run commands as the “local system” account.<br>
 Find out what the real name of the service is by looking in the following registry key:</p>
-<!-- raw HTML omitted -->
-<p>The real name (not the display name) of the service is the name of the key itself.</p>
+<pre tabindex="0"><code>HKLMSYSTEMCurrentControlSetServices 
+</code></pre><p>The real name (not the display name) of the service is the name of the key itself.</p>
 <p>Start a Command Prompt (cmd) window as administrator.<br>
 Start a new cmd session as the system account:</p>
-<!-- raw HTML omitted -->
-<p>Now it’s time to set a new DACL, this is done by using the command “sc sdset” followed by the service name and the new security descriptor using SDDL-format (Security Descriptor Definition Language). If you are unsure what parameters to use here, you can either run “sc sdshow” on another service that most likely are configured the same way as the service you are changing were, or try the command in the example below.</p>
+<pre tabindex="0"><code>PsExec.exe /s cmd 
+</code></pre><p>Now it’s time to set a new DACL, this is done by using the command “sc sdset” followed by the service name and the new security descriptor using SDDL-format (Security Descriptor Definition Language). If you are unsure what parameters to use here, you can either run “sc sdshow” on another service that most likely are configured the same way as the service you are changing were, or try the command in the example below.</p>
 <p>The command below will give access to Local System (SY), Built-in administrators (BA), Interactively logged-on user (IU) and Service logon user (SU).</p>
-<!-- raw HTML omitted -->
-<p>You should be looking at the relieving message: [SC] SetServiceObjectSecurity SUCCESS</p>
+<pre tabindex="0"><code>sc sdset service_name D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU) 
+</code></pre><p>You should be looking at the relieving message: [SC] SetServiceObjectSecurity SUCCESS</p>
 <p>Now, enjoy your coffee 😉</p>
 <p> </p>
 <p>–ricmik</p>

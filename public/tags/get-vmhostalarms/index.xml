@@ -15,8 +15,7 @@
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</guid>
       <description>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
-The output will look something like this:
-And here’s the function code:</description>
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &amp;#34;{}&amp;#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost.</description>
     </item>
     
   </channel>

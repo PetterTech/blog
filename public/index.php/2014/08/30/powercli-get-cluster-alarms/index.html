@@ -9,14 +9,11 @@
 <meta name="keywords" content="alarms, function, get-clusteralarms, powercli, Powershell, vmware">
 <meta name="description" content="The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
 Here’s the code:
-And the output will look something like this:
-As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
-Anyways, here’s the function code:
-The output will be the same, but since it’s a function you can manipulate the data further.">
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyCluster.Name)&#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -64,10 +61,7 @@ The output will be the same, but since it’s a function you can manipulate the 
 </noscript><meta property="og:title" content="PowerCLI: Getting cluster alarms" />
 <meta property="og:description" content="The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
 Here’s the code:
-And the output will look something like this:
-As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
-Anyways, here’s the function code:
-The output will be the same, but since it’s a function you can manipulate the data further." />
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyCluster.Name)&#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-08-30T08:21:59+00:00" />
@@ -77,10 +71,7 @@ The output will be the same, but since it’s a function you can manipulate the 
 <meta name="twitter:title" content="PowerCLI: Getting cluster alarms"/>
 <meta name="twitter:description" content="The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
 Here’s the code:
-And the output will look something like this:
-As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
-Anyways, here’s the function code:
-The output will be the same, but since it’s a function you can manipulate the data further."/>
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyCluster.Name)&#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm."/>
 
 
 <script type="application/ld+json">
@@ -109,12 +100,12 @@ The output will be the same, but since it’s a function you can manipulate the 
   "@type": "BlogPosting",
   "headline": "PowerCLI: Getting cluster alarms",
   "name": "PowerCLI: Getting cluster alarms",
-  "description": "The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.\nHere’s the code:\nAnd the output will look something like this:\nAs you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.\nAnyways, here’s the function code:\nThe output will be the same, but since it’s a function you can manipulate the data further.",
+  "description": "The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.\nHere’s the code:\n$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne \u0026#34;{}\u0026#34;} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity \u0026#34;Gathering alarms\u0026#34; -Status \u0026#34;Working on $($FaultyCluster.Name)\u0026#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.",
   "keywords": [
     "alarms", "function", "get-clusteralarms", "powercli", "Powershell", "vmware"
   ],
-  "articleBody": "The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.\nHere’s the code:\nAnd the output will look something like this:\nAs you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.\nAnyways, here’s the function code:\nThe output will be the same, but since it’s a function you can manipulate the data further. For example if you only want alarms related to the clusters themselves:\n",
-  "wordCount" : "96",
+  "articleBody": "The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.\nHere’s the code:\n$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne \"{}\"} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity \"Gathering alarms\" -Status \"Working on $($FaultyCluster.Name)\" -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.Entity.ToString() $alarmID = $TriggeredAlarm.Alarm.ToString() if ($entity -like \"ClusterComputeResource-*\") { $entityName = $FaultyCluster.Name $type = \"Cluster\" } elseif ($entity -like \"HostSystem-host*\") { $entityName = (Get-View -ViewType HostSystem -Property Name | Where-Object {$_.MoRef -eq $entity}).Name $type = \"VMHost\" } elseif ($entity -like \"VirtualMachine-vm*\") { $entityName = (Get-View -ViewType VirtualMachine -Property Name | Where-Object {$_.MoRef -eq $entity}).Name $type = \"VM\" } $object = New-Object PSObject Add-Member -InputObject $object NoteProperty Cluster $FaultyCluster.Name Add-Member -InputObject $object NoteProperty Entity $entityName Add-Member -InputObject $object NoteProperty Type $type Add-Member -InputObject $object NoteProperty TriggeredAlarms (\"$(Get-AlarmDefinition -Id $alarmID)\") $report += $object } $progress++ } } Write-Progress -Activity \"Gathering alarms\" -Status \"All done\" -Completed -Id 1 -ErrorAction SilentlyContinue $report | Where-Object {$_.TriggeredAlarms -ne \"\"} And the output will look something like this:\nAs you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.\nAnyways, here’s the function code:\nfunction Get-ClusterAlarms { $Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne \"{}\"} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity \"Gathering alarms\" -Status \"Working on $($FaultyCluster.Name)\" -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.Entity.ToString() $alarmID = $TriggeredAlarm.Alarm.ToString() if ($entity -like \"ClusterComputeResource-*\") { $entityName = $FaultyCluster.Name $type = \"Cluster\" } elseif ($entity -like \"HostSystem-host*\") { $entityName = (Get-View -ViewType HostSystem -Property Name | Where-Object {$_.MoRef -eq $entity}).Name $type = \"VMHost\" } elseif ($entity -like \"VirtualMachine-vm*\") { $entityName = (Get-View -ViewType VirtualMachine -Property Name | Where-Object {$_.MoRef -eq $entity}).Name $type = \"VM\" } $object = New-Object PSObject Add-Member -InputObject $object NoteProperty Cluster $FaultyCluster.Name Add-Member -InputObject $object NoteProperty Entity $entityName Add-Member -InputObject $object NoteProperty Type $type Add-Member -InputObject $object NoteProperty TriggeredAlarms (\"$(Get-AlarmDefinition -Id $alarmID)\") $report += $object } $progress++ } } Write-Progress -Activity \"Gathering alarms\" -Status \"All done\" -Completed -Id 1 -ErrorAction SilentlyContinue $report | Where-Object {$_.TriggeredAlarms -ne \"\"} \u0026lt;# .Synopsis Lists all triggered Cluster alarms that haven't been acknowledged .Description Outputs a list of Cluster and the unacknowledged alarms they have triggered .Example Get-VMHostAlarms Outputs a list of Cluster and the unacknowledged alarms they have triggered .Link http://cloud.kemta.net #\u003e } The output will be the same, but since it’s a function you can manipulate the data further. For example if you only want alarms related to the clusters themselves:\n",
+  "wordCount" : "471",
   "inLanguage": "en",
   "datePublished": "2014-08-30T08:21:59Z",
   "dateModified": "2014-08-30T08:21:59Z",
@@ -195,15 +186,94 @@ The output will be the same, but since it’s a function you can manipulate the 
   </header> 
   <div class="post-content"><p>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.</p>
 <p>Here’s the code:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>And the output will look something like this:</p>
+<pre tabindex="0"><code>$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate
+$FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;}
+$report = @()
+$progress = 1
+if ($FaultyClusters -ne $NULL) {
+   foreach ($FaultyCluster in $FaultyClusters) {
+       foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) {
+           Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyCluster.Name)&#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue
+           $entity = $TriggeredAlarm.Entity.ToString()
+           $alarmID = $TriggeredAlarm.Alarm.ToString()
+           if ($entity -like &#34;ClusterComputeResource-*&#34;) {
+               $entityName = $FaultyCluster.Name
+               $type = &#34;Cluster&#34;
+               }
+           elseif ($entity -like &#34;HostSystem-host*&#34;) {
+               $entityName = (Get-View -ViewType HostSystem -Property Name | Where-Object {$_.MoRef -eq $entity}).Name
+               $type = &#34;VMHost&#34;
+               }
+           elseif ($entity -like &#34;VirtualMachine-vm*&#34;) {
+               $entityName = (Get-View -ViewType VirtualMachine -Property Name | Where-Object {$_.MoRef -eq $entity}).Name
+               $type = &#34;VM&#34;
+               }
+           $object = New-Object PSObject
+           Add-Member -InputObject $object NoteProperty Cluster $FaultyCluster.Name
+           Add-Member -InputObject $object NoteProperty Entity $entityName
+           Add-Member -InputObject $object NoteProperty Type $type
+           Add-Member -InputObject $object NoteProperty TriggeredAlarms (&#34;$(Get-AlarmDefinition -Id $alarmID)&#34;)
+           $report += $object
+           }
+       $progress++
+       }
+   }
+Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;All done&#34; -Completed -Id 1 -ErrorAction SilentlyContinue
+$report | Where-Object {$_.TriggeredAlarms -ne &#34;&#34;}
+</code></pre><p>And the output will look something like this:</p>
 <p><a href="http://cloud.kemta.net/wp-uploads/get-clusteralarms.png"><!-- raw HTML omitted --></a></p>
 <p>As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.</p>
 <p>Anyways, here’s the function code:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The output will be the same, but since it’s a function you can manipulate the data further. For example if you only want alarms related to the clusters themselves:</p>
+<pre tabindex="0"><code>function Get-ClusterAlarms
+{
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate
+$FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;}
+$report = @()
+$progress = 1
+if ($FaultyClusters -ne $NULL) {
+   foreach ($FaultyCluster in $FaultyClusters) {
+       foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) {
+           Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyCluster.Name)&#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue
+           $entity = $TriggeredAlarm.Entity.ToString()
+           $alarmID = $TriggeredAlarm.Alarm.ToString()
+           if ($entity -like &#34;ClusterComputeResource-*&#34;) {
+               $entityName = $FaultyCluster.Name
+               $type = &#34;Cluster&#34;
+               }
+           elseif ($entity -like &#34;HostSystem-host*&#34;) {
+               $entityName = (Get-View -ViewType HostSystem -Property Name | Where-Object {$_.MoRef -eq $entity}).Name
+               $type = &#34;VMHost&#34;
+               }
+           elseif ($entity -like &#34;VirtualMachine-vm*&#34;) {
+               $entityName = (Get-View -ViewType VirtualMachine -Property Name | Where-Object {$_.MoRef -eq $entity}).Name
+               $type = &#34;VM&#34;
+               }
+           $object = New-Object PSObject
+           Add-Member -InputObject $object NoteProperty Cluster $FaultyCluster.Name
+           Add-Member -InputObject $object NoteProperty Entity $entityName
+           Add-Member -InputObject $object NoteProperty Type $type
+           Add-Member -InputObject $object NoteProperty TriggeredAlarms (&#34;$(Get-AlarmDefinition -Id $alarmID)&#34;)
+           $report += $object
+           }
+       $progress++
+       }
+   }
+Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;All done&#34; -Completed -Id 1 -ErrorAction SilentlyContinue
+$report | Where-Object {$_.TriggeredAlarms -ne &#34;&#34;}
+
+&amp;lt;#
+.Synopsis
+ Lists all triggered Cluster alarms that haven&#39;t been acknowledged
+.Description
+ Outputs a list of Cluster and the unacknowledged alarms they have triggered
+.Example
+ Get-VMHostAlarms
+ Outputs a list of Cluster and the unacknowledged alarms they have triggered
+.Link
+ http://cloud.kemta.net
+#&gt;
+} 
+</code></pre><p>The output will be the same, but since it’s a function you can manipulate the data further. For example if you only want alarms related to the clusters themselves:</p>
 <p><a href="http://cloud.kemta.net/wp-uploads/get-clusteralarms-filter.png"><!-- raw HTML omitted --></a></p>
 
 

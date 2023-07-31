@@ -20,7 +20,8 @@ tags:
 Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it&#8217;s time for getting host alarms 🙂  
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
 
-<pre lang="PowerShell">$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate
+ ```
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne "{}"}
 
 $progress = 1
@@ -40,7 +41,8 @@ if ($FaultyVMHosts -ne $null) {
     }
 Write-Progress -Activity "Gathering alarms" -Status "All done" -Completed -Id 1 -ErrorAction SilentlyContinue
 
-$report | Where-Object {$_.TriggeredAlarms -ne ""}</pre>
+$report | Where-Object {$_.TriggeredAlarms -ne ""} 
+```
 
 The output will look something like this:
 
@@ -48,7 +50,8 @@ The output will look something like this:
 
 And here&#8217;s the function code:
 
-<pre lang="PowerShell">function Get-VMHostAlarms
+ ```
+function Get-VMHostAlarms
 {
 $VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne "{}"}
@@ -83,7 +86,8 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
  .Link
   http://cloud.kemta.net
  #>
-}</pre>
+} 
+```
 
 &nbsp;
 

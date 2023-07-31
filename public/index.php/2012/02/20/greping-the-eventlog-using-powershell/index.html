@@ -12,7 +12,7 @@ In Windows it’s a little different, if we want to find something in the event 
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/20/greping-the-eventlog-using-powershell/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ In Windows it’s a little different, if we want to find something in the event 
   "keywords": [
     "get-eventlog", "microsoft", "Powershell"
   ],
-  "articleBody": "If you are used to working with Linux you’re probably familiar with using tail, grep and such for gathering stuff from logs and other files. Those are quite useful tools and work very well when you want to find out e.g. why a user fails to log in.\nIn Windows it’s a little different, if we want to find something in the event logs we have always had to resort to a console.\nBut with powershell you can search through the event logs from a command line:\nGet-EventLog is quite the useful cmdlet. You can specify which log you want to search, a time window, usernames, entrytypes and even computername.\nIf you are a little more experienced with powershell you can even dig down further by piping the command to a where-object cmdlet, for example if you want to see all entries in the system log with the event id 7036 you would type:\nYou probably end up with a long list, so to just show the last 5 entries:\nNote that this will only grab the last 5 entries from the system event log, not necessarily the last 5 entries with event id 7036. So it might be better to use the After parameter to get events since yesterday:\nAs you can see I define a variable for yesterday, thats just because I’m lazy and want to keep the commands as little complex as I can.\nOne of the things I commonly use get-eventlog for is figuring out why a user fails to log in through one of our radius servers. Heres one example of a command I would use for that:\nSo as you can see, the get-eventlog cmdlet is quite useful, especially when you combine it with where-object. Also remember that you can always output any data you receive to a csv by piping the command: | export-csv c:filname.csv\n",
-  "wordCount" : "312",
+  "articleBody": "If you are used to working with Linux you’re probably familiar with using tail, grep and such for gathering stuff from logs and other files. Those are quite useful tools and work very well when you want to find out e.g. why a user fails to log in.\nIn Windows it’s a little different, if we want to find something in the event logs we have always had to resort to a console.\nBut with powershell you can search through the event logs from a command line:\nGet-EventLog is quite the useful cmdlet. You can specify which log you want to search, a time window, usernames, entrytypes and even computername.\nIf you are a little more experienced with powershell you can even dig down further by piping the command to a where-object cmdlet, for example if you want to see all entries in the system log with the event id 7036 you would type:\nGet-EventLog -LogName System | Where-Object {$_.EventID -eq 7036} You probably end up with a long list, so to just show the last 5 entries:\nGet-EventLog -LogName System -Newest 5 | Where-Object {$_.EventID -eq 7036} Note that this will only grab the last 5 entries from the system event log, not necessarily the last 5 entries with event id 7036. So it might be better to use the After parameter to get events since yesterday:\n$yesterday = get-date 19/02/12 Get-EventLog -LogName System -After $yesterday | Where-Object {$_.EventID -eq 7036} As you can see I define a variable for yesterday, thats just because I’m lazy and want to keep the commands as little complex as I can.\nOne of the things I commonly use get-eventlog for is figuring out why a user fails to log in through one of our radius servers. Heres one example of a command I would use for that:\n$yesterday = get-date 19/02/12 Get-EventLog -LogName security -computername radiusserver -after $yesterday | Where-Object {$_.entrytype -eq \"FailureAudit\" -and $_.Message -like \"*username*\"} | fl So as you can see, the get-eventlog cmdlet is quite useful, especially when you combine it with where-object. Also remember that you can always output any data you receive to a csv by piping the command: | export-csv c:filname.csv\n",
+  "wordCount" : "366",
   "inLanguage": "en",
   "datePublished": "2012-02-20T09:27:42Z",
   "dateModified": "2012-02-20T09:27:42Z",
@@ -186,17 +186,17 @@ In Windows it’s a little different, if we want to find something in the event 
 But with powershell you can search through the event logs from a command line:</p>
 <p>Get-EventLog is quite the useful cmdlet. You can specify which log you want to search, a time window, usernames, entrytypes and even computername.</p>
 <p>If you are a little more experienced with powershell you can even dig down further by piping the command to a where-object cmdlet, for example if you want to see all entries in the system log with the event id 7036 you would type:</p>
-<!-- raw HTML omitted -->
-<p>You probably end up with a long list, so to just show the last 5 entries:</p>
-<!-- raw HTML omitted -->
-<p>Note that this will only grab the last 5 entries from the system event log, not necessarily the last 5 entries with event id 7036. So it might be better to use the After parameter to get events since yesterday:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>As you can see I define a variable for yesterday, thats just because I’m lazy and want to keep the commands as little complex as I can.</p>
+<pre tabindex="0"><code>Get-EventLog -LogName System | Where-Object {$_.EventID -eq 7036} 
+</code></pre><p>You probably end up with a long list, so to just show the last 5 entries:</p>
+<pre tabindex="0"><code>Get-EventLog -LogName System -Newest 5 | Where-Object {$_.EventID -eq 7036} 
+</code></pre><p>Note that this will only grab the last 5 entries from the system event log, not necessarily the last 5 entries with event id 7036. So it might be better to use the After parameter to get events since yesterday:</p>
+<pre tabindex="0"><code>$yesterday = get-date 19/02/12
+Get-EventLog -LogName System -After $yesterday | Where-Object {$_.EventID -eq 7036} 
+</code></pre><p>As you can see I define a variable for yesterday, thats just because I’m lazy and want to keep the commands as little complex as I can.</p>
 <p>One of the things I commonly use get-eventlog for is figuring out why a user fails to log in through one of our radius servers. Heres one example of a command I would use for that:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>So as you can see, the get-eventlog cmdlet is quite useful, especially when you combine it with where-object. Also remember that you can always output any data you receive to a csv by piping the command: | export-csv c:filname.csv</p>
+<pre tabindex="0"><code>$yesterday = get-date 19/02/12
+Get-EventLog -LogName security -computername radiusserver -after $yesterday | Where-Object {$_.entrytype -eq &#34;FailureAudit&#34; -and $_.Message -like &#34;*username*&#34;} | fl 
+</code></pre><p>So as you can see, the get-eventlog cmdlet is quite useful, especially when you combine it with where-object. Also remember that you can always output any data you receive to a csv by piping the command: | export-csv c:filname.csv</p>
 
 
   </div>

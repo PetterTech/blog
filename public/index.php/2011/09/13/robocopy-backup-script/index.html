@@ -9,12 +9,11 @@
 <meta name="keywords" content="backup, microsoft, Robocopy, Windows 7">
 <meta name="description" content="This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
 Anyway, heres my script:
-I guess a little explanation is required.
-The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination.">
+robocopy c:users&amp;lt;username&amp;gt; &amp;lt;destination&amp;gt; /MIR /XD templates start-menu &#34;local settings&#34; appdata &#34;internal video&#34; cookies &#34;my music&#34; &#34;my pictures&#34; &#34;my documents&#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&amp;lt;log destination&amp;gt; I guess a little explanation is required.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -62,8 +61,7 @@ The first part, robocopy c:users tells robocopy what to copy where. /MIR indicat
 </noscript><meta property="og:title" content="Robocopy backup script" />
 <meta property="og:description" content="This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
 Anyway, heres my script:
-I guess a little explanation is required.
-The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination." />
+robocopy c:users&amp;lt;username&amp;gt; &amp;lt;destination&amp;gt; /MIR /XD templates start-menu &#34;local settings&#34; appdata &#34;internal video&#34; cookies &#34;my music&#34; &#34;my pictures&#34; &#34;my documents&#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&amp;lt;log destination&amp;gt; I guess a little explanation is required." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2011-09-13T13:03:29+00:00" />
@@ -73,8 +71,7 @@ The first part, robocopy c:users tells robocopy what to copy where. /MIR indicat
 <meta name="twitter:title" content="Robocopy backup script"/>
 <meta name="twitter:description" content="This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
 Anyway, heres my script:
-I guess a little explanation is required.
-The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination."/>
+robocopy c:users&amp;lt;username&amp;gt; &amp;lt;destination&amp;gt; /MIR /XD templates start-menu &#34;local settings&#34; appdata &#34;internal video&#34; cookies &#34;my music&#34; &#34;my pictures&#34; &#34;my documents&#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&amp;lt;log destination&amp;gt; I guess a little explanation is required."/>
 
 
 <script type="application/ld+json">
@@ -103,12 +100,12 @@ The first part, robocopy c:users tells robocopy what to copy where. /MIR indicat
   "@type": "BlogPosting",
   "headline": "Robocopy backup script",
   "name": "Robocopy backup script",
-  "description": "This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…\nAnyway, heres my script:\nI guess a little explanation is required.\nThe first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination.",
+  "description": "This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…\nAnyway, heres my script:\nrobocopy c:users\u0026amp;lt;username\u0026amp;gt; \u0026amp;lt;destination\u0026amp;gt; /MIR /XD templates start-menu \u0026#34;local settings\u0026#34; appdata \u0026#34;internal video\u0026#34; cookies \u0026#34;my music\u0026#34; \u0026#34;my pictures\u0026#34; \u0026#34;my documents\u0026#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:\u0026amp;lt;log destination\u0026amp;gt; I guess a little explanation is required.",
   "keywords": [
     "backup", "microsoft", "Robocopy", "Windows 7"
   ],
-  "articleBody": "This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…\nAnyway, heres my script:\nI guess a little explanation is required.\nThe first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination. This means that if you delete a file in the source, it is also deleted at destination. Use with caution as Microsoft would say /XD tells robocopy what folders to skip. This is because robocopy won’t get access to those folders. They don’t contain useful data anyway. /XF tells robocopy what files to skip. You won’t be able to copy i.e. ntuser.dat if you are logged in as that user. Also the files are not needed. /R:5 means robocopy will not try more than 5 time to copy a file. The default is 1 million… /LOG: specifies a log file for the operation. Useful if you ever need to troubleshoot ",
-  "wordCount" : "181",
+  "articleBody": "This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…\nAnyway, heres my script:\nrobocopy c:users\u0026lt;username\u0026gt; \u0026lt;destination\u0026gt; /MIR /XD templates start-menu \"local settings\" appdata \"internal video\" cookies \"my music\" \"my pictures\" \"my documents\" printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:\u0026lt;log destination\u0026gt; I guess a little explanation is required.\nThe first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination. This means that if you delete a file in the source, it is also deleted at destination. Use with caution as Microsoft would say /XD tells robocopy what folders to skip. This is because robocopy won’t get access to those folders. They don’t contain useful data anyway. /XF tells robocopy what files to skip. You won’t be able to copy i.e. ntuser.dat if you are logged in as that user. Also the files are not needed. /R:5 means robocopy will not try more than 5 time to copy a file. The default is 1 million… /LOG: specifies a log file for the operation. Useful if you ever need to troubleshoot ",
+  "wordCount" : "212",
   "inLanguage": "en",
   "datePublished": "2011-09-13T13:03:29Z",
   "dateModified": "2011-09-13T13:03:29Z",
@@ -189,8 +186,8 @@ The first part, robocopy c:users tells robocopy what to copy where. /MIR indicat
   </header> 
   <div class="post-content"><p>This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…</p>
 <p>Anyway, heres my script:</p>
-<!-- raw HTML omitted -->
-<p>I guess a little explanation is required.</p>
+<pre tabindex="0"><code>robocopy c:users&amp;lt;username&amp;gt; &amp;lt;destination&amp;gt; /MIR /XD templates start-menu &#34;local settings&#34; appdata &#34;internal video&#34; cookies &#34;my music&#34; &#34;my pictures&#34; &#34;my documents&#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&amp;lt;log destination&amp;gt; 
+</code></pre><p>I guess a little explanation is required.</p>
 <ul>
 <li>The first part, robocopy c:users<!-- raw HTML omitted --> <!-- raw HTML omitted --> tells robocopy what to copy where.</li>
 <li>/MIR indicates that robocopy should mirror the source to the destination. This means that if you delete a file in the source, it is also deleted at destination. Use with caution as Microsoft would say</li>

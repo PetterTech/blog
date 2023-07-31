@@ -20,7 +20,7 @@ It&#8217;s a simple one-liner!
 
 <div>
   <div>
-    <pre>Get-VM -Location &lt;name of folder/vApp/datacenter&gt; | foreach {Get-HardDisk -VM $_.name} | Measure-Object CapacityGB -Sum</pre>
+     ```Get-VM -Location &lt;name of folder/vApp/datacenter&gt; | foreach {Get-HardDisk -VM $_.name} | Measure-Object CapacityGB -Sum ```
   </div>
   
   <p>
@@ -31,6 +31,8 @@ It&#8217;s a simple one-liner!
     You can also get a list per vm with this one-liner:
   </p>
   
-  <pre>get-vm -Location &lt;folder&gt; | select name,@{Name="Size";Expression={(Get-HardDisk -VM $_.name |
-Measure-Object CapacityGB -sum).Sum}}</pre>
+   ```
+  get-vm -Location &lt;folder&gt; | select name,@{Name="Size";Expression={(Get-HardDisk -VM $_.name |
+Measure-Object CapacityGB -sum).Sum}} 
+```
 </div>

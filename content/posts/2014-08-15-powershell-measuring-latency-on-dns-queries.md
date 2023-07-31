@@ -18,7 +18,9 @@ tags:
 A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.  
 After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
 
-<pre lang="powershell">Measure-Command {Resolve-DnsName google.com -DnsOnly -Type A -NoHostsFile -server x.x.x.x}</pre>
+ ```
+Measure-Command {Resolve-DnsName google.com -DnsOnly -Type A -NoHostsFile -server x.x.x.x} 
+```
 
 And sure enough, we were seeing response times in the range of 5-7 seconds. Way more than enough to cause our problems. After rebooting the DNS servers ours problems disappeared.
 
@@ -28,7 +30,8 @@ The function resolves a few records from locally defined DNS servers and some pu
 
 Here&#8217;s the code:
 
-<pre lang="powershell">function Measure-DNSLatency
+ ```
+function Measure-DNSLatency
 {
     [CmdletBinding()]
         Param (
@@ -152,7 +155,8 @@ Here&#8217;s the code:
  .Link
   http://cloud.kemta.net
  #>
-}</pre>
+} 
+```
 
 The different outputs will look something like this:
 

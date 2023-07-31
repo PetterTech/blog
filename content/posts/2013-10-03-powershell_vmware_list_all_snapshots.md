@@ -27,10 +27,14 @@ The vsphere console doesn&#8217;t provide this info so I had to turn to PowerCLI
 
 After you start PowerCLI, you need to first connect to your vcenter server:
 
-<pre>Connect-VIServer &lt;vcenter server&gt;</pre>
+ ```
+Connect-VIServer &lt;vcenter server&gt; 
+```
 
 You will be promted for username and password for vcenter. After powershell has connected to the vcenter server, all you need to is run this one-liner:
 
-<pre>Get-VM | Get-Snapshot | Select VM,Name,@{N="SizeGB";E={@([math]::Round($_.SizeGB))}},Created</pre>
+ ```
+Get-VM | Get-Snapshot | Select VM,Name,@{N="SizeGB";E={@([math]::Round($_.SizeGB))}},Created 
+```
 
 This will return a list of all vm&#8217;s, their snapshots, size of the snapshots and the date the snapshot was taken.

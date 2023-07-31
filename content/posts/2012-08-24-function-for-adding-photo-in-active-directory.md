@@ -25,7 +25,8 @@ But since I already was at it I decided to to a little more, I added some argume
 
 Here is the result:
 
-<pre lang="powershell">function Set-ADPhoto ($user,$photopath) {
+ ```
+ function Set-ADPhoto ($user,$photopath) {
 Import-Module active*
 
 $error = "The file is bigger than 12KB. Shrink it or choose another file"
@@ -56,6 +57,6 @@ Will set the thumbnailPhoto attribute for the user username to the content of p:
 http://cloud.kemta.net/2012/08/function-for-adding-photo-in-active-directory
 #>
 }
-</pre>
+ ```
 
 &nbsp;

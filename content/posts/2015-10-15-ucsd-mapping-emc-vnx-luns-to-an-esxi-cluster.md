@@ -51,7 +51,8 @@ The reason I have to do a split on the StorageAccount input is that in the scrip
 
 The powershell script looks like this:
 
-<pre lang="powershell">Param (
+ ```
+    Param (
     [Parameter(Mandatory=$True,Position=0)][string]$Pod,
     [Parameter(Mandatory=$True,Position=1)][string]$StorageAccount,
     [Parameter(Mandatory=$True,Position=2)][string]$Cluster
@@ -86,7 +87,7 @@ Disconnect-VIServer vcenter01 -Confirm:$false
 
 #Returning array to console, comma separated
 return $VMhostsArray -join ","
-</pre>
+ ```
 
 On my test cluster with only two esxi hosts, the output looks like this:
 
@@ -94,7 +95,9 @@ On my test cluster with only two esxi hosts, the output looks like this:
 
 After the custom task has converted the powershell output it looks like this in plain text:
 
-<pre>storageaccount;pod;wwn;esxiHostname1,storageaccount;pod;wwn;esxiHostname2</pre>
+ ```
+ storageaccount;pod;wwn;esxiHostname1,storageaccount;pod;wwn;esxiHostname2 
+ ```
 
 Since the output from the custom task is of the emcStorageGroupIdentity type I can simply map it to the builtin &#8220;add vnx lun to storage group&#8221; task:
 

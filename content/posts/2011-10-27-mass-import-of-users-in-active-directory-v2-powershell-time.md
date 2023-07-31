@@ -161,7 +161,7 @@ wp-syntax-cache-content:
     <span style="color: #008000;">#Disconnecting from Exchange</span>
     Remove<span style="color: pink;">-</span>PSSession <span style="color: #800080;">$exsession</span>
     &nbsp;
-    cmd <span style="color: pink;">/</span>c pause <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">out-null</span></pre></td></tr></table><p class="theCode" style="display:none;">#Change the window title
+    cmd <span style="color: pink;">/</span>c pause <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">out-null</span> ```</td></tr></table><p class="theCode" style="display:none;">#Change the window title
     $UI = (Get-Host).UI.RawUI
     $UI.WindowTitle = &quot;User import script created by Nerenther, kemta.net&quot;
     
@@ -358,7 +358,8 @@ This script uses two csv files, one for groups and OUs and one for the users. Yo
 
 Anyway, the script is shown below, have fun with it 🙂
 
-<pre lang="powershell">#Change the window title
+ ```
+#Change the window title
 $UI = (Get-Host).UI.RawUI
 $UI.WindowTitle = "User import script created by Nerenther, kemta.net"
 
@@ -512,6 +513,7 @@ add-content $scriptPathlog.txt -encoding ASCII "Lines of code run:"
 #Disconnecting from Exchange
 Remove-PSSession $exsession
 
-cmd /c pause | out-null</pre>
+cmd /c pause | out-null 
+```
 
 &nbsp;

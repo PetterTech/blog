@@ -20,7 +20,8 @@ tags:
 Next in the series on getting alarms is getting datastore alarms.  
 Again, the code is pretty similar:
 
-<pre lang="PowerShell">$Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate
+ ```
+$Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyDatastores = $Datastores | Where-Object {$_.TriggeredAlarmState -ne "{}"}
 
 $progress = 1
@@ -41,7 +42,8 @@ if ($FaultyDatastores -ne $null) {
     }
 Write-Progress -Activity "Gathering alarms" -Status "All done" -Completed -Id 1 -ErrorAction SilentlyContinue
 
-$report | Where-Object {$_.TriggeredAlarms -ne ""}</pre>
+$report | Where-Object {$_.TriggeredAlarms -ne ""} 
+```
 
 And the output is pretty similar:
 
@@ -49,7 +51,8 @@ And the output is pretty similar:
 
 The function code is this:
 
-<pre lang="PowerShell">function Get-DatastoreAlarms
+ ```
+function Get-DatastoreAlarms
 {
 $Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyDatastores = $Datastores | Where-Object {$_.TriggeredAlarmState -ne "{}"}
@@ -85,7 +88,8 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
  .Link
   http://cloud.kemta.net
  #>
-}</pre>
+} 
+```
 
 &nbsp;
 

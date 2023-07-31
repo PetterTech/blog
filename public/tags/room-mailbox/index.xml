@@ -14,7 +14,8 @@
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/</guid>
       <description>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
-Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</description>
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
+Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept </description>
     </item>
     
   </channel>

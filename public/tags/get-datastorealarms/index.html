@@ -124,8 +124,7 @@
   <div class="entry-content">
     <p>Next in the series on getting alarms is getting datastore alarms.
 Again, the code is pretty similar:
-And the output is pretty similar:
-The function code is this:</p>
+$Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate $FaultyDatastores = $Datastores | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $progress = 1 $report = @() if ($FaultyDatastores -ne $null) { foreach ($FaultyDatastore in $FaultyDatastores) { foreach ($TriggeredAlarm in $FaultyDatastore.TriggeredAlarmstate) { Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyDatastore.Name)&#34; -PercentComplete ($progress/$FaultyDatastores.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.Entity.ToString() $alarmID = $TriggeredAlarm....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-31 10:16:36 +0000 +0000'>August 31, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting datastore alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/"></a>

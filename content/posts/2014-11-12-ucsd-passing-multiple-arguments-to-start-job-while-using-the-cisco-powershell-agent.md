@@ -23,15 +23,18 @@ Jon Hildebrand describes a nice way around this in one of his blog posts: <a hr
 
 Using his approach, I was able get the PSA to stick around until the job finishes. However, I ran into a challenge when I wanted to pass multiple arguments to start-job. The solution I came up with was declaring the UCSD inputs I wanted to use as powershell variables in the script, before calling the start-job cmdlet. So the commands/script input looks like this:
 
-<pre>$vm = "${custom_getVMDetails_7494.vmName}"
+ ```
+$vm = "${custom_getVMDetails_7494.vmName}"
 $annotation = "${Annotation}"
 $annotationvalue = "${AnnotationValue}"
-Start-Job -FilePath "C:\Powershell\Annotate-VM.ps1" -ArgumentList $vm,$annotation,$annotationvalue | Wait-Job</pre>
+Start-Job -FilePath "C:\Powershell\Annotate-VM.ps1" -ArgumentList $vm,$annotation,$annotationvalue | Wait-Job 
+```
 
 In case you are wondering, this task is for setting annotations on a vm in vCenter.  
 The powershell script I am calling is pretty simple:
 
-<pre lang="powershell">Param (
+ ```
+ Param (
  [Parameter(Mandatory=$True,Position=0)][string]$VM,
  [Parameter(Mandatory=$True,Position=1)][string]$Annotation,
  [Parameter(Mandatory=$True,Position=2)][string]$AnnotationValue
@@ -39,4 +42,5 @@ The powershell script I am calling is pretty simple:
 Add-PSSnapin vmware*
 Connect-VIServer
 Set-Annotation -Entity $VM -CustomAttribute "$($Annotation)" -Value "$($AnnotationValue)"
-Disconnect-VIServer  -Confirm:$false</pre>
+Disconnect-VIServer  -Confirm:$false 
+```

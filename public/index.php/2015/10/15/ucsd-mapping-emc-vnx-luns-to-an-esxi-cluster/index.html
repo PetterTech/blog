@@ -13,7 +13,7 @@ That example seems to work for other people but in our case the custom task in i
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/15/ucsd-mapping-emc-vnx-luns-to-an-esxi-cluster/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ That example seems to work for other people but in our case the custom task in i
   "keywords": [
     "CUSD", "EMC VNX", "Powershell", "Powershell agent", "PSA", "UCS Director"
   ],
-  "articleBody": "I have been struggling for quite some time with mapping luns from our vnx 5600 to entire clusters in our vCenter. We used to utilize a custom workflow a consultant wrote for us, but that workflow got borked after an update to UCS Director nearly a year ago.\nRevisiting the issue i found this example from Cisco: https://communities.cisco.com/docs/DOC-57382\nThat example seems to work for other people but in our case the custom task in it never gave the correct output, so I had to look for a way around it.\nThe solution I came up with is overly complicated and can surely be simplified, but my lacking knowledge of javascript limits me quite a bit. My workflow to map luns to vSphere clusters consists roughly of these steps:\nA powershell task running a script that does the following: Queries vCenter for esxi hosts in given cluster Queries UCS Directors api for a report on storage groups Putting together a storage group identity for each esxi host Returning all storage group identities in a comma separated matter A custom task to parse and convert the output from the powershell task to an output of the emcStorageGroupIdentity type The builtin “add vnx lun to storage group” task Here’s how I have set it up:\nThe custom task I use to convert the output from the powershell task is built up the way I describe in this blogpost: http://cloud.kemta.net/cisco-network/ucsd-grabbing-a-string-returned-from-a-powershell-task/\nThe only difference is the name and type of the output.\nNow, let’s look at the workflow user inputs:\nIn this workflow I haven’t configured any outputs, so let’s move along to the first task: the powershell task.\nThe reason I have to do a split on the StorageAccount input is that in the script I only want the hostname of the storage system. I could just as well have done it within the script itself.\nThe powershell script looks like this:\nOn my test cluster with only two esxi hosts, the output looks like this:\nAfter the custom task has converted the powershell output it looks like this in plain text:\nSince the output from the custom task is of the emcStorageGroupIdentity type I can simply map it to the builtin “add vnx lun to storage group” task:\nAnd that’s really all there is to it. If you want to download my example workflow, you can do so here: http://4.234.145.218/wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip\n",
-  "wordCount" : "397",
+  "articleBody": "I have been struggling for quite some time with mapping luns from our vnx 5600 to entire clusters in our vCenter. We used to utilize a custom workflow a consultant wrote for us, but that workflow got borked after an update to UCS Director nearly a year ago.\nRevisiting the issue i found this example from Cisco: https://communities.cisco.com/docs/DOC-57382\nThat example seems to work for other people but in our case the custom task in it never gave the correct output, so I had to look for a way around it.\nThe solution I came up with is overly complicated and can surely be simplified, but my lacking knowledge of javascript limits me quite a bit. My workflow to map luns to vSphere clusters consists roughly of these steps:\nA powershell task running a script that does the following: Queries vCenter for esxi hosts in given cluster Queries UCS Directors api for a report on storage groups Putting together a storage group identity for each esxi host Returning all storage group identities in a comma separated matter A custom task to parse and convert the output from the powershell task to an output of the emcStorageGroupIdentity type The builtin “add vnx lun to storage group” task Here’s how I have set it up:\nThe custom task I use to convert the output from the powershell task is built up the way I describe in this blogpost: http://cloud.kemta.net/cisco-network/ucsd-grabbing-a-string-returned-from-a-powershell-task/\nThe only difference is the name and type of the output.\nNow, let’s look at the workflow user inputs:\nIn this workflow I haven’t configured any outputs, so let’s move along to the first task: the powershell task.\nThe reason I have to do a split on the StorageAccount input is that in the script I only want the hostname of the storage system. I could just as well have done it within the script itself.\nThe powershell script looks like this:\nParam ( [Parameter(Mandatory=$True,Position=0)][string]$Pod, [Parameter(Mandatory=$True,Position=1)][string]$StorageAccount, [Parameter(Mandatory=$True,Position=2)][string]$Cluster ) #Add the vmware snapin Add-PSSnapin vmware* #Connecting to vCenter Connect-VIServer vcenter01 -WarningAction Ignore | out-null #Getting ESXi hosts $vmhosts = get-vmhost -location $Cluster #Polling a report on storage groups from UCS Director $webrequest = Invoke-WebRequest 'https://ucsd01/app/api/rest?opName=userAPIGetTabularReport\u0026opData={param0:\"510\",param1:\"$($StorageAccount);$($Pod)\",param2:\"STORAGE-GROUPS-T51\"}' -Headers @{\"X-Cloupia-Request-Key\"=\"ThisIsNotMyAPIKey\"} #Converting the report from json $convertedData = $webrequest.content | ConvertFrom-Json #Creating a blank array to store end result in $VMhostsArray = @() #Looping through all esxi hosts found foreach ($vmhost in $vmhosts) { $hostname = (($vmhost.name).split(\".\"))[0] #Removing domain name from esxi host name $WWN_Name = ($convertedData.serviceresult.rows | where {$_.Name -like \"$($hostname)\"}).WWN_Name #Grabbing WWN from UCSD report $StorageGroupIdentity = \"$($StorageAccount);$($Pod);$($WWN_Name);$($hostname)\" #Putting together the storage group identity $VMhostsArray += $StorageGroupIdentity #Adding the storage group identity to the array } #Disconnecting from vCenter Disconnect-VIServer vcenter01 -Confirm:$false #Returning array to console, comma separated return $VMhostsArray -join \",\" On my test cluster with only two esxi hosts, the output looks like this:\nAfter the custom task has converted the powershell output it looks like this in plain text:\nstorageaccount;pod;wwn;esxiHostname1,storageaccount;pod;wwn;esxiHostname2 Since the output from the custom task is of the emcStorageGroupIdentity type I can simply map it to the builtin “add vnx lun to storage group” task:\nAnd that’s really all there is to it. If you want to download my example workflow, you can do so here: http://4.234.145.218/wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip\n",
+  "wordCount" : "535",
   "inLanguage": "en",
   "datePublished": "2015-10-15T13:05:07Z",
   "dateModified": "2015-10-15T13:05:07Z",
@@ -210,13 +210,46 @@ Revisiting the issue i found this example from Cisco: <!-- raw HTML omitted -->
 <p><a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-41-13.png"><!-- raw HTML omitted --></a></p>
 <p>The reason I have to do a split on the StorageAccount input is that in the script I only want the hostname of the storage system. I could just as well have done it within the script itself.</p>
 <p>The powershell script looks like this:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>On my test cluster with only two esxi hosts, the output looks like this:</p>
+<pre tabindex="0"><code>   Param (
+   [Parameter(Mandatory=$True,Position=0)][string]$Pod,
+   [Parameter(Mandatory=$True,Position=1)][string]$StorageAccount,
+   [Parameter(Mandatory=$True,Position=2)][string]$Cluster
+       )
+#Add the vmware snapin
+Add-PSSnapin vmware*
+
+#Connecting to vCenter
+Connect-VIServer vcenter01 -WarningAction Ignore | out-null
+
+#Getting ESXi hosts
+$vmhosts = get-vmhost -location $Cluster
+
+#Polling a report on storage groups from UCS Director
+$webrequest = Invoke-WebRequest &#39;https://ucsd01/app/api/rest?opName=userAPIGetTabularReport&amp;opData={param0:&#34;510&#34;,param1:&#34;$($StorageAccount);$($Pod)&#34;,param2:&#34;STORAGE-GROUPS-T51&#34;}&#39; -Headers @{&#34;X-Cloupia-Request-Key&#34;=&#34;ThisIsNotMyAPIKey&#34;}
+#Converting the report from json
+$convertedData = $webrequest.content | ConvertFrom-Json
+
+#Creating a blank array to store end result in
+$VMhostsArray = @()
+
+#Looping through all esxi hosts found
+foreach ($vmhost in $vmhosts) {
+   $hostname = (($vmhost.name).split(&#34;.&#34;))[0] #Removing domain name from esxi host name
+   $WWN_Name = ($convertedData.serviceresult.rows | where {$_.Name -like &#34;$($hostname)&#34;}).WWN_Name #Grabbing WWN from UCSD report
+   $StorageGroupIdentity = &#34;$($StorageAccount);$($Pod);$($WWN_Name);$($hostname)&#34; #Putting together the storage group identity
+   $VMhostsArray += $StorageGroupIdentity #Adding the storage group identity to the array
+   }
+
+#Disconnecting from vCenter
+Disconnect-VIServer vcenter01 -Confirm:$false
+
+#Returning array to console, comma separated
+return $VMhostsArray -join &#34;,&#34;
+</code></pre><p>On my test cluster with only two esxi hosts, the output looks like this:</p>
 <p><a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-54-42.png"><!-- raw HTML omitted --></a></p>
 <p>After the custom task has converted the powershell output it looks like this in plain text:</p>
-<!-- raw HTML omitted -->
-<p>Since the output from the custom task is of the emcStorageGroupIdentity type I can simply map it to the builtin “add vnx lun to storage group” task:</p>
+<pre tabindex="0"><code>storageaccount;pod;wwn;esxiHostname1,storageaccount;pod;wwn;esxiHostname2 
+</code></pre><p>Since the output from the custom task is of the emcStorageGroupIdentity type I can simply map it to the builtin “add vnx lun to storage group” task:</p>
 <p><a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-47-52.png"><!-- raw HTML omitted --></a></p>
 <p>And that’s really all there is to it. If you want to download my example workflow, you can do so here: <a href="http://4.234.145.218/wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip">http://4.234.145.218/wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip</a></p>
 <p> </p>

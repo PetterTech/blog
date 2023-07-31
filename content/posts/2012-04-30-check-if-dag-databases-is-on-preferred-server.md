@@ -24,7 +24,7 @@ wp-syntax-cache-content:
     &nbsp;
     <span style="color: #008000;">#Sends mail if there is databases that are mounted on less preferred server</span>
     <span style="color: #0000FF;">if</span> <span style="color: #000000;">&#40;</span><span style="color: #800080;">$count</span>.Count <span style="color: #FF0000;">-gt</span> <span style="color: #804000;">0</span><span style="color: #000000;">&#41;</span>
-    <span style="color: #000000;">&#123;</span>send<span style="color: pink;">-</span>mailmessage <span style="color: pink;">-</span>smtpserver <span style="color: #800000;">'hub transport server'</span> <span style="color: pink;">-</span>to some<span style="color: pink;">@</span>recipient.com<span style="color: pink;">,</span>some.other<span style="color: pink;">@</span>recipient <span style="color: pink;">-</span>from some<span style="color: pink;">@</span>mailaddress.com <span style="color: pink;">-</span>subject <span style="color: #800000;">&quot;DAG unbalanced&quot;</span> <span style="color: #008080; font-style: italic;">-Body</span> <span style="color: #800000;">&quot;The following number of databases is not on their prefered server: $body&quot;</span><span style="color: #000000;">&#125;</span></pre></td></tr></table><p class="theCode" style="display:none;">#Add the needed exchange snapin
+    <span style="color: #000000;">&#123;</span>send<span style="color: pink;">-</span>mailmessage <span style="color: pink;">-</span>smtpserver <span style="color: #800000;">'hub transport server'</span> <span style="color: pink;">-</span>to some<span style="color: pink;">@</span>recipient.com<span style="color: pink;">,</span>some.other<span style="color: pink;">@</span>recipient <span style="color: pink;">-</span>from some<span style="color: pink;">@</span>mailaddress.com <span style="color: pink;">-</span>subject <span style="color: #800000;">&quot;DAG unbalanced&quot;</span> <span style="color: #008080; font-style: italic;">-Body</span> <span style="color: #800000;">&quot;The following number of databases is not on their prefered server: $body&quot;</span><span style="color: #000000;">&#125;</span> ```</td></tr></table><p class="theCode" style="display:none;">#Add the needed exchange snapin
     add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010
     
     #Navigate to the exchange script repository
@@ -63,7 +63,8 @@ The script uses the RedistributeActiveDatabases.ps1 script to check how many, i
 
 We run this script as a scheduled task on one of our hub transport servers, but you can run it on any server/computer that has exchange management tools installed. It has really helped us so far, so heres the script:
 
-<pre lang="powershell">#Add the needed exchange snapin
+ ```
+#Add the needed exchange snapin
 add-pssnapin Microsoft.Exchange.Management.PowerShell.E2010
 
 #Navigate to the exchange script repository
@@ -80,4 +81,5 @@ $body = $count.count | out-string
 
 #Sends mail if there is databases that are mounted on less preferred server
 if ($count.Count -gt 0)
-{send-mailmessage -smtpserver 'hub transport server' -to some@recipient.com,some.other@recipient -from some@mailaddress.com -subject "DAG unbalanced" -Body "The following number of databases is not on their prefered server: $body"}</pre>
+{send-mailmessage -smtpserver 'hub transport server' -to some@recipient.com,some.other@recipient -from some@mailaddress.com -subject "DAG unbalanced" -Body "The following number of databases is not on their prefered server: $body"} 
+```

@@ -125,7 +125,7 @@
     <p>Yesterday I was given a relatively easy task: find out who or what has a given email address.
 As this was within our own Exchange organization it proved to be quite simple:
 You can achieve the goal with a simple one-liner:
-But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
+get-recipient -ResultSize unlimited | where {$_.emailaddresses -match &#34;email@address.com&#34;} But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
   </div>
   <footer class="entry-footer"><span title='2012-08-28 10:41:15 +0000 +0000'>August 28, 2012</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Function for locating an email address" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/"></a>

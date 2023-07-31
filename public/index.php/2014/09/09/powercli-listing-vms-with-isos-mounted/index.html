@@ -13,7 +13,7 @@ When writing this post I checked the differences in speed when using the old way
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/09/powercli-listing-vms-with-isos-mounted/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ When writing this post I checked the differences in speed when using the old way
   "keywords": [
     "dismount iso", "function", "get-isomounts", "iso mount", "powercl", "powersh", "vmware"
   ],
-  "articleBody": "For almost a year ago, I posted a simple one-liner to list all VMs who has ISOs mounted. You can view that post here: http://cloud.kemta.net/2013/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/\nThat post was written before I truly discovered the major advantages of using Get-View instead of Get-VM, Get-VMHost and so on. If used correctly, there’s a major difference in speed when using Get-View over Get-VM.\nWhen writing this post I checked the differences in speed when using the old way that I linked to above and my new function (which I’ll get to in a second or two..), the result was as follows:\nAs you can see, the difference is pretty clear. 5 seconds vs. 1.6 minutes…\nSo, without further ado, I present to you the code for Get-ISOMounts:\nI feel the help section should speak for itself, but I’ll provide you a screenshot none the less. Just running Get-ISOMounts will provide you with an output looking like this:\n",
-  "wordCount" : "154",
+  "articleBody": "For almost a year ago, I posted a simple one-liner to list all VMs who has ISOs mounted. You can view that post here: http://cloud.kemta.net/2013/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/\nThat post was written before I truly discovered the major advantages of using Get-View instead of Get-VM, Get-VMHost and so on. If used correctly, there’s a major difference in speed when using Get-View over Get-VM.\nWhen writing this post I checked the differences in speed when using the old way that I linked to above and my new function (which I’ll get to in a second or two..), the result was as follows:\nAs you can see, the difference is pretty clear. 5 seconds vs. 1.6 minutes…\nSo, without further ado, I present to you the code for Get-ISOMounts:\n{ [CmdletBinding()] Param ( [switch]$Dismount ) $VMs = Get-View -ViewType virtualmachine -Property name,Config.Hardware.Device $VMsWithISO = @() $progress = 1 foreach ($VM in $VMs) { Write-Progress -Activity \"Checking if VMs have ISOs mounted\" -Status \"Working on $($VM.name)\" -PercentComplete ($progress/$VMs.count*100) -Id 1 -ErrorAction SilentlyContinue if (($VM | select -ExpandProperty config | select -ExpandProperty hardware | select -ExpandProperty device | select -ExpandProperty deviceinfo | where {$_.Summary -like \"ISO*\"}) -ne $NULL) { $object = New-Object PSObject Add-Member -InputObject $object NoteProperty VM $VM.Name Add-Member -InputObject $object NoteProperty \"ISO mounted\" (($VM | select -ExpandProperty config | select -ExpandProperty hardware | select -ExpandProperty device | select -ExpandProperty deviceinfo | where {$_.Summary -like \"ISO*\"}).Summary).Substring(4) $VMsWithISO += $object $object $progress++ } } Write-Progress -Activity \"Checking if VMs have ISOs mounted\" -Status \"All done\" -Completed -Id 1 -ErrorAction SilentlyContinue if ($Dismount) { Write-Verbose \"Starting to dismount ISOs\" $progress = 1 foreach ($VM in $VMsWithISO) { Write-Progress -Activity \"Dismounting ISOs\" -Status \"Working on $($VM.name)\" -PercentComplete ($progress/$VMsWithISO.count*100) -Id 1 -ErrorAction SilentlyContinue Get-CDDrive -VM $VM.Name | Set-CDDrive -NoMedia -Confirm:$False } Write-Progress -Activity \"Dismounting ISOs\" -Status \"All done\" -Completed -Id 1 -ErrorAction SilentlyContinue $progress++ } \u0026lt;# .Synopsis Lists all VMs with ISOs mounted, can also dismount them .Description Lists all VMs with ISOs mounted. If the switch -Dismount is present all mounted ISOs will be dismounted .Example Get-ISOMounts Lists all mounted ISOs in the vCenter .Example Get-Snapshots -Dismount Lists all mounted ISOs on VMs in the vCenter and then dismounts them .Link http://cloud.kemta.net #\u003e } I feel the help section should speak for itself, but I’ll provide you a screenshot none the less. Just running Get-ISOMounts will provide you with an output looking like this:\n",
+  "wordCount" : "395",
   "inLanguage": "en",
   "datePublished": "2014-09-09T05:55:24Z",
   "dateModified": "2014-09-09T05:55:24Z",
@@ -190,9 +190,55 @@ When writing this post I checked the differences in speed when using the old way
 <p><a href="http://4.234.145.218/wp-content/uploads/2014/09/get-isomounts_measured.png"><!-- raw HTML omitted --></a></p>
 <p>As you can see, the difference is pretty clear. 5 seconds vs. 1.6 minutes…</p>
 <p>So, without further ado, I present to you the code for Get-ISOMounts:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>I feel the help section should speak for itself, but I’ll provide you a screenshot none the less. Just running Get-ISOMounts will provide you with an output looking like this:</p>
+<pre tabindex="0"><code class="language-function" data-lang="function">{
+   [CmdletBinding()]
+       Param (
+           [switch]$Dismount
+             )
+       $VMs = Get-View -ViewType virtualmachine -Property name,Config.Hardware.Device
+       $VMsWithISO = @()
+       $progress = 1
+       foreach ($VM in $VMs) {
+           Write-Progress -Activity &#34;Checking if VMs have ISOs mounted&#34; -Status &#34;Working on $($VM.name)&#34; -PercentComplete ($progress/$VMs.count*100) -Id 1 -ErrorAction SilentlyContinue
+           if (($VM | select -ExpandProperty config | select -ExpandProperty hardware | select -ExpandProperty device | select -ExpandProperty deviceinfo | where {$_.Summary -like &#34;ISO*&#34;}) -ne $NULL) {
+               $object = New-Object PSObject
+               Add-Member -InputObject $object NoteProperty VM $VM.Name
+               Add-Member -InputObject $object NoteProperty &#34;ISO mounted&#34; (($VM | select -ExpandProperty config | select -ExpandProperty hardware | select -ExpandProperty device | select -ExpandProperty deviceinfo | where {$_.Summary -like &#34;ISO*&#34;}).Summary).Substring(4)
+               $VMsWithISO += $object
+               $object
+           $progress++
+           }
+       }
+       Write-Progress -Activity &#34;Checking if VMs have ISOs mounted&#34; -Status &#34;All done&#34; -Completed -Id 1 -ErrorAction SilentlyContinue
+
+       if ($Dismount)
+           {
+           Write-Verbose &#34;Starting to dismount ISOs&#34;
+           $progress = 1
+           foreach ($VM in $VMsWithISO) {
+               Write-Progress -Activity &#34;Dismounting ISOs&#34; -Status &#34;Working on $($VM.name)&#34; -PercentComplete ($progress/$VMsWithISO.count*100) -Id 1 -ErrorAction SilentlyContinue
+               Get-CDDrive -VM $VM.Name | Set-CDDrive -NoMedia -Confirm:$False
+               }
+           Write-Progress -Activity &#34;Dismounting ISOs&#34; -Status &#34;All done&#34; -Completed -Id 1 -ErrorAction SilentlyContinue
+           $progress++
+           }
+
+&amp;lt;#
+.Synopsis
+ Lists all VMs with ISOs mounted, can also dismount them
+.Description
+ Lists all VMs with ISOs mounted. If the switch -Dismount is present all mounted ISOs will be dismounted
+.Example
+ Get-ISOMounts
+ Lists all mounted ISOs in the vCenter
+.Example
+ Get-Snapshots -Dismount
+ Lists all mounted ISOs on VMs in the vCenter and then dismounts them
+.Link
+ http://cloud.kemta.net
+#&gt;
+}
+</code></pre><p>I feel the help section should speak for itself, but I’ll provide you a screenshot none the less. Just running Get-ISOMounts will provide you with an output looking like this:</p>
 <p><a href="http://4.234.145.218/wp-content/uploads/2014/09/get-isomounts.png"><!-- raw HTML omitted --></a></p>
 
 

@@ -14,9 +14,8 @@
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/</guid>
       <description>To find out to which vm a MAC address belongs, you can use a simple one-liner:
-(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
-Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
-A basic function doing the same thing can look something like this:</description>
+Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} (Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.</description>
     </item>
     
     <item>
@@ -27,7 +26,8 @@ A basic function doing the same thing can look something like this:</description
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/</guid>
       <description>Easy-peasy and a pretty short post…
 To get all vm’s with iso mounted:
-Then, to dismount those:</description>
+Get-VM | Get-CDDrive | select @{N=&amp;#34;VM&amp;#34;;E=&amp;#34;Parent&amp;#34;},IsoPath | where {$_.IsoPath -ne $null} Then, to dismount those:
+Get-VM | Get-CDDrive | where {$_.IsoPath -ne $null} | Set-CDDrive -NoMedia -Confirm:$False </description>
     </item>
     
     <item>
@@ -38,7 +38,8 @@ Then, to dismount those:</description>
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/08/powershell-vmware-migrate-all-vms-on-a-datastore/</guid>
       <description>PowerCLI is just awsome 🙂
 This simple one-liner migrates all vm’s off one datastore to a new one:
-You can also move vm’s off one datastore and place them in any datastore within a specified datastore cluster:</description>
+Get-VM -Datastore &amp;amp;lt;datastore1&amp;amp;gt; | Move-VM -Datastore &amp;amp;lt;datastore2&amp;amp;gt; You can also move vm’s off one datastore and place them in any datastore within a specified datastore cluster:
+$DatastoreCluster1 = Get-DatastoreCluster -Name &amp;#39;DatastoreCluster1&amp;#39; Get-VM -Datastore &amp;amp;lt;datastore1&amp;amp;gt; | Move-VM -Datastore $DatastoreCluster1 </description>
     </item>
     
     <item>

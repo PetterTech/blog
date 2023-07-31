@@ -13,7 +13,7 @@ Sadly there is no way to import MIBs using the gui in Zenoss, you have to use th
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/29/import-mibs-in-zenoss/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ Sadly there is no way to import MIBs using the gui in Zenoss, you have to use th
   "keywords": [
     "Linux", "MIB", "Zenoss"
   ],
-  "articleBody": "If you are using Zenoss as a monitoring solution, chances are you are sending snmp traps to it, right?\nIn that case you should always remember to import the MIBs for the devices you are monitoring. Because if you don’t it can be a real pain in the ass to figure what it is wrong when all you see is a “warning snmp trap enterprises.2.6.211.4.11”.\nSadly there is no way to import MIBs using the gui in Zenoss, you have to use the cli. So here’s a short guide:\nFirst you need to download the MIBs.\nThe easiest way to do that is to google the oid that is sent to Zenoss, there are a bunch of sites that provide MIBs for download. One example being oidview\nNext you need to copy the MIB to the server running Zenoss.\nIf you are experienced with Linux that shouldn’t be a problem 🙂\nIf not, you can use software like WinSCP to transfer the file.\nThe last step is to import the MIB into Zenoss.\nTo do this you first need to log in on the server running Zenoss, preferably as zenoss (default password is zenoss).\nThen run the following command:\nNote: This example is for a default Debian installation, if you are using other distros you need to adapt the path. For the virtual appliance the command would be:\n",
-  "wordCount" : "228",
+  "articleBody": "If you are using Zenoss as a monitoring solution, chances are you are sending snmp traps to it, right?\nIn that case you should always remember to import the MIBs for the devices you are monitoring. Because if you don’t it can be a real pain in the ass to figure what it is wrong when all you see is a “warning snmp trap enterprises.2.6.211.4.11”.\nSadly there is no way to import MIBs using the gui in Zenoss, you have to use the cli. So here’s a short guide:\nFirst you need to download the MIBs.\nThe easiest way to do that is to google the oid that is sent to Zenoss, there are a bunch of sites that provide MIBs for download. One example being oidview\nNext you need to copy the MIB to the server running Zenoss.\nIf you are experienced with Linux that shouldn’t be a problem 🙂\nIf not, you can use software like WinSCP to transfer the file.\nThe last step is to import the MIB into Zenoss.\nTo do this you first need to log in on the server running Zenoss, preferably as zenoss (default password is zenoss).\nThen run the following command:\n/usr/local/zenoss/zenoss/bin/zenmib run \u0026lt;path to MIB file\u0026gt; Note: This example is for a default Debian installation, if you are using other distros you need to adapt the path. For the virtual appliance the command would be:\n/opt/zenoss/bin/zenmib run \u0026lt;path to MIB file\u0026gt; ",
+  "wordCount" : "240",
   "inLanguage": "en",
   "datePublished": "2011-08-29T11:02:57Z",
   "dateModified": "2011-08-29T11:02:57Z",
@@ -195,10 +195,10 @@ If not, you can use software like WinSCP to transfer the file.</p>
 <p>The last step is to import the MIB into Zenoss.<br>
 To do this you first need to log in on the server running Zenoss, preferably as zenoss (default password is zenoss).<br>
 Then run the following command:</p>
-<!-- raw HTML omitted -->
-<p>Note: This example is for a default Debian installation, if you are using other distros you need to adapt the path. For the virtual appliance the command would be:</p>
-<!-- raw HTML omitted -->
-
+<pre tabindex="0"><code>/usr/local/zenoss/zenoss/bin/zenmib run &amp;lt;path to MIB file&amp;gt; 
+</code></pre><p>Note: This example is for a default Debian installation, if you are using other distros you need to adapt the path. For the virtual appliance the command would be:</p>
+<pre tabindex="0"><code>/opt/zenoss/bin/zenmib run &amp;lt;path to MIB file&amp;gt; 
+</code></pre>
 
   </div>
 

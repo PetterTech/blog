@@ -246,8 +246,7 @@ Why vmware hasn’t found a way to include a username in the get-snapshot cmdlet
   </header>
   <div class="entry-content">
     <p>In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:
-Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.
-The command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)</p>
+Get-VM -Datastore &#34;datastore1&#34; | Move-VM -Datastore (Get-VMHost -Location &#39;cluster1&#39; | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne &#39;datastore1&#39;) -and ($_.FreeSpaceGB -gt &#39;500&#39;)} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1) Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available....</p>
   </div>
   <footer class="entry-footer"><span title='2014-09-11 10:54:40 +0000 +0000'>September 11, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Evacuating a datastore" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/11/powercli-evacuating-a-datastore/"></a>

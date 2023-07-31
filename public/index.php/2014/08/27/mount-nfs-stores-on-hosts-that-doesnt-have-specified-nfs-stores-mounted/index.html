@@ -12,7 +12,7 @@ In our environment we have a couple of NFS stores that should be available on al
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/27/mount-nfs-stores-on-hosts-that-doesnt-have-specified-nfs-stores-mounted/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ In our environment we have a couple of NFS stores that should be available on al
   "keywords": [
     "mount nfs", "Mount-NFSstores", "powercli", "Powershell"
   ],
-  "articleBody": "Ever had a bunch of vmware hosts that you want to add a NFS datastore on? It can be quite time consuming to say the least.\nIn our environment we have a couple of NFS stores that should be available on all vmware hosts and I really don’t want to browse around all 50 or so hosts and check if they have them and then mount them if they’re not available.\nSo, of course, I wrote a small powercli script to check if the NFS stores are mounted and then mount them if they’re not mounted:\nWhile I am pretty comfortable with writing and executing scripts like this on the fly, other people who are not as familiar with powershell might be a bit intimidated by it.\nThat’s why I like to create functions of them and put them in the powershell profile for all users on our jumpstation (C:WindowsSystem32WindowsPowerShellv1.0profile.ps1).\nIf I were to create a function out of this script, it would look something like this (very basic):\n",
-  "wordCount" : "169",
+  "articleBody": "Ever had a bunch of vmware hosts that you want to add a NFS datastore on? It can be quite time consuming to say the least.\nIn our environment we have a couple of NFS stores that should be available on all vmware hosts and I really don’t want to browse around all 50 or so hosts and check if they have them and then mount them if they’re not available.\nSo, of course, I wrote a small powercli script to check if the NFS stores are mounted and then mount them if they’re not mounted:\n$vmhosts = Get-View -ViewType HostSystem -Filter @{\"Runtime.ConnectionState\" = \"connected\"} -Property name $progress = 1 $mounts = 1 foreach ($vmhost in $vmhosts) { Write-Progress -Activity \"Checking $($vmhost.Name)\" -PercentComplete ($progress/$vmhosts.count*100) if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq \"MGMT-ISO\"}) -eq $NULL){ New-Datastore -vmhost $vmhost.name -Name MGMT-ISO -Nfs -NfsHost \u0026lt;nfsHost\u0026gt; -Path /MGMT-ISO $mounts++ } if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq \"USER-ISO\"}) -eq $NULL){ New-Datastore -vmhost $vmhost.name -Name USER-ISO -Nfs -NfsHost -Path /USER-ISO $mounts++ } $progress++ } if ($mounts = \"1\") { Write-Host \"All hosts have the NFS stores already mounted\" -ForegroundColor green } While I am pretty comfortable with writing and executing scripts like this on the fly, other people who are not as familiar with powershell might be a bit intimidated by it.\nThat’s why I like to create functions of them and put them in the powershell profile for all users on our jumpstation (C:WindowsSystem32WindowsPowerShellv1.0profile.ps1).\nIf I were to create a function out of this script, it would look something like this (very basic):\nfunction Mount-NFSstores { $vmhosts = Get-View -ViewType HostSystem -Filter @{\"Runtime.ConnectionState\" = \"connected\"} -Property name $progress = 1 $mounts = 1 foreach ($vmhost in $vmhosts) { Write-Progress -Activity \"Checking $($vmhost.Name)\" -PercentComplete ($progress/$vmhosts.count*100) if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq \"MGMT-ISO\"}) -eq $NULL){ New-Datastore -vmhost $vmhost.name -Name MGMT-ISO -Nfs -NfsHost 10.64.0.8 -Path /MGMT-ISO $mounts++ } if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq \"USER-ISO\"}) -eq $NULL){ New-Datastore -vmhost $vmhost.name -Name USER-ISO -Nfs -NfsHost 10.64.0.8 -Path /USER-ISO $mounts++ } $progress++ } if ($mounts = \"1\") { Write-Host \"All hosts have the NFS stores already mounted\" -ForegroundColor green } \u0026lt;# .Synopsis Mounts MGMT-ISO and USER-ISO on vmhosts .Description Checks every vmhost for NFS stores, if MGMT-ISO or USER-ISO isn't mounted, the function will mount it .Example Mount-NFSstores Mounts MGMT-ISO and USER-ISO on vmhosts .Link http://cloud.kemta.net #\u003e } ",
+  "wordCount" : "395",
   "inLanguage": "en",
   "datePublished": "2014-08-27T07:26:32Z",
   "dateModified": "2014-08-27T07:26:32Z",
@@ -184,14 +184,61 @@ In our environment we have a couple of NFS stores that should be available on al
   <div class="post-content"><p>Ever had a bunch of vmware hosts that you want to add a NFS datastore on? It can be quite time consuming to say the least.<br>
 In our environment we have a couple of NFS stores that should be available on all vmware hosts and I really don’t want to browse around all 50 or so hosts and check if they have them and then mount them if they’re not available.</p>
 <p>So, of course, I wrote a small powercli script to check if the NFS stores are mounted and then mount them if they’re not mounted:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>While I am pretty comfortable with writing and executing scripts like this on the fly, other people who are not as familiar with powershell might be a bit intimidated by it.<br>
+<pre tabindex="0"><code>$vmhosts = Get-View -ViewType HostSystem -Filter @{&#34;Runtime.ConnectionState&#34; = &#34;connected&#34;} -Property name
+
+$progress = 1
+$mounts = 1
+foreach ($vmhost in $vmhosts) {
+   Write-Progress -Activity &#34;Checking $($vmhost.Name)&#34; -PercentComplete ($progress/$vmhosts.count*100)
+   if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq &#34;MGMT-ISO&#34;}) -eq $NULL){
+       New-Datastore -vmhost $vmhost.name -Name MGMT-ISO -Nfs -NfsHost &amp;lt;nfsHost&amp;gt; -Path /MGMT-ISO
+       $mounts++
+       }
+   if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq &#34;USER-ISO&#34;}) -eq $NULL){
+       New-Datastore -vmhost $vmhost.name -Name USER-ISO -Nfs -NfsHost  -Path /USER-ISO
+       $mounts++
+       }
+   $progress++
+   }
+if ($mounts = &#34;1&#34;) {
+   Write-Host &#34;All hosts have the NFS stores already mounted&#34; -ForegroundColor green
+   } 
+</code></pre><p>While I am pretty comfortable with writing and executing scripts like this on the fly, other people who are not as familiar with powershell might be a bit intimidated by it.<br>
 That’s why I like to create functions of them and put them in the powershell profile for all users on our jumpstation (C:WindowsSystem32WindowsPowerShellv1.0profile.ps1).</p>
 <p>If I were to create a function out of this script, it would look something like this (very basic):</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre tabindex="0"><code>function Mount-NFSstores {
+   $vmhosts = Get-View -ViewType HostSystem -Filter @{&#34;Runtime.ConnectionState&#34; = &#34;connected&#34;} -Property name
 
+   $progress = 1
+   $mounts = 1
+   foreach ($vmhost in $vmhosts) {
+       Write-Progress -Activity &#34;Checking $($vmhost.Name)&#34; -PercentComplete ($progress/$vmhosts.count*100)
+       if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq &#34;MGMT-ISO&#34;}) -eq $NULL){
+           New-Datastore -vmhost $vmhost.name -Name MGMT-ISO -Nfs -NfsHost 10.64.0.8 -Path /MGMT-ISO
+           $mounts++
+           }
+       if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq &#34;USER-ISO&#34;}) -eq $NULL){
+           New-Datastore -vmhost $vmhost.name -Name USER-ISO -Nfs -NfsHost 10.64.0.8 -Path /USER-ISO
+           $mounts++
+           }
+       $progress++
+       }
+   if ($mounts = &#34;1&#34;) {
+       Write-Host &#34;All hosts have the NFS stores already mounted&#34; -ForegroundColor green
+       }
+&amp;lt;#
+.Synopsis
+ Mounts MGMT-ISO and USER-ISO on vmhosts
+.Description
+ Checks every vmhost for NFS stores, if MGMT-ISO or USER-ISO isn&#39;t mounted, the function will mount it
+.Example
+ Mount-NFSstores
+ Mounts MGMT-ISO and USER-ISO on vmhosts
+.Link
+ http://cloud.kemta.net
+#&gt;
+   }
+</code></pre>
 
   </div>
 

@@ -124,8 +124,7 @@
   <div class="entry-content">
     <p>This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
 Anyway, heres my script:
-I guess a little explanation is required.
-The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination....</p>
+robocopy c:users&amp;lt;username&amp;gt; &amp;lt;destination&amp;gt; /MIR /XD templates start-menu &#34;local settings&#34; appdata &#34;internal video&#34; cookies &#34;my music&#34; &#34;my pictures&#34; &#34;my documents&#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&amp;lt;log destination&amp;gt; I guess a little explanation is required....</p>
   </div>
   <footer class="entry-footer"><span title='2011-09-13 13:03:29 +0000 +0000'>September 13, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Robocopy backup script" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/"></a>
@@ -138,7 +137,8 @@ The first part, robocopy c:users tells robocopy what to copy where. /MIR indicat
   </header>
   <div class="entry-content">
     <p>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
-Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</p>
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
+Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept </p>
   </div>
   <footer class="entry-footer"><span title='2011-09-12 12:28:56 +0000 +0000'>September 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Enable Resource Booking Attendant on all Room Mailboxes" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/"></a>
@@ -181,8 +181,7 @@ You can use the default Libraries as a starting point, or you can create a new o
   <div class="entry-content">
     <p>If you have some sort of 3rd-party application that needs access to all of your mailboxes, it can be a pain to set the permissions on all of your mailboxes.
 Except if you use this nice little powershell command:
-What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.
-You can of course change the -AccessRights setting to your liking, e....</p>
+Get-Mailbox -ResultSize unlimited | Add-MailboxPermission -User admin -AccessRights FullAccess -InheritanceType all What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin....</p>
   </div>
   <footer class="entry-footer"><span title='2011-08-18 07:44:23 +0000 +0000'>August 18, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Editing permissions on all mailboxes in one command, Exchange 2010/2007" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/18/editing-permissions-on-all-mailboxes-in-one-command-exchange-20102007/"></a>

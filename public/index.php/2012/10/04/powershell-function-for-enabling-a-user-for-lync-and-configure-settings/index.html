@@ -12,7 +12,7 @@ So I have made a function out of it and for the first time (I think) I have even
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ So I have made a function out of it and for the first time (I think) I have even
   "keywords": [
     "catch", "Enable-LyncUser", "error handling", "function", "Lync", "microsoft", "Powershell", "throw"
   ],
-  "articleBody": "A little while ago I posted a script for enabling users for Lync and settings some settings for that user. That script has been used here ever since I posted it and it has worked like a charm. However there’s always room for improvement, right?.\nSo I have made a function out of it and for the first time (I think) I have even implemented some error handling. The function is also improved quit a bit on the help section and the info that is shown to the user after the function completes.\nAs in the script, this function will enable the user for Lync and set some default settings like Dial Plan, Voice Policy, Conferencing Policy. It also gives you the option to specify a Line URI.\nThe difference is that this function will use the default settings only if nothing else is specified, so you can change the settings if you like, using parameters. Of course theres also the possibility to pipe input from a csv file.\nHere’s the code:\nYou may wonder why the Start-Sleep command is there. The reason is that my testing indicated that the function will work to fast for Active Directory if it isn’t there. During my testing I found that without the sleep the next command, Set-CsUser, will fail because the object cannot be found. Running the function again resultet in no errors.\nTherefore I tested adding a few seconds of sleep to prevent the Set-CsUser command (and the following commands) from failing. Depending on you environment you can decrease the seconds or even remove the sleep, but I found that 3 seconds was just a bit to short (sometimes it would fail, sometimes not) so I ended up with 4.\nI am kinda proud of the error handling in this function, given that I have never used error handling in Powershell before. But please let me know if there are improvements to be made or errors in my code.\n",
-  "wordCount" : "328",
+  "articleBody": "A little while ago I posted a script for enabling users for Lync and settings some settings for that user. That script has been used here ever since I posted it and it has worked like a charm. However there’s always room for improvement, right?.\nSo I have made a function out of it and for the first time (I think) I have even implemented some error handling. The function is also improved quit a bit on the help section and the info that is shown to the user after the function completes.\nAs in the script, this function will enable the user for Lync and set some default settings like Dial Plan, Voice Policy, Conferencing Policy. It also gives you the option to specify a Line URI.\nThe difference is that this function will use the default settings only if nothing else is specified, so you can change the settings if you like, using parameters. Of course theres also the possibility to pipe input from a csv file.\nHere’s the code:\nfunction Enable-LyncUser { [CmdletBinding()] Param ( [parameter(Mandatory=$True)][string]$Identity, [string]$Pool = 'lyncpool1.test.local', [string]$DialPlan = 'DialPlanSIPtrunk', [string]$Voice = 'SIP Trunk Service', [string]$Conference = 'Conference', [string]$LineURI ) Write-Host \"Enabling user...\" #Importing the Lync PowerShell module Import-Module Lync #Trying to enable the user for Lync try { Enable-CsUser -identity $Identity -RegistrarPool $Pool -SipAddressType emailaddress } #Catching errors, aborting if the user is not found catch [Microsoft.Rtc.Management.AD.ManagementException] { throw \"User not found, check username\" } #Sleeping, so that the next command doesn't fail Write-Host \"Sleeping... Please wait...\" Start-Sleep -s 4 Write-Host \"Configuring user...\" #Setting the user as EnterpriseVoice enabled Set-CsUser -identity $Identity -EnterpriseVoiceEnabled $True #Setting dial plan Grant-CsDialPlan –Identity $Identity -PolicyName $DialPlan #Setting voice policy Grant-CsVoicePolicy –Identity $Identity –PolicyName $Voice #Setting conferenceing policy Grant-CsConferencingPolicy -identity $Identity -PolicyName $Conference #Trying to set the optional Line URI try { Set-CsUser -identity $Identity -LineUri $LineURI } #Cathing errors and continuing catch [System.FormatException] { Write-Error -Message \"Wrong format on LineURI, it should be tel:+xxxxxxxx.\" -Category SyntaxError } Write-Host \"Config finished\" #Grabbing the Lync login for the user and writing it to the host $SipAddress = Get-CsUser -Identity $Identity | Select-Object SipAddress Write-Host \"The user may now log in to Lync as $($SipAddress.SipAddress.substring(4))\" -ForegroundColor Green \u0026lt;# .Synopsis Enables given user for Lync and sets config .Description The function will enable the user for Lync and add the given config, if no config is given the default values will be used. .Parameter Identity The user who you want to enable for Lync .Parameter Pool The Lync pool you want to assign a user to. Default is lyncpool1.test.local .Parameter DialPlan The dialplan you want to associate the user with. Default is DialPlanSIPtrunk .Parameter Voice The voice policy you want to associate the user with. Default is SIP Trunk Service .Parameter Conference The conference policy you want to associate the user with. Default is Conference .Parameter LineURI If you want to specify a Line URI, do so in the format of tel:\u0026lt;number\u003e .Example Enable-LyncUser user1 This will enable user1 with default settings .Example Enable-Lyncuser user2 -LineURI tel:+4712345678 This will enable user2 and set the lineuri to tel:+4712345678 .Link http://cloud.kemta.net #\u003e } You may wonder why the Start-Sleep command is there. The reason is that my testing indicated that the function will work to fast for Active Directory if it isn’t there. During my testing I found that without the sleep the next command, Set-CsUser, will fail because the object cannot be found. Running the function again resultet in no errors.\nTherefore I tested adding a few seconds of sleep to prevent the Set-CsUser command (and the following commands) from failing. Depending on you environment you can decrease the seconds or even remove the sleep, but I found that 3 seconds was just a bit to short (sometimes it would fail, sometimes not) so I ended up with 4.\nI am kinda proud of the error handling in this function, given that I have never used error handling in Powershell before. But please let me know if there are improvements to be made or errors in my code.\n",
+  "wordCount" : "675",
   "inLanguage": "en",
   "datePublished": "2012-10-04T12:07:10Z",
   "dateModified": "2012-10-04T12:07:10Z",
@@ -186,9 +186,91 @@ So I have made a function out of it and for the first time (I think) I have even
 <p>As in the script, this function will enable the user for Lync and set some default settings like Dial Plan, Voice Policy, Conferencing Policy. It also gives you the option to specify a Line URI.<br>
 The difference is that this function will use the default settings only if nothing else is specified, so you can change the settings if you like, using parameters. Of course theres also the possibility to pipe input from a csv file.</p>
 <p>Here’s the code:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p> </p>
+<pre tabindex="0"><code>function Enable-LyncUser {
+[CmdletBinding()]
+ Param (
+ [parameter(Mandatory=$True)][string]$Identity,
+ [string]$Pool = &#39;lyncpool1.test.local&#39;,
+ [string]$DialPlan = &#39;DialPlanSIPtrunk&#39;,
+ [string]$Voice = &#39;SIP Trunk Service&#39;,
+ [string]$Conference = &#39;Conference&#39;,
+ [string]$LineURI
+ )
+
+Write-Host &#34;Enabling user...&#34;
+
+#Importing the Lync PowerShell module
+Import-Module Lync
+
+#Trying to enable the user for Lync
+try {
+ Enable-CsUser -identity $Identity -RegistrarPool $Pool -SipAddressType emailaddress
+ }
+
+#Catching errors, aborting if the user is not found
+catch [Microsoft.Rtc.Management.AD.ManagementException] {
+ throw &#34;User not found, check username&#34;
+ }
+
+#Sleeping, so that the next command doesn&#39;t fail
+Write-Host &#34;Sleeping... Please wait...&#34;
+Start-Sleep -s 4
+
+Write-Host &#34;Configuring user...&#34;
+
+#Setting the user as EnterpriseVoice enabled
+Set-CsUser -identity $Identity -EnterpriseVoiceEnabled $True
+#Setting dial plan
+Grant-CsDialPlan –Identity $Identity -PolicyName $DialPlan
+#Setting voice policy
+Grant-CsVoicePolicy –Identity $Identity –PolicyName $Voice
+#Setting conferenceing policy
+Grant-CsConferencingPolicy -identity $Identity -PolicyName $Conference
+
+#Trying to set the optional Line URI
+try {
+ Set-CsUser -identity $Identity -LineUri $LineURI
+ }
+
+#Cathing errors and continuing
+catch [System.FormatException] {
+ Write-Error -Message &#34;Wrong format on LineURI, it should be tel:+xxxxxxxx.&#34; -Category SyntaxError
+ }
+
+Write-Host &#34;Config finished&#34;
+
+#Grabbing the Lync login for the user and writing it to the host
+$SipAddress = Get-CsUser -Identity $Identity | Select-Object SipAddress
+Write-Host &#34;The user may now log in to Lync as $($SipAddress.SipAddress.substring(4))&#34; -ForegroundColor Green
+
+&amp;lt;#
+ .Synopsis
+  Enables given user for Lync and sets config
+ .Description
+  The function will enable the user for Lync and add the given config, if no config is given the default values will be used.
+ .Parameter Identity
+  The user who you want to enable for Lync
+ .Parameter Pool
+  The Lync pool you want to assign a user to. Default is lyncpool1.test.local
+ .Parameter DialPlan
+  The dialplan you want to associate the user with. Default is DialPlanSIPtrunk
+ .Parameter Voice
+  The voice policy you want to associate the user with. Default is SIP Trunk Service
+ .Parameter Conference
+  The conference policy you want to associate the user with. Default is Conference
+ .Parameter LineURI
+  If you want to specify a Line URI, do so in the format of tel:&amp;lt;number&gt;
+ .Example
+  Enable-LyncUser user1
+  This will enable user1 with default settings
+ .Example
+  Enable-Lyncuser user2 -LineURI tel:+4712345678
+  This will enable user2 and set the lineuri to tel:+4712345678
+ .Link
+  http://cloud.kemta.net
+ #&gt;
+} 
+</code></pre><p> </p>
 <p>You may wonder why the Start-Sleep command is there. The reason is that my testing indicated that the function will work to fast for Active Directory if it isn’t there. During my testing I found that without the sleep the next command, Set-CsUser, will fail because the object cannot be found. Running the function again resultet in no errors.<br>
 Therefore I tested adding a few seconds of sleep to prevent the Set-CsUser command (and the following commands) from failing. Depending on you environment you can decrease the seconds or even remove the sleep, but I found that 3 seconds was just a bit to short (sometimes it would fail, sometimes not) so I ended up with 4.</p>
 <p>I am kinda proud of the error handling in this function, given that I have never used error handling in Powershell before. But please let me know if there are improvements to be made or errors in my code.</p>

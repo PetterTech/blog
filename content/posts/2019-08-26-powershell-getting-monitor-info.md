@@ -20,7 +20,8 @@ This information is stored in WMI, so all I had to do was to grab it using Get-W
 
 The powershell script I came up with isn&#8217;t my most beautiful work, but here it is:
 
-<pre class="wp-block-preformatted">$progress = 1
+ ```
+$progress = 1
 foreach ($monitor in (Get-WmiObject WmiMonitorID -Namespace root\wmi)) {
     Write-Host "Monitor #$($progress):" -ForegroundColor Green
     Write-Host "Manufactur: $(($monitor.ManufacturerName | ForEach-Object {[char]$_}) -join '')"
@@ -29,4 +30,5 @@ foreach ($monitor in (Get-WmiObject WmiMonitorID -Namespace root\wmi)) {
     Write-Host "WeekOfManufacture: $($monitor.WeekOfManufacture)"
     Write-Host "YearOfManufacture: $($monitor.YearOfManufacture)"
     $progress++
-    } </pre>
+    }  
+    ```

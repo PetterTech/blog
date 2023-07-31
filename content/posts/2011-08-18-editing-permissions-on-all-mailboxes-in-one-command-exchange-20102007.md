@@ -18,7 +18,9 @@ If you have some sort of 3rd-party application that needs access to all of your 
 
 Except if you use this nice little powershell command:
 
-<pre>Get-Mailbox -ResultSize unlimited | Add-MailboxPermission -User admin -AccessRights FullAccess -InheritanceType all</pre>
+ ```
+ Get-Mailbox -ResultSize unlimited | Add-MailboxPermission -User admin -AccessRights FullAccess -InheritanceType all 
+ ```
 
 What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.
 
@@ -27,4 +29,6 @@ You can also narrow down the number of mailboxes affected by changing the search
 
 For example if you only want to set SendAs permission on a mailboxes in a specific OU for the user admin:
 
-<pre>get-mailbox -OrganizationalUnit domain.local/ou/Users/ | Add-MailboxPermission -User admin -AccessRights SendAs -InheritanceType all</pre>
+ ```
+ get-mailbox -OrganizationalUnit domain.local/ou/Users/ | Add-MailboxPermission -User admin -AccessRights SendAs -InheritanceType all 
+ ```

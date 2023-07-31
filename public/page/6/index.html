@@ -134,7 +134,7 @@
     <p>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.
 Here’s the script in all its glory:
-You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</p>
+$UI = (Get-Host).UI.RawUI $UI.WindowTitle = &#34;Enable lync user&#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool....</p>
   </div>
   <footer class="entry-footer"><span title='2011-10-12 15:59:45 +0000 +0000'>October 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Simple powershell script for enabling users for Lync" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/"></a>
@@ -150,8 +150,7 @@ You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/script
 Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
 Remember to run Windows update prior to the installation.
 Start powershell as administrator and type:
-First we need to install all of the prerequisites:
-We also need to set the NetTcpPortSharing service to automatic start, the command for this is:...</p>
+import-module servermanager First we need to install all of the prerequisites:...</p>
   </div>
   <footer class="entry-footer"><span title='2011-09-29 06:51:38 +0000 +0000'>September 29, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Install and configure Exchange 2010 using Powershell" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/29/install-and-configure-exchange-2010-using-powershell/"></a>
@@ -191,8 +190,7 @@ I really enjoy working on four monitors and would never go back to working on on
   <div class="entry-content">
     <p>This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
 Anyway, heres my script:
-I guess a little explanation is required.
-The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination....</p>
+robocopy c:users&amp;lt;username&amp;gt; &amp;lt;destination&amp;gt; /MIR /XD templates start-menu &#34;local settings&#34; appdata &#34;internal video&#34; cookies &#34;my music&#34; &#34;my pictures&#34; &#34;my documents&#34; printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&amp;lt;log destination&amp;gt; I guess a little explanation is required....</p>
   </div>
   <footer class="entry-footer"><span title='2011-09-13 13:03:29 +0000 +0000'>September 13, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Robocopy backup script" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/"></a>
@@ -205,7 +203,8 @@ The first part, robocopy c:users tells robocopy what to copy where. /MIR indicat
   </header>
   <div class="entry-content">
     <p>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
-Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</p>
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
+Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept </p>
   </div>
   <footer class="entry-footer"><span title='2011-09-12 12:28:56 +0000 +0000'>September 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Enable Resource Booking Attendant on all Room Mailboxes" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/"></a>

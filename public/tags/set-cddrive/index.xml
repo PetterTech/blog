@@ -15,7 +15,8 @@
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/</guid>
       <description>Easy-peasy and a pretty short post…
 To get all vm’s with iso mounted:
-Then, to dismount those:</description>
+Get-VM | Get-CDDrive | select @{N=&amp;#34;VM&amp;#34;;E=&amp;#34;Parent&amp;#34;},IsoPath | where {$_.IsoPath -ne $null} Then, to dismount those:
+Get-VM | Get-CDDrive | where {$_.IsoPath -ne $null} | Set-CDDrive -NoMedia -Confirm:$False </description>
     </item>
     
   </channel>

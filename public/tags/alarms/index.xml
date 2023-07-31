@@ -15,8 +15,7 @@
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/</guid>
       <description>Next in the series on getting alarms is getting datastore alarms.
 Again, the code is pretty similar:
-And the output is pretty similar:
-The function code is this:</description>
+$Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate $FaultyDatastores = $Datastores | Where-Object {$_.TriggeredAlarmState -ne &amp;#34;{}&amp;#34;} $progress = 1 $report = @() if ($FaultyDatastores -ne $null) { foreach ($FaultyDatastore in $FaultyDatastores) { foreach ($TriggeredAlarm in $FaultyDatastore.TriggeredAlarmstate) { Write-Progress -Activity &amp;#34;Gathering alarms&amp;#34; -Status &amp;#34;Working on $($FaultyDatastore.Name)&amp;#34; -PercentComplete ($progress/$FaultyDatastores.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.Entity.ToString() $alarmID = $TriggeredAlarm.</description>
     </item>
     
     <item>
@@ -27,10 +26,7 @@ The function code is this:</description>
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/</guid>
       <description>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
 Here’s the code:
-And the output will look something like this:
-As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
-Anyways, here’s the function code:
-The output will be the same, but since it’s a function you can manipulate the data further.</description>
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &amp;#34;{}&amp;#34;} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity &amp;#34;Gathering alarms&amp;#34; -Status &amp;#34;Working on $($FaultyCluster.Name)&amp;#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.</description>
     </item>
     
     <item>
@@ -41,8 +37,7 @@ The output will be the same, but since it’s a function you can manipulate the 
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</guid>
       <description>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
-The output will look something like this:
-And here’s the function code:</description>
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &amp;#34;{}&amp;#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost.</description>
     </item>
     
     <item>
@@ -53,7 +48,7 @@ And here’s the function code:</description>
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</guid>
       <description>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 So here’s the the script for retrieving vm alarms:
-This will provide an output like this:</description>
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_.</description>
     </item>
     
   </channel>

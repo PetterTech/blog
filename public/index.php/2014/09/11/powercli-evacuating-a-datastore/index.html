@@ -8,12 +8,11 @@
 <title>PowerCLI: Evacuating a datastore | PetterTech</title>
 <meta name="keywords" content="one-liner, powercli, Powershell, storage vmotion, vmware">
 <meta name="description" content="In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:
-Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.
-The command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)">
+Get-VM -Datastore &#34;datastore1&#34; | Move-VM -Datastore (Get-VMHost -Location &#39;cluster1&#39; | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne &#39;datastore1&#39;) -and ($_.FreeSpaceGB -gt &#39;500&#39;)} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1) Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/11/powercli-evacuating-a-datastore/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -60,8 +59,7 @@ The command will move VMs from datastore1 to the datastore in cluster1 with the 
     </style>
 </noscript><meta property="og:title" content="PowerCLI: Evacuating a datastore" />
 <meta property="og:description" content="In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:
-Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.
-The command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)" />
+Get-VM -Datastore &#34;datastore1&#34; | Move-VM -Datastore (Get-VMHost -Location &#39;cluster1&#39; | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne &#39;datastore1&#39;) -and ($_.FreeSpaceGB -gt &#39;500&#39;)} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1) Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/11/powercli-evacuating-a-datastore/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-09-11T10:54:40+00:00" />
@@ -70,8 +68,7 @@ The command will move VMs from datastore1 to the datastore in cluster1 with the 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PowerCLI: Evacuating a datastore"/>
 <meta name="twitter:description" content="In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:
-Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.
-The command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)"/>
+Get-VM -Datastore &#34;datastore1&#34; | Move-VM -Datastore (Get-VMHost -Location &#39;cluster1&#39; | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne &#39;datastore1&#39;) -and ($_.FreeSpaceGB -gt &#39;500&#39;)} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1) Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available."/>
 
 
 <script type="application/ld+json">
@@ -100,12 +97,12 @@ The command will move VMs from datastore1 to the datastore in cluster1 with the 
   "@type": "BlogPosting",
   "headline": "PowerCLI: Evacuating a datastore",
   "name": "PowerCLI: Evacuating a datastore",
-  "description": "In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:\nWhere “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.\nThe command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)",
+  "description": "In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:\nGet-VM -Datastore \u0026#34;datastore1\u0026#34; | Move-VM -Datastore (Get-VMHost -Location \u0026#39;cluster1\u0026#39; | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne \u0026#39;datastore1\u0026#39;) -and ($_.FreeSpaceGB -gt \u0026#39;500\u0026#39;)} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1) Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.",
   "keywords": [
     "one-liner", "powercli", "Powershell", "storage vmotion", "vmware"
   ],
-  "articleBody": "In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:\nWhere “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.\nThe command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)\n",
-  "wordCount" : "63",
+  "articleBody": "In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:\nGet-VM -Datastore \"datastore1\" | Move-VM -Datastore (Get-VMHost -Location 'cluster1' | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne 'datastore1') -and ($_.FreeSpaceGB -gt '500')} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1) Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.\nThe command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)\n",
+  "wordCount" : "95",
   "inLanguage": "en",
   "datePublished": "2014-09-11T10:54:40Z",
   "dateModified": "2014-09-11T10:54:40Z",
@@ -185,8 +182,8 @@ The command will move VMs from datastore1 to the datastore in cluster1 with the 
 </div>
   </header> 
   <div class="post-content"><p>In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:</p>
-<!-- raw HTML omitted -->
-<p>Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.</p>
+<pre tabindex="0"><code>Get-VM -Datastore &#34;datastore1&#34; | Move-VM -Datastore (Get-VMHost -Location &#39;cluster1&#39; | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne &#39;datastore1&#39;) -and ($_.FreeSpaceGB -gt &#39;500&#39;)} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1) 
+</code></pre><p>Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.</p>
 <p>The command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)</p>
 
 

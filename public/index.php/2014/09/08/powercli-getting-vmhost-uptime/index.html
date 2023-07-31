@@ -8,13 +8,12 @@
 <title>PowerCLI: Getting vmhost uptime | PetterTech</title>
 <meta name="keywords" content="function, get-vmhostuptime, powercli, Powershell, uptime, vmhost, vmware">
 <meta name="description" content="I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
-However, I wasn’t completely satisfied by the the output or the ease of use.
-So today I went back and rewrote the code and made a function of it.
-Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round.">
+Get-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -61,9 +60,8 @@ Instead of using the ToString and Substring methods I went for the built-in clas
     </style>
 </noscript><meta property="og:title" content="PowerCLI: Getting vmhost uptime" />
 <meta property="og:description" content="I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
-However, I wasn’t completely satisfied by the the output or the ease of use.
-So today I went back and rewrote the code and made a function of it.
-Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round." />
+Get-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-09-08T07:26:38+00:00" />
@@ -72,9 +70,8 @@ Instead of using the ToString and Substring methods I went for the built-in clas
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PowerCLI: Getting vmhost uptime"/>
 <meta name="twitter:description" content="I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
-However, I wasn’t completely satisfied by the the output or the ease of use.
-So today I went back and rewrote the code and made a function of it.
-Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round."/>
+Get-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it."/>
 
 
 <script type="application/ld+json">
@@ -103,12 +100,12 @@ Instead of using the ToString and Substring methods I went for the built-in clas
   "@type": "BlogPosting",
   "headline": "PowerCLI: Getting vmhost uptime",
   "name": "PowerCLI: Getting vmhost uptime",
-  "description": "I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:\nHowever, I wasn’t completely satisfied by the the output or the ease of use.\nSo today I went back and rewrote the code and made a function of it.\nInstead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round.",
+  "description": "I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:\nGet-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=\u0026#34;UptimeDays\u0026#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.\nSo today I went back and rewrote the code and made a function of it.",
   "keywords": [
     "function", "get-vmhostuptime", "powercli", "Powershell", "uptime", "vmhost", "vmware"
   ],
-  "articleBody": "I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:\nHowever, I wasn’t completely satisfied by the the output or the ease of use.\nSo today I went back and rewrote the code and made a function of it.\nInstead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round. You can learn more about the Math class here: http://www.madwithpowershell.com/2013/10/math-in-powershell.html\nAnyways, here’s the function I came up with:\nYou can use it in a couple of different ways, as documented in its help section (get-help get-vmhostuptime -expamples). But if you provide no input to it, it will generate an output like this:\nHopefully, you don’t have an uptime as long as some of these hosts 🙂\n",
-  "wordCount" : "145",
+  "articleBody": "I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:\nGet-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=\"UptimeDays\"; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.\nSo today I went back and rewrote the code and made a function of it.\nInstead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round. You can learn more about the Math class here: http://www.madwithpowershell.com/2013/10/math-in-powershell.html\nAnyways, here’s the function I came up with:\nfunction Get-VMHostUptime { [CmdletBinding()] Param ( [Parameter(ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True)][Alias('Name')][string]$VMHosts, [string]$Cluster ) Process{ If ($VMHosts) { foreach ($VMHost in $VMHosts) {Get-View -ViewType hostsystem -Property name,runtime.boottime -Filter @{\"name\" = \"$VMHost\"} | Select-Object Name, @{N=\"UptimeDays\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalDays),1)}}, @{N=\"UptimeHours\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalHours),1)}}, @{N=\"UptimeMinutes\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalMinutes),1)}}} } elseif ($Cluster) { foreach ($VMHost in (Get-VMHost -Location $Cluster)) {Get-View -ViewType hostsystem -Property name,runtime.boottime -Filter @{\"name\" = \"$VMHost\"} | Select-Object Name, @{N=\"UptimeDays\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalDays),1)}}, @{N=\"UptimeHours\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalHours),1)}}, @{N=\"UptimeMinutes\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalMinutes),1)}}} } else { Get-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=\"UptimeDays\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalDays),1)}}, @{N=\"UptimeHours\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalHours),1)}}, @{N=\"UptimeMinutes\"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalMinutes),1)}} } } \u0026lt;# .Synopsis Shows the uptime of VMHosts .Description Calculates the uptime of VMHosts provided, or VMHosts in the cluster provided .Parameter VMHosts The VMHosts you want to get the uptime of. Can be a single host or multiple hosts provided by the pipeline .Example Get-VMHostUptime Shows the uptime of all VMHosts in your vCenter .Example Get-VMHostUptime vmhost1 Shows the uptime of vmhost1 .Example Get-VMHostUptime -cluster cluster1 Shows the uptime of all vmhosts in cluster1 .Example Get-VMHost -location folder1 | Get-VMHostUptime Shows the uptime of VMHosts in folder1 .Link http://cloud.kemta.net #\u003e } You can use it in a couple of different ways, as documented in its help section (get-help get-vmhostuptime -expamples). But if you provide no input to it, it will generate an output like this:\nHopefully, you don’t have an uptime as long as some of these hosts 🙂\n",
+  "wordCount" : "348",
   "inLanguage": "en",
   "datePublished": "2014-09-08T07:26:38Z",
   "dateModified": "2014-09-08T07:26:38Z",
@@ -188,15 +185,55 @@ Instead of using the ToString and Substring methods I went for the built-in clas
 </div>
   </header> 
   <div class="post-content"><p>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>However, I wasn’t completely satisfied by the the output or the ease of use.<br>
+<pre tabindex="0"><code>Get-View  -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}}
+</code></pre><p>However, I wasn’t completely satisfied by the the output or the ease of use.<br>
 So today I went back and rewrote the code and made a function of it.<br>
 Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round. You can learn more about the Math class here: <!-- raw HTML omitted --><a href="http://www.madwithpowershell.com/2013/10/math-in-powershell.html">http://www.madwithpowershell.com/2013/10/math-in-powershell.html</a><!-- raw HTML omitted --></p>
 <p>Anyways, here’s the function I came up with:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>You can use it in a couple of different ways, as documented in its help section (get-help get-vmhostuptime -expamples). But if you provide no input to it, it will generate an output like this:</p>
+<pre tabindex="0"><code>function Get-VMHostUptime
+   {
+       [CmdletBinding()]
+           Param (
+               [Parameter(ValueFromPipeline=$True,ValueFromPipelineByPropertyName=$True)][Alias(&#39;Name&#39;)][string]$VMHosts,
+               [string]$Cluster
+                 )
+   Process{
+        If ($VMHosts) {
+           foreach ($VMHost in $VMHosts) {Get-View  -ViewType hostsystem -Property name,runtime.boottime -Filter @{&#34;name&#34; = &#34;$VMHost&#34;} | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalDays),1)}}, @{N=&#34;UptimeHours&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalHours),1)}}, @{N=&#34;UptimeMinutes&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalMinutes),1)}}}
+           }
+
+        elseif ($Cluster) {
+           foreach ($VMHost in (Get-VMHost -Location $Cluster)) {Get-View  -ViewType hostsystem -Property name,runtime.boottime -Filter @{&#34;name&#34; = &#34;$VMHost&#34;} | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalDays),1)}}, @{N=&#34;UptimeHours&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalHours),1)}}, @{N=&#34;UptimeMinutes&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalMinutes),1)}}}
+           }
+
+        else {
+           Get-View  -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalDays),1)}}, @{N=&#34;UptimeHours&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalHours),1)}}, @{N=&#34;UptimeMinutes&#34;; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalMinutes),1)}}
+           }
+       }
+&amp;lt;#
+.Synopsis
+ Shows the uptime of VMHosts
+.Description
+ Calculates the uptime of VMHosts provided, or VMHosts in the cluster provided
+.Parameter VMHosts
+ The VMHosts you want to get the uptime of. Can be a single host or multiple hosts provided by the pipeline
+.Example
+ Get-VMHostUptime
+ Shows the uptime of all VMHosts in your vCenter
+.Example
+ Get-VMHostUptime vmhost1
+ Shows the uptime of vmhost1
+.Example
+ Get-VMHostUptime -cluster cluster1
+ Shows the uptime of all vmhosts in cluster1
+.Example
+ Get-VMHost -location folder1 | Get-VMHostUptime
+ Shows the uptime of VMHosts in folder1
+.Link
+ http://cloud.kemta.net
+#&gt;
+}
+</code></pre><p>You can use it in a couple of different ways, as documented in its help section (get-help get-vmhostuptime -expamples). But if you provide no input to it, it will generate an output like this:</p>
 <p><a href="http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime.png"><!-- raw HTML omitted --></a></p>
 <p>Hopefully, you don’t have an uptime as long as some of these hosts 🙂</p>
 

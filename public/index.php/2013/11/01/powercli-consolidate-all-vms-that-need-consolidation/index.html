@@ -13,7 +13,7 @@ So here’s the code for a function that will search through the vCentre for VMs
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/11/01/powercli-consolidate-all-vms-that-need-consolidation/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -104,8 +104,8 @@ So here’s the code for a function that will search through the vCentre for VMs
   "keywords": [
     "disk consolidation", "powercli", "Start-Consolidation", "vmware", "vsphere"
   ],
-  "articleBody": "Robert van den Nieuwendijk has a nice post on how to use PowerCLI to find VMs that need consolidation and then how to start consolidation. You can that post here: http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/\nBut, as always, I prefer to make a function of these kind of things. A function is much easier to remember than a bunch of parameters and cmdlets.\nSo here’s the code for a function that will search through the vCentre for VMs that need disk consolidation:\nAny input is much appreciated 🙂\n",
-  "wordCount" : "84",
+  "articleBody": "Robert van den Nieuwendijk has a nice post on how to use PowerCLI to find VMs that need consolidation and then how to start consolidation. You can that post here: http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/\nBut, as always, I prefer to make a function of these kind of things. A function is much easier to remember than a bunch of parameters and cmdlets.\nSo here’s the code for a function that will search through the vCentre for VMs that need disk consolidation:\nfunction Start-Consolidation { [CmdletBinding()] Param ( [string]$Location = '*', [switch]$ListOnly ) $VMs = Get-VM -Location $Location | Where-Object {$_.Extensiondata.Runtime.ConsolidationNeeded} if ($ListOnly) { $VMs } else { $VMs | ForEach-Object { Write-Host \"Starting disk consolidation on $_.Name\" $_.ExtensionData.ConsolidateVMDisks() Write-Host \"Finished disk consolidation on $_.Name\" } } } \u0026lt;# .Synopsis Searches vCentre for VMs in need of disk consolidation and starts disk consolidation .Description This function searches the entire vCentre, or the given folder,datasenter,cluster,vApp or ResourcePool for VMs that is in need of disk consolidation. It will then start disk consolidation on those that need it .Parameter Location If you want to narrow the search to a specific folder,datasenter,cluster,vApp or ResourcePool .Example Start-Consolidation Searches the entire vCentre for VMs that need consolidation and starts consolidating them .Example Start-Consolidation -Location vApp01 Searches through vApp01 for VMs that need consolidation and starts consolidation on them .Link http://cloud.kemta.net #\u003e Any input is much appreciated 🙂\n",
+  "wordCount" : "228",
   "inLanguage": "en",
   "datePublished": "2013-11-01T09:37:48Z",
   "dateModified": "2013-11-01T09:37:48Z",
@@ -187,9 +187,45 @@ So here’s the code for a function that will search through the vCentre for VMs
   <div class="post-content"><p>Robert van den Nieuwendijk has a nice post on how to use PowerCLI to find VMs that need consolidation and then how to start consolidation. You can that post here: <!-- raw HTML omitted --><a href="http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/">http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/</a><!-- raw HTML omitted --></p>
 <p>But, as always, I prefer to make a function of these kind of things. A function is much easier to remember than a bunch of parameters and cmdlets.<br>
 So here’s the code for a function that will search through the vCentre for VMs that need disk consolidation:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Any input is much appreciated 🙂</p>
+<pre tabindex="0"><code>function Start-Consolidation
+{
+   [CmdletBinding()]
+       Param (
+           [string]$Location = &#39;*&#39;,
+           [switch]$ListOnly
+             )
+
+       $VMs = Get-VM -Location $Location | Where-Object {$_.Extensiondata.Runtime.ConsolidationNeeded}
+
+       if ($ListOnly) {
+             $VMs
+             }
+
+       else {
+           $VMs | ForEach-Object {
+               Write-Host &#34;Starting disk consolidation on $_.Name&#34;
+               $_.ExtensionData.ConsolidateVMDisks()
+               Write-Host &#34;Finished disk consolidation on $_.Name&#34;
+                                 }
+             }
+       }
+&amp;lt;#
+.Synopsis
+ Searches vCentre for VMs in need of disk consolidation and starts disk consolidation
+.Description
+ This function searches the entire vCentre, or the given folder,datasenter,cluster,vApp or ResourcePool for VMs that is in need of disk consolidation. It will then start disk consolidation on those that need it
+.Parameter Location
+ If you want to narrow the search to a specific folder,datasenter,cluster,vApp or ResourcePool
+.Example
+ Start-Consolidation
+ Searches the entire vCentre for VMs that need consolidation and starts consolidating them
+.Example
+ Start-Consolidation -Location vApp01
+ Searches through vApp01 for VMs that need consolidation and starts consolidation on them
+.Link
+ http://cloud.kemta.net
+#&gt;
+</code></pre><p>Any input is much appreciated 🙂</p>
 
 
   </div>

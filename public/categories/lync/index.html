@@ -138,7 +138,7 @@ So I have made a function out of it and for the first time (I think) I have even
     <p>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.
 Here’s the script in all its glory:
-You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</p>
+$UI = (Get-Host).UI.RawUI $UI.WindowTitle = &#34;Enable lync user&#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool....</p>
   </div>
   <footer class="entry-footer"><span title='2011-10-12 15:59:45 +0000 +0000'>October 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Simple powershell script for enabling users for Lync" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/"></a>

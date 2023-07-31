@@ -12,7 +12,7 @@ One way to get that overview is by using VAMT (http://technet.microsoft.com/en-u
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/26/powershell-listing-activated-clients-on-kms-server/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ One way to get that overview is by using VAMT (http://technet.microsoft.com/en-u
   "keywords": [
     "get-eventlog", "KMS", "Powershell"
   ],
-  "articleBody": "If you are using a KMS server for activating servers and clients in your environment, you may have noticed that there’s really no obvious way to get a list of all the clients that have been activated by the KMS server.\nOne way to get that overview is by using VAMT (http://technet.microsoft.com/en-us/library/hh824953.aspx), but since that tool is based on pulling info from clients and not from the KMS server it is not suitable for everyone.\nThankfully, there’s PowerShell 🙂\nGetting a list of all activated KMS clients through PowerShell is actually a simple one-liner:\nWhat this does is look through the Key Management Service eventlog, grab only the client name and then remove all duplicates (since a client activates itself at regular intervals, there will be duplicates).\n",
-  "wordCount" : "127",
+  "articleBody": "If you are using a KMS server for activating servers and clients in your environment, you may have noticed that there’s really no obvious way to get a list of all the clients that have been activated by the KMS server.\nOne way to get that overview is by using VAMT (http://technet.microsoft.com/en-us/library/hh824953.aspx), but since that tool is based on pulling info from clients and not from the KMS server it is not suitable for everyone.\nThankfully, there’s PowerShell 🙂\nGetting a list of all activated KMS clients through PowerShell is actually a simple one-liner:\n$(foreach ($entry in (Get-EventLog -Logname \"Key Management Service\")) {$entry.ReplacementStrings[3]}) | sort-object -Unique What this does is look through the Key Management Service eventlog, grab only the client name and then remove all duplicates (since a client activates itself at regular intervals, there will be duplicates).\n",
+  "wordCount" : "139",
   "inLanguage": "en",
   "datePublished": "2014-08-26T07:14:29Z",
   "dateModified": "2014-08-26T07:14:29Z",
@@ -185,8 +185,8 @@ One way to get that overview is by using VAMT (http://technet.microsoft.com/en-u
 <p>One way to get that overview is by using VAMT (<!-- raw HTML omitted --><a href="http://technet.microsoft.com/en-us/library/hh824953.aspx">http://technet.microsoft.com/en-us/library/hh824953.aspx</a><!-- raw HTML omitted -->), but since that tool is based on pulling info from clients and not from the KMS server it is not suitable for everyone.</p>
 <p>Thankfully, there’s PowerShell 🙂<br>
 Getting a list of all activated KMS clients through PowerShell is actually a simple one-liner:</p>
-<!-- raw HTML omitted -->
-<p>What this does is look through the Key Management Service eventlog, grab only the client name and then remove all duplicates (since a client activates itself at regular intervals, there will be duplicates).</p>
+<pre tabindex="0"><code>$(foreach ($entry in (Get-EventLog -Logname &#34;Key Management Service&#34;)) {$entry.ReplacementStrings[3]}) | sort-object -Unique 
+</code></pre><p>What this does is look through the Key Management Service eventlog, grab only the client name and then remove all duplicates (since a client activates itself at regular intervals, there will be duplicates).</p>
 
 
   </div>

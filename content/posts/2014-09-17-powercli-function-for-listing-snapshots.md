@@ -28,7 +28,8 @@ I found that using Get-Snapshot and Get-VIEvent together was the easiest way to 
 
 As usual I created a function for this, Get-Snapshots:
 
-<pre lang="PowerShell">function Get-Snapshots
+ ```
+function Get-Snapshots
 {
             [CmdletBinding()]
             Param (
@@ -72,7 +73,7 @@ As usual I created a function for this, Get-Snapshots:
      #>
 }
 
-</pre>
+ ```
 
 You can run the function as it is, without any parameters, or you can specify which vm you want to get the snapshots of:
 
@@ -84,7 +85,8 @@ As you can see, the output is a list. If you want it to be more readable for hum
 
 If you would rather run this as a script, instead of using the function, here&#8217;s the code for that:
 
-<pre lang="PowerShell">$collection = @()
+ ```
+    $collection = @()
     $snapshots = Get-Snapshot -vm *
 
     $progress = 1
@@ -106,7 +108,7 @@ If you would rather run this as a script, instead of using the function, here&#8
     Write-Progress -Activity "Finding snapshots" -Status "All done" -Completed -Id 1 -ErrorAction SilentlyContinue
     $collection
 
-</pre>
+ ```
 
 The output, $collection, can be piped to Format-Table if you want a nice table of it:
 

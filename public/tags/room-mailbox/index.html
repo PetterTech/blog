@@ -123,7 +123,8 @@
   </header>
   <div class="entry-content">
     <p>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
-Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</p>
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
+Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept </p>
   </div>
   <footer class="entry-footer"><span title='2011-09-12 12:28:56 +0000 +0000'>September 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Enable Resource Booking Attendant on all Room Mailboxes" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/"></a>

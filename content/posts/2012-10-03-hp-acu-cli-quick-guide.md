@@ -27,13 +27,18 @@ The ACU cli can be launched by running C:Program Files (x86)CompaqHpacucliBinhp
 
 The first command you should know about is &#8220;controller all show&#8221;, this will show you all the controllers installed in the server. The output will look something like this:
 
-<pre>=&gt; controller all show</pre>
+ ```
+ =&gt; controller all show 
+ ```
 
-<pre>Smart Array P410i in Slot 0 (Embedded) (sn: 50014380124xxxxx)</pre>
+ ```
+ Smart Array P410i in Slot 0 (Embedded) (sn: 50014380124xxxxx) 
+ ```
 
 This show that my controller is installed in slot 0, to get some more info on this controller I could run &#8220;controller slot=0 show&#8221;, the output should look something like this:
 
-<pre> =&gt; controller slot=0 show
+ ```
+  =&gt; controller slot=0 show
 
 Smart Array P410i in Slot 0 (Embedded)
  Bus Interface: PCI
@@ -66,26 +71,30 @@ Smart Array P410i in Slot 0 (Embedded)
  Cache Backup Power Source: Capacitors
  Battery/Capacitor Count: 1
  Battery/Capacitor Status: OK
- SATA NCQ Supported: True</pre>
+ SATA NCQ Supported: True 
+ ```
 
 On my test server I have already created a mirrored volume on which I have installed Hyper-V. I have only one extra disk, so I cannot show you how to create a fancy raid configuration but nevertheless I will show you how to create an array and a logical disk.
 
 The first thing we need to do is to find any unassigned disk connected to the controller. This is done by running the command &#8220;controller slot=0 physicaldrive allunassigned show&#8221; (replace slot=0 with the slot where your controller is connected). The output will look something like this:
 
-<pre>=&gt; controller slot=0 physicaldrive allunassigned show
+ ```
+ =&gt; controller slot=0 physicaldrive allunassigned show
 
 Smart Array P410i in Slot 0 (Embedded)
 
  unassigned
 
- physicaldrive 1I:1:3 (port 1I:box 1:bay 3, SATA, 500 GB, OK)</pre>
+ physicaldrive 1I:1:3 (port 1I:box 1:bay 3, SATA, 500 GB, OK) 
+```
 
 So here we see that I have one unassigned disk that I can use. Given that I want to use all unassigned disks to create a new logical disk in a new array I can run the command &#8220;controller slot=0 create type=ld drives=allunassigned raid=0&#8221;  
 This will create a new array and a new logical drive that uses all unassigned drives, the raid level is 0 (striping)
 
 Thats basically what you need to do from the acu. But before you can use the disk in Windows you need to initialize it, create a partition and so on, the required steps could be something like this:
 
-<pre>DISKPART&gt; list disk
+ ```
+DISKPART&gt; list disk
 DISKPART&gt; select disk 1
 DISKPART&gt; attributes disk clear readonly
 DISKPART&gt; online disk
@@ -94,6 +103,7 @@ DISKPART&gt; list volume
 DISKPART&gt; select volume 4
 DISKPART&gt; assign letter=e:
 DISKPART&gt; EXIT
-C:UsersAdministrator&gt; format E: /Q</pre>
+C:UsersAdministrator&gt; format E: /Q 
+```
 
 &nbsp;

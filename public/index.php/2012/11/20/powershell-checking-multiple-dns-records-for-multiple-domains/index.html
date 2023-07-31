@@ -9,11 +9,11 @@
 <meta name="keywords" content="dns, Powershell, Resolve-DnsName">
 <meta name="description" content="I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
 First we need to to save our domains in an array:
-Then we send that array into a foreach loop:">
+$domains = @(&#34;domainA.com&#34;, &#34;domainB.com&#34;, &#34;domainC.com&#34;) Then we send that array into a foreach loop:">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -61,7 +61,7 @@ Then we send that array into a foreach loop:">
 </noscript><meta property="og:title" content="Powershell: Checking multiple dns records for multiple domains" />
 <meta property="og:description" content="I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
 First we need to to save our domains in an array:
-Then we send that array into a foreach loop:" />
+$domains = @(&#34;domainA.com&#34;, &#34;domainB.com&#34;, &#34;domainC.com&#34;) Then we send that array into a foreach loop:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2012-11-20T09:25:09+00:00" />
@@ -71,7 +71,7 @@ Then we send that array into a foreach loop:" />
 <meta name="twitter:title" content="Powershell: Checking multiple dns records for multiple domains"/>
 <meta name="twitter:description" content="I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
 First we need to to save our domains in an array:
-Then we send that array into a foreach loop:"/>
+$domains = @(&#34;domainA.com&#34;, &#34;domainB.com&#34;, &#34;domainC.com&#34;) Then we send that array into a foreach loop:"/>
 
 
 <script type="application/ld+json">
@@ -100,12 +100,12 @@ Then we send that array into a foreach loop:"/>
   "@type": "BlogPosting",
   "headline": "Powershell: Checking multiple dns records for multiple domains",
   "name": "Powershell: Checking multiple dns records for multiple domains",
-  "description": "I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:\nFirst we need to to save our domains in an array:\nThen we send that array into a foreach loop:",
+  "description": "I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:\nFirst we need to to save our domains in an array:\n$domains = @(\u0026#34;domainA.com\u0026#34;, \u0026#34;domainB.com\u0026#34;, \u0026#34;domainC.com\u0026#34;) Then we send that array into a foreach loop:",
   "keywords": [
     "dns", "Powershell", "Resolve-DnsName"
   ],
-  "articleBody": "I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:\nFirst we need to to save our domains in an array:\nThen we send that array into a foreach loop:\nYou might notice that I use Google’s public dns servere here, but you can use whatever dns server you want, or just leave the -server part out.\nThe example above is pretty basic and only checks for an A record. In our case we needed to check several SRV records for each of the domains, so I had to extend the script a little. The cmdlet Resolve-DnsName is equivalent to the good ol’ nslookup so it’s quite powerful, given the right swithces.\nHeres the script I ended up with for our case (10 points if you guess what the SRV records are for 🙂 ):\n",
-  "wordCount" : "178",
+  "articleBody": "I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:\nFirst we need to to save our domains in an array:\n$domains = @(\"domainA.com\", \"domainB.com\", \"domainC.com\") Then we send that array into a foreach loop:\nforeach ($element in $domains) { Resolve-DnsName -server 8.8.8.8 record.$($element) } You might notice that I use Google’s public dns servere here, but you can use whatever dns server you want, or just leave the -server part out.\nThe example above is pretty basic and only checks for an A record. In our case we needed to check several SRV records for each of the domains, so I had to extend the script a little. The cmdlet Resolve-DnsName is equivalent to the good ol’ nslookup so it’s quite powerful, given the right swithces.\nHeres the script I ended up with for our case (10 points if you guess what the SRV records are for 🙂 ):\n$domains = @(\"domainA.com\", \"domainB.com\", \"domainC.com\" ) foreach ($element in $domains) { Resolve-DnsName -server 8.8.8.8 -type srv _h323cs._tcp.$($element) Resolve-DnsName -server 8.8.8.8 -type srv _h323ls._udp.$($element) Resolve-DnsName -server 8.8.8.8 -type srv _sip._tcp.$($element) Resolve-DnsName -server 8.8.8.8 -type srv _sips._tcp.$($element) } ",
+  "wordCount" : "229",
   "inLanguage": "en",
   "datePublished": "2012-11-20T09:25:09Z",
   "dateModified": "2012-11-20T09:25:09Z",
@@ -186,16 +186,25 @@ Then we send that array into a foreach loop:"/>
   </header> 
   <div class="post-content"><p>I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:</p>
 <p>First we need to to save our domains in an array:</p>
-<!-- raw HTML omitted -->
-<p>Then we send that array into a foreach loop:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>You might notice that I use Google’s public dns servere here, but you can use whatever dns server you want, or just leave the -server part out.</p>
+<pre tabindex="0"><code>$domains = @(&#34;domainA.com&#34;, &#34;domainB.com&#34;, &#34;domainC.com&#34;)
+</code></pre><p>Then we send that array into a foreach loop:</p>
+<pre tabindex="0"><code>foreach ($element in $domains)
+{
+Resolve-DnsName -server 8.8.8.8 record.$($element)
+} 
+</code></pre><p>You might notice that I use Google’s public dns servere here, but you can use whatever dns server you want, or just leave the -server part out.</p>
 <p>The example above is pretty basic and only checks for an A record. In our case we needed to check several SRV records for each of the domains, so I had to extend the script a little. The cmdlet Resolve-DnsName is equivalent to the good ol’ nslookup so it’s quite powerful, given the right swithces.</p>
 <p>Heres the script I ended up with for our case (10 points if you guess what the SRV records are for 🙂 ):</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre tabindex="0"><code>$domains = @(&#34;domainA.com&#34;, &#34;domainB.com&#34;, &#34;domainC.com&#34; )
 
+foreach ($element in $domains) 
+{
+Resolve-DnsName -server 8.8.8.8 -type srv _h323cs._tcp.$($element)
+Resolve-DnsName -server 8.8.8.8 -type srv _h323ls._udp.$($element)
+Resolve-DnsName -server 8.8.8.8 -type srv _sip._tcp.$($element)
+Resolve-DnsName -server 8.8.8.8 -type srv _sips._tcp.$($element)
+} 
+</code></pre>
 
   </div>
 

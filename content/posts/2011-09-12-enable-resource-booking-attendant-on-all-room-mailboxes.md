@@ -19,4 +19,6 @@ The Resource Booking Attendant should be enabled on all your Room Mailboxes. If 
 
 Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
 
-<pre>Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept</pre>
+ ```
+ Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept 
+ ```

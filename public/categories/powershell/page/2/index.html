@@ -124,8 +124,7 @@
   <div class="entry-content">
     <p>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
-The output will look something like this:
-And here’s the function code:</p>
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-29 07:41:13 +0000 +0000'>August 29, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting host alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/"></a>
@@ -139,7 +138,7 @@ And here’s the function code:</p>
   <div class="entry-content">
     <p>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 So here’s the the script for retrieving vm alarms:
-This will provide an output like this:...</p>
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-28 06:42:12 +0000 +0000'>August 28, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting vm alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/"></a>
@@ -179,7 +178,7 @@ One way to get that overview is by using VAMT (http://technet.microsoft.com/en-u
   <div class="entry-content">
     <p>A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.
 After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
-And sure enough, we were seeing response times in the range of 5-7 seconds....</p>
+Measure-Command {Resolve-DnsName google.com -DnsOnly -Type A -NoHostsFile -server x.x.x.x} And sure enough, we were seeing response times in the range of 5-7 seconds....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-15 08:39:40 +0000 +0000'>August 15, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Powershell: Measuring latency on DNS queries" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/"></a>
@@ -192,7 +191,8 @@ And sure enough, we were seeing response times in the range of 5-7 seconds....</
   </header>
   <div class="entry-content">
     <p>Sometimes it can be useful to know how much space the VMs in a specific folder (or vApp/datacenter) is occupying. For example if you are a hosting provider of some sort and need to know how much space a customer is using.
-It’s a simple one-liner!</p>
+It’s a simple one-liner!
+get-vm -Location &amp;lt;folder&amp;gt; | select name,@{Name=&#34;Size&#34;;Expression={(Get-HardDisk -VM $_.name | Measure-Object CapacityGB -sum).Sum}} </p>
   </div>
   <footer class="entry-footer"><span title='2014-01-29 09:02:28 +0000 +0000'>January 29, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCli: Finding amount of GB used by VMs in a folder/vApp/datacenter" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/29/powercli-finding-amount-of-gb-used-by-vms-in-a-foldervappdatacenter/"></a>
@@ -205,7 +205,7 @@ It’s a simple one-liner!</p>
   </header>
   <div class="entry-content">
     <p>For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
-This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there....</p>
+Write-Progress -Activity &#34;Something&#34; -Status &#34;Something else&#34; -CurrentOperation &#34;thinking&#34; -PercentComplete 30 This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there....</p>
   </div>
   <footer class="entry-footer"><span title='2014-01-15 12:55:36 +0000 +0000'>January 15, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Powershell: Write-Progress, a step-by-step guide" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/"></a>
@@ -232,9 +232,8 @@ So here’s the code for a function that will search through the vCentre for VMs
   </header>
   <div class="entry-content">
     <p>To find out to which vm a MAC address belongs, you can use a simple one-liner:
-(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
-Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
-A basic function doing the same thing can look something like this:...</p>
+Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} (Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one....</p>
   </div>
   <footer class="entry-footer"><span title='2013-10-23 09:50:09 +0000 +0000'>October 23, 2013</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Locate a MAC-address in vCenter" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/"></a>
@@ -248,7 +247,8 @@ A basic function doing the same thing can look something like this:...</p>
   <div class="entry-content">
     <p>Easy-peasy and a pretty short post…
 To get all vm’s with iso mounted:
-Then, to dismount those:</p>
+Get-VM | Get-CDDrive | select @{N=&#34;VM&#34;;E=&#34;Parent&#34;},IsoPath | where {$_.IsoPath -ne $null} Then, to dismount those:
+Get-VM | Get-CDDrive | where {$_.IsoPath -ne $null} | Set-CDDrive -NoMedia -Confirm:$False </p>
   </div>
   <footer class="entry-footer"><span title='2013-10-10 12:46:48 +0000 +0000'>October 10, 2013</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: List all vm&#39;s with ISO mounted and dismount them" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/"></a>

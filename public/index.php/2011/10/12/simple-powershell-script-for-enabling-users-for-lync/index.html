@@ -10,11 +10,11 @@
 <meta name="description" content="I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.
 Here’s the script in all its glory:
-You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1">
+$UI = (Get-Host).UI.RawUI $UI.WindowTitle = &#34;Enable lync user&#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -63,7 +63,7 @@ You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/script
 <meta property="og:description" content="I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.
 Here’s the script in all its glory:
-You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1" />
+$UI = (Get-Host).UI.RawUI $UI.WindowTitle = &#34;Enable lync user&#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2011-10-12T15:59:45+00:00" />
@@ -74,7 +74,7 @@ You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/script
 <meta name="twitter:description" content="I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.
 Here’s the script in all its glory:
-You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1"/>
+$UI = (Get-Host).UI.RawUI $UI.WindowTitle = &#34;Enable lync user&#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool."/>
 
 
 <script type="application/ld+json">
@@ -103,12 +103,12 @@ You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/script
   "@type": "BlogPosting",
   "headline": "Simple powershell script for enabling users for Lync",
   "name": "Simple powershell script for enabling users for Lync",
-  "description": "I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.\nIf you only have one sipdomain you can change the script so that it doesn’t ask for it.\nHere’s the script in all its glory:\nYou can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1",
+  "description": "I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.\nIf you only have one sipdomain you can change the script so that it doesn’t ask for it.\nHere’s the script in all its glory:\n$UI = (Get-Host).UI.RawUI $UI.WindowTitle = \u0026#34;Enable lync user\u0026#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool.",
   "keywords": [
     "Lync", "microsoft", "Powershell"
   ],
-  "articleBody": "I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.\nIf you only have one sipdomain you can change the script so that it doesn’t ask for it.\nHere’s the script in all its glory:\nYou can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1\n",
-  "wordCount" : "66",
+  "articleBody": "I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.\nIf you only have one sipdomain you can change the script so that it doesn’t ask for it.\nHere’s the script in all its glory:\n$UI = (Get-Host).UI.RawUI $UI.WindowTitle = \"Enable lync user\" Import-Module Lync #Setting some variables $registrarpool = lyncpool.test.local $csdialplan = DialPlanSIPtrunk $csvoicepolicy = \"SIP Trunk Service\" $csconferencingpolicy = Conference #Ask for the rest of the information $name = Read-Host \"Who do you want to Lync enable?\" $sipdomain = Read-Host \"Enter SIP domain\" $lineuri = Read-Host \"Enter line uri\" Write-Host \"Working...\" #Enabling the user for Lync enable-csuser -identity $name -RegistrarPool $registrarpool -SipAddressType UserPrincipalName -SipDomain $sipdomain #Sleep for a few seconds (otherwise the next command might fail) Start-Sleep -s 3 #Setting settings on the user set-csuser -identity $name -EnterpriseVoiceEnabled $True -LineUri $lineuri Grant-CsDialPlan –Identity $name -PolicyName $csdialplan Grant-CsVoicePolicy –Identity $name –PolicyName $csvoicepolicy Grant-CsConferencingPolicy -identity $name -PolicyName $csconferencingpolicy #Show the result get-csuser -identity $name Write-Host \"Press any key to quit\" cmd /c pause | out-null You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1\n",
+  "wordCount" : "196",
   "inLanguage": "en",
   "datePublished": "2011-10-12T15:59:45Z",
   "dateModified": "2011-10-12T15:59:45Z",
@@ -190,9 +190,42 @@ You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/script
   <div class="post-content"><p>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.<br>
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.</p>
 <p>Here’s the script in all its glory:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>You can also download it here:  <!-- raw HTML omitted --><a href="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1">http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</a><!-- raw HTML omitted --></p>
+<pre tabindex="0"><code>$UI = (Get-Host).UI.RawUI
+$UI.WindowTitle = &#34;Enable lync user&#34;
+Import-Module Lync
+
+#Setting some variables
+$registrarpool = lyncpool.test.local
+$csdialplan = DialPlanSIPtrunk
+$csvoicepolicy = &#34;SIP Trunk Service&#34;
+$csconferencingpolicy = Conference
+
+#Ask for the rest of the information
+$name = Read-Host &#34;Who do you want to Lync enable?&#34;
+$sipdomain = Read-Host &#34;Enter SIP domain&#34;
+$lineuri = Read-Host &#34;Enter line uri&#34;
+
+Write-Host &#34;Working...&#34;
+
+#Enabling the user for Lync
+enable-csuser -identity $name -RegistrarPool $registrarpool -SipAddressType UserPrincipalName -SipDomain $sipdomain
+
+#Sleep for a few seconds (otherwise the next command might fail)
+Start-Sleep -s 3
+
+#Setting settings on the user
+set-csuser -identity $name -EnterpriseVoiceEnabled $True -LineUri $lineuri
+Grant-CsDialPlan –Identity $name -PolicyName $csdialplan
+Grant-CsVoicePolicy –Identity $name –PolicyName $csvoicepolicy
+Grant-CsConferencingPolicy -identity $name -PolicyName $csconferencingpolicy
+
+#Show the result
+get-csuser -identity $name
+
+Write-Host &#34;Press any key to quit&#34;
+
+cmd /c pause | out-null 
+</code></pre><p>You can also download it here:  <!-- raw HTML omitted --><a href="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1">http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</a><!-- raw HTML omitted --></p>
 
 
   </div>

@@ -9,11 +9,11 @@
 <meta name="keywords" content="alarms, function, get-vmalarms, powercli, Powershell, vmware">
 <meta name="description" content="A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 So here’s the the script for retrieving vm alarms:
-This will provide an output like this:">
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -61,7 +61,7 @@ This will provide an output like this:">
 </noscript><meta property="og:title" content="PowerCLI: Getting vm alarms" />
 <meta property="og:description" content="A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 So here’s the the script for retrieving vm alarms:
-This will provide an output like this:" />
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-08-28T06:42:12+00:00" />
@@ -71,7 +71,7 @@ This will provide an output like this:" />
 <meta name="twitter:title" content="PowerCLI: Getting vm alarms"/>
 <meta name="twitter:description" content="A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 So here’s the the script for retrieving vm alarms:
-This will provide an output like this:"/>
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_."/>
 
 
 <script type="application/ld+json">
@@ -100,12 +100,12 @@ This will provide an output like this:"/>
   "@type": "BlogPosting",
   "headline": "PowerCLI: Getting vm alarms",
   "name": "PowerCLI: Getting vm alarms",
-  "description": "A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.\nSo here’s the the script for retrieving vm alarms:\nThis will provide an output like this:",
+  "description": "A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.\nSo here’s the the script for retrieving vm alarms:\n$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_.",
   "keywords": [
     "alarms", "function", "get-vmalarms", "powercli", "Powershell", "vmware"
   ],
-  "articleBody": "A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.\nSo here’s the the script for retrieving vm alarms:\nThis will provide an output like this:\nBut, as always, to make it easier for my colleagues to use I make a function out of it:\nBeside the fact that a function is easier to use, it also makes it easier to manipulate the data further. For example if you only want alarms for vm whose name start with “smart”:\n",
-  "wordCount" : "127",
+  "articleBody": "A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.\nSo here’s the the script for retrieving vm alarms:\n$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_.OverallStatus -ne \"Green\"} $progress = 1 $report = @() if ($FaultyVMs -ne $null) { foreach ($FaultyVM in $FaultyVMs) { foreach ($TriggeredAlarm in $FaultyVM.TriggeredAlarmstate) { Write-Progress -Activity \"Gathering alarms\" -Status \"Working on $($FaultyVM.Name)\" -PercentComplete ($progress/$FaultyVMs.count*100) -Id 1 -ErrorAction SilentlyContinue $alarmID = $TriggeredAlarm.Alarm.ToString() $object = New-Object PSObject Add-Member -InputObject $object NoteProperty VM $FaultyVM.Name Add-Member -InputObject $object NoteProperty TriggeredAlarms (\"$(Get-AlarmDefinition -Id $alarmID)\") $report += $object } $progress++ } } Write-Progress -Activity \"Gathering VM alarms\" -Status \"All done\" -Completed -Id 1 -ErrorAction SilentlyContinue $report | Where-Object {$_.TriggeredAlarms -ne \"\"} This will provide an output like this:\nBut, as always, to make it easier for my colleagues to use I make a function out of it:\nfunction Get-VMAlarms { $VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_.OverallStatus -ne \"Green\"} $progress = 1 $report = @() if ($FaultyVMs -ne $null) { foreach ($FaultyVM in $FaultyVMs) { foreach ($TriggeredAlarm in $FaultyVM.TriggeredAlarmstate) { Write-Progress -Activity \"Gathering alarms\" -Status \"Working on $($FaultyVM.Name)\" -PercentComplete ($progress/$FaultyVMs.count*100) -Id 1 -ErrorAction SilentlyContinue $alarmID = $TriggeredAlarm.Alarm.ToString() $object = New-Object PSObject Add-Member -InputObject $object NoteProperty VM $FaultyVM.Name Add-Member -InputObject $object NoteProperty TriggeredAlarms (\"$(Get-AlarmDefinition -Id $alarmID)\") $report += $object } $progress++ } } Write-Progress -Activity \"Gathering VM alarms\" -Status \"All done\" -Completed -Id 1 -ErrorAction SilentlyContinue $report | Where-Object {$_.TriggeredAlarms -ne \"\"} \u0026lt;# .Synopsis Lists all triggered VM alarms that haven't been acknowledged .Description Outputs a list of VMs and the unacknowledged alarms they have triggered .Example Get-VMAlarms Outputs a list of VMs and the unacknowledged alarms they have triggered .Link http://cloud.kemta.net #\u003e } Beside the fact that a function is easier to use, it also makes it easier to manipulate the data further. For example if you only want alarms for vm whose name start with “smart”:\n",
+  "wordCount" : "366",
   "inLanguage": "en",
   "datePublished": "2014-08-28T06:42:12Z",
   "dateModified": "2014-08-28T06:42:12Z",
@@ -186,14 +186,67 @@ This will provide an output like this:"/>
   </header> 
   <div class="post-content"><p>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.</p>
 <p>So here’s the the script for retrieving vm alarms:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>This will provide an output like this:</p>
+<pre tabindex="0"><code>$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate
+$FaultyVMs = $VMs | Where-Object {$_.OverallStatus -ne &#34;Green&#34;}
+
+$progress = 1
+$report = @()
+if ($FaultyVMs -ne $null) {
+   foreach ($FaultyVM in $FaultyVMs) {
+           foreach ($TriggeredAlarm in $FaultyVM.TriggeredAlarmstate) {
+               Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyVM.Name)&#34; -PercentComplete ($progress/$FaultyVMs.count*100) -Id 1 -ErrorAction SilentlyContinue
+               $alarmID = $TriggeredAlarm.Alarm.ToString()
+               $object = New-Object PSObject
+               Add-Member -InputObject $object NoteProperty VM $FaultyVM.Name
+               Add-Member -InputObject $object NoteProperty TriggeredAlarms (&#34;$(Get-AlarmDefinition -Id $alarmID)&#34;)
+               $report += $object
+           }
+       $progress++
+       }
+   }
+Write-Progress -Activity &#34;Gathering VM alarms&#34; -Status &#34;All done&#34; -Completed -Id 1 -ErrorAction SilentlyContinue
+
+$report | Where-Object {$_.TriggeredAlarms -ne &#34;&#34;} 
+</code></pre><p>This will provide an output like this:</p>
 <p><a href="http://cloud.kemta.net/wp-uploads/get-vmalarms.png"><!-- raw HTML omitted --></a></p>
 <p>But, as always, to make it easier for my colleagues to use I make a function out of it:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Beside the fact that a function is easier to use, it also makes it easier to manipulate the data further. For example if you only want alarms for vm whose name start with “smart”:</p>
+<pre tabindex="0"><code>function Get-VMAlarms
+{
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate
+$FaultyVMs = $VMs | Where-Object {$_.OverallStatus -ne &#34;Green&#34;}
+
+$progress = 1
+$report = @()
+if ($FaultyVMs -ne $null) {
+   foreach ($FaultyVM in $FaultyVMs) {
+           foreach ($TriggeredAlarm in $FaultyVM.TriggeredAlarmstate) {
+               Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyVM.Name)&#34; -PercentComplete ($progress/$FaultyVMs.count*100) -Id 1 -ErrorAction SilentlyContinue
+               $alarmID = $TriggeredAlarm.Alarm.ToString()
+               $object = New-Object PSObject
+               Add-Member -InputObject $object NoteProperty VM $FaultyVM.Name
+               Add-Member -InputObject $object NoteProperty TriggeredAlarms (&#34;$(Get-AlarmDefinition -Id $alarmID)&#34;)
+               $report += $object
+           }
+       $progress++
+       }
+   }
+Write-Progress -Activity &#34;Gathering VM alarms&#34; -Status &#34;All done&#34; -Completed -Id 1 -ErrorAction SilentlyContinue
+
+$report | Where-Object {$_.TriggeredAlarms -ne &#34;&#34;}
+
+&amp;lt;#
+.Synopsis
+ Lists all triggered VM alarms that haven&#39;t been acknowledged
+.Description
+ Outputs a list of VMs and the unacknowledged alarms they have triggered
+.Example
+ Get-VMAlarms
+ Outputs a list of VMs and the unacknowledged alarms they have triggered
+.Link
+ http://cloud.kemta.net
+#&gt;
+} 
+</code></pre><p>Beside the fact that a function is easier to use, it also makes it easier to manipulate the data further. For example if you only want alarms for vm whose name start with “smart”:</p>
 <p><a href="http://cloud.kemta.net/wp-uploads/get-vmalarms_filter.png"><!-- raw HTML omitted --></a></p>
 
 

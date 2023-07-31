@@ -16,7 +16,7 @@ wp-syntax-cache-content:
      <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;body<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
      You are now beeing forwarded to <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;a</span> <span style="color: #000066;">href</span>=<span style="color: #ff0000;">&quot;https://some.domain&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>https://some.domain&gt;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/a<span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #000000; font-weight: bold;">&lt;br<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
      If you are not forwarded automatically, click the above link.
-    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/body<span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #000000; font-weight: bold;">&lt;/html<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre></td></tr></table><p class="theCode" style="display:none;">&lt;html&gt;
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/body<span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #000000; font-weight: bold;">&lt;/html<span style="color: #000000; font-weight: bold;">&gt;</span></span></span> ```</td></tr></table><p class="theCode" style="display:none;">&lt;html&gt;
     &lt;head&gt;
      &lt;title&gt;Some title&lt;/title&gt;
      &lt;META HTTP-EQUIV=&quot;Refresh&quot;
@@ -41,7 +41,7 @@ Because of that I have used this simple html code for redirecting, instead of us
 
 Use it at your own will, I&#8217;m just posting it so I know where to find it the next time I need it 🙂
 
-<pre lang="xml">
+```
 
 
 <head>
@@ -57,4 +57,5 @@ Use it at your own will, I&#8217;m just posting it so I know where to find it th
     
      You are now beeing forwarded to <a href="https://some.domain">https://some.domain></a><br />
      If you are not forwarded automatically, click the above link.
-    </html></pre>
+    </html> 
+```

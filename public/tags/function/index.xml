@@ -36,9 +36,8 @@ When writing this post I checked the differences in speed when using the old way
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/</guid>
       <description>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
-However, I wasn’t completely satisfied by the the output or the ease of use.
-So today I went back and rewrote the code and made a function of it.
-Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round.</description>
+Get-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&amp;#34;UptimeDays&amp;#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it.</description>
     </item>
     
     <item>
@@ -59,8 +58,7 @@ However, I haven’t found a good way to get a neat list of which VMs need to ha
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/</guid>
       <description>Next in the series on getting alarms is getting datastore alarms.
 Again, the code is pretty similar:
-And the output is pretty similar:
-The function code is this:</description>
+$Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate $FaultyDatastores = $Datastores | Where-Object {$_.TriggeredAlarmState -ne &amp;#34;{}&amp;#34;} $progress = 1 $report = @() if ($FaultyDatastores -ne $null) { foreach ($FaultyDatastore in $FaultyDatastores) { foreach ($TriggeredAlarm in $FaultyDatastore.TriggeredAlarmstate) { Write-Progress -Activity &amp;#34;Gathering alarms&amp;#34; -Status &amp;#34;Working on $($FaultyDatastore.Name)&amp;#34; -PercentComplete ($progress/$FaultyDatastores.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.Entity.ToString() $alarmID = $TriggeredAlarm.</description>
     </item>
     
     <item>
@@ -71,10 +69,7 @@ The function code is this:</description>
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/</guid>
       <description>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
 Here’s the code:
-And the output will look something like this:
-As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
-Anyways, here’s the function code:
-The output will be the same, but since it’s a function you can manipulate the data further.</description>
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &amp;#34;{}&amp;#34;} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity &amp;#34;Gathering alarms&amp;#34; -Status &amp;#34;Working on $($FaultyCluster.Name)&amp;#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm.</description>
     </item>
     
     <item>
@@ -85,8 +80,7 @@ The output will be the same, but since it’s a function you can manipulate the 
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</guid>
       <description>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
-The output will look something like this:
-And here’s the function code:</description>
+$VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne &amp;#34;{}&amp;#34;} $progress = 1 $report = @() if ($FaultyVMHosts -ne $null) { foreach ($FaultyVMHost in $FaultyVMHosts) { foreach ($TriggeredAlarm in $FaultyVMHost.</description>
     </item>
     
     <item>
@@ -97,7 +91,7 @@ And here’s the function code:</description>
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</guid>
       <description>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 So here’s the the script for retrieving vm alarms:
-This will provide an output like this:</description>
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate $FaultyVMs = $VMs | Where-Object {$_.</description>
     </item>
     
     <item>
@@ -108,7 +102,7 @@ This will provide an output like this:</description>
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/</guid>
       <description>A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.
 After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
-And sure enough, we were seeing response times in the range of 5-7 seconds.</description>
+Measure-Command {Resolve-DnsName google.com -DnsOnly -Type A -NoHostsFile -server x.x.x.x} And sure enough, we were seeing response times in the range of 5-7 seconds.</description>
     </item>
     
     <item>
@@ -118,9 +112,8 @@ And sure enough, we were seeing response times in the range of 5-7 seconds.</des
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/</guid>
       <description>To find out to which vm a MAC address belongs, you can use a simple one-liner:
-(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
-Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
-A basic function doing the same thing can look something like this:</description>
+Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} (Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.</description>
     </item>
     
     <item>
@@ -160,7 +153,7 @@ After he confirmed that the script worked as planned I decided to make a functio
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/motivational-powershell-function/</guid>
       <description>If you are ever in need of some motivation, here is a very simple Powershell function for that:
-Now all you need to do is write Motivate-Me in the powershell window to receive some inspirational words 🙂</description>
+function Motivate-Me { $motivator = Get-Random -Minimum 1 -Maximum 5 if ($motivator -eq 1) {Write-Host &amp;#34;You are a Powershell God!&amp;#34;} if ($motivator -eq 2) {Write-Host &amp;#34;You rule dude!&amp;#34;} if ($motivator -eq 3) {Write-Host &amp;#34;I wish I could errorhandle like you&amp;#34;} if ($motivator -eq 4) {Write-Host &amp;#34;I am nothing compared to you&amp;#34;} if ($motivator -eq 5) {Write-Host &amp;#34;Are you sure you intirely human?</description>
     </item>
     
     <item>
@@ -195,7 +188,7 @@ So here’s what I came up with:</description>
       <description>Yesterday I was given a relatively easy task: find out who or what has a given email address.
 As this was within our own Exchange organization it proved to be quite simple:
 You can achieve the goal with a simple one-liner:
-But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:</description>
+get-recipient -ResultSize unlimited | where {$_.emailaddresses -match &amp;#34;email@address.com&amp;#34;} But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:</description>
     </item>
     
     <item>

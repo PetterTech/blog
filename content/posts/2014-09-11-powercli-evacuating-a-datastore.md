@@ -18,7 +18,9 @@ tags:
 ---
 In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:
 
-<pre>Get-VM -Datastore "datastore1" | Move-VM -Datastore (Get-VMHost -Location 'cluster1' | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne 'datastore1') -and ($_.FreeSpaceGB -gt '500')} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1)</pre>
+ ```
+ Get-VM -Datastore "datastore1" | Move-VM -Datastore (Get-VMHost -Location 'cluster1' | Select-Object -First 1 | Get-Datastore | Where-Object {($_.Name -ne 'datastore1') -and ($_.FreeSpaceGB -gt '500')} | Sort-Object FreeSpaceGB -Descending | Select-Object -First 1) 
+ ```
 
 Where &#8220;datastore1&#8221; is the datastore you want to empty out and &#8220;cluster1&#8221; is the cluster where the datastore is available.
 

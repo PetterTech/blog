@@ -158,7 +158,7 @@ Activate Database Copy…...</p>
     <p>Yesterday I was given a relatively easy task: find out who or what has a given email address.
 As this was within our own Exchange organization it proved to be quite simple:
 You can achieve the goal with a simple one-liner:
-But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
+get-recipient -ResultSize unlimited | where {$_.emailaddresses -match &#34;email@address.com&#34;} But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
   </div>
   <footer class="entry-footer"><span title='2012-08-28 10:41:15 +0000 +0000'>August 28, 2012</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Function for locating an email address" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/"></a>
@@ -202,8 +202,7 @@ Creates OUs Creates users Creates security groups Creates distribution groups Cr
 Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
 Remember to run Windows update prior to the installation.
 Start powershell as administrator and type:
-First we need to install all of the prerequisites:
-We also need to set the NetTcpPortSharing service to automatic start, the command for this is:...</p>
+import-module servermanager First we need to install all of the prerequisites:...</p>
   </div>
   <footer class="entry-footer"><span title='2011-09-29 06:51:38 +0000 +0000'>September 29, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Install and configure Exchange 2010 using Powershell" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/29/install-and-configure-exchange-2010-using-powershell/"></a>
@@ -216,7 +215,8 @@ We also need to set the NetTcpPortSharing service to automatic start, the comman
   </header>
   <div class="entry-content">
     <p>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
-Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</p>
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
+Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept </p>
   </div>
   <footer class="entry-footer"><span title='2011-09-12 12:28:56 +0000 +0000'>September 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Enable Resource Booking Attendant on all Room Mailboxes" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/"></a>
@@ -230,8 +230,7 @@ Heres a powershell command to enable it on all the Room Mailboxes in an exchange
   <div class="entry-content">
     <p>If you have some sort of 3rd-party application that needs access to all of your mailboxes, it can be a pain to set the permissions on all of your mailboxes.
 Except if you use this nice little powershell command:
-What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.
-You can of course change the -AccessRights setting to your liking, e....</p>
+Get-Mailbox -ResultSize unlimited | Add-MailboxPermission -User admin -AccessRights FullAccess -InheritanceType all What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin....</p>
   </div>
   <footer class="entry-footer"><span title='2011-08-18 07:44:23 +0000 +0000'>August 18, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Editing permissions on all mailboxes in one command, Exchange 2010/2007" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/18/editing-permissions-on-all-mailboxes-in-one-command-exchange-20102007/"></a>

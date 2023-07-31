@@ -39,7 +39,7 @@ wp-syntax-cache-content:
      .Link
      http://cloud.kemta.net
      #&gt;</span>
-     <span style="color: #000000;">&#125;</span></pre></td></tr></table><p class="theCode" style="display:none;">function Show-Debug
+     <span style="color: #000000;">&#125;</span> ```</td></tr></table><p class="theCode" style="display:none;">function Show-Debug
      {
      Param(
      [switch]$KeepTempFile
@@ -93,7 +93,8 @@ If the KeepTempFile parameter is used the temp file is saved in the users profil
 
 Heres the code:
 
-<pre lang="Powershell">function Show-Debug
+```
+function Show-Debug
  {
  Param(
  [switch]$KeepTempFile
@@ -125,4 +126,5 @@ Heres the code:
  .Link
  http://cloud.kemta.net
  #>
- }</pre>
+ } 
+```

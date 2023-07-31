@@ -21,7 +21,8 @@ The next step in my short series on getting vCenter alarms using PowerCLI is to 
 
 Here&#8217;s the code:
 
-<pre lang="PowerShell">$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate
+ ```
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne "{}"}
 $report = @()
 $progress = 1
@@ -54,7 +55,8 @@ if ($FaultyClusters -ne $NULL) {
         }
     }
 Write-Progress -Activity "Gathering alarms" -Status "All done" -Completed -Id 1 -ErrorAction SilentlyContinue
-$report | Where-Object {$_.TriggeredAlarms -ne ""}</pre>
+$report | Where-Object {$_.TriggeredAlarms -ne ""}
+```
 
 And the output will look something like this:
 
@@ -64,7 +66,8 @@ As you can see, this will also list vm alarms and host alarms. So you could argu
 
 Anyways, here&#8217;s the function code:
 
-<pre lang="PowerShell">function Get-ClusterAlarms
+ ```
+function Get-ClusterAlarms
 {
 $Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne "{}"}
@@ -112,7 +115,8 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
  .Link
   http://cloud.kemta.net
  #>
-}</pre>
+} 
+```
 
 The output will be the same, but since it&#8217;s a function you can manipulate the data further. For example if you only want alarms related to the clusters themselves:
 

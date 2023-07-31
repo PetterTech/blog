@@ -19,7 +19,9 @@ tags:
 ---
 To find out to which vm a MAC address belongs, you can use a simple one-liner:
 
-<pre lang="Powershell">Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”}</pre>
+ ```
+Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} 
+```
 
 (Courtesy of this page: <a href="http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/" target="_blank" rel="noopener">http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/</a> )
 
@@ -27,16 +29,19 @@ Thats really great, and you can easily extend the one-liner to include more data
 
 A basic function doing the same thing can look something like this:
 
-<pre lang="Powershell">function Get-MACAddress ($MAC)
+ ```
+function Get-MACAddress ($MAC)
  {
  Get-vm | Select Name,Folder,PowerState, @{N="Network";E={$_ | Get-networkAdapter | ? {$_.macaddress -eq $MAC}}} | Where {$_.Network-ne ""}
- }</pre>
+ } 
+```
 
 That way, it enough to type Get-MACAddress 00:50:56:A1:50:43
 
 Or, you can take the time to create a proper function:
 
-<pre lang="Powershell">function Get-MACAddress
+ ```
+function Get-MACAddress
 {
  [CmdletBinding()]
  Param (
@@ -62,7 +67,8 @@ Or, you can take the time to create a proper function:
  .Link
  http://cloud.kemta.net
  #>
-}</pre>
+} 
+```
 
 This more advanced function will allow you to narrow the search, it will check that the mac address you type is the correct length and it provides a little help section that you can call with get-help get-macaddress.
 

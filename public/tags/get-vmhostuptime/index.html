@@ -123,9 +123,8 @@
   </header>
   <div class="entry-content">
     <p>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
-However, I wasn’t completely satisfied by the the output or the ease of use.
-So today I went back and rewrote the code and made a function of it.
-Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round....</p>
+Get-View -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N=&#34;UptimeDays&#34;; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}} However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it....</p>
   </div>
   <footer class="entry-footer"><span title='2014-09-08 07:26:38 +0000 +0000'>September 8, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting vmhost uptime" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/"></a>

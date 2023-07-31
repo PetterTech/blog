@@ -27,7 +27,8 @@ The script I wrote will loop through all esx hosts and if the custom rule doesn&
 
 Here&#8217;s the script:
 
-<pre>$progress = 1
+ ```
+$progress = 1
 $esxList = Get-View -ViewType hostsystem -Property name | Sort-Object name
 
 foreach ($esx in $esxList) {
@@ -64,4 +65,5 @@ else {
  }
 
  $progress++
- }</pre>
+ } 
+ ```

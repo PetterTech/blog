@@ -11,12 +11,11 @@
 Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
 Remember to run Windows update prior to the installation.
 Start powershell as administrator and type:
-First we need to install all of the prerequisites:
-We also need to set the NetTcpPortSharing service to automatic start, the command for this is:">
+import-module servermanager First we need to install all of the prerequisites:">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/29/install-and-configure-exchange-2010-using-powershell/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -66,8 +65,7 @@ We also need to set the NetTcpPortSharing service to automatic start, the comman
 Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
 Remember to run Windows update prior to the installation.
 Start powershell as administrator and type:
-First we need to install all of the prerequisites:
-We also need to set the NetTcpPortSharing service to automatic start, the command for this is:" />
+import-module servermanager First we need to install all of the prerequisites:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/29/install-and-configure-exchange-2010-using-powershell/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2011-09-29T06:51:38+00:00" />
@@ -79,8 +77,7 @@ We also need to set the NetTcpPortSharing service to automatic start, the comman
 Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
 Remember to run Windows update prior to the installation.
 Start powershell as administrator and type:
-First we need to install all of the prerequisites:
-We also need to set the NetTcpPortSharing service to automatic start, the command for this is:"/>
+import-module servermanager First we need to install all of the prerequisites:"/>
 
 
 <script type="application/ld+json">
@@ -109,12 +106,12 @@ We also need to set the NetTcpPortSharing service to automatic start, the comman
   "@type": "BlogPosting",
   "headline": "Install and configure Exchange 2010 using Powershell",
   "name": "Install and configure Exchange 2010 using Powershell",
-  "description": "In this guide I will show you how to install and configure a simple Exchange 2010 environment using no gui at all.\nInstalling exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.\nRemember to run Windows update prior to the installation.\nStart powershell as administrator and type:\nFirst we need to install all of the prerequisites:\nWe also need to set the NetTcpPortSharing service to automatic start, the command for this is:",
+  "description": "In this guide I will show you how to install and configure a simple Exchange 2010 environment using no gui at all.\nInstalling exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.\nRemember to run Windows update prior to the installation.\nStart powershell as administrator and type:\nimport-module servermanager First we need to install all of the prerequisites:",
   "keywords": [
     "Exchange", "microsoft", "Powershell"
   ],
-  "articleBody": "In this guide I will show you how to install and configure a simple Exchange 2010 environment using no gui at all.\nInstalling exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.\nRemember to run Windows update prior to the installation.\nStart powershell as administrator and type:\nFirst we need to install all of the prerequisites:\nWe also need to set the NetTcpPortSharing service to automatic start, the command for this is:\nIf you already haven’t you need to raise the forest functional level to at least Windows Server 2003 native.\nBefore you start to install Exchange you need to prepare your Schema. If you are installing exchange on a domain controller, all you need to do is navigate to the exchange installation media and run this command:\nPS: You probably want to change /OrganizationName to something better 🙂\nIf your soon-to-be exchange server isn’t a domain controller you have to choices:\nCopy the exchange installation files to a domain controller and run the above command Install RSAT for ActiveDirectory on your soon-to-be exchange server If you are going for the lather you need to run the following commands to install RSAT:\nReboot your server and run the following command to prepare the schema:\nAfter the schema is updated you can install exchange 2010, the command for installing the hub, cas and mailbox role is:\nThere you go! Exchange should now be successfully installed.\nHowever, there is still a few things you should configure. You can perform these next tasks by starting the Exchange Management Shell or by adding the pssnapin for exchange using this command:\nThen you can create these things:\nA new Accepted domain:\nA send connector:\nMaybe some email address policies:\nThat should just about do it! Your Exchange server should now be fully functioning!\nThere is no users, distribution groups and such, but you can use these cmdlets to create them:\n",
-  "wordCount" : "327",
+  "articleBody": "In this guide I will show you how to install and configure a simple Exchange 2010 environment using no gui at all.\nInstalling exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.\nRemember to run Windows update prior to the installation.\nStart powershell as administrator and type:\nimport-module servermanager First we need to install all of the prerequisites:\nAdd-WindowsFeature Web-Metabase, Web-Lgcy-Mgmt-Console, Web-Server, Web-ISAPI-Ext, Web-Metabase, Web-Lgcy-Mgmt-Console, Web-Basic-Auth, Web-ASP, Web-Digest-Auth, Web-Windows-Auth, Web-Dyn-Compression, Web-Net-Ext, RPC-over-HTTP-proxy, AS-NET-Framework, NET-HTTP-Activation We also need to set the NetTcpPortSharing service to automatic start, the command for this is:\nSet-service NetTcpPortSharing -startuptype automatic If you already haven’t you need to raise the forest functional level to at least Windows Server 2003 native.\nBefore you start to install Exchange you need to prepare your Schema. If you are installing exchange on a domain controller, all you need to do is navigate to the exchange installation media and run this command:\n.setup /PrepareAD /OrganizationName:Kemta PS: You probably want to change /OrganizationName to something better 🙂\nIf your soon-to-be exchange server isn’t a domain controller you have to choices:\nCopy the exchange installation files to a domain controller and run the above command Install RSAT for ActiveDirectory on your soon-to-be exchange server If you are going for the lather you need to run the following commands to install RSAT:\nImport-Module ServerManager Add-WindowsFeature RSAT-ADDS Reboot your server and run the following command to prepare the schema:\n.setup /PrepareAD /OrganizationName:Kemta After the schema is updated you can install exchange 2010, the command for installing the hub, cas and mailbox role is:\n.setup.com /mode:install /roles:mb,ht,ca There you go! Exchange should now be successfully installed.\nHowever, there is still a few things you should configure. You can perform these next tasks by starting the Exchange Management Shell or by adding the pssnapin for exchange using this command:\nAdd-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010 Then you can create these things:\nA new Accepted domain:\nnew-AcceptedDomain -Name 'Kemta.net' -DomainName 'Kemta.net' -DomainType 'Authoritative' A send connector:\nnew-SendConnector -Name 'Internet' -Usage 'Internet' -AddressSpaces 'SMTP:*;1' -IsScopedConnector $false -DNSRoutingEnabled $false -SmartHosts 'smarthost.kemta.net' -SmartHostAuthMechanism 'None' -UseExternalDNSServersEnabled $false -SourceTransportServers 'TESTEX1' Maybe some email address policies:\nnew-EmailAddressPolicy -Name 'Kemta.net' -RecipientContainer 'test.local/Kemta.net' -IncludedRecipients 'AllRecipients' -Priority 'Lowest' -EnabledEmailAddressTemplates 'SMTP:%g.%s@Kemta.net' new-EmailAddressPolicy -Name 'hr.kemta.net' -RecipientContainer 'test.local/Kemta.net/Users/HR' -IncludedRecipients 'AllRecipients' -Priority '1' -EnabledEmailAddressTemplates 'SMTP:%g.%s@Kemta.net' That should just about do it! Your Exchange server should now be fully functioning!\nThere is no users, distribution groups and such, but you can use these cmdlets to create them:\nNew-DistributionGroup New-Mailbox ",
+  "wordCount" : "414",
   "inLanguage": "en",
   "datePublished": "2011-09-29T06:51:38Z",
   "dateModified": "2011-09-29T06:51:38Z",
@@ -197,43 +194,43 @@ We also need to set the NetTcpPortSharing service to automatic start, the comman
 Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.</p>
 <p>Remember to run Windows update prior to the installation.</p>
 <p>Start powershell as administrator and type:</p>
-<!-- raw HTML omitted -->
-<p>First we need to install all of the prerequisites:</p>
-<!-- raw HTML omitted -->
-<p>We also need to set the NetTcpPortSharing service to automatic start, the command for this is:</p>
-<!-- raw HTML omitted -->
-<p>If you already haven’t you need to raise the forest functional level to at least Windows Server 2003 native.</p>
+<pre tabindex="0"><code>import-module servermanager 
+</code></pre><p>First we need to install all of the prerequisites:</p>
+<pre tabindex="0"><code>Add-WindowsFeature Web-Metabase, Web-Lgcy-Mgmt-Console, Web-Server, Web-ISAPI-Ext, Web-Metabase, Web-Lgcy-Mgmt-Console, Web-Basic-Auth, Web-ASP, Web-Digest-Auth, Web-Windows-Auth, Web-Dyn-Compression, Web-Net-Ext, RPC-over-HTTP-proxy, AS-NET-Framework, NET-HTTP-Activation 
+</code></pre><p>We also need to set the NetTcpPortSharing service to automatic start, the command for this is:</p>
+<pre tabindex="0"><code>Set-service NetTcpPortSharing -startuptype automatic 
+</code></pre><p>If you already haven’t you need to raise the forest functional level to at least Windows Server 2003 native.</p>
 <p>Before you start to install Exchange you need to prepare your Schema. If you are installing exchange on a domain controller, all you need to do is navigate to the exchange installation media and run this command:</p>
-<!-- raw HTML omitted -->
-<p>PS: You probably want to change /OrganizationName to something better 🙂</p>
+<pre tabindex="0"><code>.setup /PrepareAD /OrganizationName:Kemta 
+</code></pre><p>PS: You probably want to change /OrganizationName to something better 🙂</p>
 <p>If your soon-to-be exchange server isn’t a domain controller you have to choices:</p>
 <ul>
 <li>Copy the exchange installation files to a domain controller and run the above command</li>
 <li>Install RSAT for ActiveDirectory on your soon-to-be exchange server</li>
 </ul>
 <p>If you are going for the lather you need to run the following commands to install RSAT:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Reboot your server and run the following command to prepare the schema:</p>
-<!-- raw HTML omitted -->
-<p>After the schema is updated you can install exchange 2010, the command for installing the hub, cas and mailbox role is:</p>
-<!-- raw HTML omitted -->
-<p>There you go! Exchange should now be successfully installed.</p>
+<pre tabindex="0"><code>Import-Module ServerManager
+Add-WindowsFeature RSAT-ADDS 
+</code></pre><p>Reboot your server and run the following command to prepare the schema:</p>
+<pre tabindex="0"><code>.setup  /PrepareAD /OrganizationName:Kemta 
+</code></pre><p>After the schema is updated you can install exchange 2010, the command for installing the hub, cas and mailbox role is:</p>
+<pre tabindex="0"><code>.setup.com /mode:install /roles:mb,ht,ca 
+</code></pre><p>There you go! Exchange should now be successfully installed.</p>
 <p>However, there is still a few things you should configure. You can perform these next tasks by starting the Exchange Management Shell or by adding the pssnapin for exchange using this command:</p>
-<!-- raw HTML omitted -->
-<p>Then you can create these things:<br>
+<pre tabindex="0"><code>Add-PSSnapin  Microsoft.Exchange.Management.PowerShell.E2010 
+</code></pre><p>Then you can create these things:<br>
 A new Accepted domain:</p>
-<!-- raw HTML omitted -->
-<p>A send connector:</p>
-<!-- raw HTML omitted -->
-<p>Maybe some email address policies:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>That should just about do it! Your Exchange server should now be fully functioning!<br>
+<pre tabindex="0"><code>new-AcceptedDomain -Name &#39;Kemta.net&#39; -DomainName &#39;Kemta.net&#39; -DomainType &#39;Authoritative&#39; 
+</code></pre><p>A send connector:</p>
+<pre tabindex="0"><code>new-SendConnector -Name &#39;Internet&#39; -Usage &#39;Internet&#39; -AddressSpaces &#39;SMTP:*;1&#39; -IsScopedConnector $false -DNSRoutingEnabled $false -SmartHosts &#39;smarthost.kemta.net&#39; -SmartHostAuthMechanism &#39;None&#39; -UseExternalDNSServersEnabled $false -SourceTransportServers &#39;TESTEX1&#39; 
+</code></pre><p>Maybe some email address policies:</p>
+<pre tabindex="0"><code>new-EmailAddressPolicy -Name &#39;Kemta.net&#39; -RecipientContainer &#39;test.local/Kemta.net&#39; -IncludedRecipients &#39;AllRecipients&#39; -Priority &#39;Lowest&#39; -EnabledEmailAddressTemplates &#39;SMTP:%g.%s@Kemta.net&#39;
+new-EmailAddressPolicy -Name &#39;hr.kemta.net&#39; -RecipientContainer &#39;test.local/Kemta.net/Users/HR&#39; -IncludedRecipients &#39;AllRecipients&#39; -Priority &#39;1&#39; -EnabledEmailAddressTemplates &#39;SMTP:%g.%s@Kemta.net&#39; 
+</code></pre><p>That should just about do it! Your Exchange server should now be fully functioning!<br>
 There is no users, distribution groups and such, but you can use these cmdlets to create them:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
+<pre tabindex="0"><code>New-DistributionGroup
+New-Mailbox 
+</code></pre>
 
   </div>
 

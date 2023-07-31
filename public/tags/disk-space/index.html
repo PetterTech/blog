@@ -123,7 +123,8 @@
   </header>
   <div class="entry-content">
     <p>Sometimes it can be useful to know how much space the VMs in a specific folder (or vApp/datacenter) is occupying. For example if you are a hosting provider of some sort and need to know how much space a customer is using.
-It’s a simple one-liner!</p>
+It’s a simple one-liner!
+get-vm -Location &amp;lt;folder&amp;gt; | select name,@{Name=&#34;Size&#34;;Expression={(Get-HardDisk -VM $_.name | Measure-Object CapacityGB -sum).Sum}} </p>
   </div>
   <footer class="entry-footer"><span title='2014-01-29 09:02:28 +0000 +0000'>January 29, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCli: Finding amount of GB used by VMs in a folder/vApp/datacenter" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/29/powercli-finding-amount-of-gb-used-by-vms-in-a-foldervappdatacenter/"></a>

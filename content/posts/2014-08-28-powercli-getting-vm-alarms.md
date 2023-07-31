@@ -21,7 +21,8 @@ A few weeks ago I started to put together a health check script for our vmware e
 
 So here&#8217;s the the script for retrieving vm alarms:
 
-<pre lang="PowerShell">$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate
+ ```
+$VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyVMs = $VMs | Where-Object {$_.OverallStatus -ne "Green"}
 
 $progress = 1
@@ -41,7 +42,8 @@ if ($FaultyVMs -ne $null) {
     }
 Write-Progress -Activity "Gathering VM alarms" -Status "All done" -Completed -Id 1 -ErrorAction SilentlyContinue
 
-$report | Where-Object {$_.TriggeredAlarms -ne ""}</pre>
+$report | Where-Object {$_.TriggeredAlarms -ne ""} 
+```
 
 This will provide an output like this:
 
@@ -49,7 +51,8 @@ This will provide an output like this:
 
 But, as always, to make it easier for my colleagues to use I make a function out of it:
 
-<pre lang="PowerShell">function Get-VMAlarms
+ ```
+function Get-VMAlarms
 {
 $VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyVMs = $VMs | Where-Object {$_.OverallStatus -ne "Green"}
@@ -84,7 +87,8 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
  .Link
   http://cloud.kemta.net
  #>
-}</pre>
+} 
+```
 
 Beside the fact that a function is easier to use, it also makes it easier to manipulate the data further. For example if you only want alarms for vm whose name start with &#8220;smart&#8221;:
 

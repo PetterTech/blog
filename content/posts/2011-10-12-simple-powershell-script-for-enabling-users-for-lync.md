@@ -41,7 +41,7 @@ wp-syntax-cache-content:
     &nbsp;
     <span style="color: #008080; font-weight: bold;">Write-Host</span> <span style="color: #800000;">&quot;Press any key to quit&quot;</span>
     &nbsp;
-    cmd <span style="color: pink;">/</span>c pause <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">out-null</span></pre></td></tr></table><p class="theCode" style="display:none;">$UI = (Get-Host).UI.RawUI
+    cmd <span style="color: pink;">/</span>c pause <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">out-null</span> ```</td></tr></table><p class="theCode" style="display:none;">$UI = (Get-Host).UI.RawUI
     $UI.WindowTitle = &quot;Enable lync user&quot;
     Import-Module Lync
     
@@ -92,7 +92,8 @@ If you only have one sipdomain you can change the script so that it doesn&#8217;
 
 Here&#8217;s the script in all its glory:
 
-<pre lang="powershell">$UI = (Get-Host).UI.RawUI
+ ```
+$UI = (Get-Host).UI.RawUI
 $UI.WindowTitle = "Enable lync user"
 Import-Module Lync
 
@@ -126,6 +127,7 @@ get-csuser -identity $name
 
 Write-Host "Press any key to quit"
 
-cmd /c pause | out-null</pre>
+cmd /c pause | out-null 
+```
 
 You can also download it here:  <a title="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1" href="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1" target="_blank" rel="noopener">http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</a>

@@ -16,7 +16,7 @@
       <description>Yesterday I was given a relatively easy task: find out who or what has a given email address.
 As this was within our own Exchange organization it proved to be quite simple:
 You can achieve the goal with a simple one-liner:
-But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:</description>
+get-recipient -ResultSize unlimited | where {$_.emailaddresses -match &amp;#34;email@address.com&amp;#34;} But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:</description>
     </item>
     
   </channel>

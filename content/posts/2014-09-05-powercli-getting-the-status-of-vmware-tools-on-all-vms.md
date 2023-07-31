@@ -22,7 +22,8 @@ However, I haven&#8217;t found a good way to get a neat list of which VMs need t
 
 I ended up with creating a function to provide me with that list:
 
-<pre lang="PowerShell">function Get-VMToolsStatus
+ ```
+function Get-VMToolsStatus
     {
         [CmdletBinding()]
         Param (
@@ -76,7 +77,7 @@ I ended up with creating a function to provide me with that list:
   http://cloud.kemta.net
  #>
 }
-</pre>
+ ```
 
 The function will create an output that look kinda like this:
 
@@ -89,7 +90,8 @@ For example, if you only want a list of VMs who need an upgrade of their VMware 
 
 In case you don&#8217;t want to use this as a function, here&#8217;s the script version:
 
-<pre lang="PowerShell">$VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,runtime.PowerState
+ ```
+$VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,runtime.PowerState
     $report = @()
     $progress = 1
     foreach ($VM in $VMs) {
@@ -109,7 +111,7 @@ In case you don&#8217;t want to use this as a function, here&#8217;s the script 
     Write-Progress -Activity "Checking vmware tools" -Status "All done" -Completed -ErrorAction SilentlyContinue
 
     $report
-</pre>
+ ```
 
 Depending on the number of VMs in your environment, the list might now even fit on the screen. So you should probably pipe it to where-object to filter it down further, like this:
 

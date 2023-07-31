@@ -124,10 +124,7 @@
   <div class="entry-content">
     <p>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
 Here’s the code:
-And the output will look something like this:
-As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
-Anyways, here’s the function code:
-The output will be the same, but since it’s a function you can manipulate the data further....</p>
+$Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate $FaultyClusters = $Clusters | Where-Object {$_.TriggeredAlarmState -ne &#34;{}&#34;} $report = @() $progress = 1 if ($FaultyClusters -ne $NULL) { foreach ($FaultyCluster in $FaultyClusters) { foreach ($TriggeredAlarm in $FaultyCluster.TriggeredAlarmstate) { Write-Progress -Activity &#34;Gathering alarms&#34; -Status &#34;Working on $($FaultyCluster.Name)&#34; -PercentComplete ($progress/$FaultyClusters.count*100) -Id 1 -ErrorAction SilentlyContinue $entity = $TriggeredAlarm....</p>
   </div>
   <footer class="entry-footer"><span title='2014-08-30 08:21:59 +0000 +0000'>August 30, 2014</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Getting cluster alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/"></a>

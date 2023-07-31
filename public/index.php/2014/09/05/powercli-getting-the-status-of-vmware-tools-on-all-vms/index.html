@@ -12,7 +12,7 @@ However, I haven’t found a good way to get a neat list of which VMs need to ha
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ However, I haven’t found a good way to get a neat list of which VMs need to ha
   "keywords": [
     "function", "get-vmtoolsstatus", "powercli", "Powershell", "vmware", "vmware tools"
   ],
-  "articleBody": "I’m sure I don’t need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it’s a good idea to keep VMware tools updated.\nHowever, I haven’t found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list. And, in addition, I wanted the list to include the VM version.\nI ended up with creating a function to provide me with that list:\nThe function will create an output that look kinda like this:\nYou can also use a basic filter on the function by specifying -Filter . The different filters is documented in the help section.\nFor example, if you only want a list of VMs who need an upgrade of their VMware tools version:\nIn case you don’t want to use this as a function, here’s the script version:\nDepending on the number of VMs in your environment, the list might now even fit on the screen. So you should probably pipe it to where-object to filter it down further, like this:\n",
-  "wordCount" : "207",
+  "articleBody": "I’m sure I don’t need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it’s a good idea to keep VMware tools updated.\nHowever, I haven’t found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list. And, in addition, I wanted the list to include the VM version.\nI ended up with creating a function to provide me with that list:\nfunction Get-VMToolsStatus { [CmdletBinding()] Param ( [ValidateSet('NeedUpgrade','NotInstalled','Unsupported')][string]$Filter ) $VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,runtime.PowerState $report = @() $progress = 1 foreach ($VM in $VMs) { Write-Progress -Activity \"Checking vmware tools status\" -Status \"Working on $($VM.Name)\" -PercentComplete ($progress/$VMs.count*100) -ErrorAction SilentlyContinue $object = New-Object PSObject Add-Member -InputObject $object NoteProperty VM $VM.Name if ($VM.runtime.powerstate -eq \"PoweredOff\") {Add-Member -InputObject $object NoteProperty ToolsStatus \"$($VM.guest.ToolsStatus) (PoweredOff)\"} else {Add-Member -InputObject $object NoteProperty ToolsStatus $VM.guest.ToolsStatus} Add-Member -InputObject $object NoteProperty ToolsVersionStatus ($VM.Guest.ToolsVersionStatus).Substring(10) Add-Member -InputObject $object NoteProperty SupportState ($VM.Guest.ToolsVersionStatus2).Substring(10) if ($object.ToolsStatus -eq \"NotInstalled\") {Add-Member -InputObject $object NoteProperty Version \"\"} else {Add-Member -InputObject $object NoteProperty Version $VM.Guest.ToolsVersion} Add-Member -InputObject $object NoteProperty \"HW Version\" $VM.config.version $report += $object $progress++ } Write-Progress -Activity \"Checking vmware tools\" -Status \"All done\" -Completed -ErrorAction SilentlyContinue if ($Filter -eq 'NeedUpgrade') { $report | Sort-Object vm | Where-Object {$_.ToolsVersionStatus -eq \"NeedUpgrade\"} } elseif ($Filter -eq 'NotInstalled') { $report | Sort-Object vm | Where-Object {$_.ToolsVersionStatus -eq \"NotInstalled\"} } elseif ($Filter -eq 'Unsupported') { $report | Sort-Object vm | Where-Object {($_.SupportState -eq \"Blacklisted\") -or ($_.SupportState -eq \"TooNew\") -or ($_.SupportState -eq \"TooOld\") -or ($_.SupportState -eq \"Unmanaged\")} } else {$report | Sort-Object vm} \u0026lt;# .Synopsis List vm tools status for all VMs .Description Lists the status and version for all VMs, also tells whether the version is supported and also the vm version .Parameter Filter Filters the list based on if the VMware tools \"NeedUpgrade\", is \"NotInstalled\" or if they are \"Unsupported\" .Example Get-VMToolsStatus List vm tools status for all VMs .Example Get-VMToolsStatus -Filter NeedUpgrade Show only VMs needing update of vm tools .Link http://cloud.kemta.net #\u003e } The function will create an output that look kinda like this:\nYou can also use a basic filter on the function by specifying -Filter . The different filters is documented in the help section.\nFor example, if you only want a list of VMs who need an upgrade of their VMware tools version:\nIn case you don’t want to use this as a function, here’s the script version:\n$VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,runtime.PowerState $report = @() $progress = 1 foreach ($VM in $VMs) { Write-Progress -Activity \"Checking vmware tools status\" -Status \"Working on $($VM.Name)\" -PercentComplete ($progress/$VMs.count*100) -ErrorAction SilentlyContinue $object = New-Object PSObject Add-Member -InputObject $object NoteProperty VM $VM.Name if ($VM.runtime.powerstate -eq \"PoweredOff\") {Add-Member -InputObject $object NoteProperty ToolsStatus \"$($VM.guest.ToolsStatus) (PoweredOff)\"} else {Add-Member -InputObject $object NoteProperty ToolsStatus $VM.guest.ToolsStatus} Add-Member -InputObject $object NoteProperty ToolsVersionStatus ($VM.Guest.ToolsVersionStatus).Substring(10) Add-Member -InputObject $object NoteProperty SupportState ($VM.Guest.ToolsVersionStatus2).Substring(10) if ($object.ToolsStatus -eq \"NotInstalled\") {Add-Member -InputObject $object NoteProperty Version \"\"} else {Add-Member -InputObject $object NoteProperty Version $VM.Guest.ToolsVersion} Add-Member -InputObject $object NoteProperty \"HW Version\" $VM.config.version $report += $object $progress++ } Write-Progress -Activity \"Checking vmware tools\" -Status \"All done\" -Completed -ErrorAction SilentlyContinue $report Depending on the number of VMs in your environment, the list might now even fit on the screen. So you should probably pipe it to where-object to filter it down further, like this:\n",
+  "wordCount" : "576",
   "inLanguage": "en",
   "datePublished": "2014-09-05T12:06:17Z",
   "dateModified": "2014-09-05T12:06:17Z",
@@ -184,17 +184,87 @@ However, I haven’t found a good way to get a neat list of which VMs need to ha
   <div class="post-content"><p>I’m sure I don’t need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it’s a good idea to keep VMware tools updated.<br>
 However, I haven’t found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list. And, in addition, I wanted the list to include the VM version.</p>
 <p>I ended up with creating a function to provide me with that list:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The function will create an output that look kinda like this:</p>
+<pre tabindex="0"><code>function Get-VMToolsStatus
+   {
+       [CmdletBinding()]
+       Param (
+           [ValidateSet(&#39;NeedUpgrade&#39;,&#39;NotInstalled&#39;,&#39;Unsupported&#39;)][string]$Filter
+           )
+
+   $VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,runtime.PowerState
+   $report = @()
+   $progress = 1
+   foreach ($VM in $VMs) {
+       Write-Progress -Activity &#34;Checking vmware tools status&#34; -Status &#34;Working on $($VM.Name)&#34; -PercentComplete ($progress/$VMs.count*100) -ErrorAction SilentlyContinue
+       $object = New-Object PSObject
+       Add-Member -InputObject $object NoteProperty VM $VM.Name
+       if ($VM.runtime.powerstate -eq &#34;PoweredOff&#34;) {Add-Member -InputObject $object NoteProperty ToolsStatus &#34;$($VM.guest.ToolsStatus) (PoweredOff)&#34;}
+       else {Add-Member -InputObject $object NoteProperty ToolsStatus $VM.guest.ToolsStatus}
+       Add-Member -InputObject $object NoteProperty ToolsVersionStatus ($VM.Guest.ToolsVersionStatus).Substring(10)
+       Add-Member -InputObject $object NoteProperty SupportState ($VM.Guest.ToolsVersionStatus2).Substring(10)
+       if ($object.ToolsStatus -eq &#34;NotInstalled&#34;) {Add-Member -InputObject $object NoteProperty Version &#34;&#34;}
+       else {Add-Member -InputObject $object NoteProperty Version $VM.Guest.ToolsVersion}
+       Add-Member -InputObject $object NoteProperty &#34;HW Version&#34; $VM.config.version
+       $report += $object
+       $progress++
+       }
+   Write-Progress -Activity &#34;Checking vmware tools&#34; -Status &#34;All done&#34; -Completed -ErrorAction SilentlyContinue
+
+   if ($Filter -eq &#39;NeedUpgrade&#39;) {
+       $report | Sort-Object vm | Where-Object {$_.ToolsVersionStatus -eq &#34;NeedUpgrade&#34;}
+       }
+   elseif ($Filter -eq &#39;NotInstalled&#39;) {
+       $report | Sort-Object vm | Where-Object {$_.ToolsVersionStatus -eq &#34;NotInstalled&#34;}
+       }
+   elseif ($Filter -eq &#39;Unsupported&#39;) {
+       $report | Sort-Object vm | Where-Object {($_.SupportState -eq &#34;Blacklisted&#34;) -or ($_.SupportState -eq &#34;TooNew&#34;) -or ($_.SupportState -eq &#34;TooOld&#34;) -or ($_.SupportState -eq &#34;Unmanaged&#34;)}
+       }
+   else {$report | Sort-Object vm}
+
+&amp;lt;#
+.Synopsis
+ List vm tools status for all VMs
+.Description
+ Lists the status and version for all VMs, also tells whether the version is supported and also the vm version
+.Parameter Filter
+ Filters the list based on if the VMware tools &#34;NeedUpgrade&#34;, is &#34;NotInstalled&#34; or if they are &#34;Unsupported&#34;
+.Example
+ Get-VMToolsStatus
+ List vm tools status for all VMs
+.Example
+ Get-VMToolsStatus -Filter NeedUpgrade
+ Show only VMs needing update of vm tools
+.Link
+ http://cloud.kemta.net
+#&gt;
+}
+</code></pre><p>The function will create an output that look kinda like this:</p>
 <p><a href="http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatues1.png"><!-- raw HTML omitted --></a></p>
 <p>You can also use a basic filter on the function by specifying -Filter <!-- raw HTML omitted -->. The different filters is documented in the help section.<br>
 For example, if you only want a list of VMs who need an upgrade of their VMware tools version:</p>
 <p><a href="http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png"><!-- raw HTML omitted --></a></p>
 <p>In case you don’t want to use this as a function, here’s the script version:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Depending on the number of VMs in your environment, the list might now even fit on the screen. So you should probably pipe it to where-object to filter it down further, like this:</p>
+<pre tabindex="0"><code>$VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,runtime.PowerState
+   $report = @()
+   $progress = 1
+   foreach ($VM in $VMs) {
+       Write-Progress -Activity &#34;Checking vmware tools status&#34; -Status &#34;Working on $($VM.Name)&#34; -PercentComplete ($progress/$VMs.count*100) -ErrorAction SilentlyContinue
+       $object = New-Object PSObject
+       Add-Member -InputObject $object NoteProperty VM $VM.Name
+       if ($VM.runtime.powerstate -eq &#34;PoweredOff&#34;) {Add-Member -InputObject $object NoteProperty ToolsStatus &#34;$($VM.guest.ToolsStatus) (PoweredOff)&#34;}
+       else {Add-Member -InputObject $object NoteProperty ToolsStatus $VM.guest.ToolsStatus}
+       Add-Member -InputObject $object NoteProperty ToolsVersionStatus ($VM.Guest.ToolsVersionStatus).Substring(10)
+       Add-Member -InputObject $object NoteProperty SupportState ($VM.Guest.ToolsVersionStatus2).Substring(10)
+       if ($object.ToolsStatus -eq &#34;NotInstalled&#34;) {Add-Member -InputObject $object NoteProperty Version &#34;&#34;}
+       else {Add-Member -InputObject $object NoteProperty Version $VM.Guest.ToolsVersion}
+       Add-Member -InputObject $object NoteProperty &#34;HW Version&#34; $VM.config.version
+       $report += $object
+       $progress++
+       }
+   Write-Progress -Activity &#34;Checking vmware tools&#34; -Status &#34;All done&#34; -Completed -ErrorAction SilentlyContinue
+
+   $report
+</code></pre><p>Depending on the number of VMs in your environment, the list might now even fit on the screen. So you should probably pipe it to where-object to filter it down further, like this:</p>
 <p><a href="http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatus-script.png"><!-- raw HTML omitted --></a></p>
 
 

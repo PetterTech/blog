@@ -137,7 +137,7 @@ If the KeepTempFile parameter is used the temp file is saved in the users profil
   </header>
   <div class="entry-content">
     <p>If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
-This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
+cmd /c pause | out-null This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
 The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed)....</p>
   </div>
   <footer class="entry-footer"><span title='2012-09-10 13:57:52 +0000 +0000'>September 10, 2012</span>&nbsp;·&nbsp;nerenther</footer>
@@ -168,7 +168,7 @@ So here’s what I came up with:...</p>
     <p>Yesterday I was given a relatively easy task: find out who or what has a given email address.
 As this was within our own Exchange organization it proved to be quite simple:
 You can achieve the goal with a simple one-liner:
-But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
+get-recipient -ResultSize unlimited | where {$_.emailaddresses -match &#34;email@address.com&#34;} But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
   </div>
   <footer class="entry-footer"><span title='2012-08-28 10:41:15 +0000 +0000'>August 28, 2012</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Function for locating an email address" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/"></a>
@@ -252,7 +252,7 @@ Creates OUs Creates users Creates security groups Creates distribution groups Cr
     <p>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.
 Here’s the script in all its glory:
-You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</p>
+$UI = (Get-Host).UI.RawUI $UI.WindowTitle = &#34;Enable lync user&#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool....</p>
   </div>
   <footer class="entry-footer"><span title='2011-10-12 15:59:45 +0000 +0000'>October 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Simple powershell script for enabling users for Lync" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/"></a>

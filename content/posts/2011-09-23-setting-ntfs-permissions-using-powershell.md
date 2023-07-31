@@ -21,7 +21,7 @@ wp-syntax-cache-content:
     &nbsp;
     <span style="color: #008080; font-weight: bold;">Set-Acl</span> c:test <span style="color: #800080;">$acl</span>
     &nbsp;
-    <span style="color: #008080; font-weight: bold;">Get-Acl</span> c:test <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">format-list</span></pre></td></tr></table><p class="theCode" style="display:none;">$acl = Get-Acl c:test
+    <span style="color: #008080; font-weight: bold;">Get-Acl</span> c:test <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">format-list</span> ```</td></tr></table><p class="theCode" style="display:none;">$acl = Get-Acl c:test
     $acl.SetAccessRuleProtection($True, $False)
     
     $rule = New-Object System.Security.AccessControl.FileSystemAccessRule(&quot;Administrators&quot;,&quot;FullControl&quot;, &quot;ContainerInherit, ObjectInherit&quot;, &quot;None&quot;, &quot;Allow&quot;)
@@ -51,7 +51,8 @@ I am currently working on a script similar to the <a href="http://cloud.kemta.ne
 
 After some googling I came up with a rather extensive script, it is a little more complicated than I wanted but here goes:
 
-<pre lang="powershell">$acl = Get-Acl c:test
+ ```
+ $acl = Get-Acl c:test
 $acl.SetAccessRuleProtection($True, $False)
 
 $rule = New-Object System.Security.AccessControl.FileSystemAccessRule("Administrators","FullControl", "ContainerInherit, ObjectInherit", "None", "Allow")
@@ -66,7 +67,7 @@ $acl.AddAccessRule($rule)
 Set-Acl c:test $acl
 
 Get-Acl c:test | format-list
-</pre>
+```
 
 What it does it set the default permissions (in win7) that are inherited, in addition to full controll for &#8220;testuser&#8221;, on the folder c:test.
 

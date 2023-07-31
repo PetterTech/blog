@@ -14,11 +14,15 @@ tags:
 ---
 If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
 
-<pre>cmd /c pause | out-null</pre>
+```
+cmd /c pause | out-null
+```
 
 This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol&#8217; pause in batch scripting.  
 The reason I used this method was that I just didn&#8217;t know how to do this in Powershell (yes, I am ashamed). But now I have stumbled upon the Powershell way to do it:
 
-<pre>$null = $host.ui.rawui.readkey("NoEcho,Includekeydown")</pre>
+```
+$null = $host.ui.rawui.readkey("NoEcho,Includekeydown") 
+```
 
 This will do exactly the same as pause in batch scripting 🙂

@@ -29,7 +29,7 @@ As you can see, the difference is pretty clear. 5 seconds vs. 1.6 minutes&#8230;
 
 So, without further ado, I present to you the code for Get-ISOMounts:
 
-<pre lang="PowerShell">function Get-ISOMounts
+ ```function Get-ISOMounts
 {
     [CmdletBinding()]
         Param (
@@ -78,7 +78,7 @@ So, without further ado, I present to you the code for Get-ISOMounts:
   http://cloud.kemta.net
  #>
 }
-</pre>
+ ```
 
 I feel the help section should speak for itself, but I&#8217;ll provide you a screenshot none the less. Just running Get-ISOMounts will provide you with an output looking like this:
 

@@ -8,12 +8,12 @@
 <title>Adding a pause to you Powershell scripts | PetterTech</title>
 <meta name="keywords" content="pause, Powershell">
 <meta name="description" content="If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
-This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
+cmd /c pause | out-null This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
 The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed).">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/10/adding-a-pause-to-you-powershell-scripts/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -60,7 +60,7 @@ The reason I used this method was that I just didn’t know how to do this in Po
     </style>
 </noscript><meta property="og:title" content="Adding a pause to you Powershell scripts" />
 <meta property="og:description" content="If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
-This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
+cmd /c pause | out-null This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
 The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/10/adding-a-pause-to-you-powershell-scripts/" /><meta property="article:section" content="posts" />
@@ -70,7 +70,7 @@ The reason I used this method was that I just didn’t know how to do this in Po
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Adding a pause to you Powershell scripts"/>
 <meta name="twitter:description" content="If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
-This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
+cmd /c pause | out-null This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
 The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed)."/>
 
 
@@ -100,12 +100,12 @@ The reason I used this method was that I just didn’t know how to do this in Po
   "@type": "BlogPosting",
   "headline": "Adding a pause to you Powershell scripts",
   "name": "Adding a pause to you Powershell scripts",
-  "description": "If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:\nThis was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.\nThe reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed).",
+  "description": "If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:\ncmd /c pause | out-null This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.\nThe reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed).",
   "keywords": [
     "pause", "Powershell"
   ],
-  "articleBody": "If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:\nThis was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.\nThe reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed). But now I have stumbled upon the Powershell way to do it:\nThis will do exactly the same as pause in batch scripting 🙂\n",
-  "wordCount" : "104",
+  "articleBody": "If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:\ncmd /c pause | out-null This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.\nThe reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed). But now I have stumbled upon the Powershell way to do it:\n$null = $host.ui.rawui.readkey(\"NoEcho,Includekeydown\") This will do exactly the same as pause in batch scripting 🙂\n",
+  "wordCount" : "112",
   "inLanguage": "en",
   "datePublished": "2012-09-10T13:57:52Z",
   "dateModified": "2012-09-10T13:57:52Z",
@@ -185,11 +185,11 @@ The reason I used this method was that I just didn’t know how to do this in Po
 </div>
   </header> 
   <div class="post-content"><p>If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:</p>
-<!-- raw HTML omitted -->
-<p>This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.<br>
+<pre tabindex="0"><code>cmd /c pause | out-null
+</code></pre><p>This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.<br>
 The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed). But now I have stumbled upon the Powershell way to do it:</p>
-<!-- raw HTML omitted -->
-<p>This will do exactly the same as pause in batch scripting 🙂</p>
+<pre tabindex="0"><code>$null = $host.ui.rawui.readkey(&#34;NoEcho,Includekeydown&#34;) 
+</code></pre><p>This will do exactly the same as pause in batch scripting 🙂</p>
 
 
   </div>

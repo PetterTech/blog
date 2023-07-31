@@ -20,7 +20,8 @@ In our environment we have a couple of NFS stores that should be available on al
 
 So, of course, I wrote a small powercli script to check if the NFS stores are mounted and then mount them if they&#8217;re not mounted:
 
-<pre lang="PowerShell">$vmhosts = Get-View -ViewType HostSystem -Filter @{"Runtime.ConnectionState" = "connected"} -Property name
+ ```
+ $vmhosts = Get-View -ViewType HostSystem -Filter @{"Runtime.ConnectionState" = "connected"} -Property name
 
 $progress = 1
 $mounts = 1
@@ -38,14 +39,16 @@ foreach ($vmhost in $vmhosts) {
     }
 if ($mounts = "1") {
     Write-Host "All hosts have the NFS stores already mounted" -ForegroundColor green
-    }</pre>
+    } 
+```
 
 While I am pretty comfortable with writing and executing scripts like this on the fly, other people who are not as familiar with powershell might be a bit intimidated by it.  
 That&#8217;s why I like to create functions of them and put them in the powershell profile for all users on our jumpstation (C:WindowsSystem32WindowsPowerShellv1.0profile.ps1).
 
 If I were to create a function out of this script, it would look something like this (very basic):
 
-<pre lang="PowerShell">function Mount-NFSstores {
+ ```
+ function Mount-NFSstores {
     $vmhosts = Get-View -ViewType HostSystem -Filter @{"Runtime.ConnectionState" = "connected"} -Property name
 
     $progress = 1
@@ -77,4 +80,4 @@ If I were to create a function out of this script, it would look something like 
   http://cloud.kemta.net
  #>
     }
-</pre>
+ ```

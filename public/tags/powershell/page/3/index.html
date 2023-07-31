@@ -194,7 +194,7 @@ Run the command in the Exchange Management Shell and it should fix the Content i
   <div class="entry-content">
     <p>I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
 First we need to to save our domains in an array:
-Then we send that array into a foreach loop:...</p>
+$domains = @(&#34;domainA.com&#34;, &#34;domainB.com&#34;, &#34;domainC.com&#34;) Then we send that array into a foreach loop:...</p>
   </div>
   <footer class="entry-footer"><span title='2012-11-20 09:25:09 +0000 +0000'>November 20, 2012</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Powershell: Checking multiple dns records for multiple domains" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/"></a>
@@ -233,7 +233,7 @@ After he confirmed that the script worked as planned I decided to make a functio
   </header>
   <div class="entry-content">
     <p>If you are ever in need of some motivation, here is a very simple Powershell function for that:
-Now all you need to do is write Motivate-Me in the powershell window to receive some inspirational words 🙂</p>
+function Motivate-Me { $motivator = Get-Random -Minimum 1 -Maximum 5 if ($motivator -eq 1) {Write-Host &#34;You are a Powershell God!&#34;} if ($motivator -eq 2) {Write-Host &#34;You rule dude!&#34;} if ($motivator -eq 3) {Write-Host &#34;I wish I could errorhandle like you&#34;} if ($motivator -eq 4) {Write-Host &#34;I am nothing compared to you&#34;} if ($motivator -eq 5) {Write-Host &#34;Are you sure you intirely human?...</p>
   </div>
   <footer class="entry-footer"><span title='2012-09-12 11:06:18 +0000 +0000'>September 12, 2012</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Motivational Powershell function" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/motivational-powershell-function/"></a>

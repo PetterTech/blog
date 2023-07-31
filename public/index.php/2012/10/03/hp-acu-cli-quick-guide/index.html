@@ -12,7 +12,7 @@ I finally got myself a server to play around with Hyper-V on. This has been sore
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/03/hp-acu-cli-quick-guide/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -101,8 +101,8 @@ I finally got myself a server to play around with Hyper-V on. This has been sore
   "keywords": [
     "ACU", "array", "cli", "create", "disk", "HP"
   ],
-  "articleBody": "Guess what? It’s time for something different than powershell 😛\nI finally got myself a server to play around with Hyper-V on. This has been sorely missed for a long time. I worked a lot with Hyper-V in my previous job, and even built a small data center running on Hyper-V. But at my current job we only use vmware, which is a great product but to expensive in my book. Especially when we are finally looking at a datacenter license from Microsoft and we already have the System Center suite. This means that we can save a ton of money on switching from vmware to Hyper-V.\nAnyway…In this blogpost I want to show you a little about the HP Array Configuration Utility command-line interface.\nI usually use the graphical interface for creating volumes and such, but for some reason I couldn’t get it working on my Hyper-V test server. So instead of looking on how to fix that I decided to give the cli a shot. What I want to achieve with this post is to show you how the steps you need after putting one or more new disks in the server.\nThe ACU cli can be launched by running C:Program Files (x86)CompaqHpacucliBinhpacucli.exe.\nThe first command you should know about is “controller all show”, this will show you all the controllers installed in the server. The output will look something like this:\nThis show that my controller is installed in slot 0, to get some more info on this controller I could run “controller slot=0 show”, the output should look something like this:\nOn my test server I have already created a mirrored volume on which I have installed Hyper-V. I have only one extra disk, so I cannot show you how to create a fancy raid configuration but nevertheless I will show you how to create an array and a logical disk.\nThe first thing we need to do is to find any unassigned disk connected to the controller. This is done by running the command “controller slot=0 physicaldrive allunassigned show” (replace slot=0 with the slot where your controller is connected). The output will look something like this:\nSo here we see that I have one unassigned disk that I can use. Given that I want to use all unassigned disks to create a new logical disk in a new array I can run the command “controller slot=0 create type=ld drives=allunassigned raid=0”\nThis will create a new array and a new logical drive that uses all unassigned drives, the raid level is 0 (striping)\nThats basically what you need to do from the acu. But before you can use the disk in Windows you need to initialize it, create a partition and so on, the required steps could be something like this:\n",
-  "wordCount" : "465",
+  "articleBody": "Guess what? It’s time for something different than powershell 😛\nI finally got myself a server to play around with Hyper-V on. This has been sorely missed for a long time. I worked a lot with Hyper-V in my previous job, and even built a small data center running on Hyper-V. But at my current job we only use vmware, which is a great product but to expensive in my book. Especially when we are finally looking at a datacenter license from Microsoft and we already have the System Center suite. This means that we can save a ton of money on switching from vmware to Hyper-V.\nAnyway…In this blogpost I want to show you a little about the HP Array Configuration Utility command-line interface.\nI usually use the graphical interface for creating volumes and such, but for some reason I couldn’t get it working on my Hyper-V test server. So instead of looking on how to fix that I decided to give the cli a shot. What I want to achieve with this post is to show you how the steps you need after putting one or more new disks in the server.\nThe ACU cli can be launched by running C:Program Files (x86)CompaqHpacucliBinhpacucli.exe.\nThe first command you should know about is “controller all show”, this will show you all the controllers installed in the server. The output will look something like this:\n=\u0026gt; controller all show Smart Array P410i in Slot 0 (Embedded) (sn: 50014380124xxxxx) This show that my controller is installed in slot 0, to get some more info on this controller I could run “controller slot=0 show”, the output should look something like this:\n=\u0026gt; controller slot=0 show Smart Array P410i in Slot 0 (Embedded) Bus Interface: PCI Slot: 0 Serial Number: 50014380124D5620 Cache Serial Number: PBCDF0CRHZU5D4 RAID 6 (ADG) Status: Disabled Controller Status: OK Hardware Revision: C Firmware Version: 5.70 Rebuild Priority: Medium Expand Priority: Medium Surface Scan Delay: 15 secs Surface Scan Mode: Idle Queue Depth: Automatic Monitor and Performance Delay: 60 min Elevator Sort: Enabled Degraded Performance Optimization: Disabled Inconsistency Repair Policy: Disabled Wait for Cache Room: Disabled Surface Analysis Inconsistency Notification: Disabled Post Prompt Timeout: 0 secs Cache Board Present: True Cache Status: OK Cache Ratio: 25% Read / 75% Write Drive Write Cache: Disabled Total Cache Size: 1024 MB Total Cache Memory Available: 912 MB No-Battery Write Cache: Disabled Cache Backup Power Source: Capacitors Battery/Capacitor Count: 1 Battery/Capacitor Status: OK SATA NCQ Supported: True On my test server I have already created a mirrored volume on which I have installed Hyper-V. I have only one extra disk, so I cannot show you how to create a fancy raid configuration but nevertheless I will show you how to create an array and a logical disk.\nThe first thing we need to do is to find any unassigned disk connected to the controller. This is done by running the command “controller slot=0 physicaldrive allunassigned show” (replace slot=0 with the slot where your controller is connected). The output will look something like this:\n=\u0026gt; controller slot=0 physicaldrive allunassigned show Smart Array P410i in Slot 0 (Embedded) unassigned physicaldrive 1I:1:3 (port 1I:box 1:bay 3, SATA, 500 GB, OK) So here we see that I have one unassigned disk that I can use. Given that I want to use all unassigned disks to create a new logical disk in a new array I can run the command “controller slot=0 create type=ld drives=allunassigned raid=0”\nThis will create a new array and a new logical drive that uses all unassigned drives, the raid level is 0 (striping)\nThats basically what you need to do from the acu. But before you can use the disk in Windows you need to initialize it, create a partition and so on, the required steps could be something like this:\nDISKPART\u0026gt; list disk DISKPART\u0026gt; select disk 1 DISKPART\u0026gt; attributes disk clear readonly DISKPART\u0026gt; online disk DISKPART\u0026gt; create partition primary DISKPART\u0026gt; list volume DISKPART\u0026gt; select volume 4 DISKPART\u0026gt; assign letter=e: DISKPART\u0026gt; EXIT C:UsersAdministrator\u0026gt; format E: /Q ",
+  "wordCount" : "672",
   "inLanguage": "en",
   "datePublished": "2012-10-03T05:46:20Z",
   "dateModified": "2012-10-03T05:46:20Z",
@@ -187,21 +187,66 @@ I finally got myself a server to play around with Hyper-V on. This has been sore
 I usually use the graphical interface for creating volumes and such, but for some reason I couldn’t get it working on my Hyper-V test server. So instead of looking on how to fix that I decided to give the cli a shot. What I want to achieve with this post is to show you how the steps you need after putting one or more new disks in the server.</p>
 <p>The ACU cli can be launched by running C:Program Files (x86)CompaqHpacucliBinhpacucli.exe.</p>
 <p>The first command you should know about is “controller all show”, this will show you all the controllers installed in the server. The output will look something like this:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>This show that my controller is installed in slot 0, to get some more info on this controller I could run “controller slot=0 show”, the output should look something like this:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>On my test server I have already created a mirrored volume on which I have installed Hyper-V. I have only one extra disk, so I cannot show you how to create a fancy raid configuration but nevertheless I will show you how to create an array and a logical disk.</p>
+<pre tabindex="0"><code>=&amp;gt; controller all show 
+</code></pre><pre tabindex="0"><code>Smart Array P410i in Slot 0 (Embedded) (sn: 50014380124xxxxx) 
+</code></pre><p>This show that my controller is installed in slot 0, to get some more info on this controller I could run “controller slot=0 show”, the output should look something like this:</p>
+<pre tabindex="0"><code> =&amp;gt; controller slot=0 show
+
+Smart Array P410i in Slot 0 (Embedded)
+Bus Interface: PCI
+Slot: 0
+Serial Number: 50014380124D5620
+Cache Serial Number: PBCDF0CRHZU5D4
+RAID 6 (ADG) Status: Disabled
+Controller Status: OK
+Hardware Revision: C
+Firmware Version: 5.70
+Rebuild Priority: Medium
+Expand Priority: Medium
+Surface Scan Delay: 15 secs
+Surface Scan Mode: Idle
+Queue Depth: Automatic
+Monitor and Performance Delay: 60 min
+Elevator Sort: Enabled
+Degraded Performance Optimization: Disabled
+Inconsistency Repair Policy: Disabled
+Wait for Cache Room: Disabled
+Surface Analysis Inconsistency Notification: Disabled
+Post Prompt Timeout: 0 secs
+Cache Board Present: True
+Cache Status: OK
+Cache Ratio: 25% Read / 75% Write
+Drive Write Cache: Disabled
+Total Cache Size: 1024 MB
+Total Cache Memory Available: 912 MB
+No-Battery Write Cache: Disabled
+Cache Backup Power Source: Capacitors
+Battery/Capacitor Count: 1
+Battery/Capacitor Status: OK
+SATA NCQ Supported: True 
+</code></pre><p>On my test server I have already created a mirrored volume on which I have installed Hyper-V. I have only one extra disk, so I cannot show you how to create a fancy raid configuration but nevertheless I will show you how to create an array and a logical disk.</p>
 <p>The first thing we need to do is to find any unassigned disk connected to the controller. This is done by running the command “controller slot=0 physicaldrive allunassigned show” (replace slot=0 with the slot where your controller is connected). The output will look something like this:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>So here we see that I have one unassigned disk that I can use. Given that I want to use all unassigned disks to create a new logical disk in a new array I can run the command “controller slot=0 create type=ld drives=allunassigned raid=0”<br>
+<pre tabindex="0"><code>=&amp;gt; controller slot=0 physicaldrive allunassigned show
+
+Smart Array P410i in Slot 0 (Embedded)
+
+unassigned
+
+physicaldrive 1I:1:3 (port 1I:box 1:bay 3, SATA, 500 GB, OK) 
+</code></pre><p>So here we see that I have one unassigned disk that I can use. Given that I want to use all unassigned disks to create a new logical disk in a new array I can run the command “controller slot=0 create type=ld drives=allunassigned raid=0”<br>
 This will create a new array and a new logical drive that uses all unassigned drives, the raid level is 0 (striping)</p>
 <p>Thats basically what you need to do from the acu. But before you can use the disk in Windows you need to initialize it, create a partition and so on, the required steps could be something like this:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p> </p>
+<pre tabindex="0"><code>DISKPART&amp;gt; list disk
+DISKPART&amp;gt; select disk 1
+DISKPART&amp;gt; attributes disk clear readonly
+DISKPART&amp;gt; online disk
+DISKPART&amp;gt; create partition primary
+DISKPART&amp;gt; list volume
+DISKPART&amp;gt; select volume 4
+DISKPART&amp;gt; assign letter=e:
+DISKPART&amp;gt; EXIT
+C:UsersAdministrator&amp;gt; format E: /Q 
+</code></pre><p> </p>
 
 
   </div>

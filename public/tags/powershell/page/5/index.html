@@ -136,7 +136,8 @@ After some googling I came up with a rather extensive script, it is a little mor
   </header>
   <div class="entry-content">
     <p>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
-Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</p>
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:
+Get-Mailbox -RecipientTypeDetails roommailbox | Set-CalendarProcessing -AutomateProcessing AutoAccept </p>
   </div>
   <footer class="entry-footer"><span title='2011-09-12 12:28:56 +0000 +0000'>September 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Enable Resource Booking Attendant on all Room Mailboxes" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/"></a>
@@ -150,8 +151,7 @@ Heres a powershell command to enable it on all the Room Mailboxes in an exchange
   <div class="entry-content">
     <p>If you have some sort of 3rd-party application that needs access to all of your mailboxes, it can be a pain to set the permissions on all of your mailboxes.
 Except if you use this nice little powershell command:
-What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.
-You can of course change the -AccessRights setting to your liking, e....</p>
+Get-Mailbox -ResultSize unlimited | Add-MailboxPermission -User admin -AccessRights FullAccess -InheritanceType all What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin....</p>
   </div>
   <footer class="entry-footer"><span title='2011-08-18 07:44:23 +0000 +0000'>August 18, 2011</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to Editing permissions on all mailboxes in one command, Exchange 2010/2007" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/18/editing-permissions-on-all-mailboxes-in-one-command-exchange-20102007/"></a>

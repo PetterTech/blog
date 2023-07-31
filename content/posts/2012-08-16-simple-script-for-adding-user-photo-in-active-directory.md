@@ -32,7 +32,7 @@ wp-syntax-cache-content:
     <span style="color: #008080; font-weight: bold;">Write-host</span> <span style="color: #800000;">&quot;All done&quot;</span>
     <span style="color: #000000;">&#125;</span>
     &nbsp;
-    cmd <span style="color: pink;">/</span>c pause <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">out-null</span></pre></td></tr></table><p class="theCode" style="display:none;">#Imports the Active Directory module
+    cmd <span style="color: pink;">/</span>c pause <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">out-null</span> ```</td></tr></table><p class="theCode" style="display:none;">#Imports the Active Directory module
     Import-Module active*
     
     #Asks the user for a filename
@@ -77,7 +77,8 @@ The requirements for this script is the Active Directory module and permission t
 
 The script:
 
-<pre lang="powershell">#Imports the Active Directory module
+ ```
+#Imports the Active Directory module
 Import-Module active*
 
 #Asks the user for a filename
@@ -102,4 +103,5 @@ Set-ADUser $user -Replace @{thumbnailPhoto=$photo}
 Write-host "All done"
 }
 
-cmd /c pause | out-null</pre>
+cmd /c pause | out-null 
+```

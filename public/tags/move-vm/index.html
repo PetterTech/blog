@@ -124,7 +124,8 @@
   <div class="entry-content">
     <p>PowerCLI is just awsome 🙂
 This simple one-liner migrates all vm’s off one datastore to a new one:
-You can also move vm’s off one datastore and place them in any datastore within a specified datastore cluster:</p>
+Get-VM -Datastore &amp;lt;datastore1&amp;gt; | Move-VM -Datastore &amp;lt;datastore2&amp;gt; You can also move vm’s off one datastore and place them in any datastore within a specified datastore cluster:
+$DatastoreCluster1 = Get-DatastoreCluster -Name &#39;DatastoreCluster1&#39; Get-VM -Datastore &amp;lt;datastore1&amp;gt; | Move-VM -Datastore $DatastoreCluster1 </p>
   </div>
   <footer class="entry-footer"><span title='2013-10-08 11:24:34 +0000 +0000'>October 8, 2013</span>&nbsp;·&nbsp;nerenther</footer>
   <a class="entry-link" aria-label="post link to PowerCLI: Migrate all vm&#39;s on a datastore" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/08/powershell-vmware-migrate-all-vms-on-a-datastore/"></a>

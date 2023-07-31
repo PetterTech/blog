@@ -26,7 +26,7 @@ So I have made a function out of it and for the first time (I think) I have even
       <description>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
 If you only have one sipdomain you can change the script so that it doesn’t ask for it.
 Here’s the script in all its glory:
-You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</description>
+$UI = (Get-Host).UI.RawUI $UI.WindowTitle = &amp;#34;Enable lync user&amp;#34; Import-Module Lync #Setting some variables $registrarpool = lyncpool.</description>
     </item>
     
   </channel>

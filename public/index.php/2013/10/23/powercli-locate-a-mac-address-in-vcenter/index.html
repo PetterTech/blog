@@ -8,13 +8,12 @@
 <title>PowerCLI: Locate a MAC-address in vCenter | PetterTech</title>
 <meta name="keywords" content="function, get-macaddress, get-vm, powercli, Powershell, vmware">
 <meta name="description" content="To find out to which vm a MAC address belongs, you can use a simple one-liner:
-(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
-Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
-A basic function doing the same thing can look something like this:">
+Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} (Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.">
 <meta name="author" content="nerenther">
 <link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+<script defer crossorigin="anonymous" src="/assets/js/highlight.fac638d29b1850be00dc7293f352d808596a07979e190a08c5fe93492d9df1e9.js" integrity="sha256-&#43;sY40psYUL4A3HKT81LYCFlqB5eeGQoIxf6TSS2d8ek="
     onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
@@ -61,9 +60,8 @@ A basic function doing the same thing can look something like this:">
     </style>
 </noscript><meta property="og:title" content="PowerCLI: Locate a MAC-address in vCenter" />
 <meta property="og:description" content="To find out to which vm a MAC address belongs, you can use a simple one-liner:
-(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
-Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
-A basic function doing the same thing can look something like this:" />
+Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} (Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2013-10-23T09:50:09+00:00" />
@@ -72,9 +70,8 @@ A basic function doing the same thing can look something like this:" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PowerCLI: Locate a MAC-address in vCenter"/>
 <meta name="twitter:description" content="To find out to which vm a MAC address belongs, you can use a simple one-liner:
-(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
-Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
-A basic function doing the same thing can look something like this:"/>
+Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} (Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one."/>
 
 
 <script type="application/ld+json">
@@ -103,12 +100,12 @@ A basic function doing the same thing can look something like this:"/>
   "@type": "BlogPosting",
   "headline": "PowerCLI: Locate a MAC-address in vCenter",
   "name": "PowerCLI: Locate a MAC-address in vCenter",
-  "description": "To find out to which vm a MAC address belongs, you can use a simple one-liner:\n(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )\nThats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.\nA basic function doing the same thing can look something like this:",
+  "description": "To find out to which vm a MAC address belongs, you can use a simple one-liner:\nGet-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} (Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )\nThats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.",
   "keywords": [
     "function", "get-macaddress", "get-vm", "powercli", "Powershell", "vmware"
   ],
-  "articleBody": "To find out to which vm a MAC address belongs, you can use a simple one-liner:\n(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )\nThats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.\nA basic function doing the same thing can look something like this:\nThat way, it enough to type Get-MACAddress 00:50:56:A1:50:43\nOr, you can take the time to create a proper function:\nThis more advanced function will allow you to narrow the search, it will check that the mac address you type is the correct length and it provides a little help section that you can call with get-help get-macaddress.\n",
-  "wordCount" : "135",
+  "articleBody": "To find out to which vm a MAC address belongs, you can use a simple one-liner:\nGet-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} (Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )\nThats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.\nA basic function doing the same thing can look something like this:\nfunction Get-MACAddress ($MAC) { Get-vm | Select Name,Folder,PowerState, @{N=\"Network\";E={$_ | Get-networkAdapter | ? {$_.macaddress -eq $MAC}}} | Where {$_.Network-ne \"\"} } That way, it enough to type Get-MACAddress 00:50:56:A1:50:43\nOr, you can take the time to create a proper function:\nfunction Get-MACAddress { [CmdletBinding()] Param ( [parameter(Mandatory=$True,ValueFromPipeline=$True)][Validatelength(17,17)][string]$MAC, [string]$Location = '*' ) Get-VM -Location $Location | Select Name,Folder,PowerState, @{N=\"Network\";E={$_ | Get-networkAdapter | ? {$_.macaddress -eq $MAC}}} | Where {$_.Network -ne \"\"} \u0026lt;# .Synopsis Searches vCentre for the given MAC address .Description This function searches the entire vCentre, or the given folder,datasenter,cluster,vApp or ResourcePool for VMs using the given MAC address. VMs with the given MAC address will be listed with Name,Folder,PowerState and to which network adapter the MAC address is assigned .Parameter MACAddress The MAC address you want to search for. Use the following format: 00:00:00:00:00:00 .Parameter Location If you want to narrow the search to a specific folder,datasenter,cluster,vApp or ResourcePool .Example Get-MACAddress 00:50:56:a4:04:ce Searches the entire vCentre for VMs with the mac address 00:50:56:a4:04:ce .Example Get-MACAddress 00:50:56:a4:04:ce -Location vApp01 Searches the vApp called vApp01 for VMs with the mac address 00:50:56:a4:04:ce .Link http://cloud.kemta.net #\u003e } This more advanced function will allow you to narrow the search, it will check that the mac address you type is the correct length and it provides a little help section that you can call with get-help get-macaddress.\n",
+  "wordCount" : "315",
   "inLanguage": "en",
   "datePublished": "2013-10-23T09:50:09Z",
   "dateModified": "2013-10-23T09:50:09Z",
@@ -188,17 +185,44 @@ A basic function doing the same thing can look something like this:"/>
 </div>
   </header> 
   <div class="post-content"><p>To find out to which vm a MAC address belongs, you can use a simple one-liner:</p>
-<!-- raw HTML omitted -->
-<p>(Courtesy of this page: <!-- raw HTML omitted --><a href="http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/">http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/</a><!-- raw HTML omitted --> )</p>
+<pre tabindex="0"><code>Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq“00:50:56:A4:22:F4“}}} |Where {$_.Network-ne “”} 
+</code></pre><p>(Courtesy of this page: <!-- raw HTML omitted --><a href="http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/">http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/</a><!-- raw HTML omitted --> )</p>
 <p>Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.</p>
 <p>A basic function doing the same thing can look something like this:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>That way, it enough to type Get-MACAddress 00:50:56:A1:50:43</p>
+<pre tabindex="0"><code>function Get-MACAddress ($MAC)
+{
+Get-vm | Select Name,Folder,PowerState, @{N=&#34;Network&#34;;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq $MAC}}} | Where {$_.Network-ne &#34;&#34;}
+} 
+</code></pre><p>That way, it enough to type Get-MACAddress 00:50:56:A1:50:43</p>
 <p>Or, you can take the time to create a proper function:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>This more advanced function will allow you to narrow the search, it will check that the mac address you type is the correct length and it provides a little help section that you can call with get-help get-macaddress.</p>
+<pre tabindex="0"><code>function Get-MACAddress
+{
+[CmdletBinding()]
+Param (
+[parameter(Mandatory=$True,ValueFromPipeline=$True)][Validatelength(17,17)][string]$MAC,
+[string]$Location = &#39;*&#39;
+)
+Get-VM -Location $Location | Select Name,Folder,PowerState, @{N=&#34;Network&#34;;E={$_ | Get-networkAdapter | ? {$_.macaddress -eq $MAC}}} | Where {$_.Network -ne &#34;&#34;}
+&amp;lt;#
+.Synopsis
+Searches vCentre for the given MAC address
+.Description
+This function searches the entire vCentre, or the given folder,datasenter,cluster,vApp or ResourcePool for VMs using the given MAC address. VMs with the given MAC address will be listed with Name,Folder,PowerState and to which network adapter the MAC address is assigned
+.Parameter MACAddress
+The MAC address you want to search for. Use the following format: 00:00:00:00:00:00
+.Parameter Location
+If you want to narrow the search to a specific folder,datasenter,cluster,vApp or ResourcePool
+.Example
+Get-MACAddress 00:50:56:a4:04:ce
+Searches the entire vCentre for VMs with the mac address 00:50:56:a4:04:ce
+.Example
+Get-MACAddress 00:50:56:a4:04:ce -Location vApp01
+Searches the vApp called vApp01 for VMs with the mac address 00:50:56:a4:04:ce
+.Link
+http://cloud.kemta.net
+#&gt;
+} 
+</code></pre><p>This more advanced function will allow you to narrow the search, it will check that the mac address you type is the correct length and it provides a little help section that you can call with get-help get-macaddress.</p>
 <p> </p>
 <p> </p>
 

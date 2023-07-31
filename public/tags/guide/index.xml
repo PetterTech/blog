@@ -14,7 +14,7 @@
       
       <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/</guid>
       <description>For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
-This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.</description>
+Write-Progress -Activity &amp;#34;Something&amp;#34; -Status &amp;#34;Something else&amp;#34; -CurrentOperation &amp;#34;thinking&amp;#34; -PercentComplete 30 This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.</description>
     </item>
     
   </channel>
