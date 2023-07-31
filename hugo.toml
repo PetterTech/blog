@@ -1,3 +1,4 @@
 baseURL = 'https://green-glacier-046ccc103.3.azurestaticapps.net'
 languageCode = 'en-us'
 title = 'PetterTech'
+theme: "PaperMod"
