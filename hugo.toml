@@ -1,4 +1,4 @@
-baseURL = 'https://kind-field-086fd8103.3.azurestaticapps.net'
+baseURL = 'https://blue-cliff-0fe9f2b03.3.azurestaticapps.net'
 languageCode = 'en-us'
 title = 'PetterTech'
-theme: "PaperMod"
+theme = "PaperMod"
