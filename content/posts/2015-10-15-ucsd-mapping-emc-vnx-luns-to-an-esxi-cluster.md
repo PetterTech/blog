@@ -31,7 +31,7 @@ The solution I came up with is overly complicated and can surely be simplified, 
   * A custom task to parse and convert the output from the powershell task to an output of the emcStorageGroupIdentity type
   * The builtin &#8220;add vnx lun to storage group&#8221; task
 
-Here&#8217;s how I have set it up:
+Here's how I have set it up:
 
 [<img decoding="async" loading="lazy" class="alignnone size-full wp-image-755" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-48-58.png" alt="2015-10-15_14-48-58" width="578" height="609" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-48-58.png 578w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-48-58-285x300.png 285w" sizes="(max-width: 578px) 100vw, 578px" />][1]
 
@@ -39,11 +39,11 @@ The custom task I use to convert the output from the powershell task is built up
 
 The only difference is the name and type of the output.
 
-Now, let&#8217;s look at the workflow user inputs:
+Now, let's look at the workflow user inputs:
 
 [<img decoding="async" loading="lazy" class="alignnone size-full wp-image-756" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-17-37.png" alt="2015-10-15_14-17-37" width="947" height="339" />][2]
 
-In this workflow I haven&#8217;t configured any outputs, so let&#8217;s move along to the first task: the powershell task.
+In this workflow I haven't configured any outputs, so let's move along to the first task: the powershell task.
 
 [<img decoding="async" loading="lazy" class="alignnone size-full wp-image-757" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-41-13.png" alt="2015-10-15_14-41-13" width="1213" height="580" />][3]
 
@@ -103,7 +103,7 @@ Since the output from the custom task is of the emcStorageGroupIdentity type I 
 
 [<img decoding="async" loading="lazy" class="alignnone size-full wp-image-760" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-47-52.png" alt="2015-10-15_14-47-52" width="1004" height="654" />][5]
 
-And that&#8217;s really all there is to it. If you want to download my example workflow, you can do so here: <http://4.234.145.218/wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip>
+And that's really all there is to it. If you want to download my example workflow, you can do so here: <http://4.234.145.218/wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip>
 
 &nbsp;
 

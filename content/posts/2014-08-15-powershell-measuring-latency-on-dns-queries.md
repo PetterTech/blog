@@ -28,7 +28,7 @@ But, as always, I had to play around with created a powershell function.
 
 The function resolves a few records from locally defined DNS servers and some publicly available DNS servers (or a custom list if you want) and measures the average latency (in milliseconds). The results are put in a list and sorted by latency.
 
-Here&#8217;s the code:
+Here's the code:
 
  ```
 function Measure-DNSLatency

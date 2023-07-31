@@ -18,11 +18,11 @@ tags:
   - Powershell
 
 ---
-If you are using a KMS server for activating servers and clients in your environment, you may have noticed that there&#8217;s really no obvious way to get a list of all the clients that have been activated by the KMS server.
+If you are using a KMS server for activating servers and clients in your environment, you may have noticed that there's really no obvious way to get a list of all the clients that have been activated by the KMS server.
 
 One way to get that overview is by using VAMT (<a href="http://technet.microsoft.com/en-us/library/hh824953.aspx" target="_blank" rel="noopener">http://technet.microsoft.com/en-us/library/hh824953.aspx</a>), but since that tool is based on pulling info from clients and not from the KMS server it is not suitable for everyone.
 
-Thankfully, there&#8217;s PowerShell 🙂  
+Thankfully, there's PowerShell 🙂  
 Getting a list of all activated KMS clients through PowerShell is actually a simple one-liner:
 
  ```

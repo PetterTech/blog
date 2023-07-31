@@ -15,6 +15,6 @@ tags:
 I better write this down before I forget it again: ctrl+shift+6 x
 
 If this makes absolutely no sense to you I will explain:  
-When you run commands like traceroute, ping and others within Cisco IOS you can abort them. But you can&#8217;t use the usual ctrl+c (that would be to logical I guess), you need to press ctrl+shift+6 and THEN press x.
+When you run commands like traceroute, ping and others within Cisco IOS you can abort them. But you can't use the usual ctrl+c (that would be to logical I guess), you need to press ctrl+shift+6 and THEN press x.
 
-There&#8217;s probably a good explanation for this, but I still feel that it is horribly cumbersome. Especially since I don&#8217;t use it that often, so I forget it from time to time 😛
+There's probably a good explanation for this, but I still feel that it is horribly cumbersome. Especially since I don't use it that often, so I forget it from time to time 😛

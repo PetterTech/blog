@@ -14,12 +14,12 @@ tags:
   - Powershell
 
 ---
-Often it&#8217;s a good idea to have a receive connector allowing certain devices to send mail through you exchange server without having to authenticate.
+Often it's a good idea to have a receive connector allowing certain devices to send mail through you exchange server without having to authenticate.
 
 One example from where I currently work is printers.  
-We never set up the printers ourselves, that job is done by the provider. And do we want to give them a username and password allowing for mail relay through our servers? No, we don&#8217;t.
+We never set up the printers ourselves, that job is done by the provider. And do we want to give them a username and password allowing for mail relay through our servers? No, we don't.
 
-It&#8217;s a better practice to have them only input the name/ip-address of one exchange server with the cas role. Then all we have to do is add the ip-address of the printer to the list of allowed ip&#8217;s on our receive connector. Here&#8217;s a short guide on how to do it:
+It's a better practice to have them only input the name/ip-address of one exchange server with the cas role. Then all we have to do is add the ip-address of the printer to the list of allowed ip's on our receive connector. Here's a short guide on how to do it:
 
   * Open up the EMC on a exchange server with the cas role and navigate to Server Configuration&#8211;>Hub transport.
   * On the right side, click New Receive Connector&#8230;
@@ -32,7 +32,7 @@ It&#8217;s a better practice to have them only input the name/ip-address of one 
 
 Then you are good to go. If you want to allow more ip-addresses to relay, you can always enter more of them on the Properties&#8211;>Network for the receive connector.
 
-And, as always, here&#8217;s the nerdy way of doing it in powershell:
+And, as always, here's the nerdy way of doing it in powershell:
 
  ```
  New-ReceiveConnector -Name "Anonymous" -Usage Custom -PermissionGroups AnonymousUsers -Bindings 0.0.0.0:25 -RemoteIpRanges <ip of printer> -server <name of your server> 

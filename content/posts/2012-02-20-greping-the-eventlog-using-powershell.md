@@ -13,9 +13,9 @@ tags:
   - Powershell
 
 ---
-If you are used to working with Linux you&#8217;re probably familiar with using tail, grep and such for gathering stuff from logs and other files. Those are quite useful tools and work very well when you want to find out e.g. why a user fails to log in.
+If you are used to working with Linux you're probably familiar with using tail, grep and such for gathering stuff from logs and other files. Those are quite useful tools and work very well when you want to find out e.g. why a user fails to log in.
 
-In Windows it&#8217;s a little different, if we want to find something in the event logs we have always had to resort to a console.  
+In Windows it's a little different, if we want to find something in the event logs we have always had to resort to a console.  
 But with powershell you can search through the event logs from a command line:
 
 Get-EventLog is quite the useful cmdlet. You can specify which log you want to search, a time window, usernames, entrytypes and even computername.
@@ -39,7 +39,7 @@ Note that this will only grab the last 5 entries from the system event log, not 
  Get-EventLog -LogName System -After $yesterday | Where-Object {$_.EventID -eq 7036} 
  ```
 
-As you can see I define a variable for yesterday, thats just because I&#8217;m lazy and want to keep the commands as little complex as I can.
+As you can see I define a variable for yesterday, thats just because I'm lazy and want to keep the commands as little complex as I can.
 
 One of the things I commonly use get-eventlog for is figuring out why a user fails to log in through one of our radius servers. Heres one example of a command I would use for that:
 

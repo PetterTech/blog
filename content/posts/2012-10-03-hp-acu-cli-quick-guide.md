@@ -16,12 +16,12 @@ tags:
   - HP
 
 ---
-Guess what? It&#8217;s time for something different than powershell 😛
+Guess what? It's time for something different than powershell 😛
 
 I finally got myself a server to play around with Hyper-V on. This has been sorely missed for a long time. I worked a lot with Hyper-V in my previous job, and even built a small data center running on Hyper-V. But at my current job we only use vmware, which is a great product but to expensive in my book. Especially when we are finally looking at a datacenter license from Microsoft and we already have the System Center suite. This means that we can save a ton of money on switching from vmware to Hyper-V.
 
 Anyway&#8230;In this blogpost I want to show you a little about the HP Array Configuration Utility command-line interface.  
-I usually use the graphical interface for creating volumes and such, but for some reason I couldn&#8217;t get it working on my Hyper-V test server. So instead of looking on how to fix that I decided to give the cli a shot. What I want to achieve with this post is to show you how the steps you need after putting one or more new disks in the server.
+I usually use the graphical interface for creating volumes and such, but for some reason I couldn't get it working on my Hyper-V test server. So instead of looking on how to fix that I decided to give the cli a shot. What I want to achieve with this post is to show you how the steps you need after putting one or more new disks in the server.
 
 The ACU cli can be launched by running C:Program Files (x86)CompaqHpacucliBinhpacucli.exe.
 

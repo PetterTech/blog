@@ -14,7 +14,7 @@ tags:
 
 ---
 Libraries can be a nice feature to use if you have your pictures, music, movies and whatnot spread across several different locations, be that discs, servers or folders.  
-It&#8217;s really simple to setup too!
+It's really simple to setup too!
 
 Open up explorer and look to your left, there you will see the default Libraries Windows has set up.
 

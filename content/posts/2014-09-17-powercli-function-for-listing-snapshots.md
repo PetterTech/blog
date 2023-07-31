@@ -22,9 +22,9 @@ tags:
 My very first PowerCLI related post was about this same topic: listing snapshot info using PowerCLI.  
 In my original post (which you can see <a href="http://cloud.kemta.net/2013/10/powershell_vmware_list_all_snapshots/" target="_blank" rel="noopener">here</a>) I only wrote a pretty simple one-liner. Which was kind of okay, but it was missing one crucial thing: who took the snapshot?
 
-Why vmware hasn&#8217;t found a way to include a username in the get-snapshot cmdlet is something I just can&#8217;t understand. There&#8217;s really not much code needed to add this to the output, and there&#8217;s several ways of doing so.
+Why vmware hasn't found a way to include a username in the get-snapshot cmdlet is something I just can't understand. There's really not much code needed to add this to the output, and there's several ways of doing so.
 
-I found that using Get-Snapshot and Get-VIEvent together was the easiest way to get all the info I want. It&#8217;s not a perfect solution, seeing as I really wanted to make use of the much faster Get-View instead of Get-Snapshot, but I have yet to figure out a good way to handle snapshot trees using Get-View.
+I found that using Get-Snapshot and Get-VIEvent together was the easiest way to get all the info I want. It's not a perfect solution, seeing as I really wanted to make use of the much faster Get-View instead of Get-Snapshot, but I have yet to figure out a good way to handle snapshot trees using Get-View.
 
 As usual I created a function for this, Get-Snapshots:
 
@@ -83,7 +83,7 @@ As you can see, the output is a list. If you want it to be more readable for hum
 
 [<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-643" alt="get-snapshots-ft" src="http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft.png" width="1031" height="172" srcset="http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft.png 1031w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft-300x50.png 300w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft-1024x171.png 1024w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft-768x128.png 768w" sizes="(max-width: 1031px) 100vw, 1031px" />][2]
 
-If you would rather run this as a script, instead of using the function, here&#8217;s the code for that:
+If you would rather run this as a script, instead of using the function, here's the code for that:
 
  ```
     $collection = @()

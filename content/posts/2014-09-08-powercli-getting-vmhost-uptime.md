@@ -24,11 +24,11 @@ I love a powershell challenge, and last week a colleague of mine asked me for as
  Get-View  -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N="UptimeDays"; E={((((get-date) - ($_.runtime).BootTime).TotalDays).Tostring()).Substring(0,5)}}
  ```
 
-However, I wasn&#8217;t completely satisfied by the the output or the ease of use.  
+However, I wasn't completely satisfied by the the output or the ease of use.  
 So today I went back and rewrote the code and made a function of it.  
 Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round. You can learn more about the Math class here: <a href="http://www.madwithpowershell.com/2013/10/math-in-powershell.html" target="_blank" rel="noopener">http://www.madwithpowershell.com/2013/10/math-in-powershell.html</a>
 
-Anyways, here&#8217;s the function I came up with:
+Anyways, here's the function I came up with:
 
  ```
  function Get-VMHostUptime
@@ -80,6 +80,6 @@ You can use it in a couple of different ways, as documented in its help section 
 
 [<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-627" alt="get-vmhostuptime" src="http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime.png" width="1224" height="712" srcset="http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime.png 1224w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime-300x175.png 300w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime-1024x596.png 1024w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime-768x447.png 768w" sizes="(max-width: 1224px) 100vw, 1224px" />][1]
 
-Hopefully, you don&#8217;t have an uptime as long as some of these hosts 🙂
+Hopefully, you don't have an uptime as long as some of these hosts 🙂
 
  [1]: http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime.png

@@ -16,7 +16,7 @@ tags:
 ---
 Sometimes it can be useful to know how much space the VMs in a specific folder (or vApp/datacenter) is occupying. For example if you are a hosting provider of some sort and need to know how much space a customer is using.
 
-It&#8217;s a simple one-liner!
+It's a simple one-liner!
 
 <div>
   <div>

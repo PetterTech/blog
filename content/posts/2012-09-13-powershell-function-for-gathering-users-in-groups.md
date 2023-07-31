@@ -19,7 +19,7 @@ A friend of mine asked me a couple of days ago if I knew a way to gather users w
 
 After he confirmed that the script worked as planned I decided to make a function of it (Yes, I know it has been a lot of them on this blog lately).  
 The function accepts two parameters: GroupNames and Filelocation. In addition there is an optional switch called KeepCSV.  
-Rest of the function isn&#8217;t that interesting, if you want to use it you can always consult the help (get-help get-membersinadgroups) that I actually have created 🙂
+Rest of the function isn't that interesting, if you want to use it you can always consult the help (get-help get-membersinadgroups) that I actually have created 🙂
 
 Heres the code:
 

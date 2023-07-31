@@ -19,7 +19,7 @@ tags:
 ---
 The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
 
-Here&#8217;s the code:
+Here's the code:
 
  ```
 $Clusters = Get-View -ViewType ComputeResource -Property Name,OverallStatus,TriggeredAlarmstate
@@ -64,7 +64,7 @@ And the output will look something like this:
 
 As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
 
-Anyways, here&#8217;s the function code:
+Anyways, here's the function code:
 
  ```
 function Get-ClusterAlarms
@@ -118,7 +118,7 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 } 
 ```
 
-The output will be the same, but since it&#8217;s a function you can manipulate the data further. For example if you only want alarms related to the clusters themselves:
+The output will be the same, but since it's a function you can manipulate the data further. For example if you only want alarms related to the clusters themselves:
 
 [<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-607" alt="get-clusteralarms-filter" src="http://cloud.kemta.net/wp-uploads/get-clusteralarms-filter.png" width="890" height="141" />][2]
 

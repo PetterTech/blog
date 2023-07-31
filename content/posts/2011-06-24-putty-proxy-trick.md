@@ -11,7 +11,7 @@ tags:
   - PuTTY
 
 ---
-Did you know you use an SSH connection as a proxy using PuTTY? I didn&#8217;t until today 🙂
+Did you know you use an SSH connection as a proxy using PuTTY? I didn't until today 🙂
 
 Fire up PuTTY but before you connect navigate to Connection&#8211;>SSH&#8211;>Tunnels.  
 Here you can specify a port you want PuTTY to respond to proxy requests. Choose a port that is not in use on your localhost, I will use 8080 in this example. Choose Dynamic on Destination and click Add.

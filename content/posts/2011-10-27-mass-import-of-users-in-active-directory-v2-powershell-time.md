@@ -350,9 +350,9 @@ If you want a script for enabling users for lync, you can see my previous post <
 The cool thing about this script is that is pretty fast. In my test environment, consisting of two virtual machines, one domain controller and one exchange server, it took only 1 minute to create 100 users and mailboxes, 8 OUs and 5 security and distribution groups.  
 I think thats quite impressive taking in consideration that the two virtual machines both run on my computer and with only 2GB ram each.
 
-The only thing thats quite sad is that there&#8217;s no powershell commands for sharing and setting share permissions in powershell 2.0. Thats why I have used one powershell 3.0 command in the script , new-smbshare. It is only used once, for sharing the homefolder root.
+The only thing thats quite sad is that there's no powershell commands for sharing and setting share permissions in powershell 2.0. Thats why I have used one powershell 3.0 command in the script , new-smbshare. It is only used once, for sharing the homefolder root.
 
-You can download the powershell 3.0 community preview and install it on the server you will run the script on. Or you can just comment out that command and rather share the root homefolder manually if you don&#8217;t want to install powershell 3.0 on your server.
+You can download the powershell 3.0 community preview and install it on the server you will run the script on. Or you can just comment out that command and rather share the root homefolder manually if you don't want to install powershell 3.0 on your server.
 
 This script uses two csv files, one for groups and OUs and one for the users. You can download a zip containing all files <a href="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/powershell/populate-ad.zip" target="_blank" rel="noopener">here</a>
 

@@ -16,7 +16,7 @@ tags:
   - script
 
 ---
-Tried sleeping&#8230;&#8230;That obviously didn&#8217;t work out, so here&#8217;s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
+Tried sleeping&#8230;&#8230;That obviously didn't work out, so here's a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
 
 Note: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.
 
@@ -49,7 +49,7 @@ I hope you all are familiar with the md and net share commands, but thats for cr
 
 Cacls sets ntfs permissions on the users home folder for the user, administrators and system.
 
-Now if you want to add say 1000 users, you might want to use something like Word&#8217;s Mailings feature (that is, if you don&#8217;t loove to sit and punch usernames and such all day long).
+Now if you want to add say 1000 users, you might want to use something like Word's Mailings feature (that is, if you don't loove to sit and punch usernames and such all day long).
 
 For that I have created a couple of example files, you can download them here:  <a title="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip" href="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip" target="_blank" rel="noopener">http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip</a>
 

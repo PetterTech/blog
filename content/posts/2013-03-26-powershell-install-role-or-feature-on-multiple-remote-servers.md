@@ -32,7 +32,7 @@ tags:
 ---
 Today I was presented with a task that sounded pretty boring and repetitive: Install the Windows Search service on all our citrix servers.
 
-Now, I could just log on each and every one of our citrix servers, open Server Manager and then install the role service but where&#8217;s the fun in that?
+Now, I could just log on each and every one of our citrix servers, open Server Manager and then install the role service but where's the fun in that?
 
 As always Powershell is a lot more fun:
 
@@ -53,4 +53,4 @@ Next I only had to create a foreach loop that enters a PSSession on each of the 
  } 
  ```
 
-It is worth mentioning that you can&#8217;t connect to remote servers using the Enter-PSSession cmdlet if you haven&#8217;t enabled remote management, if you want to enable it you can check this guide: <a title="http://blog.powershell.no/2010/03/04/enable-and-configure-windows-powershell-remoting-using-group-policy/" href="http://blog.powershell.no/2010/03/04/enable-and-configure-windows-powershell-remoting-using-group-policy/" target="_blank" rel="noopener">http://blog.powershell.no/2010/03/04/enable-and-configure-windows-powershell-remoting-using-group-policy/</a>
+It is worth mentioning that you can't connect to remote servers using the Enter-PSSession cmdlet if you haven't enabled remote management, if you want to enable it you can check this guide: <a title="http://blog.powershell.no/2010/03/04/enable-and-configure-windows-powershell-remoting-using-group-policy/" href="http://blog.powershell.no/2010/03/04/enable-and-configure-windows-powershell-remoting-using-group-policy/" target="_blank" rel="noopener">http://blog.powershell.no/2010/03/04/enable-and-configure-windows-powershell-remoting-using-group-policy/</a>

@@ -21,7 +21,7 @@ Trying to manually activate the database on server1, where is has an activation 
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;  
 Microsoft Exchange Error  
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;  
-Cannot activate database copy &#8216;Activate Database Copy&#8230;&#8217;.
+Cannot activate database copy &#8216;Activate Database Copy&#8230;'.
 
 Activate Database Copy&#8230;  
 Failed  

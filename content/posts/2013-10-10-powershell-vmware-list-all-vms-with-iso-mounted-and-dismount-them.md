@@ -19,7 +19,7 @@ tags:
 ---
 Easy-peasy and a pretty short post&#8230;
 
-To get all vm&#8217;s with iso mounted:
+To get all vm's with iso mounted:
 
  ```
 Get-VM | Get-CDDrive | select @{N="VM";E="Parent"},IsoPath | where {$_.IsoPath -ne $null} 

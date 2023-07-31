@@ -17,7 +17,7 @@ Just thought I should share this link:
 <http://technet.microsoft.com/en-us/library/ee731893(WS.10).aspx>
 
 I have tried this on a HP DL380 G6 and it worked like a charm.  
-One of the advantages of using that kind of server is that it has internal usb ports so you don&#8217;t have to worry about someone accidentally unplugging the usb drive.
+One of the advantages of using that kind of server is that it has internal usb ports so you don't have to worry about someone accidentally unplugging the usb drive.
 
-Why should I run a server os from a usb drive you may ask. Well, the biggest advantage is that if your storing all virtual machines on e.g. a SAN anyway you don&#8217;t have to buy internal disks for your Hyper-V hosts.  
+Why should I run a server os from a usb drive you may ask. Well, the biggest advantage is that if your storing all virtual machines on e.g. a SAN anyway you don't have to buy internal disks for your Hyper-V hosts.  
 Another advantage is that is that usb drives are like ssd disks, they have no movable parts that can break, and they have a much lower power consumption.

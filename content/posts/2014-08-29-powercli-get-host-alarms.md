@@ -17,7 +17,7 @@ tags:
   - vmware
 
 ---
-Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it&#8217;s time for getting host alarms 🙂  
+Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it's time for getting host alarms 🙂  
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
 
  ```
@@ -48,7 +48,7 @@ The output will look something like this:
 
 [<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-602" alt="get-vmhostalarms" src="http://cloud.kemta.net/wp-uploads/get-vmhostalarms.png" width="920" height="73" />][1]
 
-And here&#8217;s the function code:
+And here's the function code:
 
  ```
 function Get-VMHostAlarms

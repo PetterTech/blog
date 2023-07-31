@@ -28,7 +28,7 @@ tags:
 ---
 #### OpenService FAILED 5: Access is denied. &#8212; &#8220;Oh crap!&#8221;
 
-If you ever see this error and need to reset the DACL on a Windows service, let&#8217;s say in case you (or someone else) accidentally deletes it, or configure it to something that prevents you from reading it&#8217;s security settings, this might do the trick:
+If you ever see this error and need to reset the DACL on a Windows service, let's say in case you (or someone else) accidentally deletes it, or configure it to something that prevents you from reading it's security settings, this might do the trick:
 
 First of all, get a cup of coffee.
 
@@ -48,7 +48,7 @@ Start a new cmd session as the system account:
 PsExec.exe /s cmd 
 ```
 
-Now it&#8217;s time to set a new DACL, this is done by using the command &#8220;sc sdset&#8221; followed by the service name and the new security descriptor using SDDL-format (Security Descriptor Definition Language). If you are unsure what parameters to use here, you can either run &#8220;sc sdshow&#8221; on another service that most likely are configured the same way as the service you are changing were, or try the command in the example below.
+Now it's time to set a new DACL, this is done by using the command &#8220;sc sdset&#8221; followed by the service name and the new security descriptor using SDDL-format (Security Descriptor Definition Language). If you are unsure what parameters to use here, you can either run &#8220;sc sdshow&#8221; on another service that most likely are configured the same way as the service you are changing were, or try the command in the example below.
 
 The command below will give access to Local System (SY), Built-in administrators (BA), Interactively logged-on user (IU) and Service logon user (SU).
 

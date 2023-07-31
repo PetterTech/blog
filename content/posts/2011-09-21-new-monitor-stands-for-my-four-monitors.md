@@ -39,7 +39,7 @@ You can see the end result here:
 
 [<img decoding="async" loading="lazy" class="alignnone" title="img" src="http://dl.dropbox.com/u/33041052/blogbilder/desk/IMG_1718_thumb.png" alt="" width="324" height="242" />][6]
 
-I am quite happy with the results, the only thing that bothers me is that the stands should have been placed further apart, that way I wouldn&#8217;t have to have the left monitor slightly above the center one. But that isn&#8217;t something I can blame the stands for, I could just drill an extra hole for them instead of using the cable routing hole in the desk.
+I am quite happy with the results, the only thing that bothers me is that the stands should have been placed further apart, that way I wouldn't have to have the left monitor slightly above the center one. But that isn't something I can blame the stands for, I could just drill an extra hole for them instead of using the cable routing hole in the desk.
 
 The stands are a dream to work with, very easy installation. It takes some time setting up, but I think I only spent about half an hour on assembly. The rest of the time is tweaking the position of each monitor to my liking.
 

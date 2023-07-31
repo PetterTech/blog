@@ -39,7 +39,7 @@ The redirect function in IIS 7 and 7.5 is in my experience pretty buggy. More of
 
 Because of that I have used this simple html code for redirecting, instead of using the built in function in IIS.
 
-Use it at your own will, I&#8217;m just posting it so I know where to find it the next time I need it 🙂
+Use it at your own will, I'm just posting it so I know where to find it the next time I need it 🙂
 
 ```
 

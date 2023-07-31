@@ -25,7 +25,7 @@ Get-vm | Select Name, @{N=“Network“;E={$_ | Get-networkAdapter | ? {$_.macad
 
 (Courtesy of this page: <a href="http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/" target="_blank" rel="noopener">http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/</a> )
 
-Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn&#8217;t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn't comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
 
 A basic function doing the same thing can look something like this:
 

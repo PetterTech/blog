@@ -41,7 +41,7 @@ You can achieve the goal with a simple one-liner:
 
  ```
 
-But wouldn&#8217;t it be easier to have it in a function? In Powershell, creating functions isn&#8217;t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:
+But wouldn't it be easier to have it in a function? In Powershell, creating functions isn't all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:
 
  ```
 function Get-EmailAddress ($emailaddress)
@@ -52,7 +52,7 @@ Get-Recipient -ResultSize unlimited | where {$_.emailaddresses -match "$emailadd
  ```
 
 See how easy that was?  
-First you tell powershell that you want to configure a function, then the command you want to associate the function with. Within the ( ) you define what parameters the function will need. Then there&#8217;s only a { to start defining what the function will do and a } to end the function.
+First you tell powershell that you want to configure a function, then the command you want to associate the function with. Within the ( ) you define what parameters the function will need. Then there's only a { to start defining what the function will do and a } to end the function.
 
 Now all you have to do in order to find out who or what has a given email address is:
 

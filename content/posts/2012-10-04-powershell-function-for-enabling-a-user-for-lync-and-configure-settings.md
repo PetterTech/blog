@@ -190,14 +190,14 @@ tags:
   - throw
 
 ---
-A little while ago I posted a script for enabling users for Lync and settings some settings for that user. That script has been used here ever since I posted it and it has worked like a charm. However there&#8217;s always room for improvement, right?.
+A little while ago I posted a script for enabling users for Lync and settings some settings for that user. That script has been used here ever since I posted it and it has worked like a charm. However there's always room for improvement, right?.
 
 So I have made a function out of it and for the first time (I think) I have even implemented some error handling. The function is also improved quit a bit on the help section and the info that is shown to the user after the function completes.
 
 As in the script, this function will enable the user for Lync and set some default settings like Dial Plan, Voice Policy, Conferencing Policy. It also gives you the option to specify a Line URI.  
 The difference is that this function will use the default settings only if nothing else is specified, so you can change the settings if you like, using parameters. Of course theres also the possibility to pipe input from a csv file.
 
-Here&#8217;s the code:
+Here's the code:
 
 ```
 function Enable-LyncUser {
@@ -288,7 +288,7 @@ Write-Host "The user may now log in to Lync as $($SipAddress.SipAddress.substrin
 
 &nbsp;
 
-You may wonder why the Start-Sleep command is there. The reason is that my testing indicated that the function will work to fast for Active Directory if it isn&#8217;t there. During my testing I found that without the sleep the next command, Set-CsUser, will fail because the object cannot be found. Running the function again resultet in no errors.  
+You may wonder why the Start-Sleep command is there. The reason is that my testing indicated that the function will work to fast for Active Directory if it isn't there. During my testing I found that without the sleep the next command, Set-CsUser, will fail because the object cannot be found. Running the function again resultet in no errors.  
 Therefore I tested adding a few seconds of sleep to prevent the Set-CsUser command (and the following commands) from failing. Depending on you environment you can decrease the seconds or even remove the sleep, but I found that 3 seconds was just a bit to short (sometimes it would fail, sometimes not) so I ended up with 4.
 
 I am kinda proud of the error handling in this function, given that I have never used error handling in Powershell before. But please let me know if there are improvements to be made or errors in my code.

@@ -13,9 +13,9 @@ tags:
   - tools
 
 ---
-Stumbled upon a tool from Microsoft called ALTools that I thought were absolutely awesome. It&#8217;s over 7 years old so I wonder why I haven&#8217;t seen it before
+Stumbled upon a tool from Microsoft called ALTools that I thought were absolutely awesome. It's over 7 years old so I wonder why I haven't seen it before
 
-Nevertheless it&#8217;s as cool now as it was when it was released.  
+Nevertheless it's as cool now as it was when it was released.  
 ALTools consists of several tools, but the coolest of them are:
 
   * aloinfo &#8211; Displays all user account names and the age of their passwords

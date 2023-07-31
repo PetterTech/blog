@@ -14,7 +14,7 @@ tags:
 ---
 From time to time you will want to reinstall you os right? And of course you have all your license keys documented right?
 
-Well, I don&#8217;t 🙂
+Well, I don't 🙂
 
 Thats why I usually extract them from my computer before i reinstall the os.  
 A nice little tool that I have been using for this is ProduKey.  

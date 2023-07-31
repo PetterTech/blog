@@ -16,13 +16,13 @@ tags:
   - REST
 
 ---
-Lately, I&#8217;ve had the pleasure of using Powershell to automate some of the basic tasks we do on our HPE 3PAR systems: creating volumes, adding them to volume sets, exporting them and so on.
+Lately, I've had the pleasure of using Powershell to automate some of the basic tasks we do on our HPE 3PAR systems: creating volumes, adding them to volume sets, exporting them and so on.
 
-Since my experience with REST APIs was rather limited it was quite daunting at first but once you get the hang of how REST works and the Invoke-RestMethod cmdlet it&#8217;s really not that bad.
+Since my experience with REST APIs was rather limited it was quite daunting at first but once you get the hang of how REST works and the Invoke-RestMethod cmdlet it's really not that bad.
 
 _Disclaimer: The examples below will vary somewhat in how I do certain things, simply because I had to learn all this from scratch. Hence, the first examples will sometimes do things &#8220;less correct&#8221; than the later examples since this also was quite the learning curve for me._
 
-The first step in doing anything with the REST API will always be to create a session key. If you&#8217;re not familiar with APIs, think of a session key as username and password combined into one string. You will need to add the session key to every REST call you do later on in order to authenticate yourself.  
+The first step in doing anything with the REST API will always be to create a session key. If you're not familiar with APIs, think of a session key as username and password combined into one string. You will need to add the session key to every REST call you do later on in order to authenticate yourself.  
 To create a session key from powershell you can use the following line:
 
  ```
@@ -51,10 +51,10 @@ Now that you have your session key you can start to do some more interesting stu
 
 The above example will create a datastore named &#8220;3parDatastore01&#8221; in the cpg named &#8220;SSD_r5&#8221; with 2TB of space and dedupe enabled. As you can see our session key is passed in the header as X-HP3PAR-WSAPI-SessionKey.
 
-_If your well versed in JSON and powershell you can probably tell that I&#8217;m not 🙂_  
-_The body you&#8217;re sending in the REST call is supposed to be formatted as a JSON object and in the above example I&#8217;m creating the JSON object manually by building it up as a string. In a later example I&#8217;ll show a more &#8220;correct&#8221; way to do it._
+_If your well versed in JSON and powershell you can probably tell that I'm not 🙂_  
+_The body you're sending in the REST call is supposed to be formatted as a JSON object and in the above example I'm creating the JSON object manually by building it up as a string. In a later example I'll show a more &#8220;correct&#8221; way to do it._
 
-The next step will usually be to export the volume or to add it to a volume set. Let&#8217;s look at an example where I add a volume to an existing volume set:
+The next step will usually be to export the volume or to add it to a volume set. Let's look at an example where I add a volume to an existing volume set:
 
  ```
  $body = '{"action":1,"setmembers":["'
@@ -63,7 +63,7 @@ The next step will usually be to export the volume or to add it to a volume set.
  Invoke-RestMethod -Method Put -Uri "http://<3PAR ip/hostname>:8008/api/v1/volumesets/testVVSet" -Headers @{'X-HP3PAR-WSAPI-SessionKey'=$key} -ContentType application/json -Body $body 
  ```
 
-_Again, I&#8217;m building the JSON object as a string here instead of doing it the correct way._
+_Again, I'm building the JSON object as a string here instead of doing it the correct way._
 
 The above example will add the volume called &#8220;3parDatastore01&#8221; (which we created in the previous example) to the existing volumeset called &#8220;testVVSet&#8221;. If you already have exported the volume set to a host or host set it is now available for the host(s) to use.
 
@@ -80,16 +80,16 @@ To query a single volume you can use this line:
  Invoke-RestMethod -Method get -Uri "http://<3PAR ip/hostname>:8008/api/v1/volumes/<volumename>" -Headers @{'X-HP3PAR-WSAPI-SessionKey'=$key} -ContentType "application/json" 
  ```
 
-You can also build a query directly in the uri you&#8217;re accessing by adding ?query=&#8221;<your query>&#8221; after /volumes. Here&#8217;s an example from HPE&#8217;s own guide:
+You can also build a query directly in the uri you're accessing by adding ?query=&#8221;<your query>&#8221; after /volumes. Here's an example from HPE's own guide:
 
  ```
  https://<storage_system>:8080/api/v1/volumes?query=”wwn EQ value1 OR wwn EQ value2 OR userCPG EQ value3 OR snapCPG EQ value4 OR wwn EQ valueN” 
  ```
 
-Of course, you can also do filtering in powershell if you&#8217;re more comfortable with that (I know I am) but then you will have wasted computing power on both the SAN and the machine you&#8217;re running powershell on 😉
+Of course, you can also do filtering in powershell if you're more comfortable with that (I know I am) but then you will have wasted computing power on both the SAN and the machine you're running powershell on 😉
 
 <p style="padding-left: 60px;">
-  Bonus:<br /> If you&#8217;re running vmware you can now use powercli to create the datastore. Example:
+  Bonus:<br /> If you're running vmware you can now use powercli to create the datastore. Example:
 </p>
 
 ```
@@ -123,7 +123,7 @@ _I also create the header before the Invoke-RestMethod line here._
 
 The example above will export 3parDatastore01 to esx01 with a lun id of 255.
 
-Lastly, I would like to provide you with an example on how we create our boot luns. This is an extract of a powershell function I wrote, in the original function there&#8217;s a lot more automation, error handling and logging but I removed it here for the sake of readability.
+Lastly, I would like to provide you with an example on how we create our boot luns. This is an extract of a powershell function I wrote, in the original function there's a lot more automation, error handling and logging but I removed it here for the sake of readability.
 
  ```
 $3PARHostname = "3Par01"

@@ -15,9 +15,9 @@ tags:
   - UCS Director
 
 ---
-While the Cisco PowerShell Agent (PSA) that can be used in UCS Director isn&#8217;t exactly perfect, it can still be put to good use. As long as you now how to use it properly 😉
+While the Cisco PowerShell Agent (PSA) that can be used in UCS Director isn't exactly perfect, it can still be put to good use. As long as you now how to use it properly 😉
 
-The major issue with using the PSA is that it doesn&#8217;t stick around to see if the commands/script was successful or not. As long as it delivered the commands successfully, it&#8217;s happy and your workflow will continue to the next step.
+The major issue with using the PSA is that it doesn't stick around to see if the commands/script was successful or not. As long as it delivered the commands successfully, it's happy and your workflow will continue to the next step.
 
 Jon Hildebrand describes a nice way around this in one of his blog posts: <a href="http://snoopj.wordpress.com/2014/11/05/cisco-powershell-agent-service-and-vmware-vum-powercli/" target="_blank" rel="noopener">http://snoopj.wordpress.com/2014/11/05/cisco-powershell-agent-service-and-vmware-vum-powercli/</a>
 

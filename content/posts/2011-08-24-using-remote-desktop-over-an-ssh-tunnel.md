@@ -13,10 +13,10 @@ tags:
   - ssh tunnel
 
 ---
-This is kinda the nerdy way of remoting a pc on a remote network. Usually a vpn connection would be preffered, but in my case I don&#8217;t want to forward the rdp port of security reasons.
+This is kinda the nerdy way of remoting a pc on a remote network. Usually a vpn connection would be preffered, but in my case I don't want to forward the rdp port of security reasons.
 
 Lets use my setup as an example:  
-At home I have a server running Debian linux, I also have several windows pc&#8217;s  that I want to be able to use remote desktop to. Since I have already forwarded the ssh port (22) to my Debian server I figured I could use it as a jumpstation.
+At home I have a server running Debian linux, I also have several windows pc's  that I want to be able to use remote desktop to. Since I have already forwarded the ssh port (22) to my Debian server I figured I could use it as a jumpstation.
 
 The way I solved this is somewhat similar to the [PuTTY proxy trick][1] guide that I posted earlier.
 
@@ -30,7 +30,7 @@ In the remote desktop window you now need to type 127.0.0.3:3390 and connect.
 
 All done!
 
-Note: You don&#8217;t have to have a linux server running at home to do this, any device running an ssh server will do. For example if you only have windows devices, you can use [MobaSSH][2]
+Note: You don't have to have a linux server running at home to do this, any device running an ssh server will do. For example if you only have windows devices, you can use [MobaSSH][2]
 
  [1]: http://cloud.kemta.net/?p=24
  [2]: http://mobassh.mobatek.net/

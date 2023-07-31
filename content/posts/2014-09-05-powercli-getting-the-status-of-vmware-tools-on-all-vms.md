@@ -17,8 +17,8 @@ tags:
   - vmware tools
 
 ---
-I&#8217;m sure I don&#8217;t need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it&#8217;s a good idea to keep VMware tools updated.  
-However, I haven&#8217;t found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list. And, in addition, I wanted the list to include the VM version.
+I'm sure I don't need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it's a good idea to keep VMware tools updated.  
+However, I haven't found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list. And, in addition, I wanted the list to include the VM version.
 
 I ended up with creating a function to provide me with that list:
 
@@ -88,7 +88,7 @@ For example, if you only want a list of VMs who need an upgrade of their VMware 
 
 [<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-623" alt="get-vmtoolsstatus-needupgrade" src="http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png" width="1560" height="856" srcset="http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png 1560w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade-300x165.png 300w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade-1024x562.png 1024w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade-768x421.png 768w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade-1536x843.png 1536w" sizes="(max-width: 1560px) 100vw, 1560px" />][2]
 
-In case you don&#8217;t want to use this as a function, here&#8217;s the script version:
+In case you don't want to use this as a function, here's the script version:
 
  ```
 $VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,runtime.PowerState

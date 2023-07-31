@@ -15,10 +15,10 @@ tags:
 A little list of some nifty packages for Debian:
 
 **sudo**  
-Oddly enough this isn&#8217;t installed by default. Well known for most Linux users, but it enables regular users to perform commands as root without actually logging in as root.
+Oddly enough this isn't installed by default. Well known for most Linux users, but it enables regular users to perform commands as root without actually logging in as root.
 
 **molly-guard  
-** Protects you from shutting down wrong server when using ssh to a server. What it does is ask you which server you want to shutdown when you run the command shutdown. If you type in wrong hostname it won&#8217;t run the command. Handy if you have a bunch of ssh sessions open and you type shutdown in the wrong session.
+** Protects you from shutting down wrong server when using ssh to a server. What it does is ask you which server you want to shutdown when you run the command shutdown. If you type in wrong hostname it won't run the command. Handy if you have a bunch of ssh sessions open and you type shutdown in the wrong session.
 
 **pwgen  
 ** Generates random passwords. Configurable what kind of passwords you want, for example high complexity and so on.

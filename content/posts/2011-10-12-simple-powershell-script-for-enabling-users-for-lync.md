@@ -88,9 +88,9 @@ tags:
 
 ---
 I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.  
-If you only have one sipdomain you can change the script so that it doesn&#8217;t ask for it.
+If you only have one sipdomain you can change the script so that it doesn't ask for it.
 
-Here&#8217;s the script in all its glory:
+Here's the script in all its glory:
 
  ```
 $UI = (Get-Host).UI.RawUI

@@ -69,9 +69,9 @@ tags:
   - script
 
 ---
-It&#8217;s been a while since I posted here so I thought it might be time to add some content.
+It's been a while since I posted here so I thought it might be time to add some content.
 
-This script is a simple script that adds a photo to a user&#8217;s active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).
+This script is a simple script that adds a photo to a user's active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).
 
 The requirements for this script is the Active Directory module and permission to edit a user object in Active Directory
 

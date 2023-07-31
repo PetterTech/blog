@@ -14,7 +14,7 @@ tags:
   - Windows 7
 
 ---
-This is a script I have used on several of my relatives computers for backing up their data. Windows backup won&#8217;t do for them because they feel the need to see the actual files on the external drive&#8230;
+This is a script I have used on several of my relatives computers for backing up their data. Windows backup won't do for them because they feel the need to see the actual files on the external drive&#8230;
 
 Anyway, heres my script:
 
@@ -26,7 +26,7 @@ I guess a little explanation is required.
 
   * The first part, robocopy c:users<username> <destination> tells robocopy what to copy where.
   * /MIR indicates that robocopy should mirror the source to the destination. This means that if you delete a file in the source, it is also deleted at destination. Use with caution as Microsoft would say
-  * /XD tells robocopy what folders to skip. This is because robocopy won&#8217;t get access to those folders. They don&#8217;t contain useful data anyway.
-  * /XF tells robocopy what files to skip. You won&#8217;t be able to copy i.e. ntuser.dat if you are logged in as that user. Also the files are not needed.
+  * /XD tells robocopy what folders to skip. This is because robocopy won't get access to those folders. They don't contain useful data anyway.
+  * /XF tells robocopy what files to skip. You won't be able to copy i.e. ntuser.dat if you are logged in as that user. Also the files are not needed.
   * /R:5 means robocopy will not try more than 5 time to copy a file. The default is 1 million&#8230;
   * /LOG: specifies a log file for the operation. Useful if you ever need to troubleshoot

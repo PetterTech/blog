@@ -17,7 +17,7 @@ tags:
 ---
 I have always been careful to avoid the really advanced and cool stuff in Powershell, like functions, arrays and such.
 
-But as I created the last script it hit me that it would be really cool to have it in a command, like set-adphoto. After some googling I found that funtions aren&#8217;t hard at all!
+But as I created the last script it hit me that it would be really cool to have it in a command, like set-adphoto. After some googling I found that funtions aren't hard at all!
 
 Basically all I really had to do with the ad photo import script was to add &#8220;function Set-ADPhoto { &#8221; in front of the script and end it with a }
 

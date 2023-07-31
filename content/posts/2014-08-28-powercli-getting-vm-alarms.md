@@ -19,7 +19,7 @@ tags:
 ---
 A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 
-So here&#8217;s the the script for retrieving vm alarms:
+So here's the the script for retrieving vm alarms:
 
  ```
 $VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate

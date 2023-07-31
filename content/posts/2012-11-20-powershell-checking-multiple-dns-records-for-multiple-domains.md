@@ -44,7 +44,7 @@ tags:
   - Resolve-DnsName
 
 ---
-I don&#8217;t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
+I don't know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
 
 First we need to to save our domains in an array:
 
@@ -61,9 +61,9 @@ Resolve-DnsName -server 8.8.8.8 record.$($element)
 } 
 ```
 
-You might notice that I use Google&#8217;s public dns servere here, but you can use whatever dns server you want, or just leave the -server part out.
+You might notice that I use Google's public dns servere here, but you can use whatever dns server you want, or just leave the -server part out.
 
-The example above is pretty basic and only checks for an A record. In our case we needed to check several SRV records for each of the domains, so I had to extend the script a little. The cmdlet Resolve-DnsName is equivalent to the good ol&#8217; nslookup so it&#8217;s quite powerful, given the right swithces.
+The example above is pretty basic and only checks for an A record. In our case we needed to check several SRV records for each of the domains, so I had to extend the script a little. The cmdlet Resolve-DnsName is equivalent to the good ol' nslookup so it's quite powerful, given the right swithces.
 
 Heres the script I ended up with for our case (10 points if you guess what the SRV records are for 🙂 ):
 

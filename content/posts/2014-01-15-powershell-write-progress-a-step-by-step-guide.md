@@ -81,11 +81,11 @@ For($i = 1; $i -le $colItems.count; $i++)
 $colItems | Select name 
 ```
 
-I&#8217;m sure that if I had a stronger background in programming and/or scripting I could have figured it out quite easily (for what it&#8217;s worth: I understand the code now 😉 ). But since I haven&#8217;t really been scripting before Powershell came along I just sat there scratching my head.
+I'm sure that if I had a stronger background in programming and/or scripting I could have figured it out quite easily (for what it's worth: I understand the code now 😉 ). But since I haven't really been scripting before Powershell came along I just sat there scratching my head.
 
-So let&#8217;s write a simpler guide!
+So let's write a simpler guide!
 
-Let&#8217;s start by explaining a briefly how Write-Progress works:  
+Let's start by explaining a briefly how Write-Progress works:  
 If you type the command in your Powershell console it will display the progress bar, but it will disappear again in a split second.  
 If you put your Write-Progress snippet in a script, the progress bar will be displayed until another Write-Progress snippet comes along, or until the script finishes.
 
@@ -101,7 +101,7 @@ That will create an output looking something like this:
   <a href="https://dl.dropboxusercontent.com/u/33041052/bloggting/img/write-progress/1.PNG"><img decoding="async" loading="lazy" class="aligncenter" alt="" src="https://dl.dropboxusercontent.com/u/33041052/bloggting/img/write-progress/1.PNG" width="100%" height="130" /></a>
 </p>
 
-It&#8217;s also quite easy to create a child progress bar by using the Id and ParentId parameters:
+It's also quite easy to create a child progress bar by using the Id and ParentId parameters:
 
  ```
 Write-Progress -Activity Something -Status "Something else" -CurrentOperation Thinking -PercentComplete 30 -Id 1
@@ -131,7 +131,7 @@ Then we create a variable for our progress and set it to 1:
 $progress = 1 
 ```
 
-This way PercentComplete will start at 1, you&#8217;ll see why in a bit.
+This way PercentComplete will start at 1, you'll see why in a bit.
 
 Now we can create our foreach loop (I assume you know how they work):
 

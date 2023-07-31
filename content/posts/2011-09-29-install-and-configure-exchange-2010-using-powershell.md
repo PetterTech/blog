@@ -48,7 +48,7 @@ tags:
 
 ---
 In this guide I will show you how to install and configure a simple Exchange 2010 environment using no gui at all.  
-Installing exchange 2010 without gui may seem kinda nerdy, but it&#8217;s quite useful for quickly setting up a test environment for example.
+Installing exchange 2010 without gui may seem kinda nerdy, but it's quite useful for quickly setting up a test environment for example.
 
 Remember to run Windows update prior to the installation.
 
@@ -70,7 +70,7 @@ We also need to set the NetTcpPortSharing service to automatic start, the comman
  Set-service NetTcpPortSharing -startuptype automatic 
  ```
 
-If you already haven&#8217;t you need to raise the forest functional level to at least Windows Server 2003 native.
+If you already haven't you need to raise the forest functional level to at least Windows Server 2003 native.
 
 Before you start to install Exchange you need to prepare your Schema. If you are installing exchange on a domain controller, all you need to do is navigate to the exchange installation media and run this command:
 
@@ -80,7 +80,7 @@ Before you start to install Exchange you need to prepare your Schema. If you are
 
 PS: You probably want to change /OrganizationName to something better 🙂
 
-If your soon-to-be exchange server isn&#8217;t a domain controller you have to choices:
+If your soon-to-be exchange server isn't a domain controller you have to choices:
 
   * Copy the exchange installation files to a domain controller and run the above command
   * Install RSAT for ActiveDirectory on your soon-to-be exchange server

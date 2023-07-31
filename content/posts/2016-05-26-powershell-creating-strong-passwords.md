@@ -33,7 +33,7 @@ Now that we have our regex we can simple throw the one-liner into a while loop:
  } 
  ```
 
-This means that as long as the password created doesn&#8217;t comply with the regex, it creates a new one.
+This means that as long as the password created doesn't comply with the regex, it creates a new one.
 
 And guess what? It can also be written as a one-liner:
 
