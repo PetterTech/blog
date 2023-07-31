@@ -28,7 +28,7 @@ $mounts = 1
 foreach ($vmhost in $vmhosts) {
     Write-Progress -Activity "Checking $($vmhost.Name)" -PercentComplete ($progress/$vmhosts.count*100)
     if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq "MGMT-ISO"}) -eq $NULL){
-        New-Datastore -vmhost $vmhost.name -Name MGMT-ISO -Nfs -NfsHost &lt;nfsHost&gt; -Path /MGMT-ISO
+        New-Datastore -vmhost $vmhost.name -Name MGMT-ISO -Nfs -NfsHost <nfsHost> -Path /MGMT-ISO
         $mounts++
         }
     if ((Get-Datastore -VMHost $vmhost.name | Where-Object {$_.name -eq "USER-ISO"}) -eq $NULL){
@@ -68,7 +68,7 @@ If I were to create a function out of this script, it would look something like 
     if ($mounts = "1") {
         Write-Host "All hosts have the NFS stores already mounted" -ForegroundColor green
         }
-&lt;#
+<#
  .Synopsis
   Mounts MGMT-ISO and USER-ISO on vmhosts
  .Description

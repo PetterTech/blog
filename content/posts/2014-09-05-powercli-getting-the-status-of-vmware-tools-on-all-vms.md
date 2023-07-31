@@ -60,7 +60,7 @@ function Get-VMToolsStatus
         }
     else {$report | Sort-Object vm}
 
-&lt;#
+<#
  .Synopsis
   List vm tools status for all VMs
  .Description

@@ -26,7 +26,7 @@ wp-syntax-cache-content:
      <span style="color: #0000FF;">Else</span> <span style="color: #000000;">&#123;</span>
      <span style="color: #008080; font-weight: bold;">Remove-Item</span> <span style="color: #800080;">$tempfile</span>
      <span style="color: #000000;">&#125;</span>
-     <span style="color: #008000;">&lt;#
+     <span style="color: #008000;"><#
      .Synopsis
      Show some information about your computer
      .Description
@@ -38,7 +38,7 @@ wp-syntax-cache-content:
      Gathers info and show it on screen
      .Link
      http://cloud.kemta.net
-     #&gt;</span>
+     #></span>
      <span style="color: #000000;">&#125;</span> ```</td></tr></table><p class="theCode" style="display:none;">function Show-Debug
      {
      Param(
@@ -58,7 +58,7 @@ wp-syntax-cache-content:
      Else {
      Remove-Item $tempfile
      }
-     &lt;#
+     <#
      .Synopsis
      Show some information about your computer
      .Description
@@ -70,7 +70,7 @@ wp-syntax-cache-content:
      Gathers info and show it on screen
      .Link
      http://cloud.kemta.net
-     #&gt;
+     #>
      }</p></div>
     ";}
 categories:
@@ -113,7 +113,7 @@ function Show-Debug
  Else {
  Remove-Item $tempfile
  }
- &lt;#
+ <#
  .Synopsis
  Show some information about your computer
  .Description

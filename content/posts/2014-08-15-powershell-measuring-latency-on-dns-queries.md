@@ -136,7 +136,7 @@ function Measure-DNSLatency
 
     $report | Sort-Object LatencyInMS
 
-&lt;#
+<#
  .Synopsis
   Measures DNS Latency
  .Description

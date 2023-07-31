@@ -21,12 +21,12 @@ PowerCLI is just awsome 🙂
 This simple one-liner migrates all vm&#8217;s off one datastore to a new one:
 
  ```
-Get-VM -Datastore &lt;datastore1&gt; | Move-VM -Datastore &lt;datastore2&gt;
+Get-VM -Datastore <datastore1> | Move-VM -Datastore <datastore2>
  ```
 
 You can also move vm&#8217;s off one datastore and place them in any datastore within a specified datastore cluster:
 
  ```
 $DatastoreCluster1 = Get-DatastoreCluster -Name 'DatastoreCluster1'
-Get-VM -Datastore &lt;datastore1&gt; | Move-VM -Datastore $DatastoreCluster1 
+Get-VM -Datastore <datastore1> | Move-VM -Datastore $DatastoreCluster1 
 ```

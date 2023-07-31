@@ -29,7 +29,7 @@ function Motivate-Me
  {Write-Host "I am nothing compared to you"}
  if ($motivator -eq 5)
  {Write-Host "Are you sure you intirely human? 'cause you seem to cool to be real"}
- &lt;#
+ <#
  .Synopsis
  Show som motivational words on the screen
  .Description

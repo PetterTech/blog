@@ -220,7 +220,7 @@ Active directory response: 00000005: SecErr: DSID-031521D0, problem 4003 (INSUFF
 Make sure the user has inherited permission granted to domainExchange Servers to allow List, Create child, Delete child of object type “msExchangeActiveSyncDevices” and doesn’t have any deny permissions that block such operations.</p>
 <p>Details:%3</p>
 <p>This, I found, was because the exchange server wants to create a container under the user object in ad. That container shall contain an object for each mobile device the user wants to sync mail on.</p>
-<p>I compared the users having trouble syncing to those who are able to sync and found only one difference: The users who cannot sync mail doesn’t have “Include inheritable permissions from this object’s parent” ticked on the Security–&gt;Advanced page of the user object. Ticking this resolved the issue.</p>
+<p>I compared the users having trouble syncing to those who are able to sync and found only one difference: The users who cannot sync mail doesn’t have “Include inheritable permissions from this object’s parent” ticked on the Security–>Advanced page of the user object. Ticking this resolved the issue.</p>
 <p>After a little more digging I found the specific permission the exchange servers need.<br>
 To enable ActiveSync the group “<!-- raw HTML omitted -->Exchange Servers” need to have these permissions:</p>
 <p>Create msExchActiveSyncDevices object<br>

@@ -88,7 +88,7 @@ importPackage(java.util);
 
 var xml = input.xml;
 
-// Try and parse the &lt;Objects&gt;...&lt;/Objects&gt; section
+// Try and parse the <Objects>...</Objects> section
 var objects_xml = XMLUtil.getValue("Objects", xml);
 logger.addDebug("Grabbed objects from xml: "+objects_xml);
 

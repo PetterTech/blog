@@ -29,13 +29,13 @@ To do this you first need to log in on the server running Zenoss, preferably as 
 Then run the following command:
 
  ```
- /usr/local/zenoss/zenoss/bin/zenmib run &lt;path to MIB file&gt; 
+ /usr/local/zenoss/zenoss/bin/zenmib run <path to MIB file> 
  ```
 
 Note: This example is for a default Debian installation, if you are using other distros you need to adapt the path. For the virtual appliance the command would be:
 
  ```
- /opt/zenoss/bin/zenmib run &lt;path to MIB file&gt; 
+ /opt/zenoss/bin/zenmib run <path to MIB file> 
  ```
 
  [1]: http://www.oidview.com/mibs/detail.html

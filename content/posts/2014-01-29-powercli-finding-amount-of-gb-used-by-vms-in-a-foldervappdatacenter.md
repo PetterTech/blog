@@ -20,7 +20,7 @@ It&#8217;s a simple one-liner!
 
 <div>
   <div>
-     ```Get-VM -Location &lt;name of folder/vApp/datacenter&gt; | foreach {Get-HardDisk -VM $_.name} | Measure-Object CapacityGB -Sum ```
+     ```Get-VM -Location <name of folder/vApp/datacenter> | foreach {Get-HardDisk -VM $_.name} | Measure-Object CapacityGB -Sum ```
   </div>
   
   <p>
@@ -32,7 +32,7 @@ It&#8217;s a simple one-liner!
   </p>
   
    ```
-  get-vm -Location &lt;folder&gt; | select name,@{Name="Size";Expression={(Get-HardDisk -VM $_.name |
+  get-vm -Location <folder> | select name,@{Name="Size";Expression={(Get-HardDisk -VM $_.name |
 Measure-Object CapacityGB -sum).Sum}} 
 ```
 </div>

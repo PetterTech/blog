@@ -48,7 +48,7 @@ function Get-MembersInADGroups
     {
     Remove-Item $FileLocationtemp.csv
     }
- &lt;#
+ <#
  .Synopsis
  Gathers members in given group(s) and puts the result in txt files
  .Description

@@ -259,7 +259,7 @@ Write-Host &#34;The user may now log in to Lync as $($SipAddress.SipAddress.subs
  .Parameter Conference
   The conference policy you want to associate the user with. Default is Conference
  .Parameter LineURI
-  If you want to specify a Line URI, do so in the format of tel:&amp;lt;number&gt;
+  If you want to specify a Line URI, do so in the format of tel:&amp;lt;number>
  .Example
   Enable-LyncUser user1
   This will enable user1 with default settings
@@ -268,7 +268,7 @@ Write-Host &#34;The user may now log in to Lync as $($SipAddress.SipAddress.subs
   This will enable user2 and set the lineuri to tel:+4712345678
  .Link
   http://cloud.kemta.net
- #&gt;
+ #>
 } 
 </code></pre><p> </p>
 <p>You may wonder why the Start-Sleep command is there. The reason is that my testing indicated that the function will work to fast for Active Directory if it isn’t there. During my testing I found that without the sleep the next command, Set-CsUser, will fail because the object cannot be found. Running the function again resultet in no errors.<br>

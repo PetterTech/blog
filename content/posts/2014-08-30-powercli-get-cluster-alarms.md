@@ -104,7 +104,7 @@ if ($FaultyClusters -ne $NULL) {
 Write-Progress -Activity "Gathering alarms" -Status "All done" -Completed -Id 1 -ErrorAction SilentlyContinue
 $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
-&lt;#
+<#
  .Synopsis
   Lists all triggered Cluster alarms that haven't been acknowledged
  .Description

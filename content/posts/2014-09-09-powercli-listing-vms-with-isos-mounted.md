@@ -63,7 +63,7 @@ So, without further ado, I present to you the code for Get-ISOMounts:
             $progress++
             }
 
-&lt;#
+<#
  .Synopsis
   Lists all VMs with ISOs mounted, can also dismount them
  .Description

@@ -64,7 +64,7 @@ wp-syntax-cache-content:
     <span style="color: #800080;">$SipAddress</span> <span style="color: pink;">=</span> Get<span style="color: pink;">-</span>CsUser <span style="color: pink;">-</span>Identity <span style="color: #800080;">$Identity</span> <span style="color: pink;">|</span> <span style="color: #008080; font-weight: bold;">Select-Object</span> SipAddress
     <span style="color: #008080; font-weight: bold;">Write-Host</span> <span style="color: #800000;">&quot;The user may now log in to Lync as $($SipAddress.SipAddress.substring(4))&quot;</span> <span style="color: #008080; font-style: italic;">-ForegroundColor</span> Green
     &nbsp;
-    <span style="color: #008000;">&lt;#
+    <span style="color: #008000;"><#
      .Synopsis
       Enables given user for Lync and sets config
      .Description
@@ -80,7 +80,7 @@ wp-syntax-cache-content:
      .Parameter Conference
       The conference policy you want to associate the user with. Default is Conference
      .Parameter LineURI
-      If you want to specify a Line URI, do so in the format of tel:&lt;number&gt;
+      If you want to specify a Line URI, do so in the format of tel:<number>
      .Example
       Enable-LyncUser user1
       This will enable user1 with default settings
@@ -89,7 +89,7 @@ wp-syntax-cache-content:
       This will enable user2 and set the lineuri to tel:+4712345678
      .Link
       http://cloud.kemta.net
-     #&gt;</span>
+     #></span>
     <span style="color: #000000;">&#125;</span> ```</td></tr></table><p class="theCode" style="display:none;">function Enable-LyncUser {
     [CmdletBinding()]
      Param (
@@ -147,7 +147,7 @@ wp-syntax-cache-content:
     $SipAddress = Get-CsUser -Identity $Identity | Select-Object SipAddress
     Write-Host &quot;The user may now log in to Lync as $($SipAddress.SipAddress.substring(4))&quot; -ForegroundColor Green
     
-    &lt;#
+    <#
      .Synopsis
       Enables given user for Lync and sets config
      .Description
@@ -163,7 +163,7 @@ wp-syntax-cache-content:
      .Parameter Conference
       The conference policy you want to associate the user with. Default is Conference
      .Parameter LineURI
-      If you want to specify a Line URI, do so in the format of tel:&lt;number&gt;
+      If you want to specify a Line URI, do so in the format of tel:<number>
      .Example
       Enable-LyncUser user1
       This will enable user1 with default settings
@@ -172,7 +172,7 @@ wp-syntax-cache-content:
       This will enable user2 and set the lineuri to tel:+4712345678
      .Link
       http://cloud.kemta.net
-     #&gt;
+     #>
     }</p></div>
     ";}
 categories:
@@ -257,7 +257,7 @@ Write-Host "Config finished"
 $SipAddress = Get-CsUser -Identity $Identity | Select-Object SipAddress
 Write-Host "The user may now log in to Lync as $($SipAddress.SipAddress.substring(4))" -ForegroundColor Green
 
-&lt;#
+<#
  .Synopsis
   Enables given user for Lync and sets config
  .Description
@@ -273,7 +273,7 @@ Write-Host "The user may now log in to Lync as $($SipAddress.SipAddress.substrin
  .Parameter Conference
   The conference policy you want to associate the user with. Default is Conference
  .Parameter LineURI
-  If you want to specify a Line URI, do so in the format of tel:&lt;number>
+  If you want to specify a Line URI, do so in the format of tel:<number>
  .Example
   Enable-LyncUser user1
   This will enable user1 with default settings

@@ -7,25 +7,25 @@ url: /index.php/2012/02/27/redirecting-a-webpage-using-html/
 wp-syntax-cache-content:
   - |
     a:1:{i:1;s:2982:"
-    <div class="wp_syntax" style="position:relative;"><table><tr><td class="code"><pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;html<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
-    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;head<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
-     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;title<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>Some title<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/title<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
-     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;META</span> <span style="color: #000066;">HTTP-EQUIV</span>=<span style="color: #ff0000;">&quot;Refresh&quot;</span></span>
-    <span style="color: #009900;"> <span style="color: #000066;">CONTENT</span>=<span style="color: #ff0000;">&quot;1; URL=https://some.domain.com/&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
-     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;head<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
-     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;body<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
-     You are now beeing forwarded to <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;a</span> <span style="color: #000066;">href</span>=<span style="color: #ff0000;">&quot;https://some.domain&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>https://some.domain&gt;<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/a<span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #000000; font-weight: bold;">&lt;br<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <div class="wp_syntax" style="position:relative;"><table><tr><td class="code"><pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;"><html<span style="color: #000000; font-weight: bold;">></span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;"><head<span style="color: #000000; font-weight: bold;">></span></span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;"><title<span style="color: #000000; font-weight: bold;">></span></span></span>Some title<span style="color: #009900;"><span style="color: #000000; font-weight: bold;"></title<span style="color: #000000; font-weight: bold;">></span></span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;"><META</span> <span style="color: #000066;">HTTP-EQUIV</span>=<span style="color: #ff0000;">&quot;Refresh&quot;</span></span>
+    <span style="color: #009900;"> <span style="color: #000066;">CONTENT</span>=<span style="color: #ff0000;">&quot;1; URL=https://some.domain.com/&quot;</span><span style="color: #000000; font-weight: bold;">></span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;"><head<span style="color: #000000; font-weight: bold;">></span></span></span>
+     <span style="color: #009900;"><span style="color: #000000; font-weight: bold;"><body<span style="color: #000000; font-weight: bold;">></span></span></span>
+     You are now beeing forwarded to <span style="color: #009900;"><span style="color: #000000; font-weight: bold;"><a</span> <span style="color: #000066;">href</span>=<span style="color: #ff0000;">&quot;https://some.domain&quot;</span><span style="color: #000000; font-weight: bold;">></span></span>https://some.domain><span style="color: #009900;"><span style="color: #000000; font-weight: bold;"></a<span style="color: #000000; font-weight: bold;">></span></span><span style="color: #000000; font-weight: bold;"><br<span style="color: #000000; font-weight: bold;">></span></span></span>
      If you are not forwarded automatically, click the above link.
-    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/body<span style="color: #000000; font-weight: bold;">&gt;</span></span><span style="color: #000000; font-weight: bold;">&lt;/html<span style="color: #000000; font-weight: bold;">&gt;</span></span></span> ```</td></tr></table><p class="theCode" style="display:none;">&lt;html&gt;
-    &lt;head&gt;
-     &lt;title&gt;Some title&lt;/title&gt;
-     &lt;META HTTP-EQUIV=&quot;Refresh&quot;
-     CONTENT=&quot;1; URL=https://some.domain.com/&quot;&gt;
-     &lt;head&gt;
-     &lt;body&gt;
-     You are now beeing forwarded to &lt;a href=&quot;https://some.domain&quot;&gt;https://some.domain&gt;&lt;/a&gt;&lt;br&gt;
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;"></body<span style="color: #000000; font-weight: bold;">></span></span><span style="color: #000000; font-weight: bold;"></html<span style="color: #000000; font-weight: bold;">></span></span></span> ```</td></tr></table><p class="theCode" style="display:none;"><html>
+    <head>
+     <title>Some title</title>
+     <META HTTP-EQUIV=&quot;Refresh&quot;
+     CONTENT=&quot;1; URL=https://some.domain.com/&quot;>
+     <head>
+     <body>
+     You are now beeing forwarded to <a href=&quot;https://some.domain&quot;>https://some.domain></a><br>
      If you are not forwarded automatically, click the above link.
-    &lt;/body&gt;&lt;/html&gt;</p></div>
+    </body></html></p></div>
     ";}
 categories:
   - Web code

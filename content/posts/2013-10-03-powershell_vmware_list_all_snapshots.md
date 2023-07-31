@@ -28,7 +28,7 @@ The vsphere console doesn&#8217;t provide this info so I had to turn to PowerCLI
 After you start PowerCLI, you need to first connect to your vcenter server:
 
  ```
-Connect-VIServer &lt;vcenter server&gt; 
+Connect-VIServer <vcenter server> 
 ```
 
 You will be promted for username and password for vcenter. After powershell has connected to the vcenter server, all you need to is run this one-liner:

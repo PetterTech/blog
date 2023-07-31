@@ -77,7 +77,7 @@ Write-Progress -Activity "Gathering alarms" -Status "All done" -Completed -Id 1 
 
 $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
-&lt;#
+<#
  .Synopsis
   Lists all triggered Cluster alarms that haven't been acknowledged
  .Description

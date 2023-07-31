@@ -76,7 +76,7 @@ Write-Progress -Activity "Gathering VM alarms" -Status "All done" -Completed -Id
 
 $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
-&lt;#
+<#
  .Synopsis
   Lists all triggered VM alarms that haven't been acknowledged
  .Description

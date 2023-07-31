@@ -51,7 +51,7 @@ Anyways, here&#8217;s the function I came up with:
             Get-View  -ViewType hostsystem -Property name,runtime.boottime | Select-Object Name, @{N="UptimeDays"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalDays),1)}}, @{N="UptimeHours"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalHours),1)}}, @{N="UptimeMinutes"; E={[math]::round((((Get-Date) - ($_.Runtime.BootTime)).TotalMinutes),1)}}
             }
         }
-&lt;#
+<#
  .Synopsis
   Shows the uptime of VMHosts
  .Description

@@ -43,7 +43,7 @@ else {
     $photo = [byte[]](get-content $file -Encoding byte)
     Set-ADUser $user -Replace @{thumbnailPhoto=$photo}
         }
-&lt;#
+<#
 .SYNOPSIS
 This function will add a photo to a users Active Directory user object. It also verifies that the file is less than 12KB
 .DESCRIPTION

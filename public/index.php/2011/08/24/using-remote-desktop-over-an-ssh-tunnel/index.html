@@ -188,7 +188,7 @@ At home I have a server running Debian linux, I also have several windows pc’s
 <p>Lets use my setup as an example:<br>
 At home I have a server running Debian linux, I also have several windows pc’s  that I want to be able to use remote desktop to. Since I have already forwarded the ssh port (22) to my Debian server I figured I could use it as a jumpstation.</p>
 <p>The way I solved this is somewhat similar to the <a href="http://cloud.kemta.net/?p=24">PuTTY proxy trick</a> guide that I posted earlier.</p>
-<p>Fire up PuTTY, enter the hostname or ip-adress of your remote network. Then navigate to Connection–&gt;SSH–&gt;Tunnels</p>
+<p>Fire up PuTTY, enter the hostname or ip-adress of your remote network. Then navigate to Connection–>SSH–>Tunnels</p>
 <p>In the Source port field, type 127.0.0.3:3390 and in the Destination field type the internal ip of the pc you want to remote followed by :3389, e.g. 10.0.0.3:3389</p>
 <p>Connect and log on. Then fire up remote desktop.</p>
 <p>In the remote desktop window you now need to type 127.0.0.3:3390 and connect.</p>

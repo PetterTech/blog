@@ -44,7 +44,7 @@ function Start-Consolidation
                                   }
               }
         }
-&lt;#
+<#
  .Synopsis
   Searches vCentre for VMs in need of disk consolidation and starts disk consolidation
  .Description

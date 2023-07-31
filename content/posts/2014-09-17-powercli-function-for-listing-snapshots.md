@@ -60,7 +60,7 @@ function Get-Snapshots
     Write-Progress -Activity "Finding snapshots" -Status "All done" -Completed -Id 1 -ErrorAction SilentlyContinue
     $collection
 
-    &lt;#
+    <#
      .Synopsis
       Lists snapshots in vCenter
      .Description

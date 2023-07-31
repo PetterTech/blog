@@ -19,7 +19,7 @@ This is a script I have used on several of my relatives computers for backing up
 Anyway, heres my script:
 
  ```
- robocopy c:users&lt;username&gt; &lt;destination&gt; /MIR /XD templates start-menu "local settings" appdata "internal video" cookies "my music" "my pictures" "my documents" printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:&lt;log destination&gt; 
+ robocopy c:users<username> <destination> /MIR /XD templates start-menu "local settings" appdata "internal video" cookies "my music" "my pictures" "my documents" printers programdata recent sendto andrmask /XF ntuser.dat ntuser.dat.log1 ntuser.dat.log2 /R:5 /LOG:<log destination> 
  ```
 
 I guess a little explanation is required.

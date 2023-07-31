@@ -49,7 +49,7 @@ function Get-MACAddress
  [string]$Location = '*'
  )
  Get-VM -Location $Location | Select Name,Folder,PowerState, @{N="Network";E={$_ | Get-networkAdapter | ? {$_.macaddress -eq $MAC}}} | Where {$_.Network -ne ""}
-&lt;#
+<#
  .Synopsis
  Searches vCentre for the given MAC address
  .Description

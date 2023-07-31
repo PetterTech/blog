@@ -33,12 +33,12 @@ In the OU called groups, there are a few groups with identical names to the rest
 Now that we have set the scenario heres the script:
 
 ```
-dsadd user "CN=&lt;username&gt;,OU=&lt;department&gt;,DC=test,DC=local" -samid &lt;username&gt; -upn &lt;username&gt;@test.local -fn &lt;firstname&gt; -ln &lt;lastname&gt; -pwd eeh7at3R -memberof "CN=&lt;department&gt;,OU=groups,DC=test,DC=local" -hmdir \file01&lt;username&gt;$ -hmdrv h:
-md e:users&lt;username&gt;
-net share &lt;username&gt;$=e:users&lt;username&gt; /grant:&lt;username&gt;,CHANGE /grant:"domain admins",FULL /grant:administrator,FULL
-cacls e:users&lt;username&gt; /T /E /G test&lt;username&gt;:C
-cacls e:users&lt;username&gt; /T /E /G builtinadministrators:F
-cacls e:users&lt;username&gt; /T /E /G SYSTEM:F 
+dsadd user "CN=<username>,OU=<department>,DC=test,DC=local" -samid <username> -upn <username>@test.local -fn <firstname> -ln <lastname> -pwd eeh7at3R -memberof "CN=<department>,OU=groups,DC=test,DC=local" -hmdir \file01<username>$ -hmdrv h:
+md e:users<username>
+net share <username>$=e:users<username> /grant:<username>,CHANGE /grant:"domain admins",FULL /grant:administrator,FULL
+cacls e:users<username> /T /E /G test<username>:C
+cacls e:users<username> /T /E /G builtinadministrators:F
+cacls e:users<username> /T /E /G SYSTEM:F 
 ```
 
 A little explanation:  

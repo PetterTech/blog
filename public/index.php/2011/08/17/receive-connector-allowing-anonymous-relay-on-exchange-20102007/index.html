@@ -192,7 +192,7 @@ It’s a better practice to have them only input the name/ip-address of one exch
 We never set up the printers ourselves, that job is done by the provider. And do we want to give them a username and password allowing for mail relay through our servers? No, we don’t.</p>
 <p>It’s a better practice to have them only input the name/ip-address of one exchange server with the cas role. Then all we have to do is add the ip-address of the printer to the list of allowed ip’s on our receive connector. Here’s a short guide on how to do it:</p>
 <ul>
-<li>Open up the EMC on a exchange server with the cas role and navigate to Server Configuration–&gt;Hub transport.</li>
+<li>Open up the EMC on a exchange server with the cas role and navigate to Server Configuration–>Hub transport.</li>
 <li>On the right side, click New Receive Connector…</li>
 <li>Give the new receive connector a suitable name, for example Anonymous, and choose Custom as the intended use.</li>
 <li>On the next page you are prompted to choose which local ip-addresses the receive connector should receive mail on and what fqdn the server should respond with. I usually leave the default settings here, but if your server has multiple ip-addresses connecting to different secured/unsecured networks it is a good idea to not accept mail on all ip-addresses.</li>
@@ -201,7 +201,7 @@ We never set up the printers ourselves, that job is done by the provider. And do
 <li>When back at EMC, hit properties on the newly created receive connector.</li>
 <li>On the Permissions tab you can remove everything but Anonymous users and click OK.</li>
 </ul>
-<p>Then you are good to go. If you want to allow more ip-addresses to relay, you can always enter more of them on the Properties–&gt;Network for the receive connector.</p>
+<p>Then you are good to go. If you want to allow more ip-addresses to relay, you can always enter more of them on the Properties–>Network for the receive connector.</p>
 <p>And, as always, here’s the nerdy way of doing it in powershell:</p>
 <pre tabindex="0"><code>New-ReceiveConnector -Name &#34;Anonymous&#34; -Usage Custom -PermissionGroups AnonymousUsers -Bindings 0.0.0.0:25 -RemoteIpRanges &amp;lt;ip of printer&amp;gt; -server &amp;lt;name of your server&amp;gt; 
 </code></pre>
