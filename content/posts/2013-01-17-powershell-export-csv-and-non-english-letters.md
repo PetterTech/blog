@@ -20,7 +20,9 @@ Working in Norway with users from all the Nordic countries means that we have a 
 
 The magical switch to Export-Csv is -encoding. E.g. for us we would use unicode as encoding as this will export the Nordic letters:
 
-<pre>Export-Csv &lt;filename&gt; -Encoding unicode</pre>
+ ```
+Export-Csv &lt;filename&gt; -Encoding unicode 
+```
 
 &nbsp;
 
