@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Content index state failed on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/content-index-state-failed/</link>
+    <description>Recent content in Content index state failed on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Jan 2013 09:17:13 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/content-index-state-failed/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exchange: Content index state failed</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/exchange-content-index-state-failed/</link>
+      <pubDate>Wed, 16 Jan 2013 09:17:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/exchange-content-index-state-failed/</guid>
+      <description>If you ever had problems with corrupt databases in an Exchange 2010 DAG setup you might have encountered this error. Trying to activate the database on a server where it has this state will fail.
+However there is a quite simple fix given that you have a healthy copy of the database on a different server:
+Update-MailboxDatabaseCopy -Identity DB -SourceServer -CatalogOnly
+Run the command in the Exchange Management Shell and it should fix the Content index state and allow you to activate the database again.</description>
+    </item>
+    
+  </channel>
+</rss>

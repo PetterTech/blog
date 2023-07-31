@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cisco on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/cisco/</link>
+    <description>Recent content in Cisco on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2015 13:05:07 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCSD: Mapping EMC VNX LUNs to an ESXi cluster</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/15/ucsd-mapping-emc-vnx-luns-to-an-esxi-cluster/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/15/ucsd-mapping-emc-vnx-luns-to-an-esxi-cluster/</guid>
+      <description>I have been struggling for quite some time with mapping luns from our vnx 5600 to entire clusters in our vCenter. We used to utilize a custom workflow a consultant wrote for us, but that workflow got borked after an update to UCS Director nearly a year ago.
+Revisiting the issue i found this example from Cisco: https://communities.cisco.com/docs/DOC-57382
+That example seems to work for other people but in our case the custom task in it never gave the correct output, so I had to look for a way around it.</description>
+    </item>
+    
+    <item>
+      <title>UCSD: Grabbing a string returned from a Powershell task</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/13/ucsd-grabbing-a-string-returned-from-a-powershell-task/</link>
+      <pubDate>Tue, 13 Oct 2015 12:16:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/13/ucsd-grabbing-a-string-returned-from-a-powershell-task/</guid>
+      <description>My last post described how to get around some issues with using Powershell tasks in workflows. While that post surely enables you to uilize powershell to do stuff for you, what about if you want Powershell to grab stuff for you and return them in a usable matter?
+This time I’m going to show you how you can return a string from Powershell and use it further down in the workflow.</description>
+    </item>
+    
+    <item>
+      <title>UCSD: Passing multiple arguments to start-job while using the Cisco PowerShell Agent</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/11/12/ucsd-passing-multiple-arguments-to-start-job-while-using-the-cisco-powershell-agent/</link>
+      <pubDate>Wed, 12 Nov 2014 12:21:03 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/11/12/ucsd-passing-multiple-arguments-to-start-job-while-using-the-cisco-powershell-agent/</guid>
+      <description>While the Cisco PowerShell Agent (PSA) that can be used in UCS Director isn’t exactly perfect, it can still be put to good use. As long as you now how to use it properly 😉
+The major issue with using the PSA is that it doesn’t stick around to see if the commands/script was successful or not. As long as it delivered the commands successfully, it’s happy and your workflow will continue to the next step.</description>
+    </item>
+    
+    <item>
+      <title>Cisco escape sequence</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/03/cisco-escape-sequence/</link>
+      <pubDate>Mon, 03 Sep 2012 06:42:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/03/cisco-escape-sequence/</guid>
+      <description>I better write this down before I forget it again: ctrl+shift+6 x
+If this makes absolutely no sense to you I will explain:
+When you run commands like traceroute, ping and others within Cisco IOS you can abort them. But you can’t use the usual ctrl+c (that would be to logical I guess), you need to press ctrl+shift+6 and THEN press x.
+There’s probably a good explanation for this, but I still feel that it is horribly cumbersome.</description>
+    </item>
+    
+    <item>
+      <title>Locate a computer/server/printer in a cisco environment</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/07/29/locate-a-computerserverprinter-in-a-cisco-environment/</link>
+      <pubDate>Fri, 29 Jul 2011 11:17:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/07/29/locate-a-computerserverprinter-in-a-cisco-environment/</guid>
+      <description>At work I was recently assigned some more network related task.
+One of the task I fine myself repeating over and over is locating a computer on the network. The only info you need is the ip-address of the computer.</description>
+    </item>
+    
+  </channel>
+</rss>

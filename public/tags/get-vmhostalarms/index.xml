@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>get-vmhostalarms on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmhostalarms/</link>
+    <description>Recent content in get-vmhostalarms on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Aug 2014 07:41:13 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmhostalarms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Getting host alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</link>
+      <pubDate>Fri, 29 Aug 2014 07:41:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</guid>
+      <description>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
+The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
+The output will look something like this:
+And here’s the function code:</description>
+    </item>
+    
+  </channel>
+</rss>

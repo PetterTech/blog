@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DAG on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dag/</link>
+    <description>Recent content in DAG on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Jan 2013 09:17:13 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dag/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exchange: Content index state failed</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/exchange-content-index-state-failed/</link>
+      <pubDate>Wed, 16 Jan 2013 09:17:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/exchange-content-index-state-failed/</guid>
+      <description>If you ever had problems with corrupt databases in an Exchange 2010 DAG setup you might have encountered this error. Trying to activate the database on a server where it has this state will fail.
+However there is a quite simple fix given that you have a healthy copy of the database on a different server:
+Update-MailboxDatabaseCopy -Identity DB -SourceServer -CatalogOnly
+Run the command in the Exchange Management Shell and it should fix the Content index state and allow you to activate the database again.</description>
+    </item>
+    
+    <item>
+      <title>Exchange: Activate Database Copy fails</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/activate-database-copy-fails/</link>
+      <pubDate>Wed, 16 Jan 2013 09:07:50 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/activate-database-copy-fails/</guid>
+      <description>After some exchange services failed on one of the nodes in our Exchange 2010 DAG we got some problems with one database. The database was mounted on server2 where it has an activation preference of 2.
+Trying to manually activate the database on server1, where is has an activation preference of 1, resulted in the following error:
+——————————————————–
+Microsoft Exchange Error
+——————————————————–
+Cannot activate database copy ‘Activate Database Copy…’.
+Activate Database Copy…</description>
+    </item>
+    
+    <item>
+      <title>Check if DAG databases is on preferred server</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/04/30/check-if-dag-databases-is-on-preferred-server/</link>
+      <pubDate>Mon, 30 Apr 2012 10:35:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/04/30/check-if-dag-databases-is-on-preferred-server/</guid>
+      <description>If you are using DAG in exchange 2010 for high availability on your mailboxes there may be one thing you might have noticed, the databases can fail over to a less preferred server at any time without you noticing.
+Microsoft have provided you with a script for balancing these databases, RedistributeActiveDatabases.ps1. With this script you can activate the databases on their preferred server again. But how do you know when they have failed over?</description>
+    </item>
+    
+  </channel>
+</rss>

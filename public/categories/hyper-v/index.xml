@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hyper-V on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/hyper-v/</link>
+    <description>Recent content in Hyper-V on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Aug 2011 12:04:31 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/hyper-v/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploying Microsoft Hyper-V Server 2008 R2 on USB Flash Drive</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/deploying-microsoft-hyper-v-server-2008-r2-on-usb-flash-drive/</link>
+      <pubDate>Wed, 03 Aug 2011 12:04:31 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/deploying-microsoft-hyper-v-server-2008-r2-on-usb-flash-drive/</guid>
+      <description>Just thought I should share this link:
+http://technet.microsoft.com/en-us/library/ee731893(WS.10).aspx
+I have tried this on a HP DL380 G6 and it worked like a charm.
+One of the advantages of using that kind of server is that it has internal usb ports so you don’t have to worry about someone accidentally unplugging the usb drive.
+Why should I run a server os from a usb drive you may ask. Well, the biggest advantage is that if your storing all virtual machines on e.</description>
+    </item>
+    
+  </channel>
+</rss>

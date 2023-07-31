@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mount-NFSstores on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mount-nfsstores/</link>
+    <description>Recent content in Mount-NFSstores on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Aug 2014 07:26:32 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mount-nfsstores/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Mount NFS stores on multiple hosts</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/27/mount-nfs-stores-on-hosts-that-doesnt-have-specified-nfs-stores-mounted/</link>
+      <pubDate>Wed, 27 Aug 2014 07:26:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/27/mount-nfs-stores-on-hosts-that-doesnt-have-specified-nfs-stores-mounted/</guid>
+      <description>Ever had a bunch of vmware hosts that you want to add a NFS datastore on? It can be quite time consuming to say the least.
+In our environment we have a couple of NFS stores that should be available on all vmware hosts and I really don’t want to browse around all 50 or so hosts and check if they have them and then mount them if they’re not available.</description>
+    </item>
+    
+  </channel>
+</rss>

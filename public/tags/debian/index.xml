@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Debian on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/debian/</link>
+    <description>Recent content in Debian on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Aug 2011 13:24:08 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nifty Debian packages</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/15/nifty-debian-packages/</link>
+      <pubDate>Mon, 15 Aug 2011 13:24:08 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/15/nifty-debian-packages/</guid>
+      <description>A little list of some nifty packages for Debian:
+sudo
+Oddly enough this isn’t installed by default. Well known for most Linux users, but it enables regular users to perform commands as root without actually logging in as root.
+**molly-guard
+** Protects you from shutting down wrong server when using ssh to a server. What it does is ask you which server you want to shutdown when you run the command shutdown.</description>
+    </item>
+    
+  </channel>
+</rss>

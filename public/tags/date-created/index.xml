@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>date created on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/date-created/</link>
+    <description>Recent content in date created on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Oct 2013 10:27:41 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/date-created/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: List all snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/</link>
+      <pubDate>Thu, 03 Oct 2013 10:27:41 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/</guid>
+      <description>It’s been a while since last update, again, so I figured I should at least provide something..
+I recently started in a new job, and one of the first things I looked into was the amount of snapshots in our vmware environments. Not surprisingly there was a lot of snapshots, and very few of them had any hints of when they were taken and why.
+The vsphere console doesn’t provide this info so I had to turn to PowerCLI to get the info I needed.</description>
+    </item>
+    
+  </channel>
+</rss>

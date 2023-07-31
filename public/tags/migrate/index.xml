@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>migrate on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/migrate/</link>
+    <description>Recent content in migrate on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 Oct 2013 11:24:34 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/migrate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Migrate all vm&#39;s on a datastore</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/08/powershell-vmware-migrate-all-vms-on-a-datastore/</link>
+      <pubDate>Tue, 08 Oct 2013 11:24:34 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/08/powershell-vmware-migrate-all-vms-on-a-datastore/</guid>
+      <description>PowerCLI is just awsome 🙂
+This simple one-liner migrates all vm’s off one datastore to a new one:
+You can also move vm’s off one datastore and place them in any datastore within a specified datastore cluster:</description>
+    </item>
+    
+  </channel>
+</rss>

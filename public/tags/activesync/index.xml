@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ActiveSync on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/activesync/</link>
+    <description>Recent content in ActiveSync on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Aug 2011 09:56:46 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/activesync/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Activesync issue on Exchange 2010</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/04/activesync-issue-on-exchange-2010/</link>
+      <pubDate>Thu, 04 Aug 2011 09:56:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/04/activesync-issue-on-exchange-2010/</guid>
+      <description>At work we are currently migrating to a new active directory domain. The migration hos gone rather smoothly except for a couple of users who are not able to sync mail on their phones.
+After a little research I found the following events in the event log on our exchange CAS server:
+Log Name: Application
+Source: MSExchange ActiveSync
+Date: 04.08.2011 11:00:48
+Event ID: 1053
+Task Category: Configuration
+Level: Error
+Keywords: Classic</description>
+    </item>
+    
+  </channel>
+</rss>

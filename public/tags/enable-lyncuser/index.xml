@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Enable-LyncUser on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/enable-lyncuser/</link>
+    <description>Recent content in Enable-LyncUser on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Oct 2012 12:07:10 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/enable-lyncuser/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell function for enabling a user for Lync and configure settings</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/</guid>
+      <description>A little while ago I posted a script for enabling users for Lync and settings some settings for that user. That script has been used here ever since I posted it and it has worked like a charm. However there’s always room for improvement, right?.
+So I have made a function out of it and for the first time (I think) I have even implemented some error handling. The function is also improved quit a bit on the help section and the info that is shown to the user after the function completes.</description>
+    </item>
+    
+  </channel>
+</rss>

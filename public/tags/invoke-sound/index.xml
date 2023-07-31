@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Invoke-Sound on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/invoke-sound/</link>
+    <description>Recent content in Invoke-Sound on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Apr 2013 09:26:09 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/invoke-sound/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Invoke-Sound function</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/04/18/powershell-invoke-sound-function/</link>
+      <pubDate>Thu, 18 Apr 2013 09:26:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/04/18/powershell-invoke-sound-function/</guid>
+      <description>I stumbled upon this brilliant powershell function for playing sounds using powershell, check it out: http://community.spiceworks.com/scripts/show/1337-powershell-function-invoke-sound
+He even added a switch for playing the imperial march from Star Wars 🙂</description>
+    </item>
+    
+  </channel>
+</rss>

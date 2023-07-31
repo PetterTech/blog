@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>vmware on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vmware/</link>
+    <description>Recent content in vmware on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Sep 2014 07:16:57 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Function for listing snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/17/powercli-function-for-listing-snapshots/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/17/powercli-function-for-listing-snapshots/</guid>
+      <description>My very first PowerCLI related post was about this same topic: listing snapshot info using PowerCLI.
+In my original post (which you can see here) I only wrote a pretty simple one-liner. Which was kind of okay, but it was missing one crucial thing: who took the snapshot?
+Why vmware hasn’t found a way to include a username in the get-snapshot cmdlet is something I just can’t understand. There’s really not much code needed to add this to the output, and there’s several ways of doing so.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Evacuating a datastore</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/11/powercli-evacuating-a-datastore/</link>
+      <pubDate>Thu, 11 Sep 2014 10:54:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/11/powercli-evacuating-a-datastore/</guid>
+      <description>In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:
+Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.
+The command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Listing VMs with ISOs mounted</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/09/powercli-listing-vms-with-isos-mounted/</link>
+      <pubDate>Tue, 09 Sep 2014 05:55:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/09/powercli-listing-vms-with-isos-mounted/</guid>
+      <description>For almost a year ago, I posted a simple one-liner to list all VMs who has ISOs mounted. You can view that post here: http://cloud.kemta.net/2013/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/
+That post was written before I truly discovered the major advantages of using Get-View instead of Get-VM, Get-VMHost and so on. If used correctly, there’s a major difference in speed when using Get-View over Get-VM.
+When writing this post I checked the differences in speed when using the old way that I linked to above and my new function (which I’ll get to in a second or two.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting vmhost uptime</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/</link>
+      <pubDate>Mon, 08 Sep 2014 07:26:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/</guid>
+      <description>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
+However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it.
+Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting the status of vmware tools on all VMs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/</link>
+      <pubDate>Fri, 05 Sep 2014 12:06:17 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/</guid>
+      <description>I’m sure I don’t need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it’s a good idea to keep VMware tools updated.
+However, I haven’t found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting datastore alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/</link>
+      <pubDate>Sun, 31 Aug 2014 10:16:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/</guid>
+      <description>Next in the series on getting alarms is getting datastore alarms.
+Again, the code is pretty similar:
+And the output is pretty similar:
+The function code is this:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting cluster alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/</link>
+      <pubDate>Sat, 30 Aug 2014 08:21:59 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/</guid>
+      <description>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
+Here’s the code:
+And the output will look something like this:
+As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
+Anyways, here’s the function code:
+The output will be the same, but since it’s a function you can manipulate the data further.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting host alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</link>
+      <pubDate>Fri, 29 Aug 2014 07:41:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</guid>
+      <description>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
+The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
+The output will look something like this:
+And here’s the function code:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting vm alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</link>
+      <pubDate>Thu, 28 Aug 2014 06:42:12 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</guid>
+      <description>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
+So here’s the the script for retrieving vm alarms:
+This will provide an output like this:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Consolidate all VMs that need consolidation</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/11/01/powercli-consolidate-all-vms-that-need-consolidation/</link>
+      <pubDate>Fri, 01 Nov 2013 09:37:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/11/01/powercli-consolidate-all-vms-that-need-consolidation/</guid>
+      <description>Robert van den Nieuwendijk has a nice post on how to use PowerCLI to find VMs that need consolidation and then how to start consolidation. You can that post here: http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/
+But, as always, I prefer to make a function of these kind of things. A function is much easier to remember than a bunch of parameters and cmdlets.
+So here’s the code for a function that will search through the vCentre for VMs that need disk consolidation:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Locate a MAC-address in vCenter</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/</link>
+      <pubDate>Wed, 23 Oct 2013 09:50:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/</guid>
+      <description>To find out to which vm a MAC address belongs, you can use a simple one-liner:
+(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
+A basic function doing the same thing can look something like this:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: List all vm&#39;s with ISO mounted and dismount them</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/</link>
+      <pubDate>Thu, 10 Oct 2013 12:46:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/</guid>
+      <description>Easy-peasy and a pretty short post…
+To get all vm’s with iso mounted:
+Then, to dismount those:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Migrate all vm&#39;s on a datastore</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/08/powershell-vmware-migrate-all-vms-on-a-datastore/</link>
+      <pubDate>Tue, 08 Oct 2013 11:24:34 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/08/powershell-vmware-migrate-all-vms-on-a-datastore/</guid>
+      <description>PowerCLI is just awsome 🙂
+This simple one-liner migrates all vm’s off one datastore to a new one:
+You can also move vm’s off one datastore and place them in any datastore within a specified datastore cluster:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: List all snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/</link>
+      <pubDate>Thu, 03 Oct 2013 10:27:41 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/</guid>
+      <description>It’s been a while since last update, again, so I figured I should at least provide something..
+I recently started in a new job, and one of the first things I looked into was the amount of snapshots in our vmware environments. Not surprisingly there was a lot of snapshots, and very few of them had any hints of when they were taken and why.
+The vsphere console doesn’t provide this info so I had to turn to PowerCLI to get the info I needed.</description>
+    </item>
+    
+  </channel>
+</rss>

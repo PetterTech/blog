@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Mass import of users in Active Directory | PetterTech</title>
+<meta name="keywords" content="active directory, cacls, dsadd, import, microsoft, script">
+<meta name="description" content="Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
+Note: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.
+In the scenario I have created this script for we have a domain controller who happens to also be the file server, file01.">
+<meta name="author" content="nerenther">
+<link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Mass import of users in Active Directory" />
+<meta property="og:description" content="Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
+Note: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.
+In the scenario I have created this script for we have a domain controller who happens to also be the file server, file01." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2011-09-06T23:10:38+00:00" />
+<meta property="article:modified_time" content="2011-09-06T23:10:38+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mass import of users in Active Directory"/>
+<meta name="twitter:description" content="Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
+Note: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.
+In the scenario I have created this script for we have a domain controller who happens to also be the file server, file01."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Mass import of users in Active Directory",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mass import of users in Active Directory",
+  "name": "Mass import of users in Active Directory",
+  "description": "Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.\nNote: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.\nIn the scenario I have created this script for we have a domain controller who happens to also be the file server, file01.",
+  "keywords": [
+    "active directory", "cacls", "dsadd", "import", "microsoft", "script"
+  ],
+  "articleBody": "Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.\nNote: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.\nIn the scenario I have created this script for we have a domain controller who happens to also be the file server, file01. The domain is called test.local and have 5 OUs in addition to the default ones, those are:\nSales\nManagement\nHR\nIT\ngroups\nFiles are stored on a drive called e: under a folder named users. Each homefolder is shared with a trailing $.\nIn the OU called groups, there are a few groups with identical names to the rest of our OUs.\nNow that we have set the scenario heres the script:\nA little explanation:\nUsing dsadd we first specify that it is a user we want to add, followed by the distinguished name for that user. We also specify the sam id, upn, firstname, lastname and password. The -memberof switch sets which groups the user should be a member of, in this case there is only one, but you can specify multiple groups separated by , just remember to use the distinguished name of the group.\nThe last switches are for setting home folder and drive in ad. I put it in here because thats the way most admins specify home folders, event though I recommend doing via the login script.\nI hope you all are familiar with the md and net share commands, but thats for creating the folder and sharing it.\nCacls sets ntfs permissions on the users home folder for the user, administrators and system.\nNow if you want to add say 1000 users, you might want to use something like Word’s Mailings feature (that is, if you don’t loove to sit and punch usernames and such all day long).\nFor that I have created a couple of example files, you can download them here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip\nThe files you will find in that zip file are:\nscript.docx – The template used for the mailings process\nusers.xlsx – Excel file containg info on the users we want to create\nscript.txt – How the finished script will look like using my example users.\n",
+  "wordCount" : "399",
+  "inLanguage": "en",
+  "datePublished": "2011-09-06T23:10:38Z",
+  "dateModified": "2011-09-06T23:10:38Z",
+  "author":{
+    "@type": "Person",
+    "name": "nerenther"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PetterTech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net" accesskey="h" title="PetterTech (Alt + H)">PetterTech</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Mass import of users in Active Directory
+    </h1>
+    <div class="post-meta"><span title='2011-09-06 23:10:38 +0000 +0000'>September 6, 2011</span>&nbsp;·&nbsp;nerenther
+
+</div>
+  </header> 
+  <div class="post-content"><p>Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.</p>
+<p>Note: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.</p>
+<p>In the scenario I have created this script for we have a domain controller who happens to also be the file server, file01. The domain is called test.local and have 5 OUs in addition to the default ones, those are:<br>
+Sales<br>
+Management<br>
+HR<br>
+IT<br>
+groups</p>
+<p>Files are stored on a drive called e: under a folder named users. Each homefolder is shared with a trailing $.<br>
+In the OU called groups, there are a few groups with identical names to the rest of our OUs.</p>
+<p>Now that we have set the scenario heres the script:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>A little explanation:<br>
+Using dsadd we first specify that it is a user we want to add, followed by the distinguished name for that user. We also specify the sam id, upn, firstname, lastname and password. The -memberof switch sets which groups the user should be a member of, in this case there is only one, but you can specify multiple groups separated by , just remember to use the distinguished name of the group.<br>
+The last switches are for setting home folder and drive in ad. I put it in here because thats the way most admins specify home folders, event though I recommend doing via the login script.</p>
+<p>I hope you all are familiar with the md and net share commands, but thats for creating the folder and sharing it.</p>
+<p>Cacls sets ntfs permissions on the users home folder for the user, administrators and system.</p>
+<p>Now if you want to add say 1000 users, you might want to use something like Word’s Mailings feature (that is, if you don’t loove to sit and punch usernames and such all day long).</p>
+<p>For that I have created a couple of example files, you can download them here:  <!-- raw HTML omitted --><a href="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip">http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip</a><!-- raw HTML omitted --></p>
+<p>The files you will find in that zip file are:<br>
+script.docx – The template used for the mailings process<br>
+users.xlsx – Excel file containg info on the users we want to create<br>
+script.txt – How the finished script will look like using my example users.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/active-directory/">active directory</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cacls/">cacls</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dsadd/">dsadd</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/import/">import</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/microsoft/">microsoft</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/script/">script</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net">PetterTech</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

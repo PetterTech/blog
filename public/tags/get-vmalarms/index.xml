@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>get-vmalarms on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmalarms/</link>
+    <description>Recent content in get-vmalarms on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Aug 2014 06:42:12 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmalarms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Getting vm alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</link>
+      <pubDate>Thu, 28 Aug 2014 06:42:12 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</guid>
+      <description>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
+So here’s the the script for retrieving vm alarms:
+This will provide an output like this:</description>
+    </item>
+    
+  </channel>
+</rss>

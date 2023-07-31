@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Powershell: Write-Progress, a step-by-step guide | PetterTech</title>
+<meta name="keywords" content="guide, Powershell, write-progress">
+<meta name="description" content="For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
+This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.">
+<meta name="author" content="nerenther">
+<link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Powershell: Write-Progress, a step-by-step guide" />
+<meta property="og:description" content="For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
+This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2014-01-15T12:55:36+00:00" />
+<meta property="article:modified_time" content="2014-01-15T12:55:36+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Powershell: Write-Progress, a step-by-step guide"/>
+<meta name="twitter:description" content="For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
+This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Powershell: Write-Progress, a step-by-step guide",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Powershell: Write-Progress, a step-by-step guide",
+  "name": "Powershell: Write-Progress, a step-by-step guide",
+  "description": "For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:\nThis will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.",
+  "keywords": [
+    "guide", "Powershell", "write-progress"
+  ],
+  "articleBody": "For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:\nThis will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there. I mean, look at this for example:\nI’m sure that if I had a stronger background in programming and/or scripting I could have figured it out quite easily (for what it’s worth: I understand the code now 😉 ). But since I haven’t really been scripting before Powershell came along I just sat there scratching my head.\nSo let’s write a simpler guide!\nLet’s start by explaining a briefly how Write-Progress works:\nIf you type the command in your Powershell console it will display the progress bar, but it will disappear again in a split second.\nIf you put your Write-Progress snippet in a script, the progress bar will be displayed until another Write-Progress snippet comes along, or until the script finishes.\nThe basic usage of Write-Progress is, as I wrote further up, something like this:\nThat will create an output looking something like this:\nIt’s also quite easy to create a child progress bar by using the Id and ParentId parameters:\nThis will create an output looking something like this:\nCool ey?\nNow, this is all fine and dandy as a starting point, and you CAN use write-progress this way in your scripts, but thats not exactly a dynamic way of doing it.\nOften in your script you will have one or more foreach loops. Those are a great place to put your write-progress snippet and have PercentComplete and perhaps even Status or CurrentOperation filled out automagically.\nFirst off we will need some data to parse through, I like to use Get-Process for that:\nThen we create a variable for our progress and set it to 1:\nThis way PercentComplete will start at 1, you’ll see why in a bit.\nNow we can create our foreach loop (I assume you know how they work):\nThis Write-Progress line will show Activity as “Sleeping”, the status will be the name of the process and currentoperation will be the ID of the process. Percentagecomplete will the correct progress (since $progress++ will increment $progress by 1 for each time the loop runs).\nStart-Sleep is only there to delay the operation, so you can actually see whats going on.\nSo the final result will be:\nAnd it will look something like this:\nComments?\n",
+  "wordCount" : "442",
+  "inLanguage": "en",
+  "datePublished": "2014-01-15T12:55:36Z",
+  "dateModified": "2014-01-15T12:55:36Z",
+  "author":{
+    "@type": "Person",
+    "name": "nerenther"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PetterTech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net" accesskey="h" title="PetterTech (Alt + H)">PetterTech</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Powershell: Write-Progress, a step-by-step guide
+    </h1>
+    <div class="post-meta"><span title='2014-01-15 12:55:36 +0000 +0000'>January 15, 2014</span>&nbsp;·&nbsp;nerenther
+
+</div>
+  </header> 
+  <div class="post-content"><p>For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:</p>
+<!-- raw HTML omitted -->
+<p>This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there. I mean, look at this for example:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>I’m sure that if I had a stronger background in programming and/or scripting I could have figured it out quite easily (for what it’s worth: I understand the code now 😉 ). But since I haven’t really been scripting before Powershell came along I just sat there scratching my head.</p>
+<p>So let’s write a simpler guide!</p>
+<p>Let’s start by explaining a briefly how Write-Progress works:<br>
+If you type the command in your Powershell console it will display the progress bar, but it will disappear again in a split second.<br>
+If you put your Write-Progress snippet in a script, the progress bar will be displayed until another Write-Progress snippet comes along, or until the script finishes.</p>
+<p>The basic usage of Write-Progress is, as I wrote further up, something like this:</p>
+<!-- raw HTML omitted -->
+<p>That will create an output looking something like this:</p>
+<!-- raw HTML omitted -->
+<p>It’s also quite easy to create a child progress bar by using the Id and ParentId parameters:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This will create an output looking something like this:</p>
+<!-- raw HTML omitted -->
+<p>Cool ey?</p>
+<p>Now, this is all fine and dandy as a starting point, and you CAN use write-progress this way in your scripts, but thats not exactly a dynamic way of doing it.<br>
+Often in your script you will have one or more foreach loops. Those are a great place to put your write-progress snippet and have PercentComplete and perhaps even Status or CurrentOperation filled out automagically.</p>
+<p>First off we will need some data to parse through, I like to use Get-Process for that:</p>
+<!-- raw HTML omitted -->
+<p>Then we create a variable for our progress and set it to 1:</p>
+<!-- raw HTML omitted -->
+<p>This way PercentComplete will start at 1, you’ll see why in a bit.</p>
+<p>Now we can create our foreach loop (I assume you know how they work):</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This Write-Progress line will show Activity as “Sleeping”, the status will be the name of the process and currentoperation will be the ID of the process. Percentagecomplete will the correct progress (since $progress++ will increment $progress by 1 for each time the loop runs).<br>
+Start-Sleep is only there to delay the operation, so you can actually see whats going on.</p>
+<p>So the final result will be:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>And it will look something like this:</p>
+<!-- raw HTML omitted -->
+<p>Comments?</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/guide/">guide</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell/">Powershell</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/write-progress/">write-progress</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net">PetterTech</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

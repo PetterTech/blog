@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>get-snapshot on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-snapshot/</link>
+    <description>Recent content in get-snapshot on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Sep 2014 07:16:57 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-snapshot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Function for listing snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/17/powercli-function-for-listing-snapshots/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/17/powercli-function-for-listing-snapshots/</guid>
+      <description>My very first PowerCLI related post was about this same topic: listing snapshot info using PowerCLI.
+In my original post (which you can see here) I only wrote a pretty simple one-liner. Which was kind of okay, but it was missing one crucial thing: who took the snapshot?
+Why vmware hasn’t found a way to include a username in the get-snapshot cmdlet is something I just can’t understand. There’s really not much code needed to add this to the output, and there’s several ways of doing so.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: List all snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/</link>
+      <pubDate>Thu, 03 Oct 2013 10:27:41 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/</guid>
+      <description>It’s been a while since last update, again, so I figured I should at least provide something..
+I recently started in a new job, and one of the first things I looked into was the amount of snapshots in our vmware environments. Not surprisingly there was a lot of snapshots, and very few of them had any hints of when they were taken and why.
+The vsphere console doesn’t provide this info so I had to turn to PowerCLI to get the info I needed.</description>
+    </item>
+    
+  </channel>
+</rss>

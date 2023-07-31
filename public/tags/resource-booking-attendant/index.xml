@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Resource Booking Attendant on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/resource-booking-attendant/</link>
+    <description>Recent content in Resource Booking Attendant on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Sep 2011 12:28:56 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/resource-booking-attendant/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable Resource Booking Attendant on all Room Mailboxes</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/</link>
+      <pubDate>Mon, 12 Sep 2011 12:28:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/</guid>
+      <description>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</description>
+    </item>
+    
+  </channel>
+</rss>

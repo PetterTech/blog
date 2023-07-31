@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ACU on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/acu/</link>
+    <description>Recent content in ACU on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Oct 2012 05:46:20 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/acu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HP ACU cli quick guide</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/03/hp-acu-cli-quick-guide/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/03/hp-acu-cli-quick-guide/</guid>
+      <description>Guess what? It’s time for something different than powershell 😛
+I finally got myself a server to play around with Hyper-V on. This has been sorely missed for a long time. I worked a lot with Hyper-V in my previous job, and even built a small data center running on Hyper-V. But at my current job we only use vmware, which is a great product but to expensive in my book.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Software on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/software/</link>
+    <description>Recent content in Software on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Jun 2011 13:09:35 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ProduKey – recover cd-keys</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/23/produkey-recover-cd-keys/</link>
+      <pubDate>Thu, 23 Jun 2011 13:09:35 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/23/produkey-recover-cd-keys/</guid>
+      <description>From time to time you will want to reinstall you os right? And of course you have all your license keys documented right?
+Well, I don’t 🙂
+Thats why I usually extract them from my computer before i reinstall the os.
+A nice little tool that I have been using for this is ProduKey.
+It has a small footprint, no need for installation, just run the exe file.
+It gathers your licensekeys for windows, office, exchange, sql etc.</description>
+    </item>
+    
+  </channel>
+</rss>

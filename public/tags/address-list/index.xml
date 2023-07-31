@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Address list on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/address-list/</link>
+    <description>Recent content in Address list on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Aug 2011 06:48:06 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/address-list/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Set event logging for the offline address list generator to medium</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/</link>
+      <pubDate>Wed, 03 Aug 2011 06:48:06 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/</guid>
+      <description>In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:
+Log Name: Application
+Source: MSExchangeSA
+Date: 03.08.2011 08:15:18
+Event ID: 9320 Task Category: (13)
+Level: Warning
+Keywords: Classic
+User: N/A</description>
+    </item>
+    
+  </channel>
+</rss>

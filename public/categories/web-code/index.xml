@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web code on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/web-code/</link>
+    <description>Recent content in Web code on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Feb 2012 07:55:57 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/web-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redirecting a webpage using html</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/27/redirecting-a-webpage-using-html/</link>
+      <pubDate>Mon, 27 Feb 2012 07:55:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/27/redirecting-a-webpage-using-html/</guid>
+      <description>The redirect function in IIS 7 and 7.5 is in my experience pretty buggy. More often than not it will send the visitor into an eternal redirect loop.
+Because of that I have used this simple html code for redirecting, instead of using the built in function in IIS.
+Use it at your own will, I’m just posting it so I know where to find it the next time I need it 🙂</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Active Directory on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/active-directory/</link>
+    <description>Recent content in Active Directory on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Sep 2012 12:02:13 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/active-directory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell function for gathering users in groups</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/</link>
+      <pubDate>Thu, 13 Sep 2012 12:02:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/</guid>
+      <description>A friend of mine asked me a couple of days ago if I knew a way to gather users who are members of given groups. I thought to myself “Hmm, challenge accepted!” and started writing a small powershell script.
+After he confirmed that the script worked as planned I decided to make a function of it (Yes, I know it has been a lot of them on this blog lately).</description>
+    </item>
+    
+    <item>
+      <title>Function for adding photo in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/</link>
+      <pubDate>Fri, 24 Aug 2012 13:16:30 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/</guid>
+      <description>I have always been careful to avoid the really advanced and cool stuff in Powershell, like functions, arrays and such.
+But as I created the last script it hit me that it would be really cool to have it in a command, like set-adphoto. After some googling I found that funtions aren’t hard at all!
+Basically all I really had to do with the ad photo import script was to add “function Set-ADPhoto { ” in front of the script and end it with a }</description>
+    </item>
+    
+    <item>
+      <title>Simple script for adding user photo in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/16/simple-script-for-adding-user-photo-in-active-directory/</link>
+      <pubDate>Thu, 16 Aug 2012 12:24:00 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/16/simple-script-for-adding-user-photo-in-active-directory/</guid>
+      <description>It’s been a while since I posted here so I thought it might be time to add some content.
+This script is a simple script that adds a photo to a user’s active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).
+The requirements for this script is the Active Directory module and permission to edit a user object in Active Directory</description>
+    </item>
+    
+    <item>
+      <title>Mass import of users in Active Directory v2 – Powershell time</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/</link>
+      <pubDate>Thu, 27 Oct 2011 19:54:21 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/</guid>
+      <description>Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.
+That script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.
+The powershell script I came up does a lot more than the last one. Here a little list:
+Creates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot.</description>
+    </item>
+    
+    <item>
+      <title>Mass import of users in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/</link>
+      <pubDate>Tue, 06 Sep 2011 23:10:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/</guid>
+      <description>Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
+Note: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.
+In the scenario I have created this script for we have a domain controller who happens to also be the file server, file01.</description>
+    </item>
+    
+    <item>
+      <title>ALTools from Microsoft, awesome!</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/09/altools-from-microsoft-awesome/</link>
+      <pubDate>Thu, 09 Jun 2011 11:39:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/09/altools-from-microsoft-awesome/</guid>
+      <description>Stumbled upon a tool from Microsoft called ALTools that I thought were absolutely awesome. It’s over 7 years old so I wonder why I haven’t seen it before
+Nevertheless it’s as cool now as it was when it was released.
+ALTools consists of several tools, but the coolest of them are:
+aloinfo – Displays all user account names and the age of their passwords eventcombMT – Gathers specific events from event logs of several different machines and saves them in a text file LockoutStatus – Shows a list of all domain controllers in a given domain and the lockoutstatus of a given user on those I have used eventcomb a couple of times as it has some predefined searches, for example Account Lockouts.</description>
+    </item>
+    
+  </channel>
+</rss>

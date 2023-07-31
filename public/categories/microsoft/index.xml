@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Microsoft on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/microsoft/</link>
+    <description>Recent content in Microsoft on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Aug 2019 12:12:56 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Getting monitor info</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2019/08/26/powershell-getting-monitor-info/</link>
+      <pubDate>Mon, 26 Aug 2019 12:12:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2019/08/26/powershell-getting-monitor-info/</guid>
+      <description>Today I got a request from a colleague of mine that was doing inventory: What are the make, model, serial number and purchase date of your monitors?
+Seeing as this wasn’t something I had readily in my head I had to figure it out, but being the automation enthusiast that I am, I refused to bend over my monitors and snap a photo of it all. I wanted to find it a cooler way, the powershell way 🙂</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Creating strong passwords</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2016/05/26/powershell-creating-strong-passwords/</link>
+      <pubDate>Thu, 26 May 2016 10:40:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2016/05/26/powershell-creating-strong-passwords/</guid>
+      <description>A tweet from @JanEgilRing caught my eye this morning, it was showing how you can use powershell to create passwords. The link in the tweet pointed here: http://powershell.com/cs/blogs/tips/archive/2016/05/23/one-liner-random-password-generator.aspx
+Seeing that line and realizing how simple it was, it got me thinking on how I could implement this in my scripts.
+The only issue I saw with that one-liner was that the passwords it creates do not necessarily comply with high complexity rules.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Listing activated clients on KMS server</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/26/powershell-listing-activated-clients-on-kms-server/</link>
+      <pubDate>Tue, 26 Aug 2014 07:14:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/26/powershell-listing-activated-clients-on-kms-server/</guid>
+      <description>If you are using a KMS server for activating servers and clients in your environment, you may have noticed that there’s really no obvious way to get a list of all the clients that have been activated by the KMS server.
+One way to get that overview is by using VAMT (http://technet.microsoft.com/en-us/library/hh824953.aspx), but since that tool is based on pulling info from clients and not from the KMS server it is not suitable for everyone.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Measuring latency on DNS queries</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/</link>
+      <pubDate>Fri, 15 Aug 2014 08:39:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/</guid>
+      <description>A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.
+After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
+And sure enough, we were seeing response times in the range of 5-7 seconds.</description>
+    </item>
+    
+    <item>
+      <title>Activate Server 2012 (R2) by telephone</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/02/05/activate-server-2012-r2-by-telephone/</link>
+      <pubDate>Wed, 05 Feb 2014 22:20:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/02/05/activate-server-2012-r2-by-telephone/</guid>
+      <description>The option for activating Server 2012 by phone is kinda hidden, so I have to write this down before I forget it:
+Win+R – SLUI 4</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Write-Progress, a step-by-step guide</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/</link>
+      <pubDate>Wed, 15 Jan 2014 12:55:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/</guid>
+      <description>For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
+This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Invoke-Sound function</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/04/18/powershell-invoke-sound-function/</link>
+      <pubDate>Thu, 18 Apr 2013 09:26:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/04/18/powershell-invoke-sound-function/</guid>
+      <description>I stumbled upon this brilliant powershell function for playing sounds using powershell, check it out: http://community.spiceworks.com/scripts/show/1337-powershell-function-invoke-sound
+He even added a switch for playing the imperial march from Star Wars 🙂</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Install role or feature on multiple remote servers</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/03/26/powershell-install-role-or-feature-on-multiple-remote-servers/</link>
+      <pubDate>Tue, 26 Mar 2013 12:48:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/03/26/powershell-install-role-or-feature-on-multiple-remote-servers/</guid>
+      <description>Today I was presented with a task that sounded pretty boring and repetitive: Install the Windows Search service on all our citrix servers.
+Now, I could just log on each and every one of our citrix servers, open Server Manager and then install the role service but where’s the fun in that?
+As always Powershell is a lot more fun:
+First I had to find the name of all our citrix servers.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Export-Csv and non-English letters</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/17/powershell-export-csv-and-non-english-letters/</link>
+      <pubDate>Thu, 17 Jan 2013 12:06:53 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/17/powershell-export-csv-and-non-english-letters/</guid>
+      <description>The Export-Csv cmdlet is a really nice tool if you want to gather info from e.g. Active Directory that you later want to import to Excel. But as you might have noticed it doesn’t play well with non-English letters.
+Working in Norway with users from all the Nordic countries means that we have a lot of users i Active Directory who have non-English letters in their names (æ ø å ö ä and so on).</description>
+    </item>
+    
+    <item>
+      <title>Exchange: Content index state failed</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/exchange-content-index-state-failed/</link>
+      <pubDate>Wed, 16 Jan 2013 09:17:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/exchange-content-index-state-failed/</guid>
+      <description>If you ever had problems with corrupt databases in an Exchange 2010 DAG setup you might have encountered this error. Trying to activate the database on a server where it has this state will fail.
+However there is a quite simple fix given that you have a healthy copy of the database on a different server:
+Update-MailboxDatabaseCopy -Identity DB -SourceServer -CatalogOnly
+Run the command in the Exchange Management Shell and it should fix the Content index state and allow you to activate the database again.</description>
+    </item>
+    
+    <item>
+      <title>Exchange: Activate Database Copy fails</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/activate-database-copy-fails/</link>
+      <pubDate>Wed, 16 Jan 2013 09:07:50 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/activate-database-copy-fails/</guid>
+      <description>After some exchange services failed on one of the nodes in our Exchange 2010 DAG we got some problems with one database. The database was mounted on server2 where it has an activation preference of 2.
+Trying to manually activate the database on server1, where is has an activation preference of 1, resulted in the following error:
+——————————————————–
+Microsoft Exchange Error
+——————————————————–
+Cannot activate database copy ‘Activate Database Copy…’.
+Activate Database Copy…</description>
+    </item>
+    
+    <item>
+      <title>Resetting the Discretionary Access Control List (DACL) in a Windows Service security descriptor</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/14/resetting-the-discretionary-access-control-list-dacl-in-a-windows-service-security-descriptor/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/14/resetting-the-discretionary-access-control-list-dacl-in-a-windows-service-security-descriptor/</guid>
+      <description>OpenService FAILED 5: Access is denied. — “Oh crap!” If you ever see this error and need to reset the DACL on a Windows service, let’s say in case you (or someone else) accidentally deletes it, or configure it to something that prevents you from reading it’s security settings, this might do the trick:
+First of all, get a cup of coffee.
+Download PsExec (a tool in PsTools), which among other things allow you to run commands as the “local system” account.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Checking multiple dns records for multiple domains</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/</link>
+      <pubDate>Tue, 20 Nov 2012 09:25:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/</guid>
+      <description>I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
+First we need to to save our domains in an array:
+Then we send that array into a foreach loop:</description>
+    </item>
+    
+    <item>
+      <title>Powershell function for enabling a user for Lync and configure settings</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/</guid>
+      <description>A little while ago I posted a script for enabling users for Lync and settings some settings for that user. That script has been used here ever since I posted it and it has worked like a charm. However there’s always room for improvement, right?.
+So I have made a function out of it and for the first time (I think) I have even implemented some error handling. The function is also improved quit a bit on the help section and the info that is shown to the user after the function completes.</description>
+    </item>
+    
+    <item>
+      <title>Powershell function for gathering users in groups</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/</link>
+      <pubDate>Thu, 13 Sep 2012 12:02:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/</guid>
+      <description>A friend of mine asked me a couple of days ago if I knew a way to gather users who are members of given groups. I thought to myself “Hmm, challenge accepted!” and started writing a small powershell script.
+After he confirmed that the script worked as planned I decided to make a function of it (Yes, I know it has been a lot of them on this blog lately).</description>
+    </item>
+    
+    <item>
+      <title>Motivational Powershell function</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/motivational-powershell-function/</link>
+      <pubDate>Wed, 12 Sep 2012 11:06:18 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/motivational-powershell-function/</guid>
+      <description>If you are ever in need of some motivation, here is a very simple Powershell function for that:
+Now all you need to do is write Motivate-Me in the powershell window to receive some inspirational words 🙂</description>
+    </item>
+    
+    <item>
+      <title>Powershell function for showing some system information</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/powershell-function-for-showing-some-system-information/</link>
+      <pubDate>Wed, 12 Sep 2012 09:32:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/powershell-function-for-showing-some-system-information/</guid>
+      <description>This is a function I created just because I wanted to toy around with Powershell and get-wmiobject. Also, this is my first function where I made it possible to use a switch parameter.
+What the function does is gather some system information using get-wmiobject. The info is written to a temp file and then shown using out-gridview.
+If the KeepTempFile parameter is used the temp file is saved in the users profile, if not it is deleted after the function finishes.</description>
+    </item>
+    
+    <item>
+      <title>Adding a pause to you Powershell scripts</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/10/adding-a-pause-to-you-powershell-scripts/</link>
+      <pubDate>Mon, 10 Sep 2012 13:57:52 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/10/adding-a-pause-to-you-powershell-scripts/</guid>
+      <description>If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
+This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
+The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed).</description>
+    </item>
+    
+    <item>
+      <title>Powershell function for rotating event logs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/06/powershell-function-for-rotating-event-logs/</link>
+      <pubDate>Thu, 06 Sep 2012 10:13:33 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/06/powershell-function-for-rotating-event-logs/</guid>
+      <description>A friend of mine came to me with an interesting powershell challenge today: how can I use powershell to archive and clear event logs?
+Well, challenge accepted!
+The reason the challenge arose is due to maintenance he performs on a number of customer servers. Every month he saves each eventlog and clears it manually, a time consuming task if you have more than a few servers.
+So here’s what I came up with:</description>
+    </item>
+    
+    <item>
+      <title>Function for locating an email address</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/</link>
+      <pubDate>Tue, 28 Aug 2012 10:41:15 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/</guid>
+      <description>Yesterday I was given a relatively easy task: find out who or what has a given email address.
+As this was within our own Exchange organization it proved to be quite simple:
+You can achieve the goal with a simple one-liner:
+But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:</description>
+    </item>
+    
+    <item>
+      <title>Function for adding photo in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/</link>
+      <pubDate>Fri, 24 Aug 2012 13:16:30 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/</guid>
+      <description>I have always been careful to avoid the really advanced and cool stuff in Powershell, like functions, arrays and such.
+But as I created the last script it hit me that it would be really cool to have it in a command, like set-adphoto. After some googling I found that funtions aren’t hard at all!
+Basically all I really had to do with the ad photo import script was to add “function Set-ADPhoto { ” in front of the script and end it with a }</description>
+    </item>
+    
+    <item>
+      <title>Simple script for adding user photo in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/16/simple-script-for-adding-user-photo-in-active-directory/</link>
+      <pubDate>Thu, 16 Aug 2012 12:24:00 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/16/simple-script-for-adding-user-photo-in-active-directory/</guid>
+      <description>It’s been a while since I posted here so I thought it might be time to add some content.
+This script is a simple script that adds a photo to a user’s active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).
+The requirements for this script is the Active Directory module and permission to edit a user object in Active Directory</description>
+    </item>
+    
+    <item>
+      <title>Check if DAG databases is on preferred server</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/04/30/check-if-dag-databases-is-on-preferred-server/</link>
+      <pubDate>Mon, 30 Apr 2012 10:35:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/04/30/check-if-dag-databases-is-on-preferred-server/</guid>
+      <description>If you are using DAG in exchange 2010 for high availability on your mailboxes there may be one thing you might have noticed, the databases can fail over to a less preferred server at any time without you noticing.
+Microsoft have provided you with a script for balancing these databases, RedistributeActiveDatabases.ps1. With this script you can activate the databases on their preferred server again. But how do you know when they have failed over?</description>
+    </item>
+    
+    <item>
+      <title>Grep&#39;ing the eventlog using powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/20/greping-the-eventlog-using-powershell/</link>
+      <pubDate>Mon, 20 Feb 2012 09:27:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/20/greping-the-eventlog-using-powershell/</guid>
+      <description>If you are used to working with Linux you’re probably familiar with using tail, grep and such for gathering stuff from logs and other files. Those are quite useful tools and work very well when you want to find out e.g. why a user fails to log in.
+In Windows it’s a little different, if we want to find something in the event logs we have always had to resort to a console.</description>
+    </item>
+    
+    <item>
+      <title>Mass import of users in Active Directory v2 – Powershell time</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/</link>
+      <pubDate>Thu, 27 Oct 2011 19:54:21 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/</guid>
+      <description>Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.
+That script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.
+The powershell script I came up does a lot more than the last one. Here a little list:
+Creates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot.</description>
+    </item>
+    
+    <item>
+      <title>Simple powershell script for enabling users for Lync</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/</link>
+      <pubDate>Wed, 12 Oct 2011 15:59:45 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/</guid>
+      <description>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
+If you only have one sipdomain you can change the script so that it doesn’t ask for it.
+Here’s the script in all its glory:
+You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</description>
+    </item>
+    
+    <item>
+      <title>Install and configure Exchange 2010 using Powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/29/install-and-configure-exchange-2010-using-powershell/</link>
+      <pubDate>Thu, 29 Sep 2011 06:51:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/29/install-and-configure-exchange-2010-using-powershell/</guid>
+      <description>In this guide I will show you how to install and configure a simple Exchange 2010 environment using no gui at all.
+Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
+Remember to run Windows update prior to the installation.
+Start powershell as administrator and type:
+First we need to install all of the prerequisites:
+We also need to set the NetTcpPortSharing service to automatic start, the command for this is:</description>
+    </item>
+    
+    <item>
+      <title>Setting NTFS permissions using Powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/23/setting-ntfs-permissions-using-powershell/</link>
+      <pubDate>Fri, 23 Sep 2011 11:19:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/23/setting-ntfs-permissions-using-powershell/</guid>
+      <description>I am currently working on a script similar to the Mass import of users in Active Direcory post I published earlier (as promised 🙂 ). In the new script I wanted to only use powershell, so I had to find a way to set ntfs permissions using powershell. After all, the cacls way is pretty outdated.
+After some googling I came up with a rather extensive script, it is a little more complicated than I wanted but here goes:</description>
+    </item>
+    
+    <item>
+      <title>Robocopy backup script</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/</link>
+      <pubDate>Tue, 13 Sep 2011 13:03:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/</guid>
+      <description>This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
+Anyway, heres my script:
+I guess a little explanation is required.
+The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination.</description>
+    </item>
+    
+    <item>
+      <title>Enable Resource Booking Attendant on all Room Mailboxes</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/</link>
+      <pubDate>Mon, 12 Sep 2011 12:28:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/12/enable-resource-booking-attendant-on-all-room-mailboxes/</guid>
+      <description>The Resource Booking Attendant should be enabled on all your Room Mailboxes. If it is not, the room will not accept or decline incoming meeting requests. Which is somewhat the whole point right?
+Heres a powershell command to enable it on all the Room Mailboxes in an exchange organization:</description>
+    </item>
+    
+    <item>
+      <title>Mass import of users in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/</link>
+      <pubDate>Tue, 06 Sep 2011 23:10:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/</guid>
+      <description>Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
+Note: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.
+In the scenario I have created this script for we have a domain controller who happens to also be the file server, file01.</description>
+    </item>
+    
+    <item>
+      <title>Quick guide for setting up Libraries in Windows 7</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/23/quick-guide-for-setting-up-libraries-in-windows-7/</link>
+      <pubDate>Tue, 23 Aug 2011 06:09:54 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/23/quick-guide-for-setting-up-libraries-in-windows-7/</guid>
+      <description>Libraries can be a nice feature to use if you have your pictures, music, movies and whatnot spread across several different locations, be that discs, servers or folders.
+It’s really simple to setup too!
+Open up explorer and look to your left, there you will see the default Libraries Windows has set up.
+You can use the default Libraries as a starting point, or you can create a new one by right-clicking Libraries New–&amp;gt;Library</description>
+    </item>
+    
+    <item>
+      <title>Editing permissions on all mailboxes in one command, Exchange 2010/2007</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/18/editing-permissions-on-all-mailboxes-in-one-command-exchange-20102007/</link>
+      <pubDate>Thu, 18 Aug 2011 07:44:23 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/18/editing-permissions-on-all-mailboxes-in-one-command-exchange-20102007/</guid>
+      <description>If you have some sort of 3rd-party application that needs access to all of your mailboxes, it can be a pain to set the permissions on all of your mailboxes.
+Except if you use this nice little powershell command:
+What this command will do is to add Full mailbox access to every mailbox in your Exchange organization for the user admin.
+You can of course change the -AccessRights setting to your liking, e.</description>
+    </item>
+    
+    <item>
+      <title>Receive connector allowing anonymous relay on exchange 2010/2007</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/17/receive-connector-allowing-anonymous-relay-on-exchange-20102007/</link>
+      <pubDate>Wed, 17 Aug 2011 14:27:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/17/receive-connector-allowing-anonymous-relay-on-exchange-20102007/</guid>
+      <description>Often it’s a good idea to have a receive connector allowing certain devices to send mail through you exchange server without having to authenticate.
+One example from where I currently work is printers.
+We never set up the printers ourselves, that job is done by the provider. And do we want to give them a username and password allowing for mail relay through our servers? No, we don’t.
+It’s a better practice to have them only input the name/ip-address of one exchange server with the cas role.</description>
+    </item>
+    
+    <item>
+      <title>Activesync issue on Exchange 2010</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/04/activesync-issue-on-exchange-2010/</link>
+      <pubDate>Thu, 04 Aug 2011 09:56:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/04/activesync-issue-on-exchange-2010/</guid>
+      <description>At work we are currently migrating to a new active directory domain. The migration hos gone rather smoothly except for a couple of users who are not able to sync mail on their phones.
+After a little research I found the following events in the event log on our exchange CAS server:
+Log Name: Application
+Source: MSExchange ActiveSync
+Date: 04.08.2011 11:00:48
+Event ID: 1053
+Task Category: Configuration
+Level: Error
+Keywords: Classic</description>
+    </item>
+    
+    <item>
+      <title>Deploying Microsoft Hyper-V Server 2008 R2 on USB Flash Drive</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/deploying-microsoft-hyper-v-server-2008-r2-on-usb-flash-drive/</link>
+      <pubDate>Wed, 03 Aug 2011 12:04:31 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/deploying-microsoft-hyper-v-server-2008-r2-on-usb-flash-drive/</guid>
+      <description>Just thought I should share this link:
+http://technet.microsoft.com/en-us/library/ee731893(WS.10).aspx
+I have tried this on a HP DL380 G6 and it worked like a charm.
+One of the advantages of using that kind of server is that it has internal usb ports so you don’t have to worry about someone accidentally unplugging the usb drive.
+Why should I run a server os from a usb drive you may ask. Well, the biggest advantage is that if your storing all virtual machines on e.</description>
+    </item>
+    
+    <item>
+      <title>Set event logging for the offline address list generator to medium</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/</link>
+      <pubDate>Wed, 03 Aug 2011 06:48:06 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/</guid>
+      <description>In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:
+Log Name: Application
+Source: MSExchangeSA
+Date: 03.08.2011 08:15:18
+Event ID: 9320 Task Category: (13)
+Level: Warning
+Keywords: Classic
+User: N/A</description>
+    </item>
+    
+    <item>
+      <title>ALTools from Microsoft, awesome!</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/09/altools-from-microsoft-awesome/</link>
+      <pubDate>Thu, 09 Jun 2011 11:39:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/09/altools-from-microsoft-awesome/</guid>
+      <description>Stumbled upon a tool from Microsoft called ALTools that I thought were absolutely awesome. It’s over 7 years old so I wonder why I haven’t seen it before
+Nevertheless it’s as cool now as it was when it was released.
+ALTools consists of several tools, but the coolest of them are:
+aloinfo – Displays all user account names and the age of their passwords eventcombMT – Gathers specific events from event logs of several different machines and saves them in a text file LockoutStatus – Shows a list of all domain controllers in a given domain and the lockoutstatus of a given user on those I have used eventcomb a couple of times as it has some predefined searches, for example Account Lockouts.</description>
+    </item>
+    
+  </channel>
+</rss>

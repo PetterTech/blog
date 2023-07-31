@@ -1,10 +1,1514 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on PetterTech</title>
-    <link>https://green-glacier-046ccc103.3.azurestaticapps.net/tags/</link>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/</link>
     <description>Recent content in Tags on PetterTech</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://green-glacier-046ccc103.3.azurestaticapps.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Aug 2019 12:12:56 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Get-WmiObject</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-wmiobject/</link>
+      <pubDate>Mon, 26 Aug 2019 12:12:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-wmiobject/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell/</link>
+      <pubDate>Mon, 26 Aug 2019 12:12:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-esxcli</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-esxcli/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-esxcli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HPE 3PAR</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hpe-3par/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hpe-3par/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>path selection poliocy</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/path-selection-poliocy/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/path-selection-poliocy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powercli</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercli/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PSP</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psp/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SATP</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/satp/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/satp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>3PAR</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/3par/</link>
+      <pubDate>Thu, 15 Jun 2017 12:01:01 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/3par/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boot lun</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/boot-lun/</link>
+      <pubDate>Thu, 15 Jun 2017 12:01:01 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/boot-lun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Invoke-RestMethod</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/invoke-restmethod/</link>
+      <pubDate>Thu, 15 Jun 2017 12:01:01 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/invoke-restmethod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>REST</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/rest/</link>
+      <pubDate>Thu, 15 Jun 2017 12:01:01 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>password</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/password/</link>
+      <pubDate>Thu, 26 May 2016 10:40:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/password/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regex</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/regex/</link>
+      <pubDate>Thu, 26 May 2016 10:40:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/regex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CUSD</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cusd/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cusd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EMC VNX</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/emc-vnx/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/emc-vnx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powershell agent</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell-agent/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell-agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PSA</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psa/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCS Director</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ucs-director/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ucs-director/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>start-job</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/start-job/</link>
+      <pubDate>Wed, 12 Nov 2014 12:21:03 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/start-job/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>function</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/function/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-snapshot</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-snapshot/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-snapshot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-snapshots/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-snapshots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-vievent</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vievent/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vievent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/snapshots/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/snapshots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vmware</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vmware/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>one-liner</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/one-liner/</link>
+      <pubDate>Thu, 11 Sep 2014 10:54:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/one-liner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storage vmotion</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/storage-vmotion/</link>
+      <pubDate>Thu, 11 Sep 2014 10:54:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/storage-vmotion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dismount iso</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dismount-iso/</link>
+      <pubDate>Tue, 09 Sep 2014 05:55:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dismount-iso/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-isomounts</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-isomounts/</link>
+      <pubDate>Tue, 09 Sep 2014 05:55:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-isomounts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iso mount</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/iso-mount/</link>
+      <pubDate>Tue, 09 Sep 2014 05:55:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/iso-mount/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powercl</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercl/</link>
+      <pubDate>Tue, 09 Sep 2014 05:55:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powersh</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powersh/</link>
+      <pubDate>Tue, 09 Sep 2014 05:55:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powersh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-vmhostuptime</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmhostuptime/</link>
+      <pubDate>Mon, 08 Sep 2014 07:26:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmhostuptime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>uptime</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/uptime/</link>
+      <pubDate>Mon, 08 Sep 2014 07:26:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/uptime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vmhost</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vmhost/</link>
+      <pubDate>Mon, 08 Sep 2014 07:26:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vmhost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-vmtoolsstatus</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmtoolsstatus/</link>
+      <pubDate>Fri, 05 Sep 2014 12:06:17 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmtoolsstatus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vmware tools</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vmware-tools/</link>
+      <pubDate>Fri, 05 Sep 2014 12:06:17 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vmware-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/alarms/</link>
+      <pubDate>Sun, 31 Aug 2014 10:16:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/alarms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-datastorealarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-datastorealarms/</link>
+      <pubDate>Sun, 31 Aug 2014 10:16:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-datastorealarms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-clusteralarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-clusteralarms/</link>
+      <pubDate>Sat, 30 Aug 2014 08:21:59 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-clusteralarms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-vmhostalarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmhostalarms/</link>
+      <pubDate>Fri, 29 Aug 2014 07:41:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmhostalarms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-vmalarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmalarms/</link>
+      <pubDate>Thu, 28 Aug 2014 06:42:12 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmalarms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mount nfs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mount-nfs/</link>
+      <pubDate>Wed, 27 Aug 2014 07:26:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mount-nfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mount-NFSstores</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mount-nfsstores/</link>
+      <pubDate>Wed, 27 Aug 2014 07:26:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mount-nfsstores/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-eventlog</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-eventlog/</link>
+      <pubDate>Tue, 26 Aug 2014 07:14:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-eventlog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KMS</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/kms/</link>
+      <pubDate>Tue, 26 Aug 2014 07:14:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/kms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dns/</link>
+      <pubDate>Fri, 15 Aug 2014 08:39:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns latency</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dns-latency/</link>
+      <pubDate>Fri, 15 Aug 2014 08:39:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dns-latency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measure-DNSLatency</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/measure-dnslatency/</link>
+      <pubDate>Fri, 15 Aug 2014 08:39:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/measure-dnslatency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>activate by phone</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/activate-by-phone/</link>
+      <pubDate>Wed, 05 Feb 2014 22:20:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/activate-by-phone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server 2012</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/server-2012/</link>
+      <pubDate>Wed, 05 Feb 2014 22:20:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/server-2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows Server</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/windows-server/</link>
+      <pubDate>Wed, 05 Feb 2014 22:20:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/windows-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>disk space</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/disk-space/</link>
+      <pubDate>Wed, 29 Jan 2014 09:02:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/disk-space/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-harddisk</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-harddisk/</link>
+      <pubDate>Wed, 29 Jan 2014 09:02:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-harddisk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>guide</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/guide/</link>
+      <pubDate>Wed, 15 Jan 2014 12:55:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/guide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>write-progress</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/write-progress/</link>
+      <pubDate>Wed, 15 Jan 2014 12:55:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/write-progress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>disk consolidation</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/disk-consolidation/</link>
+      <pubDate>Fri, 01 Nov 2013 09:37:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/disk-consolidation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Start-Consolidation</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/start-consolidation/</link>
+      <pubDate>Fri, 01 Nov 2013 09:37:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/start-consolidation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vsphere</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vsphere/</link>
+      <pubDate>Fri, 01 Nov 2013 09:37:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/vsphere/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-macaddress</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-macaddress/</link>
+      <pubDate>Wed, 23 Oct 2013 09:50:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-macaddress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>get-vm</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vm/</link>
+      <pubDate>Wed, 23 Oct 2013 09:50:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>set-cddrive</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/set-cddrive/</link>
+      <pubDate>Thu, 10 Oct 2013 12:46:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/set-cddrive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datastore</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/datastore/</link>
+      <pubDate>Tue, 08 Oct 2013 11:24:34 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/datastore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>migrate</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/migrate/</link>
+      <pubDate>Tue, 08 Oct 2013 11:24:34 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/migrate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>move-vm</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/move-vm/</link>
+      <pubDate>Tue, 08 Oct 2013 11:24:34 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/move-vm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>date created</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/date-created/</link>
+      <pubDate>Thu, 03 Oct 2013 10:27:41 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/date-created/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>size</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/size/</link>
+      <pubDate>Thu, 03 Oct 2013 10:27:41 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/size/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>snapshot</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/snapshot/</link>
+      <pubDate>Thu, 03 Oct 2013 10:27:41 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/snapshot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Invoke-Sound</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/invoke-sound/</link>
+      <pubDate>Thu, 18 Apr 2013 09:26:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/invoke-sound/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server Manager</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/server-manager/</link>
+      <pubDate>Tue, 26 Mar 2013 12:48:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/server-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Encoding</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/encoding/</link>
+      <pubDate>Thu, 17 Jan 2013 12:06:53 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/encoding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Export-Csv</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/export-csv/</link>
+      <pubDate>Thu, 17 Jan 2013 12:06:53 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/export-csv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unicode</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/unicode/</link>
+      <pubDate>Thu, 17 Jan 2013 12:06:53 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/unicode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Content index state failed</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/content-index-state-failed/</link>
+      <pubDate>Wed, 16 Jan 2013 09:17:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/content-index-state-failed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DAG</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dag/</link>
+      <pubDate>Wed, 16 Jan 2013 09:17:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exchange</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/exchange/</link>
+      <pubDate>Wed, 16 Jan 2013 09:17:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/exchange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database action failed</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/database-action-failed/</link>
+      <pubDate>Wed, 16 Jan 2013 09:07:50 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/database-action-failed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hr=0x80004005 ec=-1216</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hr0x80004005-ec-1216/</link>
+      <pubDate>Wed, 16 Jan 2013 09:07:50 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hr0x80004005-ec-1216/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unable to mount database</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/unable-to-mount-database/</link>
+      <pubDate>Wed, 16 Jan 2013 09:07:50 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/unable-to-mount-database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2008R2</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/2008r2/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/2008r2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Access List</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/access-list/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/access-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ACL</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/acl/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/acl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DACL</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dacl/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dacl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PsExec</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psexec/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psexec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PsTools</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/pstools/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/pstools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>registry</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/registry/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resolve-DnsName</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/resolve-dnsname/</link>
+      <pubDate>Tue, 20 Nov 2012 09:25:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/resolve-dnsname/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>catch</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/catch/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/catch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enable-LyncUser</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/enable-lyncuser/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/enable-lyncuser/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>error handling</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/error-handling/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/error-handling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lync</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/lync/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/lync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microsoft</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/microsoft/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/microsoft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>throw</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/throw/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/throw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ACU</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/acu/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/acu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>array</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/array/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/array/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cli/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>create</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/create/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/create/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>disk</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/disk/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/disk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HP</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hp/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Citrix</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/citrix/</link>
+      <pubDate>Tue, 18 Sep 2012 08:13:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/citrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>different databases</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/different-databases/</link>
+      <pubDate>Tue, 18 Sep 2012 08:13:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/different-databases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>inipath</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/inipath/</link>
+      <pubDate>Tue, 18 Sep 2012 08:13:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/inipath/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SuperOffice</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/superoffice/</link>
+      <pubDate>Tue, 18 Sep 2012 08:13:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/superoffice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>active directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/active-directory/</link>
+      <pubDate>Thu, 13 Sep 2012 12:02:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/active-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Get-MembersInADGroups</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-membersinadgroups/</link>
+      <pubDate>Thu, 13 Sep 2012 12:02:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-membersinadgroups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Motivate-Me</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/motivate-me/</link>
+      <pubDate>Wed, 12 Sep 2012 11:06:18 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/motivate-me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>parameter</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/parameter/</link>
+      <pubDate>Wed, 12 Sep 2012 09:32:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/parameter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Show-Debug</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/show-debug/</link>
+      <pubDate>Wed, 12 Sep 2012 09:32:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/show-debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>switch</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/switch/</link>
+      <pubDate>Wed, 12 Sep 2012 09:32:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/switch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system information</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/system-information/</link>
+      <pubDate>Wed, 12 Sep 2012 09:32:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/system-information/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wmi</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/wmi/</link>
+      <pubDate>Wed, 12 Sep 2012 09:32:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/wmi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pause</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/pause/</link>
+      <pubDate>Mon, 10 Sep 2012 13:57:52 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/pause/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>event logs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/event-logs/</link>
+      <pubDate>Thu, 06 Sep 2012 10:13:33 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/event-logs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rotate-eventlogs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/rotate-eventlogs/</link>
+      <pubDate>Thu, 06 Sep 2012 10:13:33 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/rotate-eventlogs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cisco</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cisco/</link>
+      <pubDate>Mon, 03 Sep 2012 06:42:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cisco/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>escape sequence</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/escape-sequence/</link>
+      <pubDate>Mon, 03 Sep 2012 06:42:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/escape-sequence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Get-EmailAddress</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-emailaddress/</link>
+      <pubDate>Tue, 28 Aug 2012 10:41:15 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-emailaddress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Set-ADPhoto</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/set-adphoto/</link>
+      <pubDate>Fri, 24 Aug 2012 13:16:30 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/set-adphoto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>script</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/script/</link>
+      <pubDate>Thu, 16 Aug 2012 12:24:00 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>html</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/html/</link>
+      <pubDate>Mon, 27 Feb 2012 07:55:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iis</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/iis/</link>
+      <pubDate>Mon, 27 Feb 2012 07:55:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/iis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shop</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/shop/</link>
+      <pubDate>Tue, 29 Nov 2011 09:24:59 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/shop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ntfs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ntfs/</link>
+      <pubDate>Fri, 23 Sep 2011 11:19:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ntfs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Permissions</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/permissions/</link>
+      <pubDate>Fri, 23 Sep 2011 11:19:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/permissions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KCY220B</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/kcy220b/</link>
+      <pubDate>Wed, 21 Sep 2011 10:21:00 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/kcy220b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monitor stand</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/monitor-stand/</link>
+      <pubDate>Wed, 21 Sep 2011 10:21:00 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/monitor-stand/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>backup</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/backup/</link>
+      <pubDate>Tue, 13 Sep 2011 13:03:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robocopy</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/robocopy/</link>
+      <pubDate>Tue, 13 Sep 2011 13:03:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/robocopy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows 7</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/windows-7/</link>
+      <pubDate>Tue, 13 Sep 2011 13:03:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/windows-7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resource Booking Attendant</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/resource-booking-attendant/</link>
+      <pubDate>Mon, 12 Sep 2011 12:28:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/resource-booking-attendant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Room mailbox</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/room-mailbox/</link>
+      <pubDate>Mon, 12 Sep 2011 12:28:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/room-mailbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cacls</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cacls/</link>
+      <pubDate>Tue, 06 Sep 2011 23:10:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cacls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dsadd</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dsadd/</link>
+      <pubDate>Tue, 06 Sep 2011 23:10:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/dsadd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>import</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/import/</link>
+      <pubDate>Tue, 06 Sep 2011 23:10:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/import/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minecraft</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/minecraft/</link>
+      <pubDate>Thu, 01 Sep 2011 07:42:04 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/minecraft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minecraft Structure Planner</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/minecraft-structure-planner/</link>
+      <pubDate>Thu, 01 Sep 2011 07:42:04 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/minecraft-structure-planner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/linux/</link>
+      <pubDate>Mon, 29 Aug 2011 11:02:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MIB</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mib/</link>
+      <pubDate>Mon, 29 Aug 2011 11:02:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zenoss</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/zenoss/</link>
+      <pubDate>Mon, 29 Aug 2011 11:02:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/zenoss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PuTTY</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/putty/</link>
+      <pubDate>Wed, 24 Aug 2011 12:55:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/putty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>remote desktop</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/remote-desktop/</link>
+      <pubDate>Wed, 24 Aug 2011 12:55:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/remote-desktop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh tunnel</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ssh-tunnel/</link>
+      <pubDate>Wed, 24 Aug 2011 12:55:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ssh-tunnel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Libraries</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/libraries/</link>
+      <pubDate>Tue, 23 Aug 2011 06:09:54 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/libraries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anonymous relay</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/anonymous-relay/</link>
+      <pubDate>Wed, 17 Aug 2011 14:27:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/anonymous-relay/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debian</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/debian/</link>
+      <pubDate>Mon, 15 Aug 2011 13:24:08 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Packages</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/packages/</link>
+      <pubDate>Mon, 15 Aug 2011 13:24:08 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/packages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>failover</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/failover/</link>
+      <pubDate>Mon, 08 Aug 2011 08:43:02 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/failover/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fortigate</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/fortigate/</link>
+      <pubDate>Mon, 08 Aug 2011 08:43:02 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/fortigate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fortinet</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/fortinet/</link>
+      <pubDate>Mon, 08 Aug 2011 08:43:02 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/fortinet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ospf</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ospf/</link>
+      <pubDate>Mon, 08 Aug 2011 08:43:02 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ospf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HA</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ha/</link>
+      <pubDate>Fri, 05 Aug 2011 12:45:25 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ha/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ActiveSync</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/activesync/</link>
+      <pubDate>Thu, 04 Aug 2011 09:56:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/activesync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hyper-V</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hyper-v/</link>
+      <pubDate>Wed, 03 Aug 2011 12:04:31 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hyper-v/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Address list</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/address-list/</link>
+      <pubDate>Wed, 03 Aug 2011 06:48:06 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/address-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GAL</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/gal/</link>
+      <pubDate>Wed, 03 Aug 2011 06:48:06 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/gal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oab</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/oab/</link>
+      <pubDate>Wed, 03 Aug 2011 06:48:06 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/oab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/network/</link>
+      <pubDate>Fri, 29 Jul 2011 11:17:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diag</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/diag/</link>
+      <pubDate>Fri, 24 Jun 2011 09:27:35 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/diag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>smtp</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/smtp/</link>
+      <pubDate>Fri, 24 Jun 2011 09:27:35 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/smtp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/proxy/</link>
+      <pubDate>Fri, 24 Jun 2011 08:35:16 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cd-key</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cd-key/</link>
+      <pubDate>Thu, 23 Jun 2011 13:09:35 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cd-key/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>licensekey</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/licensekey/</link>
+      <pubDate>Thu, 23 Jun 2011 13:09:35 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/licensekey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ProduKey</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/produkey/</link>
+      <pubDate>Thu, 23 Jun 2011 13:09:35 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/produkey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/tools/</link>
+      <pubDate>Thu, 09 Jun 2011 11:39:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xerox</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/xerox/</link>
+      <pubDate>Tue, 31 May 2011 11:12:33 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/xerox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zenpack</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/zenpack/</link>
+      <pubDate>Tue, 31 May 2011 11:12:33 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/zenpack/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ospf on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ospf/</link>
+    <description>Recent content in ospf on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Aug 2011 08:43:02 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ospf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up failover ospf routing on Fortigate</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/08/setting-up-failover-ospf-routing-on-fortigate/</link>
+      <pubDate>Mon, 08 Aug 2011 08:43:02 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/08/setting-up-failover-ospf-routing-on-fortigate/</guid>
+      <description>I’ve put together a small guide for setting up two Fortigates with failover ospf routing. This example is based on a small lab, but you can easily adapt it to your own environment.
+This is the scenario:
+In this scenario we want the 100Mb line to be prioritized.
+Start of with setting up the two Fortigates with ip-adresses as shown. Also make sure to create firewall rules for traffic from internal to wan1 and wan2 and back (make sure not to enabel NAT).</description>
+    </item>
+    
+  </channel>
+</rss>

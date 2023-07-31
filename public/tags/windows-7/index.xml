@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows 7 on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/windows-7/</link>
+    <description>Recent content in Windows 7 on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Sep 2011 13:03:29 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/windows-7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robocopy backup script</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/</link>
+      <pubDate>Tue, 13 Sep 2011 13:03:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/13/robocopy-backup-script/</guid>
+      <description>This is a script I have used on several of my relatives computers for backing up their data. Windows backup won’t do for them because they feel the need to see the actual files on the external drive…
+Anyway, heres my script:
+I guess a little explanation is required.
+The first part, robocopy c:users tells robocopy what to copy where. /MIR indicates that robocopy should mirror the source to the destination.</description>
+    </item>
+    
+    <item>
+      <title>Quick guide for setting up Libraries in Windows 7</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/23/quick-guide-for-setting-up-libraries-in-windows-7/</link>
+      <pubDate>Tue, 23 Aug 2011 06:09:54 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/23/quick-guide-for-setting-up-libraries-in-windows-7/</guid>
+      <description>Libraries can be a nice feature to use if you have your pictures, music, movies and whatnot spread across several different locations, be that discs, servers or folders.
+It’s really simple to setup too!
+Open up explorer and look to your left, there you will see the default Libraries Windows has set up.
+You can use the default Libraries as a starting point, or you can create a new one by right-clicking Libraries New–&amp;gt;Library</description>
+    </item>
+    
+  </channel>
+</rss>

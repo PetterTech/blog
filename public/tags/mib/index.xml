@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MIB on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mib/</link>
+    <description>Recent content in MIB on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Aug 2011 11:02:57 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/mib/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Import MIBs in Zenoss</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/29/import-mibs-in-zenoss/</link>
+      <pubDate>Mon, 29 Aug 2011 11:02:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/29/import-mibs-in-zenoss/</guid>
+      <description>If you are using Zenoss as a monitoring solution, chances are you are sending snmp traps to it, right?
+In that case you should always remember to import the MIBs for the devices you are monitoring. Because if you don’t it can be a real pain in the ass to figure what it is wrong when all you see is a “warning snmp trap enterprises.2.6.211.4.11”.
+Sadly there is no way to import MIBs using the gui in Zenoss, you have to use the cli.</description>
+    </item>
+    
+  </channel>
+</rss>

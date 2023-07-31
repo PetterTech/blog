@@ -1,10 +1,245 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on PetterTech</title>
-    <link>https://green-glacier-046ccc103.3.azurestaticapps.net/categories/</link>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/</link>
     <description>Recent content in Categories on PetterTech</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://green-glacier-046ccc103.3.azurestaticapps.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Aug 2019 12:12:56 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/microsoft/</link>
+      <pubDate>Mon, 26 Aug 2019 12:12:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/microsoft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/</link>
+      <pubDate>Mon, 26 Aug 2019 12:12:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HPE 3PAR</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/hpe-3par/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/hpe-3par/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerCLI</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powercli/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powercli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/vmware/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cisco</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/cisco/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/cisco/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UCS Director</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/ucs-director/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/ucs-director/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exchange</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/exchange/</link>
+      <pubDate>Wed, 16 Jan 2013 09:17:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/exchange/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lync</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/lync/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/lync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ACU</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/acu/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/acu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HP</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/hp/</link>
+      <pubDate>Wed, 03 Oct 2012 05:46:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/hp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SuperOffice</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/superoffice/</link>
+      <pubDate>Tue, 18 Sep 2012 08:13:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/superoffice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/active-directory/</link>
+      <pubDate>Thu, 13 Sep 2012 12:02:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/active-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/network/</link>
+      <pubDate>Mon, 03 Sep 2012 06:42:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web code</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/web-code/</link>
+      <pubDate>Mon, 27 Feb 2012 07:55:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/web-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Non IT related</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/non-it-related/</link>
+      <pubDate>Tue, 29 Nov 2011 09:24:59 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/non-it-related/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Other IT related</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/other-it-related/</link>
+      <pubDate>Wed, 21 Sep 2011 10:21:00 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/other-it-related/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows 7</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/windows-7/</link>
+      <pubDate>Tue, 13 Sep 2011 13:03:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/windows-7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minecraft</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/minecraft/</link>
+      <pubDate>Thu, 01 Sep 2011 07:42:04 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/minecraft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zenoss</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/zenoss/</link>
+      <pubDate>Mon, 29 Aug 2011 11:02:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/zenoss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/linux/</link>
+      <pubDate>Wed, 24 Aug 2011 12:55:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PuTTY</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/putty/</link>
+      <pubDate>Wed, 24 Aug 2011 12:55:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/putty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fortinet</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/fortinet/</link>
+      <pubDate>Mon, 08 Aug 2011 08:43:02 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/fortinet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hyper-V</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/hyper-v/</link>
+      <pubDate>Wed, 03 Aug 2011 12:04:31 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/hyper-v/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/software/</link>
+      <pubDate>Thu, 23 Jun 2011 13:09:35 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zenpack</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/zenpack/</link>
+      <pubDate>Tue, 31 May 2011 11:12:33 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/zenpack/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

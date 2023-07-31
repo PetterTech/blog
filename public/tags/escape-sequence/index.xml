@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>escape sequence on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/escape-sequence/</link>
+    <description>Recent content in escape sequence on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Sep 2012 06:42:20 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/escape-sequence/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cisco escape sequence</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/03/cisco-escape-sequence/</link>
+      <pubDate>Mon, 03 Sep 2012 06:42:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/03/cisco-escape-sequence/</guid>
+      <description>I better write this down before I forget it again: ctrl+shift+6 x
+If this makes absolutely no sense to you I will explain:
+When you run commands like traceroute, ping and others within Cisco IOS you can abort them. But you can’t use the usual ctrl+c (that would be to logical I guess), you need to press ctrl+shift+6 and THEN press x.
+There’s probably a good explanation for this, but I still feel that it is horribly cumbersome.</description>
+    </item>
+    
+  </channel>
+</rss>

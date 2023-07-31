@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Windows Server on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/windows-server/</link>
+    <description>Recent content in Windows Server on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Feb 2014 22:20:46 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/windows-server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Activate Server 2012 (R2) by telephone</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/02/05/activate-server-2012-r2-by-telephone/</link>
+      <pubDate>Wed, 05 Feb 2014 22:20:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/02/05/activate-server-2012-r2-by-telephone/</guid>
+      <description>The option for activating Server 2012 by phone is kinda hidden, so I have to write this down before I forget it:
+Win+R – SLUI 4</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Install role or feature on multiple remote servers</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/03/26/powershell-install-role-or-feature-on-multiple-remote-servers/</link>
+      <pubDate>Tue, 26 Mar 2013 12:48:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/03/26/powershell-install-role-or-feature-on-multiple-remote-servers/</guid>
+      <description>Today I was presented with a task that sounded pretty boring and repetitive: Install the Windows Search service on all our citrix servers.
+Now, I could just log on each and every one of our citrix servers, open Server Manager and then install the role service but where’s the fun in that?
+As always Powershell is a lot more fun:
+First I had to find the name of all our citrix servers.</description>
+    </item>
+    
+    <item>
+      <title>Resetting the Discretionary Access Control List (DACL) in a Windows Service security descriptor</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/14/resetting-the-discretionary-access-control-list-dacl-in-a-windows-service-security-descriptor/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/14/resetting-the-discretionary-access-control-list-dacl-in-a-windows-service-security-descriptor/</guid>
+      <description>OpenService FAILED 5: Access is denied. — “Oh crap!” If you ever see this error and need to reset the DACL on a Windows service, let’s say in case you (or someone else) accidentally deletes it, or configure it to something that prevents you from reading it’s security settings, this might do the trick:
+First of all, get a cup of coffee.
+Download PsExec (a tool in PsTools), which among other things allow you to run commands as the “local system” account.</description>
+    </item>
+    
+  </channel>
+</rss>

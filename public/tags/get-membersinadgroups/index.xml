@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Get-MembersInADGroups on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-membersinadgroups/</link>
+    <description>Recent content in Get-MembersInADGroups on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Sep 2012 12:02:13 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-membersinadgroups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell function for gathering users in groups</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/</link>
+      <pubDate>Thu, 13 Sep 2012 12:02:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/</guid>
+      <description>A friend of mine asked me a couple of days ago if I knew a way to gather users who are members of given groups. I thought to myself “Hmm, challenge accepted!” and started writing a small powershell script.
+After he confirmed that the script worked as planned I decided to make a function of it (Yes, I know it has been a lot of them on this blog lately).</description>
+    </item>
+    
+  </channel>
+</rss>

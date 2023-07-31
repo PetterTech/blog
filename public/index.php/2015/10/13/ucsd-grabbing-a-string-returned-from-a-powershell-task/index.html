@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>UCSD: Grabbing a string returned from a Powershell task | PetterTech</title>
+<meta name="keywords" content="CUSD, Powershell, Powershell agent, PSA, UCS Director">
+<meta name="description" content="My last post described how to get around some issues with using Powershell tasks in workflows. While that post surely enables you to uilize powershell to do stuff for you, what about if you want Powershell to grab stuff for you and return them in a usable matter?
+This time I’m going to show you how you can return a string from Powershell and use it further down in the workflow.">
+<meta name="author" content="nerenther">
+<link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/13/ucsd-grabbing-a-string-returned-from-a-powershell-task/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="UCSD: Grabbing a string returned from a Powershell task" />
+<meta property="og:description" content="My last post described how to get around some issues with using Powershell tasks in workflows. While that post surely enables you to uilize powershell to do stuff for you, what about if you want Powershell to grab stuff for you and return them in a usable matter?
+This time I’m going to show you how you can return a string from Powershell and use it further down in the workflow." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/13/ucsd-grabbing-a-string-returned-from-a-powershell-task/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-10-13T12:16:20+00:00" />
+<meta property="article:modified_time" content="2015-10-13T12:16:20+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UCSD: Grabbing a string returned from a Powershell task"/>
+<meta name="twitter:description" content="My last post described how to get around some issues with using Powershell tasks in workflows. While that post surely enables you to uilize powershell to do stuff for you, what about if you want Powershell to grab stuff for you and return them in a usable matter?
+This time I’m going to show you how you can return a string from Powershell and use it further down in the workflow."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "UCSD: Grabbing a string returned from a Powershell task",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/13/ucsd-grabbing-a-string-returned-from-a-powershell-task/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "UCSD: Grabbing a string returned from a Powershell task",
+  "name": "UCSD: Grabbing a string returned from a Powershell task",
+  "description": "My last post described how to get around some issues with using Powershell tasks in workflows. While that post surely enables you to uilize powershell to do stuff for you, what about if you want Powershell to grab stuff for you and return them in a usable matter?\nThis time I’m going to show you how you can return a string from Powershell and use it further down in the workflow.",
+  "keywords": [
+    "CUSD", "Powershell", "Powershell agent", "PSA", "UCS Director"
+  ],
+  "articleBody": "My last post described how to get around some issues with using Powershell tasks in workflows. While that post surely enables you to uilize powershell to do stuff for you, what about if you want Powershell to grab stuff for you and return them in a usable matter?\nThis time I’m going to show you how you can return a string from Powershell and use it further down in the workflow. Cisco has provided an example on how to do that here: https://communities.cisco.com/docs/DOC-58250\nThe example from Cisco is what I started with, but I have modified it a bit since I didn’t want anything that advanced.\nSo let’s set the stage:\nSay you have a workflow that uses the execute powershell command task and you want that task to output something you can utilize further down in the workflow, e.g. sending that output in an email. In this case we will use powershell to give us a comma separated list of esxi hosts in a given cluster.\nThe workflow has 1 defined workflow user input, vspherecluster, and 1 defined workflow user output, PowerShell_output.\nThere are a few things we need to get this done:\nA powershell script that only outputs one line with all the hosts A powershell task that runs said script A custom tasks that parses the powershell output and only returns the string returned by the powershell script A send email task sending the output First off, the powershell script:\nThe comments should be pretty explanatory, but in essence it connects to vCenter, grabs the name of the esxi hosts in the given cluster and then returns them comma separated.\nThis works fine and dandy in a powershell console, but the output from the powershell task will look rather different, we’ll look at that in a second. Secondly, the powershell task kicking off the script:\nThe output from this task will look something like this:\nIf you’re unfamiliar with how UCS Director handles powershell but familiar with powershell, then that’s probably not what you expected at all.\nNow we need to parse that output and return only the string we want. I made a custom task for this, like in the example from Cisco:\nRequired inputs:\nOutputs:\nThe beauty of doing it like this is that you can create any kind of output type just by changing the output type. I actually use this to create outputs of other types as well, for example vmwareHostNodeIdentity, vmwareClusterIdentity and so on. It’s just easier for me to use powershell to put those kind of outputs together instead of using javascript since I really don’t know javascript.\nAnd then the script:\nWhen using the custom task in a workflow I map the input to the output from the powershell task:\nAnd the output to the defined workflow user output:\nLastly, it’s the send email task which is pretty simple:\nIf you want to test this yourself, you can download this example workflow here: http://4.234.145.218/wp-content/uploads/2015/10/getPowershellOutput.zip\n",
+  "wordCount" : "494",
+  "inLanguage": "en",
+  "datePublished": "2015-10-13T12:16:20Z",
+  "dateModified": "2015-10-13T12:16:20Z",
+  "author":{
+    "@type": "Person",
+    "name": "nerenther"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/13/ucsd-grabbing-a-string-returned-from-a-powershell-task/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PetterTech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net" accesskey="h" title="PetterTech (Alt + H)">PetterTech</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      UCSD: Grabbing a string returned from a Powershell task
+    </h1>
+    <div class="post-meta"><span title='2015-10-13 12:16:20 +0000 +0000'>October 13, 2015</span>&nbsp;·&nbsp;nerenther
+
+</div>
+  </header> 
+  <div class="post-content"><p>My last post described how to get around some issues with using Powershell tasks in workflows. While that post surely enables you to uilize powershell to do stuff for you, what about if you want Powershell to grab stuff for you and return them in a usable matter?<br>
+This time I’m going to show you how you can return a string from Powershell and use it further down in the workflow. Cisco has provided an example on how to do that here: <!-- raw HTML omitted --><a href="https://communities.cisco.com/docs/DOC-58250">https://communities.cisco.com/docs/DOC-58250</a><!-- raw HTML omitted --></p>
+<p>The example from Cisco is what I started with, but I have modified it a bit since I didn’t want anything that advanced.</p>
+<p>So let’s set the stage:<br>
+Say you have a workflow that uses the execute powershell command task and you want that task to output something you can utilize further down  in the workflow, e.g. sending that output in an email. In this case we will use powershell to give us a comma separated list of esxi hosts in a given cluster.<br>
+The workflow has 1 defined workflow user input, vspherecluster, and 1 defined workflow user output, PowerShell_output.</p>
+<p>There are a few things we need to get this done:</p>
+<ul>
+<li>A powershell script that only outputs one line with all the hosts</li>
+<li>A powershell task that runs said script</li>
+<li>A custom tasks that parses the powershell output and only returns the string returned by the powershell script</li>
+<li>A send email task sending the output</li>
+</ul>
+<p>First off, the powershell script:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The comments should be pretty explanatory, but in essence it connects to vCenter, grabs the name of the esxi hosts in the given cluster and then returns them comma separated.<br>
+This works fine and dandy in a powershell console, but the output from the powershell task will look rather different, we’ll look at that in a second. Secondly, the powershell task kicking off the script:</p>
+<p><a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-41-33.png"><!-- raw HTML omitted --></a></p>
+<p>The output from this task will look something like this:<a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_14-02-07.png"><!-- raw HTML omitted --></a></p>
+<p>If you’re unfamiliar with how UCS Director handles powershell but familiar with powershell, then that’s probably not what you expected at all.</p>
+<p>Now we need to parse that output and return only the string we want. I made a custom task for this, like in the example from Cisco:</p>
+<p>Required inputs:<br>
+<a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-42-43.png"><!-- raw HTML omitted --></a></p>
+<p>Outputs:<br>
+<a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-04.png"><!-- raw HTML omitted --></a></p>
+<p>The beauty of doing it like this is that you can create any kind of output type just by changing the output type. I actually use this to create outputs of other types as well, for example vmwareHostNodeIdentity, vmwareClusterIdentity and so on. It’s just easier for me to use powershell to put those kind of outputs together instead of using javascript since I really don’t know javascript.</p>
+<p>And then the script:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>When using the custom task in a workflow I map the input to the output from the powershell task:</p>
+<p><a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-32.png"><!-- raw HTML omitted --></a></p>
+<p>And the output to the defined workflow user output:</p>
+<p><a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-56.png"><!-- raw HTML omitted --></a></p>
+<p>Lastly, it’s the send email task which is pretty simple:</p>
+<p><a href="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-44-27.png"><!-- raw HTML omitted --></a></p>
+<p>If you want to test this yourself, you can download this example workflow here: <!-- raw HTML omitted -->http://4.234.145.218/wp-content/uploads/2015/10/getPowershellOutput.zip<!-- raw HTML omitted --></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/cusd/">CUSD</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell/">Powershell</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell-agent/">Powershell agent</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psa/">PSA</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ucs-director/">UCS Director</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net">PetterTech</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

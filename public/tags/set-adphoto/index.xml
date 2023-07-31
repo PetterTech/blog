@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Set-ADPhoto on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/set-adphoto/</link>
+    <description>Recent content in Set-ADPhoto on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Aug 2012 13:16:30 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/set-adphoto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Function for adding photo in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/</link>
+      <pubDate>Fri, 24 Aug 2012 13:16:30 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/</guid>
+      <description>I have always been careful to avoid the really advanced and cool stuff in Powershell, like functions, arrays and such.
+But as I created the last script it hit me that it would be really cool to have it in a command, like set-adphoto. After some googling I found that funtions aren’t hard at all!
+Basically all I really had to do with the ad photo import script was to add “function Set-ADPhoto { ” in front of the script and end it with a }</description>
+    </item>
+    
+  </channel>
+</rss>

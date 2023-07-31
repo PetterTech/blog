@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lync on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/lync/</link>
+    <description>Recent content in Lync on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Oct 2012 12:07:10 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/lync/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell function for enabling a user for Lync and configure settings</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/</guid>
+      <description>A little while ago I posted a script for enabling users for Lync and settings some settings for that user. That script has been used here ever since I posted it and it has worked like a charm. However there’s always room for improvement, right?.
+So I have made a function out of it and for the first time (I think) I have even implemented some error handling. The function is also improved quit a bit on the help section and the info that is shown to the user after the function completes.</description>
+    </item>
+    
+    <item>
+      <title>Simple powershell script for enabling users for Lync</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/</link>
+      <pubDate>Wed, 12 Oct 2011 15:59:45 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/</guid>
+      <description>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
+If you only have one sipdomain you can change the script so that it doesn’t ask for it.
+Here’s the script in all its glory:
+You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</description>
+    </item>
+    
+  </channel>
+</rss>

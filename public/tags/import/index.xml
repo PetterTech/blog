@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>import on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/import/</link>
+    <description>Recent content in import on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Sep 2011 23:10:38 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/import/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mass import of users in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/</link>
+      <pubDate>Tue, 06 Sep 2011 23:10:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/07/mass-import-of-users-in-active-directory/</guid>
+      <description>Tried sleeping……That obviously didn’t work out, so here’s a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
+Note: This guide uses dsadd for creating users and cacls for setting ntfs permissions. Thats kind of old fashioned, I will try to write a new guide using powershell later on.
+In the scenario I have created this script for we have a domain controller who happens to also be the file server, file01.</description>
+    </item>
+    
+  </channel>
+</rss>

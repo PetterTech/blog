@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>HPE 3PAR on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hpe-3par/</link>
+    <description>Recent content in HPE 3PAR on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 08 Aug 2017 12:06:28 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hpe-3par/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Creating custom SATP rule for HPE 3PAR</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2017/08/08/powercli-creating-custom-satp-rule-for-hpe-3par/</link>
+      <pubDate>Tue, 08 Aug 2017 12:06:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2017/08/08/powercli-creating-custom-satp-rule-for-hpe-3par/</guid>
+      <description>A while back we migrated from our old EMC VNX to a new HPE 3PAR array. It all went fine but what kinda slipped our mind is that HPE’s best practice is to create a custom SATP rule that uses RoudRobin as path selection policy and a IOPS limit to 1 in stead of the default 1000.
+The steps are documented in the HPE 3PAR VMware ESX/ESXi Implementation Guide, but they only show you how to do it through the esx cli.</description>
+    </item>
+    
+    <item>
+      <title>Powershell and the HPE 3PAR REST API</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2017/06/15/powershell-and-the-hpe-3par-rest-api/</link>
+      <pubDate>Thu, 15 Jun 2017 12:01:01 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2017/06/15/powershell-and-the-hpe-3par-rest-api/</guid>
+      <description>Lately, I’ve had the pleasure of using Powershell to automate some of the basic tasks we do on our HPE 3PAR systems: creating volumes, adding them to volume sets, exporting them and so on.
+Since my experience with REST APIs was rather limited it was quite daunting at first but once you get the hang of how REST works and the Invoke-RestMethod cmdlet it’s really not that bad.
+Disclaimer: The examples below will vary somewhat in how I do certain things, simply because I had to learn all this from scratch.</description>
+    </item>
+    
+  </channel>
+</rss>

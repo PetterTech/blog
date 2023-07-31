@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>tools on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/tools/</link>
+    <description>Recent content in tools on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jun 2011 11:39:13 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ALTools from Microsoft, awesome!</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/09/altools-from-microsoft-awesome/</link>
+      <pubDate>Thu, 09 Jun 2011 11:39:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/09/altools-from-microsoft-awesome/</guid>
+      <description>Stumbled upon a tool from Microsoft called ALTools that I thought were absolutely awesome. It’s over 7 years old so I wonder why I haven’t seen it before
+Nevertheless it’s as cool now as it was when it was released.
+ALTools consists of several tools, but the coolest of them are:
+aloinfo – Displays all user account names and the age of their passwords eventcombMT – Gathers specific events from event logs of several different machines and saves them in a text file LockoutStatus – Shows a list of all domain controllers in a given domain and the lockoutstatus of a given user on those I have used eventcomb a couple of times as it has some predefined searches, for example Account Lockouts.</description>
+    </item>
+    
+  </channel>
+</rss>

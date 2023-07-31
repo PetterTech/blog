@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Powershell on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/</link>
+    <description>Recent content in Powershell on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Aug 2019 12:12:56 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Getting monitor info</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2019/08/26/powershell-getting-monitor-info/</link>
+      <pubDate>Mon, 26 Aug 2019 12:12:56 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2019/08/26/powershell-getting-monitor-info/</guid>
+      <description>Today I got a request from a colleague of mine that was doing inventory: What are the make, model, serial number and purchase date of your monitors?
+Seeing as this wasn’t something I had readily in my head I had to figure it out, but being the automation enthusiast that I am, I refused to bend over my monitors and snap a photo of it all. I wanted to find it a cooler way, the powershell way 🙂</description>
+    </item>
+    
+    <item>
+      <title>Powershell and the HPE 3PAR REST API</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2017/06/15/powershell-and-the-hpe-3par-rest-api/</link>
+      <pubDate>Thu, 15 Jun 2017 12:01:01 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2017/06/15/powershell-and-the-hpe-3par-rest-api/</guid>
+      <description>Lately, I’ve had the pleasure of using Powershell to automate some of the basic tasks we do on our HPE 3PAR systems: creating volumes, adding them to volume sets, exporting them and so on.
+Since my experience with REST APIs was rather limited it was quite daunting at first but once you get the hang of how REST works and the Invoke-RestMethod cmdlet it’s really not that bad.
+Disclaimer: The examples below will vary somewhat in how I do certain things, simply because I had to learn all this from scratch.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Creating strong passwords</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2016/05/26/powershell-creating-strong-passwords/</link>
+      <pubDate>Thu, 26 May 2016 10:40:20 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2016/05/26/powershell-creating-strong-passwords/</guid>
+      <description>A tweet from @JanEgilRing caught my eye this morning, it was showing how you can use powershell to create passwords. The link in the tweet pointed here: http://powershell.com/cs/blogs/tips/archive/2016/05/23/one-liner-random-password-generator.aspx
+Seeing that line and realizing how simple it was, it got me thinking on how I could implement this in my scripts.
+The only issue I saw with that one-liner was that the passwords it creates do not necessarily comply with high complexity rules.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Function for listing snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/17/powercli-function-for-listing-snapshots/</link>
+      <pubDate>Wed, 17 Sep 2014 07:16:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/17/powercli-function-for-listing-snapshots/</guid>
+      <description>My very first PowerCLI related post was about this same topic: listing snapshot info using PowerCLI.
+In my original post (which you can see here) I only wrote a pretty simple one-liner. Which was kind of okay, but it was missing one crucial thing: who took the snapshot?
+Why vmware hasn’t found a way to include a username in the get-snapshot cmdlet is something I just can’t understand. There’s really not much code needed to add this to the output, and there’s several ways of doing so.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Evacuating a datastore</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/11/powercli-evacuating-a-datastore/</link>
+      <pubDate>Thu, 11 Sep 2014 10:54:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/11/powercli-evacuating-a-datastore/</guid>
+      <description>In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:
+Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.
+The command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Listing VMs with ISOs mounted</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/09/powercli-listing-vms-with-isos-mounted/</link>
+      <pubDate>Tue, 09 Sep 2014 05:55:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/09/powercli-listing-vms-with-isos-mounted/</guid>
+      <description>For almost a year ago, I posted a simple one-liner to list all VMs who has ISOs mounted. You can view that post here: http://cloud.kemta.net/2013/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/
+That post was written before I truly discovered the major advantages of using Get-View instead of Get-VM, Get-VMHost and so on. If used correctly, there’s a major difference in speed when using Get-View over Get-VM.
+When writing this post I checked the differences in speed when using the old way that I linked to above and my new function (which I’ll get to in a second or two.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting vmhost uptime</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/</link>
+      <pubDate>Mon, 08 Sep 2014 07:26:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/</guid>
+      <description>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
+However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it.
+Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting the status of vmware tools on all VMs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/</link>
+      <pubDate>Fri, 05 Sep 2014 12:06:17 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/</guid>
+      <description>I’m sure I don’t need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it’s a good idea to keep VMware tools updated.
+However, I haven’t found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting datastore alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/</link>
+      <pubDate>Sun, 31 Aug 2014 10:16:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/</guid>
+      <description>Next in the series on getting alarms is getting datastore alarms.
+Again, the code is pretty similar:
+And the output is pretty similar:
+The function code is this:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting cluster alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/</link>
+      <pubDate>Sat, 30 Aug 2014 08:21:59 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/</guid>
+      <description>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
+Here’s the code:
+And the output will look something like this:
+As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
+Anyways, here’s the function code:
+The output will be the same, but since it’s a function you can manipulate the data further.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting host alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</link>
+      <pubDate>Fri, 29 Aug 2014 07:41:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</guid>
+      <description>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
+The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
+The output will look something like this:
+And here’s the function code:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting vm alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</link>
+      <pubDate>Thu, 28 Aug 2014 06:42:12 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</guid>
+      <description>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
+So here’s the the script for retrieving vm alarms:
+This will provide an output like this:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Mount NFS stores on multiple hosts</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/27/mount-nfs-stores-on-hosts-that-doesnt-have-specified-nfs-stores-mounted/</link>
+      <pubDate>Wed, 27 Aug 2014 07:26:32 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/27/mount-nfs-stores-on-hosts-that-doesnt-have-specified-nfs-stores-mounted/</guid>
+      <description>Ever had a bunch of vmware hosts that you want to add a NFS datastore on? It can be quite time consuming to say the least.
+In our environment we have a couple of NFS stores that should be available on all vmware hosts and I really don’t want to browse around all 50 or so hosts and check if they have them and then mount them if they’re not available.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Listing activated clients on KMS server</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/26/powershell-listing-activated-clients-on-kms-server/</link>
+      <pubDate>Tue, 26 Aug 2014 07:14:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/26/powershell-listing-activated-clients-on-kms-server/</guid>
+      <description>If you are using a KMS server for activating servers and clients in your environment, you may have noticed that there’s really no obvious way to get a list of all the clients that have been activated by the KMS server.
+One way to get that overview is by using VAMT (http://technet.microsoft.com/en-us/library/hh824953.aspx), but since that tool is based on pulling info from clients and not from the KMS server it is not suitable for everyone.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Measuring latency on DNS queries</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/</link>
+      <pubDate>Fri, 15 Aug 2014 08:39:40 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/</guid>
+      <description>A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.
+After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
+And sure enough, we were seeing response times in the range of 5-7 seconds.</description>
+    </item>
+    
+    <item>
+      <title>PowerCli: Finding amount of GB used by VMs in a folder/vApp/datacenter</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/29/powercli-finding-amount-of-gb-used-by-vms-in-a-foldervappdatacenter/</link>
+      <pubDate>Wed, 29 Jan 2014 09:02:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/29/powercli-finding-amount-of-gb-used-by-vms-in-a-foldervappdatacenter/</guid>
+      <description>Sometimes it can be useful to know how much space the VMs in a specific folder (or vApp/datacenter) is occupying. For example if you are a hosting provider of some sort and need to know how much space a customer is using.
+It’s a simple one-liner!</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Write-Progress, a step-by-step guide</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/</link>
+      <pubDate>Wed, 15 Jan 2014 12:55:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/</guid>
+      <description>For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
+This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Consolidate all VMs that need consolidation</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/11/01/powercli-consolidate-all-vms-that-need-consolidation/</link>
+      <pubDate>Fri, 01 Nov 2013 09:37:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/11/01/powercli-consolidate-all-vms-that-need-consolidation/</guid>
+      <description>Robert van den Nieuwendijk has a nice post on how to use PowerCLI to find VMs that need consolidation and then how to start consolidation. You can that post here: http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/
+But, as always, I prefer to make a function of these kind of things. A function is much easier to remember than a bunch of parameters and cmdlets.
+So here’s the code for a function that will search through the vCentre for VMs that need disk consolidation:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Locate a MAC-address in vCenter</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/</link>
+      <pubDate>Wed, 23 Oct 2013 09:50:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/</guid>
+      <description>To find out to which vm a MAC address belongs, you can use a simple one-liner:
+(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
+A basic function doing the same thing can look something like this:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: List all vm&#39;s with ISO mounted and dismount them</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/</link>
+      <pubDate>Thu, 10 Oct 2013 12:46:48 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/</guid>
+      <description>Easy-peasy and a pretty short post…
+To get all vm’s with iso mounted:
+Then, to dismount those:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Migrate all vm&#39;s on a datastore</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/08/powershell-vmware-migrate-all-vms-on-a-datastore/</link>
+      <pubDate>Tue, 08 Oct 2013 11:24:34 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/08/powershell-vmware-migrate-all-vms-on-a-datastore/</guid>
+      <description>PowerCLI is just awsome 🙂
+This simple one-liner migrates all vm’s off one datastore to a new one:
+You can also move vm’s off one datastore and place them in any datastore within a specified datastore cluster:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: List all snapshots</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/</link>
+      <pubDate>Thu, 03 Oct 2013 10:27:41 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/03/powershell_vmware_list_all_snapshots/</guid>
+      <description>It’s been a while since last update, again, so I figured I should at least provide something..
+I recently started in a new job, and one of the first things I looked into was the amount of snapshots in our vmware environments. Not surprisingly there was a lot of snapshots, and very few of them had any hints of when they were taken and why.
+The vsphere console doesn’t provide this info so I had to turn to PowerCLI to get the info I needed.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Invoke-Sound function</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/04/18/powershell-invoke-sound-function/</link>
+      <pubDate>Thu, 18 Apr 2013 09:26:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/04/18/powershell-invoke-sound-function/</guid>
+      <description>I stumbled upon this brilliant powershell function for playing sounds using powershell, check it out: http://community.spiceworks.com/scripts/show/1337-powershell-function-invoke-sound
+He even added a switch for playing the imperial march from Star Wars 🙂</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Install role or feature on multiple remote servers</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/03/26/powershell-install-role-or-feature-on-multiple-remote-servers/</link>
+      <pubDate>Tue, 26 Mar 2013 12:48:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/03/26/powershell-install-role-or-feature-on-multiple-remote-servers/</guid>
+      <description>Today I was presented with a task that sounded pretty boring and repetitive: Install the Windows Search service on all our citrix servers.
+Now, I could just log on each and every one of our citrix servers, open Server Manager and then install the role service but where’s the fun in that?
+As always Powershell is a lot more fun:
+First I had to find the name of all our citrix servers.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Export-Csv and non-English letters</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/17/powershell-export-csv-and-non-english-letters/</link>
+      <pubDate>Thu, 17 Jan 2013 12:06:53 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/17/powershell-export-csv-and-non-english-letters/</guid>
+      <description>The Export-Csv cmdlet is a really nice tool if you want to gather info from e.g. Active Directory that you later want to import to Excel. But as you might have noticed it doesn’t play well with non-English letters.
+Working in Norway with users from all the Nordic countries means that we have a lot of users i Active Directory who have non-English letters in their names (æ ø å ö ä and so on).</description>
+    </item>
+    
+    <item>
+      <title>Exchange: Content index state failed</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/exchange-content-index-state-failed/</link>
+      <pubDate>Wed, 16 Jan 2013 09:17:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/exchange-content-index-state-failed/</guid>
+      <description>If you ever had problems with corrupt databases in an Exchange 2010 DAG setup you might have encountered this error. Trying to activate the database on a server where it has this state will fail.
+However there is a quite simple fix given that you have a healthy copy of the database on a different server:
+Update-MailboxDatabaseCopy -Identity DB -SourceServer -CatalogOnly
+Run the command in the Exchange Management Shell and it should fix the Content index state and allow you to activate the database again.</description>
+    </item>
+    
+    <item>
+      <title>Powershell: Checking multiple dns records for multiple domains</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/</link>
+      <pubDate>Tue, 20 Nov 2012 09:25:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/</guid>
+      <description>I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
+First we need to to save our domains in an array:
+Then we send that array into a foreach loop:</description>
+    </item>
+    
+    <item>
+      <title>Powershell function for enabling a user for Lync and configure settings</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/</link>
+      <pubDate>Thu, 04 Oct 2012 12:07:10 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/10/04/powershell-function-for-enabling-a-user-for-lync-and-configure-settings/</guid>
+      <description>A little while ago I posted a script for enabling users for Lync and settings some settings for that user. That script has been used here ever since I posted it and it has worked like a charm. However there’s always room for improvement, right?.
+So I have made a function out of it and for the first time (I think) I have even implemented some error handling. The function is also improved quit a bit on the help section and the info that is shown to the user after the function completes.</description>
+    </item>
+    
+    <item>
+      <title>Powershell function for gathering users in groups</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/</link>
+      <pubDate>Thu, 13 Sep 2012 12:02:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/</guid>
+      <description>A friend of mine asked me a couple of days ago if I knew a way to gather users who are members of given groups. I thought to myself “Hmm, challenge accepted!” and started writing a small powershell script.
+After he confirmed that the script worked as planned I decided to make a function of it (Yes, I know it has been a lot of them on this blog lately).</description>
+    </item>
+    
+    <item>
+      <title>Motivational Powershell function</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/motivational-powershell-function/</link>
+      <pubDate>Wed, 12 Sep 2012 11:06:18 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/motivational-powershell-function/</guid>
+      <description>If you are ever in need of some motivation, here is a very simple Powershell function for that:
+Now all you need to do is write Motivate-Me in the powershell window to receive some inspirational words 🙂</description>
+    </item>
+    
+    <item>
+      <title>Powershell function for showing some system information</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/powershell-function-for-showing-some-system-information/</link>
+      <pubDate>Wed, 12 Sep 2012 09:32:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/powershell-function-for-showing-some-system-information/</guid>
+      <description>This is a function I created just because I wanted to toy around with Powershell and get-wmiobject. Also, this is my first function where I made it possible to use a switch parameter.
+What the function does is gather some system information using get-wmiobject. The info is written to a temp file and then shown using out-gridview.
+If the KeepTempFile parameter is used the temp file is saved in the users profile, if not it is deleted after the function finishes.</description>
+    </item>
+    
+    <item>
+      <title>Adding a pause to you Powershell scripts</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/10/adding-a-pause-to-you-powershell-scripts/</link>
+      <pubDate>Mon, 10 Sep 2012 13:57:52 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/10/adding-a-pause-to-you-powershell-scripts/</guid>
+      <description>If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
+This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
+The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed).</description>
+    </item>
+    
+    <item>
+      <title>Powershell function for rotating event logs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/06/powershell-function-for-rotating-event-logs/</link>
+      <pubDate>Thu, 06 Sep 2012 10:13:33 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/06/powershell-function-for-rotating-event-logs/</guid>
+      <description>A friend of mine came to me with an interesting powershell challenge today: how can I use powershell to archive and clear event logs?
+Well, challenge accepted!
+The reason the challenge arose is due to maintenance he performs on a number of customer servers. Every month he saves each eventlog and clears it manually, a time consuming task if you have more than a few servers.
+So here’s what I came up with:</description>
+    </item>
+    
+    <item>
+      <title>Function for locating an email address</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/</link>
+      <pubDate>Tue, 28 Aug 2012 10:41:15 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/</guid>
+      <description>Yesterday I was given a relatively easy task: find out who or what has a given email address.
+As this was within our own Exchange organization it proved to be quite simple:
+You can achieve the goal with a simple one-liner:
+But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:</description>
+    </item>
+    
+    <item>
+      <title>Function for adding photo in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/</link>
+      <pubDate>Fri, 24 Aug 2012 13:16:30 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/</guid>
+      <description>I have always been careful to avoid the really advanced and cool stuff in Powershell, like functions, arrays and such.
+But as I created the last script it hit me that it would be really cool to have it in a command, like set-adphoto. After some googling I found that funtions aren’t hard at all!
+Basically all I really had to do with the ad photo import script was to add “function Set-ADPhoto { ” in front of the script and end it with a }</description>
+    </item>
+    
+    <item>
+      <title>Simple script for adding user photo in Active Directory</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/16/simple-script-for-adding-user-photo-in-active-directory/</link>
+      <pubDate>Thu, 16 Aug 2012 12:24:00 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/16/simple-script-for-adding-user-photo-in-active-directory/</guid>
+      <description>It’s been a while since I posted here so I thought it might be time to add some content.
+This script is a simple script that adds a photo to a user’s active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).
+The requirements for this script is the Active Directory module and permission to edit a user object in Active Directory</description>
+    </item>
+    
+    <item>
+      <title>Check if DAG databases is on preferred server</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/04/30/check-if-dag-databases-is-on-preferred-server/</link>
+      <pubDate>Mon, 30 Apr 2012 10:35:57 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/04/30/check-if-dag-databases-is-on-preferred-server/</guid>
+      <description>If you are using DAG in exchange 2010 for high availability on your mailboxes there may be one thing you might have noticed, the databases can fail over to a less preferred server at any time without you noticing.
+Microsoft have provided you with a script for balancing these databases, RedistributeActiveDatabases.ps1. With this script you can activate the databases on their preferred server again. But how do you know when they have failed over?</description>
+    </item>
+    
+    <item>
+      <title>Grep&#39;ing the eventlog using powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/20/greping-the-eventlog-using-powershell/</link>
+      <pubDate>Mon, 20 Feb 2012 09:27:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/20/greping-the-eventlog-using-powershell/</guid>
+      <description>If you are used to working with Linux you’re probably familiar with using tail, grep and such for gathering stuff from logs and other files. Those are quite useful tools and work very well when you want to find out e.g. why a user fails to log in.
+In Windows it’s a little different, if we want to find something in the event logs we have always had to resort to a console.</description>
+    </item>
+    
+    <item>
+      <title>Mass import of users in Active Directory v2 – Powershell time</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/</link>
+      <pubDate>Thu, 27 Oct 2011 19:54:21 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/</guid>
+      <description>Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.
+That script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.
+The powershell script I came up does a lot more than the last one. Here a little list:
+Creates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot.</description>
+    </item>
+    
+    <item>
+      <title>Simple powershell script for enabling users for Lync</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/</link>
+      <pubDate>Wed, 12 Oct 2011 15:59:45 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/</guid>
+      <description>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
+If you only have one sipdomain you can change the script so that it doesn’t ask for it.
+Here’s the script in all its glory:
+You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</description>
+    </item>
+    
+    <item>
+      <title>Install and configure Exchange 2010 using Powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/29/install-and-configure-exchange-2010-using-powershell/</link>
+      <pubDate>Thu, 29 Sep 2011 06:51:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/29/install-and-configure-exchange-2010-using-powershell/</guid>
+      <description>In this guide I will show you how to install and configure a simple Exchange 2010 environment using no gui at all.
+Installing exchange 2010 without gui may seem kinda nerdy, but it’s quite useful for quickly setting up a test environment for example.
+Remember to run Windows update prior to the installation.
+Start powershell as administrator and type:
+First we need to install all of the prerequisites:
+We also need to set the NetTcpPortSharing service to automatic start, the command for this is:</description>
+    </item>
+    
+    <item>
+      <title>Setting NTFS permissions using Powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/23/setting-ntfs-permissions-using-powershell/</link>
+      <pubDate>Fri, 23 Sep 2011 11:19:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/09/23/setting-ntfs-permissions-using-powershell/</guid>
+      <description>I am currently working on a script similar to the Mass import of users in Active Direcory post I published earlier (as promised 🙂 ). In the new script I wanted to only use powershell, so I had to find a way to set ntfs permissions using powershell. After all, the cacls way is pretty outdated.
+After some googling I came up with a rather extensive script, it is a little more complicated than I wanted but here goes:</description>
+    </item>
+    
+  </channel>
+</rss>

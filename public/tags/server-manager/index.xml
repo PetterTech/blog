@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Server Manager on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/server-manager/</link>
+    <description>Recent content in Server Manager on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Mar 2013 12:48:09 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/server-manager/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Install role or feature on multiple remote servers</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/03/26/powershell-install-role-or-feature-on-multiple-remote-servers/</link>
+      <pubDate>Tue, 26 Mar 2013 12:48:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/03/26/powershell-install-role-or-feature-on-multiple-remote-servers/</guid>
+      <description>Today I was presented with a task that sounded pretty boring and repetitive: Install the Windows Search service on all our citrix servers.
+Now, I could just log on each and every one of our citrix servers, open Server Manager and then install the role service but where’s the fun in that?
+As always Powershell is a lot more fun:
+First I had to find the name of all our citrix servers.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>hr=0x80004005 ec=-1216 on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hr0x80004005-ec-1216/</link>
+    <description>Recent content in hr=0x80004005 ec=-1216 on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Jan 2013 09:07:50 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/hr0x80004005-ec-1216/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exchange: Activate Database Copy fails</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/activate-database-copy-fails/</link>
+      <pubDate>Wed, 16 Jan 2013 09:07:50 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/16/activate-database-copy-fails/</guid>
+      <description>After some exchange services failed on one of the nodes in our Exchange 2010 DAG we got some problems with one database. The database was mounted on server2 where it has an activation preference of 2.
+Trying to manually activate the database on server1, where is has an activation preference of 1, resulted in the following error:
+——————————————————–
+Microsoft Exchange Error
+——————————————————–
+Cannot activate database copy ‘Activate Database Copy…’.
+Activate Database Copy…</description>
+    </item>
+    
+  </channel>
+</rss>

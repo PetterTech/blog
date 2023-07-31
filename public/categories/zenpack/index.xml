@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Zenpack on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/zenpack/</link>
+    <description>Recent content in Zenpack on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 May 2011 11:12:33 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/zenpack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xerox ZenPack for Zenoss 3.x</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/05/31/xerox-zenpack-for-zenoss-3-x/</link>
+      <pubDate>Tue, 31 May 2011 11:12:33 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/05/31/xerox-zenpack-for-zenoss-3-x/</guid>
+      <description>At the company where I currently work we lease a bunch of Xerox copiers. Those leasing contracts are based on number of prints per device.
+That means that once a month we have to gather pagecounts from all our printers (about 100 of them) and report them to our supplier, which takes a lot of time.
+Since we already were using Zenoss for monitoring of the printers I figured I could try and gather the information via snmp.</description>
+    </item>
+    
+  </channel>
+</rss>

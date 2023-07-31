@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>powercl on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercl/</link>
+    <description>Recent content in powercl on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Sep 2014 05:55:24 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Listing VMs with ISOs mounted</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/09/powercli-listing-vms-with-isos-mounted/</link>
+      <pubDate>Tue, 09 Sep 2014 05:55:24 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/09/powercli-listing-vms-with-isos-mounted/</guid>
+      <description>For almost a year ago, I posted a simple one-liner to list all VMs who has ISOs mounted. You can view that post here: http://cloud.kemta.net/2013/10/powershell-vmware-list-all-vms-with-iso-mounted-and-dismount-them/
+That post was written before I truly discovered the major advantages of using Get-View instead of Get-VM, Get-VMHost and so on. If used correctly, there’s a major difference in speed when using Get-View over Get-VM.
+When writing this post I checked the differences in speed when using the old way that I linked to above and my new function (which I’ll get to in a second or two.</description>
+    </item>
+    
+  </channel>
+</rss>

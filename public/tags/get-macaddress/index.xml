@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>get-macaddress on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-macaddress/</link>
+    <description>Recent content in get-macaddress on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Oct 2013 09:50:09 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-macaddress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Locate a MAC-address in vCenter</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/</link>
+      <pubDate>Wed, 23 Oct 2013 09:50:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/10/23/powercli-locate-a-mac-address-in-vcenter/</guid>
+      <description>To find out to which vm a MAC address belongs, you can use a simple one-liner:
+(Courtesy of this page: http://www.virtu-al.net/2009/07/07/powercli-more-one-liner-power/ )
+Thats really great, and you can easily extend the one-liner to include more data if you like. But for someone who isn’t comfortable with using PowerCLI yet, it can seem a bit terrifying. Therefore I usually create functions for long one-liners like this one.
+A basic function doing the same thing can look something like this:</description>
+    </item>
+    
+  </channel>
+</rss>

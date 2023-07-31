@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>SuperOffice and Citrix | PetterTech</title>
+<meta name="keywords" content="Citrix, different databases, inipath, SuperOffice">
+<meta name="description" content="I’m just gonna start by putting this out there: I have never been a fan of SuperOffice, and I probably never will be either.
+Now that thats out there, heres the situation: We have one citrix farm, and three different SuperOffice instances. The goal with our citrix farm is to have each citrix server completely the same as the others. Because of that, only one of the SuperOffice instance have been accessible from the citrix farm.">
+<meta name="author" content="nerenther">
+<link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/18/superoffice-and-citrix/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="SuperOffice and Citrix" />
+<meta property="og:description" content="I’m just gonna start by putting this out there: I have never been a fan of SuperOffice, and I probably never will be either.
+Now that thats out there, heres the situation: We have one citrix farm, and three different SuperOffice instances. The goal with our citrix farm is to have each citrix server completely the same as the others. Because of that, only one of the SuperOffice instance have been accessible from the citrix farm." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/18/superoffice-and-citrix/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2012-09-18T08:13:48+00:00" />
+<meta property="article:modified_time" content="2012-09-18T08:13:48+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SuperOffice and Citrix"/>
+<meta name="twitter:description" content="I’m just gonna start by putting this out there: I have never been a fan of SuperOffice, and I probably never will be either.
+Now that thats out there, heres the situation: We have one citrix farm, and three different SuperOffice instances. The goal with our citrix farm is to have each citrix server completely the same as the others. Because of that, only one of the SuperOffice instance have been accessible from the citrix farm."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "SuperOffice and Citrix",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/18/superoffice-and-citrix/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SuperOffice and Citrix",
+  "name": "SuperOffice and Citrix",
+  "description": "I’m just gonna start by putting this out there: I have never been a fan of SuperOffice, and I probably never will be either.\nNow that thats out there, heres the situation: We have one citrix farm, and three different SuperOffice instances. The goal with our citrix farm is to have each citrix server completely the same as the others. Because of that, only one of the SuperOffice instance have been accessible from the citrix farm.",
+  "keywords": [
+    "Citrix", "different databases", "inipath", "SuperOffice"
+  ],
+  "articleBody": "I’m just gonna start by putting this out there: I have never been a fan of SuperOffice, and I probably never will be either.\nNow that thats out there, heres the situation: We have one citrix farm, and three different SuperOffice instances. The goal with our citrix farm is to have each citrix server completely the same as the others. Because of that, only one of the SuperOffice instance have been accessible from the citrix farm. Until yesterday…\nWhen we first set up the citrix farm, we installed that one SuperOffice instance and didn’t put much effort into getting the other two instances accessible. What we did try was using the -inipath parameter for socrm.exe and soadmin.exe as stated here: http://cs.superoffice.com/scripts/customer.exe?_sf=0\u0026custSessionKey=\u0026customerLang=no\u0026noCookies=true\u0026action=viewKbEntry\u0026id=2388\nThat didn’t work at all so we didn’t bother trying anymore as the other two instances isn’t that much used anyway.\nBut yesterday I did another attempt and it turns out that the documentation from SuperOffice is flawed, it clearly states that the inipath parameter should be used like this:\nsocrm.exe -inipath=c:superoffice.ini\nBut when in fact the correct way would be like this:\nsocrm.exe -inipath=c:\nAs far as I can see, SuperOffice is coded to look for superoffice.ini in the folder specified by the inipath parameter. It also will not recognize i.e. c:superoffice as a folder, you would need to specify c:superoffice\nAnother thing that is important, and that I have found no documentation on, is that superoffice.config needs to be in the same folder as superoffice.ini.\nSo to sum up: If you want to run a SuperOffice client and connect to different databases, you need to use the -inipath parameter. You should create a superoffice.ini and a superoffice.config file, store it somewhere (a network share works fine), and then start SuperOffice or SuperOffice Admin with the following switch: -inipath=\\serversharefolder\n",
+  "wordCount" : "301",
+  "inLanguage": "en",
+  "datePublished": "2012-09-18T08:13:48Z",
+  "dateModified": "2012-09-18T08:13:48Z",
+  "author":{
+    "@type": "Person",
+    "name": "nerenther"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/18/superoffice-and-citrix/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PetterTech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net" accesskey="h" title="PetterTech (Alt + H)">PetterTech</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      SuperOffice and Citrix
+    </h1>
+    <div class="post-meta"><span title='2012-09-18 08:13:48 +0000 +0000'>September 18, 2012</span>&nbsp;·&nbsp;nerenther
+
+</div>
+  </header> 
+  <div class="post-content"><p>I’m just gonna start by putting this out there: I have never been a fan of SuperOffice, and I probably never will be either.</p>
+<p>Now that thats out there, heres the situation: We have one citrix farm, and three different SuperOffice instances. The goal with our citrix farm is to have each citrix server completely the same as the others. Because of that, only one of the SuperOffice instance have been accessible from the citrix farm. Until yesterday…</p>
+<p>When we first set up the citrix farm, we installed that one SuperOffice instance and didn’t put much effort into getting the other two instances accessible. What we did try was using the -inipath parameter for socrm.exe and soadmin.exe as stated here: <!-- raw HTML omitted --><a href="http://cs.superoffice.com/scripts/customer.exe?_sf=0&amp;custSessionKey=&amp;customerLang=no&amp;noCookies=true&amp;action=viewKbEntry&amp;id=2388">http://cs.superoffice.com/scripts/customer.exe?_sf=0&amp;custSessionKey=&amp;customerLang=no&amp;noCookies=true&amp;action=viewKbEntry&amp;id=2388</a><!-- raw HTML omitted --></p>
+<p>That didn’t work at all so we didn’t bother trying anymore as the other two instances isn’t that much used anyway.</p>
+<p>But yesterday I did another attempt and it turns out that the documentation from SuperOffice is flawed, it clearly states that the inipath parameter should be used like this:</p>
+<p>socrm.exe -inipath=c:superoffice.ini</p>
+<p>But when in fact the correct way would be like this:</p>
+<p>socrm.exe -inipath=c:</p>
+<p>As far as I can see, SuperOffice is coded to look for superoffice.ini in the folder specified by the inipath parameter. It also will not recognize i.e. c:superoffice as a folder, you would need to specify c:superoffice</p>
+<p>Another thing that is important, and that I have found no documentation on, is that superoffice.config needs to be in the same folder as superoffice.ini.</p>
+<p> </p>
+<p>So to sum up: If you want to run a SuperOffice client and connect to different databases, you need to use the -inipath parameter. You should create a superoffice.ini and a superoffice.config file, store it somewhere (a network share works fine), and then start SuperOffice or SuperOffice Admin with the following switch: -inipath=\serversharefolder</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/citrix/">Citrix</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/different-databases/">different databases</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/inipath/">inipath</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/superoffice/">SuperOffice</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net">PetterTech</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

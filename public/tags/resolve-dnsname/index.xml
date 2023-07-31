@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Resolve-DnsName on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/resolve-dnsname/</link>
+    <description>Recent content in Resolve-DnsName on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Nov 2012 09:25:09 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/resolve-dnsname/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Checking multiple dns records for multiple domains</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/</link>
+      <pubDate>Tue, 20 Nov 2012 09:25:09 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/11/20/powershell-checking-multiple-dns-records-for-multiple-domains/</guid>
+      <description>I don’t know how useful this will be for others, but in our case we had a need to check a few public dns records on some of our domains. Doing so by using a web portal will be time consuming and straight out boring. Luckily you can use Powershell for such things:
+First we need to to save our domains in an array:
+Then we send that array into a foreach loop:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>write-progress on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/write-progress/</link>
+    <description>Recent content in write-progress on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Jan 2014 12:55:36 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/write-progress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Write-Progress, a step-by-step guide</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/</link>
+      <pubDate>Wed, 15 Jan 2014 12:55:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/15/powershell-write-progress-a-step-by-step-guide/</guid>
+      <description>For whatever reason, I had a really difficult time wrapping my head around the usage of Write-Progress. The basic usage is off-course quite easy:
+This will show a quick progress bar stating that “Something” is going on, the status is “Something else” and it has gotten to 30%. However, when I wanted to use Write-Progress in a large script I quickly got confused when I looked at some of the examples out there.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>proxy on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/proxy/</link>
+    <description>Recent content in proxy on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Jun 2011 08:35:16 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PuTTY proxy trick</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/24/putty-proxy-trick/</link>
+      <pubDate>Fri, 24 Jun 2011 08:35:16 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/06/24/putty-proxy-trick/</guid>
+      <description>Did you know you use an SSH connection as a proxy using PuTTY? I didn’t until today 🙂
+Fire up PuTTY but before you connect navigate to Connection–&amp;gt;SSH–&amp;gt;Tunnels.
+Here you can specify a port you want PuTTY to respond to proxy requests. Choose a port that is not in use on your localhost, I will use 8080 in this example. Choose Dynamic on Destination and click Add.
+In the forwarded ports part of the windows you will now see D8080.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Powershell | PetterTech</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Powershell" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Powershell"/>
+<meta name="twitter:description" content=""/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net" accesskey="h" title="PetterTech (Alt + H)">PetterTech</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Powershell
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Powershell function for showing some system information
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>This is a function I created just because I wanted to toy around with Powershell and get-wmiobject. Also, this is my first function where I made it possible to use a switch parameter.
+What the function does is gather some system information using get-wmiobject. The info is written to a temp file and then shown using out-gridview.
+If the KeepTempFile parameter is used the temp file is saved in the users profile, if not it is deleted after the function finishes....</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-09-12 09:32:24 +0000 +0000'>September 12, 2012</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Powershell function for showing some system information" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/12/powershell-function-for-showing-some-system-information/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Adding a pause to you Powershell scripts
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>If you have taken a look at some of the scripts I have posted earlier you might have noticed a rather strange line, usually at the end of the script:
+This was actually just to get the script to wait for the user to press a key. It is equivalent to the good ol’ pause in batch scripting.
+The reason I used this method was that I just didn’t know how to do this in Powershell (yes, I am ashamed)....</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-09-10 13:57:52 +0000 +0000'>September 10, 2012</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Adding a pause to you Powershell scripts" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/10/adding-a-pause-to-you-powershell-scripts/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Powershell function for rotating event logs
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>A friend of mine came to me with an interesting powershell challenge today: how can I use powershell to archive and clear event logs?
+Well, challenge accepted!
+The reason the challenge arose is due to maintenance he performs on a number of customer servers. Every month he saves each eventlog and clears it manually, a time consuming task if you have more than a few servers.
+So here’s what I came up with:...</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-09-06 10:13:33 +0000 +0000'>September 6, 2012</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Powershell function for rotating event logs" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/09/06/powershell-function-for-rotating-event-logs/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Function for locating an email address
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Yesterday I was given a relatively easy task: find out who or what has a given email address.
+As this was within our own Exchange organization it proved to be quite simple:
+You can achieve the goal with a simple one-liner:
+But wouldn’t it be easier to have it in a function? In Powershell, creating functions isn’t all that hard. Basically all you need to do is wrap the command or script block with a function statement, see here:...</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-08-28 10:41:15 +0000 +0000'>August 28, 2012</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Function for locating an email address" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/28/function-for-locating-an-email-address/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Function for adding photo in Active Directory
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I have always been careful to avoid the really advanced and cool stuff in Powershell, like functions, arrays and such.
+But as I created the last script it hit me that it would be really cool to have it in a command, like set-adphoto. After some googling I found that funtions aren’t hard at all!
+Basically all I really had to do with the ad photo import script was to add “function Set-ADPhoto { ” in front of the script and end it with a }...</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-08-24 13:16:30 +0000 +0000'>August 24, 2012</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Function for adding photo in Active Directory" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/24/function-for-adding-photo-in-active-directory/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Simple script for adding user photo in Active Directory
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>It’s been a while since I posted here so I thought it might be time to add some content.
+This script is a simple script that adds a photo to a user’s active directory user object. It also checks the filesize to prevent users adding large photos (you can of course change this limit).
+The requirements for this script is the Active Directory module and permission to edit a user object in Active Directory...</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-08-16 12:24:00 +0000 +0000'>August 16, 2012</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Simple script for adding user photo in Active Directory" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/08/16/simple-script-for-adding-user-photo-in-active-directory/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Check if DAG databases is on preferred server
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>If you are using DAG in exchange 2010 for high availability on your mailboxes there may be one thing you might have noticed, the databases can fail over to a less preferred server at any time without you noticing.
+Microsoft have provided you with a script for balancing these databases, RedistributeActiveDatabases.ps1. With this script you can activate the databases on their preferred server again. But how do you know when they have failed over?...</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-04-30 10:35:57 +0000 +0000'>April 30, 2012</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Check if DAG databases is on preferred server" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/04/30/check-if-dag-databases-is-on-preferred-server/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Grep&#39;ing the eventlog using powershell
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>If you are used to working with Linux you’re probably familiar with using tail, grep and such for gathering stuff from logs and other files. Those are quite useful tools and work very well when you want to find out e.g. why a user fails to log in.
+In Windows it’s a little different, if we want to find something in the event logs we have always had to resort to a console....</p>
+  </div>
+  <footer class="entry-footer"><span title='2012-02-20 09:27:42 +0000 +0000'>February 20, 2012</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Grep&#39;ing the eventlog using powershell" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/20/greping-the-eventlog-using-powershell/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Mass import of users in Active Directory v2 – Powershell time
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.
+That script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.
+The powershell script I came up does a lot more than the last one. Here a little list:
+Creates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot....</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-10-27 19:54:21 +0000 +0000'>October 27, 2011</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Mass import of users in Active Directory v2 – Powershell time" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Simple powershell script for enabling users for Lync
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I wrote this simple little script for enabling users for Lync. It asks for input on name, sipdomain and line uri. The rest is set using variables defined at the start of the script.
+If you only have one sipdomain you can change the script so that it doesn’t ask for it.
+Here’s the script in all its glory:
+You can also download it here: http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/enable_lync_user.ps1</p>
+  </div>
+  <footer class="entry-footer"><span title='2011-10-12 15:59:45 +0000 +0000'>October 12, 2011</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to Simple powershell script for enabling users for Lync" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/12/simple-powershell-script-for-enabling-users-for-lync/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/page/3/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/categories/powershell/page/5/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net">PetterTech</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

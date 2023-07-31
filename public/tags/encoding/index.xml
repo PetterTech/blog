@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Encoding on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/encoding/</link>
+    <description>Recent content in Encoding on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Jan 2013 12:06:53 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/encoding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Export-Csv and non-English letters</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/17/powershell-export-csv-and-non-english-letters/</link>
+      <pubDate>Thu, 17 Jan 2013 12:06:53 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/17/powershell-export-csv-and-non-english-letters/</guid>
+      <description>The Export-Csv cmdlet is a really nice tool if you want to gather info from e.g. Active Directory that you later want to import to Excel. But as you might have noticed it doesn’t play well with non-English letters.
+Working in Norway with users from all the Nordic countries means that we have a lot of users i Active Directory who have non-English letters in their names (æ ø å ö ä and so on).</description>
+    </item>
+    
+  </channel>
+</rss>

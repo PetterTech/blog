@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Set event logging for the offline address list generator to medium | PetterTech</title>
+<meta name="keywords" content="Address list, Exchange, GAL, microsoft, oab, Powershell">
+<meta name="description" content="In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:
+Log Name: Application
+Source: MSExchangeSA
+Date: 03.08.2011 08:15:18
+Event ID: 9320 Task Category: (13)
+Level: Warning
+Keywords: Classic
+User: N/A">
+<meta name="author" content="nerenther">
+<link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Set event logging for the offline address list generator to medium" />
+<meta property="og:description" content="In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:
+Log Name: Application
+Source: MSExchangeSA
+Date: 03.08.2011 08:15:18
+Event ID: 9320 Task Category: (13)
+Level: Warning
+Keywords: Classic
+User: N/A" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2011-08-03T06:48:06+00:00" />
+<meta property="article:modified_time" content="2011-08-03T06:48:06+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Set event logging for the offline address list generator to medium"/>
+<meta name="twitter:description" content="In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:
+Log Name: Application
+Source: MSExchangeSA
+Date: 03.08.2011 08:15:18
+Event ID: 9320 Task Category: (13)
+Level: Warning
+Keywords: Classic
+User: N/A"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Set event logging for the offline address list generator to medium",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Set event logging for the offline address list generator to medium",
+  "name": "Set event logging for the offline address list generator to medium",
+  "description": "In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:\nLog Name: Application\nSource: MSExchangeSA\nDate: 03.08.2011 08:15:18\nEvent ID: 9320 Task Category: (13)\nLevel: Warning\nKeywords: Classic\nUser: N/A",
+  "keywords": [
+    "Address list", "Exchange", "GAL", "microsoft", "oab", "Powershell"
+  ],
+  "articleBody": "In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:\nLog Name: Application\nSource: MSExchangeSA\nDate: 03.08.2011 08:15:18\nEvent ID: 9320 Task Category: (13)\nLevel: Warning\nKeywords: Classic\nUser: N/A\nComputer: Description:\nOABGen could not generate full details for some entries in the offline address list for address list ‘Global Address List’. To see which entries are affected, set event logging for the offline address list generator to at least medium.\nLog Name: Application\nSource: MSExchangeSA\nDate: 03.08.2011 08:15:18\nEvent ID: 9327\nTask Category: (13)\nLevel: Warning\nKeywords: Classic\nUser: N/A\nComputer: Description:\nOALGen skipped some entries in the offline address list ‘Global Address List’. To see which entries are affected, event logging for the OAL Generator must be set to at least medium. – Default Offline Address Book\nIn some cases you might want to see which users are affected. To do this you have to increase the log level for MSExchangeSAOAL Generator. Thats done by running this simple little powershell command:\nSet-EventLogLevel “MSExchangeSAOAL Generator” -level medium\nThe next time the address lists are being generated you will see an event for every user that gets dropped from the address list or users that have their properties truncated in the address list.\nIf you don’t want to wait for the next scheduled generation of the address lists you can run these commands in powershell:\nUpdate-GlobalAddressList “Default Global Address List”\nUpdate-OfflineAddressBook “Default Offline Address Book”\n",
+  "wordCount" : "275",
+  "inLanguage": "en",
+  "datePublished": "2011-08-03T06:48:06Z",
+  "dateModified": "2011-08-03T06:48:06Z",
+  "author":{
+    "@type": "Person",
+    "name": "nerenther"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PetterTech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net" accesskey="h" title="PetterTech (Alt + H)">PetterTech</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Set event logging for the offline address list generator to medium
+    </h1>
+    <div class="post-meta"><span title='2011-08-03 06:48:06 +0000 +0000'>August 3, 2011</span>&nbsp;·&nbsp;nerenther
+
+</div>
+  </header> 
+  <div class="post-content"><p>In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:</p>
+<p>Log Name: Application<br>
+Source: MSExchangeSA<br>
+Date: 03.08.2011 08:15:18<br>
+Event ID: 9320 Task Category: (13)<br>
+Level: Warning<br>
+Keywords: Classic<br>
+User: N/A<br>
+Computer: <!-- raw HTML omitted --><br>
+Description:<br>
+OABGen could not generate full details for some entries in the offline address list for address list ‘Global Address List’. To see which entries are affected, set event logging for the offline address list generator to at least medium.</p>
+<p>Log Name: Application<br>
+Source: MSExchangeSA<br>
+Date: 03.08.2011 08:15:18<br>
+Event ID: 9327<br>
+Task Category: (13)<br>
+Level: Warning<br>
+Keywords: Classic<br>
+User: N/A<br>
+Computer: <!-- raw HTML omitted --><br>
+Description:<br>
+OALGen skipped some entries in the offline address list ‘Global Address List’. To see which entries are affected, event logging for the OAL Generator must be set to at least medium. – Default Offline Address Book</p>
+<p>In some cases you might want to see which users are affected. To do this you have to increase the log level for MSExchangeSAOAL Generator. Thats done by running this simple little powershell command:</p>
+<p>Set-EventLogLevel “MSExchangeSAOAL Generator” -level medium</p>
+<p>The next time the address lists are being generated you will see an event for every user that gets dropped from the address list or users that have their properties truncated in the address list.</p>
+<p>If you don’t want to wait for the next scheduled generation of the address lists you can run these commands in powershell:</p>
+<p>Update-GlobalAddressList “Default Global Address List”<br>
+Update-OfflineAddressBook “Default Offline Address Book”</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/address-list/">Address list</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/exchange/">Exchange</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/gal/">GAL</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/microsoft/">microsoft</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/oab/">oab</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell/">Powershell</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net">PetterTech</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

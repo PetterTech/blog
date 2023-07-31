@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>uptime on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/uptime/</link>
+    <description>Recent content in uptime on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Sep 2014 07:26:38 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/uptime/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Getting vmhost uptime</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/</link>
+      <pubDate>Mon, 08 Sep 2014 07:26:38 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/</guid>
+      <description>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
+However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it.
+Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>EMC VNX on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/emc-vnx/</link>
+    <description>Recent content in EMC VNX on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2015 13:05:07 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/emc-vnx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UCSD: Mapping EMC VNX LUNs to an ESXi cluster</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/15/ucsd-mapping-emc-vnx-luns-to-an-esxi-cluster/</link>
+      <pubDate>Thu, 15 Oct 2015 13:05:07 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2015/10/15/ucsd-mapping-emc-vnx-luns-to-an-esxi-cluster/</guid>
+      <description>I have been struggling for quite some time with mapping luns from our vnx 5600 to entire clusters in our vCenter. We used to utilize a custom workflow a consultant wrote for us, but that workflow got borked after an update to UCS Director nearly a year ago.
+Revisiting the issue i found this example from Cisco: https://communities.cisco.com/docs/DOC-57382
+That example seems to work for other people but in our case the custom task in it never gave the correct output, so I had to look for a way around it.</description>
+    </item>
+    
+  </channel>
+</rss>

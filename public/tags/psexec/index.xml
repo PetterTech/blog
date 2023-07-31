@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PsExec on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psexec/</link>
+    <description>Recent content in PsExec on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Jan 2013 12:00:42 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/psexec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resetting the Discretionary Access Control List (DACL) in a Windows Service security descriptor</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/14/resetting-the-discretionary-access-control-list-dacl-in-a-windows-service-security-descriptor/</link>
+      <pubDate>Mon, 14 Jan 2013 12:00:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2013/01/14/resetting-the-discretionary-access-control-list-dacl-in-a-windows-service-security-descriptor/</guid>
+      <description>OpenService FAILED 5: Access is denied. — “Oh crap!” If you ever see this error and need to reset the DACL on a Windows service, let’s say in case you (or someone else) accidentally deletes it, or configure it to something that prevents you from reading it’s security settings, this might do the trick:
+First of all, get a cup of coffee.
+Download PsExec (a tool in PsTools), which among other things allow you to run commands as the “local system” account.</description>
+    </item>
+    
+  </channel>
+</rss>

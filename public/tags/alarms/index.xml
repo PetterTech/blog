@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>alarms on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/alarms/</link>
+    <description>Recent content in alarms on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 Aug 2014 10:16:36 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/alarms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Getting datastore alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/</link>
+      <pubDate>Sun, 31 Aug 2014 10:16:36 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/</guid>
+      <description>Next in the series on getting alarms is getting datastore alarms.
+Again, the code is pretty similar:
+And the output is pretty similar:
+The function code is this:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting cluster alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/</link>
+      <pubDate>Sat, 30 Aug 2014 08:21:59 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/</guid>
+      <description>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
+Here’s the code:
+And the output will look something like this:
+As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
+Anyways, here’s the function code:
+The output will be the same, but since it’s a function you can manipulate the data further.</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting host alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</link>
+      <pubDate>Fri, 29 Aug 2014 07:41:13 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/</guid>
+      <description>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
+The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
+The output will look something like this:
+And here’s the function code:</description>
+    </item>
+    
+    <item>
+      <title>PowerCLI: Getting vm alarms</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</link>
+      <pubDate>Thu, 28 Aug 2014 06:42:12 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/</guid>
+      <description>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
+So here’s the the script for retrieving vm alarms:
+This will provide an output like this:</description>
+    </item>
+    
+  </channel>
+</rss>

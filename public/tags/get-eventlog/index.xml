@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>get-eventlog on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-eventlog/</link>
+    <description>Recent content in get-eventlog on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Aug 2014 07:14:29 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-eventlog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Powershell: Listing activated clients on KMS server</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/26/powershell-listing-activated-clients-on-kms-server/</link>
+      <pubDate>Tue, 26 Aug 2014 07:14:29 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/26/powershell-listing-activated-clients-on-kms-server/</guid>
+      <description>If you are using a KMS server for activating servers and clients in your environment, you may have noticed that there’s really no obvious way to get a list of all the clients that have been activated by the KMS server.
+One way to get that overview is by using VAMT (http://technet.microsoft.com/en-us/library/hh824953.aspx), but since that tool is based on pulling info from clients and not from the KMS server it is not suitable for everyone.</description>
+    </item>
+    
+    <item>
+      <title>Grep&#39;ing the eventlog using powershell</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/20/greping-the-eventlog-using-powershell/</link>
+      <pubDate>Mon, 20 Feb 2012 09:27:42 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2012/02/20/greping-the-eventlog-using-powershell/</guid>
+      <description>If you are used to working with Linux you’re probably familiar with using tail, grep and such for gathering stuff from logs and other files. Those are quite useful tools and work very well when you want to find out e.g. why a user fails to log in.
+In Windows it’s a little different, if we want to find something in the event logs we have always had to resort to a console.</description>
+    </item>
+    
+  </channel>
+</rss>

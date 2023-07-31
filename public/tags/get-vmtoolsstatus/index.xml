@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>get-vmtoolsstatus on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmtoolsstatus/</link>
+    <description>Recent content in get-vmtoolsstatus on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Sep 2014 12:06:17 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/get-vmtoolsstatus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCLI: Getting the status of vmware tools on all VMs</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/</link>
+      <pubDate>Fri, 05 Sep 2014 12:06:17 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/</guid>
+      <description>I’m sure I don’t need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it’s a good idea to keep VMware tools updated.
+However, I haven’t found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>server 2012 on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/server-2012/</link>
+    <description>Recent content in server 2012 on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Feb 2014 22:20:46 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/server-2012/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Activate Server 2012 (R2) by telephone</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/02/05/activate-server-2012-r2-by-telephone/</link>
+      <pubDate>Wed, 05 Feb 2014 22:20:46 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/02/05/activate-server-2012-r2-by-telephone/</guid>
+      <description>The option for activating Server 2012 by phone is kinda hidden, so I have to write this down before I forget it:
+Win+R – SLUI 4</description>
+    </item>
+    
+  </channel>
+</rss>

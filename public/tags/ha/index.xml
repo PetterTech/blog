@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>HA on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ha/</link>
+    <description>Recent content in HA on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Aug 2011 12:45:25 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/ha/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up Fortigate units in HA</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/05/setting-up-fortigate-units-in-ha/</link>
+      <pubDate>Fri, 05 Aug 2011 12:45:25 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/08/05/setting-up-fortigate-units-in-ha/</guid>
+      <description>Setting up an HA cluster on Fortigate devices is surprisingly easy, heres a short little guide:
+Set up the first Fortigate the way you want it (or perhaps you already have one in you environment).
+Then click on configure, next to HA Status on the main page.
+Type in the name and password for the HA group you want to create.
+Choose which interfaces you want the heartbeat to be sent over (I recommend at least to interfaces, one of them being dedicated to heartbeat).</description>
+    </item>
+    
+  </channel>
+</rss>

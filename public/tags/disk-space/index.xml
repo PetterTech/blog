@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>disk space on PetterTech</title>
+    <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/disk-space/</link>
+    <description>Recent content in disk space on PetterTech</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Jan 2014 09:02:28 +0000</lastBuildDate><atom:link href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/disk-space/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerCli: Finding amount of GB used by VMs in a folder/vApp/datacenter</title>
+      <link>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/29/powercli-finding-amount-of-gb-used-by-vms-in-a-foldervappdatacenter/</link>
+      <pubDate>Wed, 29 Jan 2014 09:02:28 +0000</pubDate>
+      
+      <guid>https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/01/29/powercli-finding-amount-of-gb-used-by-vms-in-a-foldervappdatacenter/</guid>
+      <description>Sometimes it can be useful to know how much space the VMs in a specific folder (or vApp/datacenter) is occupying. For example if you are a hosting provider of some sort and need to know how much space a customer is using.
+It’s a simple one-liner!</description>
+    </item>
+    
+  </channel>
+</rss>

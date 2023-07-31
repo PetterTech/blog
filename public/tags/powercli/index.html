@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>powercli | PetterTech</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercli/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercli/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="powercli" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercli/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="powercli"/>
+<meta name="twitter:description" content=""/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net" accesskey="h" title="PetterTech (Alt + H)">PetterTech</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    powercli
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Creating custom SATP rule for HPE 3PAR
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>A while back we migrated from our old EMC VNX to a new HPE 3PAR array. It all went fine but what kinda slipped our mind is that HPE’s best practice is to create a custom SATP rule that uses RoudRobin as path selection policy and a IOPS limit to 1 in stead of the default 1000.
+The steps are documented in the HPE 3PAR VMware ESX/ESXi Implementation Guide, but they only show you how to do it through the esx cli....</p>
+  </div>
+  <footer class="entry-footer"><span title='2017-08-08 12:06:28 +0000 +0000'>August 8, 2017</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Creating custom SATP rule for HPE 3PAR" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2017/08/08/powercli-creating-custom-satp-rule-for-hpe-3par/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>UCSD: Passing multiple arguments to start-job while using the Cisco PowerShell Agent
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>While the Cisco PowerShell Agent (PSA) that can be used in UCS Director isn’t exactly perfect, it can still be put to good use. As long as you now how to use it properly 😉
+The major issue with using the PSA is that it doesn’t stick around to see if the commands/script was successful or not. As long as it delivered the commands successfully, it’s happy and your workflow will continue to the next step....</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-11-12 12:21:03 +0000 +0000'>November 12, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to UCSD: Passing multiple arguments to start-job while using the Cisco PowerShell Agent" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/11/12/ucsd-passing-multiple-arguments-to-start-job-while-using-the-cisco-powershell-agent/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Function for listing snapshots
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>My very first PowerCLI related post was about this same topic: listing snapshot info using PowerCLI.
+In my original post (which you can see here) I only wrote a pretty simple one-liner. Which was kind of okay, but it was missing one crucial thing: who took the snapshot?
+Why vmware hasn’t found a way to include a username in the get-snapshot cmdlet is something I just can’t understand. There’s really not much code needed to add this to the output, and there’s several ways of doing so....</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-09-17 07:16:57 +0000 +0000'>September 17, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Function for listing snapshots" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/17/powercli-function-for-listing-snapshots/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Evacuating a datastore
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>In case you ever need to empty out a datastore in you vmware environment, there is a nice little one-liner in PowerCLI for that:
+Where “datastore1” is the datastore you want to empty out and “cluster1” is the cluster where the datastore is available.
+The command will move VMs from datastore1 to the datastore in cluster1 with the most available space (minimum 500GB)</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-09-11 10:54:40 +0000 +0000'>September 11, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Evacuating a datastore" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/11/powercli-evacuating-a-datastore/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Getting vmhost uptime
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I love a powershell challenge, and last week a colleague of mine asked me for assistance in getting the uptime of vmware hosts. My initial response did the trick:
+However, I wasn’t completely satisfied by the the output or the ease of use.
+So today I went back and rewrote the code and made a function of it.
+Instead of using the ToString and Substring methods I went for the built-in class Math, which has a method called Round....</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-09-08 07:26:38 +0000 +0000'>September 8, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Getting vmhost uptime" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/08/powercli-getting-vmhost-uptime/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Getting the status of vmware tools on all VMs
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>I’m sure I don’t need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it’s a good idea to keep VMware tools updated.
+However, I haven’t found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list....</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-09-05 12:06:17 +0000 +0000'>September 5, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Getting the status of vmware tools on all VMs" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Getting datastore alarms
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Next in the series on getting alarms is getting datastore alarms.
+Again, the code is pretty similar:
+And the output is pretty similar:
+The function code is this:</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-08-31 10:16:36 +0000 +0000'>August 31, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Getting datastore alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/31/powercli-getting-datastore-alarms/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Getting cluster alarms
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The next step in my short series on getting vCenter alarms using PowerCLI is to get cluster alarms.
+Here’s the code:
+And the output will look something like this:
+As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
+Anyways, here’s the function code:
+The output will be the same, but since it’s a function you can manipulate the data further....</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-08-30 08:21:59 +0000 +0000'>August 30, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Getting cluster alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/30/powercli-get-cluster-alarms/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Getting host alarms
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it’s time for getting host alarms 🙂
+The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
+The output will look something like this:
+And here’s the function code:</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-08-29 07:41:13 +0000 +0000'>August 29, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Getting host alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/29/powercli-get-host-alarms/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>PowerCLI: Getting vm alarms
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
+So here’s the the script for retrieving vm alarms:
+This will provide an output like this:...</p>
+  </div>
+  <footer class="entry-footer"><span title='2014-08-28 06:42:12 +0000 +0000'>August 28, 2014</span>&nbsp;·&nbsp;nerenther</footer>
+  <a class="entry-link" aria-label="post link to PowerCLI: Getting vm alarms" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2014/08/28/powercli-getting-vm-alarms/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powercli/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net">PetterTech</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

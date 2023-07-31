@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Mass import of users in Active Directory v2 – Powershell time | PetterTech</title>
+<meta name="keywords" content="active directory, Exchange, microsoft, Powershell">
+<meta name="description" content="Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.
+That script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.
+The powershell script I came up does a lot more than the last one. Here a little list:
+Creates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot.">
+<meta name="author" content="nerenther">
+<link rel="canonical" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.bf5f9f73cf17311d52cedbcda82c922e91b2f566d88a85ad9f5b5a08b586bd5f.css" integrity="sha256-v1&#43;fc88XMR1SztvNqCySLpGy9WbYioWtn1taCLWGvV8=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.acb54fd32bbc1982428b8850317e45d076b95012730a5936667e6bc21777692a.js" integrity="sha256-rLVP0yu8GYJCi4hQMX5F0Ha5UBJzClk2Zn5rwhd3aSo="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Mass import of users in Active Directory v2 – Powershell time" />
+<meta property="og:description" content="Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.
+That script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.
+The powershell script I came up does a lot more than the last one. Here a little list:
+Creates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2011-10-27T19:54:21+00:00" />
+<meta property="article:modified_time" content="2011-10-27T19:54:21+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mass import of users in Active Directory v2 – Powershell time"/>
+<meta name="twitter:description" content="Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.
+That script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.
+The powershell script I came up does a lot more than the last one. Here a little list:
+Creates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Mass import of users in Active Directory v2 – Powershell time",
+      "item": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mass import of users in Active Directory v2 – Powershell time",
+  "name": "Mass import of users in Active Directory v2 – Powershell time",
+  "description": "Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.\nThat script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.\nThe powershell script I came up does a lot more than the last one. Here a little list:\nCreates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot.",
+  "keywords": [
+    "active directory", "Exchange", "microsoft", "Powershell"
+  ],
+  "articleBody": "Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.\nThat script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.\nThe powershell script I came up does a lot more than the last one. Here a little list:\nCreates OUs Creates users Creates security groups Creates distribution groups Creates mailboxes for all users Add specified users to the correct security and distribution groups Creates a homefolder root folder and shares it Creates a homefolder for each user and sets ntfs permissions Set storage limit on the exchange mailbox database As you can see, it does quite a lot. I could incorporate more in this script, for example sharepoint and lync config, but I figured the script is long enough.\nIf you want a script for enabling users for lync, you can see my previous post here.\nThe cool thing about this script is that is pretty fast. In my test environment, consisting of two virtual machines, one domain controller and one exchange server, it took only 1 minute to create 100 users and mailboxes, 8 OUs and 5 security and distribution groups.\nI think thats quite impressive taking in consideration that the two virtual machines both run on my computer and with only 2GB ram each.\nThe only thing thats quite sad is that there’s no powershell commands for sharing and setting share permissions in powershell 2.0. Thats why I have used one powershell 3.0 command in the script , new-smbshare. It is only used once, for sharing the homefolder root.\nYou can download the powershell 3.0 community preview and install it on the server you will run the script on. Or you can just comment out that command and rather share the root homefolder manually if you don’t want to install powershell 3.0 on your server.\nThis script uses two csv files, one for groups and OUs and one for the users. You can download a zip containing all files here\nAnyway, the script is shown below, have fun with it 🙂\n",
+  "wordCount" : "362",
+  "inLanguage": "en",
+  "datePublished": "2011-10-27T19:54:21Z",
+  "dateModified": "2011-10-27T19:54:21Z",
+  "author":{
+    "@type": "Person",
+    "name": "nerenther"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/index.php/2011/10/27/mass-import-of-users-in-active-directory-v2-powershell-time/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PetterTech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net" accesskey="h" title="PetterTech (Alt + H)">PetterTech</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Mass import of users in Active Directory v2 – Powershell time
+    </h1>
+    <div class="post-meta"><span title='2011-10-27 19:54:21 +0000 +0000'>October 27, 2011</span>&nbsp;·&nbsp;nerenther
+
+</div>
+  </header> 
+  <div class="post-content"><p>Earlier I posted a script that created users and homefolders and added the users to specified groups. It also set ntfs permissions on the homefolders.<br>
+That script used primarily old fashioned stuff, so I sat down and started looking for a neat way to do the same in powershell.</p>
+<p>The powershell script I came up does a lot more than the last one. Here a little list:</p>
+<ul>
+<li>Creates OUs</li>
+<li>Creates users</li>
+<li>Creates security groups</li>
+<li>Creates distribution groups</li>
+<li>Creates mailboxes for all users</li>
+<li>Add specified users to the correct security and distribution groups</li>
+<li>Creates a homefolder root folder and shares it</li>
+<li>Creates a homefolder for each user and sets ntfs permissions</li>
+<li>Set storage limit on the exchange mailbox database</li>
+</ul>
+<p>As you can see, it does quite a lot. I could incorporate more in this script, for example sharepoint and lync config, but I figured the script is long enough.<br>
+If you want a script for enabling users for lync, you can see my previous post <!-- raw HTML omitted -->here<!-- raw HTML omitted -->.</p>
+<p>The cool thing about this script is that is pretty fast. In my test environment, consisting of two virtual machines, one domain controller and one exchange server, it took only 1 minute to create 100 users and mailboxes, 8 OUs and 5 security and distribution groups.<br>
+I think thats quite impressive taking in consideration that the two virtual machines both run on my computer and with only 2GB ram each.</p>
+<p>The only thing thats quite sad is that there’s no powershell commands for sharing and setting share permissions in powershell 2.0. Thats why I have used one powershell 3.0 command in the script , new-smbshare. It is only used once, for sharing the homefolder root.</p>
+<p>You can download the powershell 3.0 community preview and install it on the server you will run the script on. Or you can just comment out that command and rather share the root homefolder manually if you don’t want to install powershell 3.0 on your server.</p>
+<p>This script uses two csv files, one for groups and OUs and one for the users. You can download a zip containing all files <!-- raw HTML omitted -->here<!-- raw HTML omitted --></p>
+<p>Anyway, the script is shown below, have fun with it 🙂</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p> </p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/active-directory/">active directory</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/exchange/">Exchange</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/microsoft/">microsoft</a></li>
+      <li><a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net/tags/powershell/">Powershell</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://blue-cliff-0fe9f2b03.3.azurestaticapps.net">PetterTech</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
