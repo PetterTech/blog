@@ -33,7 +33,7 @@ The solution I came up with is overly complicated and can surely be simplified, 
 
 Here's how I have set it up:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-755" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-48-58.png" alt="2015-10-15_14-48-58" width="578" height="609" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-48-58.png 578w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-48-58-285x300.png 285w" sizes="(max-width: 578px) 100vw, 578px" />][1]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-755" src="/wp-content/uploads/2015/10/2015-10-15_14-48-58.png" alt="2015-10-15_14-48-58" width="578" height="609" srcset="/wp-content/uploads/2015/10/2015-10-15_14-48-58.png 578w, /wp-content/uploads/2015/10/2015-10-15_14-48-58-285x300.png 285w" sizes="(max-width: 578px) 100vw, 578px" />][1]
 
 The custom task I use to convert the output from the powershell task is built up the way I describe in this blogpost: <a href="http://cloud.kemta.net/cisco-network/ucsd-grabbing-a-string-returned-from-a-powershell-task/" target="_blank" rel="noopener">http://cloud.kemta.net/cisco-network/ucsd-grabbing-a-string-returned-from-a-powershell-task/</a>
 
@@ -41,11 +41,11 @@ The only difference is the name and type of the output.
 
 Now, let's look at the workflow user inputs:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-756" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-17-37.png" alt="2015-10-15_14-17-37" width="947" height="339" />][2]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-756" src="/wp-content/uploads/2015/10/2015-10-15_14-17-37.png" alt="2015-10-15_14-17-37" width="947" height="339" />][2]
 
 In this workflow I haven't configured any outputs, so let's move along to the first task: the powershell task.
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-757" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-41-13.png" alt="2015-10-15_14-41-13" width="1213" height="580" />][3]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-757" src="/wp-content/uploads/2015/10/2015-10-15_14-41-13.png" alt="2015-10-15_14-41-13" width="1213" height="580" />][3]
 
 The reason I have to do a split on the StorageAccount input is that in the script I only want the hostname of the storage system. I could just as well have done it within the script itself.
 
@@ -91,7 +91,7 @@ return $VMhostsArray -join ","
 
 On my test cluster with only two esxi hosts, the output looks like this:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-758" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-54-42.png" alt="2015-10-15_14-54-42" width="1154" height="104" />][4]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-758" src="/wp-content/uploads/2015/10/2015-10-15_14-54-42.png" alt="2015-10-15_14-54-42" width="1154" height="104" />][4]
 
 After the custom task has converted the powershell output it looks like this in plain text:
 
@@ -101,14 +101,14 @@ After the custom task has converted the powershell output it looks like this in
 
 Since the output from the custom task is of the emcStorageGroupIdentity type I can simply map it to the builtin &#8220;add vnx lun to storage group&#8221; task:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-760" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-47-52.png" alt="2015-10-15_14-47-52" width="1004" height="654" />][5]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-760" src="/wp-content/uploads/2015/10/2015-10-15_14-47-52.png" alt="2015-10-15_14-47-52" width="1004" height="654" />][5]
 
-And that's really all there is to it. If you want to download my example workflow, you can do so here: <http://4.234.145.218/wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip>
+And that's really all there is to it. If you want to download my example workflow, you can do so here: </wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip>
 
 &nbsp;
 
- [1]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-48-58.png
- [2]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-17-37.png
- [3]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-41-13.png
- [4]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-54-42.png
- [5]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-15_14-47-52.png
+ [1]: /wp-content/uploads/2015/10/2015-10-15_14-48-58.png
+ [2]: /wp-content/uploads/2015/10/2015-10-15_14-17-37.png
+ [3]: /wp-content/uploads/2015/10/2015-10-15_14-41-13.png
+ [4]: /wp-content/uploads/2015/10/2015-10-15_14-54-42.png
+ [5]: /wp-content/uploads/2015/10/2015-10-15_14-47-52.png

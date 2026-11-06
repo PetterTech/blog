@@ -77,11 +77,11 @@ function Get-Snapshots
 
 You can run the function as it is, without any parameters, or you can specify which vm you want to get the snapshots of:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-642" alt="get-snapshots" src="http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots.png" width="951" height="188" srcset="http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots.png 951w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-300x59.png 300w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-768x152.png 768w" sizes="(max-width: 951px) 100vw, 951px" />][1]
+[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-642" alt="get-snapshots" src="/wp-content/uploads/2014/09/get-snapshots.png" width="951" height="188" srcset="/wp-content/uploads/2014/09/get-snapshots.png 951w, /wp-content/uploads/2014/09/get-snapshots-300x59.png 300w, /wp-content/uploads/2014/09/get-snapshots-768x152.png 768w" sizes="(max-width: 951px) 100vw, 951px" />][1]
 
 As you can see, the output is a list. If you want it to be more readable for human eyes, I recommend piping it to Format-Table:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-643" alt="get-snapshots-ft" src="http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft.png" width="1031" height="172" srcset="http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft.png 1031w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft-300x50.png 300w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft-1024x171.png 1024w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft-768x128.png 768w" sizes="(max-width: 1031px) 100vw, 1031px" />][2]
+[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-643" alt="get-snapshots-ft" src="/wp-content/uploads/2014/09/get-snapshots-ft.png" width="1031" height="172" srcset="/wp-content/uploads/2014/09/get-snapshots-ft.png 1031w, /wp-content/uploads/2014/09/get-snapshots-ft-300x50.png 300w, /wp-content/uploads/2014/09/get-snapshots-ft-1024x171.png 1024w, /wp-content/uploads/2014/09/get-snapshots-ft-768x128.png 768w" sizes="(max-width: 1031px) 100vw, 1031px" />][2]
 
 If you would rather run this as a script, instead of using the function, here's the code for that:
 
@@ -112,10 +112,10 @@ If you would rather run this as a script, instead of using the function, here's 
 
 The output, $collection, can be piped to Format-Table if you want a nice table of it:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-644" alt="get-snapshots-scripts" src="http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-scripts.png" width="1039" height="125" srcset="http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-scripts.png 1039w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-scripts-300x36.png 300w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-scripts-1024x123.png 1024w, http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-scripts-768x92.png 768w" sizes="(max-width: 1039px) 100vw, 1039px" />][3]
+[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-644" alt="get-snapshots-scripts" src="/wp-content/uploads/2014/09/get-snapshots-scripts.png" width="1039" height="125" srcset="/wp-content/uploads/2014/09/get-snapshots-scripts.png 1039w, /wp-content/uploads/2014/09/get-snapshots-scripts-300x36.png 300w, /wp-content/uploads/2014/09/get-snapshots-scripts-1024x123.png 1024w, /wp-content/uploads/2014/09/get-snapshots-scripts-768x92.png 768w" sizes="(max-width: 1039px) 100vw, 1039px" />][3]
 
 &nbsp;
 
- [1]: http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots.png
- [2]: http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-ft.png
- [3]: http://4.234.145.218/wp-content/uploads/2014/09/get-snapshots-scripts.png
+ [1]: /wp-content/uploads/2014/09/get-snapshots.png
+ [2]: /wp-content/uploads/2014/09/get-snapshots-ft.png
+ [3]: /wp-content/uploads/2014/09/get-snapshots-scripts.png

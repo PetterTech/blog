@@ -78,8 +78,8 @@ Anyways, here's the function I came up with:
 
 You can use it in a couple of different ways, as documented in its help section (get-help get-vmhostuptime -expamples). But if you provide no input to it, it will generate an output like this:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-627" alt="get-vmhostuptime" src="http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime.png" width="1224" height="712" srcset="http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime.png 1224w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime-300x175.png 300w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime-1024x596.png 1024w, http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime-768x447.png 768w" sizes="(max-width: 1224px) 100vw, 1224px" />][1]
+[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-627" alt="get-vmhostuptime" src="/wp-content/uploads/2014/09/get-vmhostuptime.png" width="1224" height="712" srcset="/wp-content/uploads/2014/09/get-vmhostuptime.png 1224w, /wp-content/uploads/2014/09/get-vmhostuptime-300x175.png 300w, /wp-content/uploads/2014/09/get-vmhostuptime-1024x596.png 1024w, /wp-content/uploads/2014/09/get-vmhostuptime-768x447.png 768w" sizes="(max-width: 1224px) 100vw, 1224px" />][1]
 
 Hopefully, you don't have an uptime as long as some of these hosts 🙂
 
- [1]: http://4.234.145.218/wp-content/uploads/2014/09/get-vmhostuptime.png
+ [1]: /wp-content/uploads/2014/09/get-vmhostuptime.png

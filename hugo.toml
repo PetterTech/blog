@@ -1,4 +1,8 @@
-baseURL = 'https://blue-cliff-0fe9f2b03.3.azurestaticapps.net'
+baseURL = 'https://pettertech.com/blog/'
 languageCode = 'en-us'
 title = 'PetterTech'
 theme = "PaperMod"
+canonifyURLs = true
+
+[markup.goldmark.renderer]
+unsafe = true

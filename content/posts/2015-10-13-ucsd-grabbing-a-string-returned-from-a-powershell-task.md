@@ -64,19 +64,19 @@ return $hostarray -join ","
 The comments should be pretty explanatory, but in essence it connects to vCenter, grabs the name of the esxi hosts in the given cluster and then returns them comma separated.  
 This works fine and dandy in a powershell console, but the output from the powershell task will look rather different, we'll look at that in a second. Secondly, the powershell task kicking off the script:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-737" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-41-33.png" alt="2015-10-14_13-41-33" width="981" height="472" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-41-33.png 981w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-41-33-300x144.png 300w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-41-33-768x370.png 768w" sizes="(max-width: 981px) 100vw, 981px" />][1]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-737" src="/wp-content/uploads/2015/10/2015-10-14_13-41-33.png" alt="2015-10-14_13-41-33" width="981" height="472" srcset="/wp-content/uploads/2015/10/2015-10-14_13-41-33.png 981w, /wp-content/uploads/2015/10/2015-10-14_13-41-33-300x144.png 300w, /wp-content/uploads/2015/10/2015-10-14_13-41-33-768x370.png 768w" sizes="(max-width: 981px) 100vw, 981px" />][1]
 
-The output from this task will look something like this:[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-746" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_14-02-07.png" alt="2015-10-14_14-02-07" width="1163" height="146" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_14-02-07.png 1163w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_14-02-07-300x38.png 300w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_14-02-07-1024x129.png 1024w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_14-02-07-768x96.png 768w" sizes="(max-width: 1163px) 100vw, 1163px" />][2]
+The output from this task will look something like this:[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-746" src="/wp-content/uploads/2015/10/2015-10-14_14-02-07.png" alt="2015-10-14_14-02-07" width="1163" height="146" srcset="/wp-content/uploads/2015/10/2015-10-14_14-02-07.png 1163w, /wp-content/uploads/2015/10/2015-10-14_14-02-07-300x38.png 300w, /wp-content/uploads/2015/10/2015-10-14_14-02-07-1024x129.png 1024w, /wp-content/uploads/2015/10/2015-10-14_14-02-07-768x96.png 768w" sizes="(max-width: 1163px) 100vw, 1163px" />][2]
 
 If you're unfamiliar with how UCS Director handles powershell but familiar with powershell, then that's probably not what you expected at all.
 
 Now we need to parse that output and return only the string we want. I made a custom task for this, like in the example from Cisco:
 
 Required inputs:  
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-738" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-42-43.png" alt="2015-10-14_13-42-43" width="1155" height="246" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-42-43.png 1155w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-42-43-300x64.png 300w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-42-43-1024x218.png 1024w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-42-43-768x164.png 768w" sizes="(max-width: 1155px) 100vw, 1155px" />][3]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-738" src="/wp-content/uploads/2015/10/2015-10-14_13-42-43.png" alt="2015-10-14_13-42-43" width="1155" height="246" srcset="/wp-content/uploads/2015/10/2015-10-14_13-42-43.png 1155w, /wp-content/uploads/2015/10/2015-10-14_13-42-43-300x64.png 300w, /wp-content/uploads/2015/10/2015-10-14_13-42-43-1024x218.png 1024w, /wp-content/uploads/2015/10/2015-10-14_13-42-43-768x164.png 768w" sizes="(max-width: 1155px) 100vw, 1155px" />][3]
 
 Outputs:  
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-739" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-04.png" alt="2015-10-14_13-43-04" width="1087" height="240" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-04.png 1087w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-04-300x66.png 300w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-04-1024x226.png 1024w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-04-768x170.png 768w" sizes="(max-width: 1087px) 100vw, 1087px" />][4]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-739" src="/wp-content/uploads/2015/10/2015-10-14_13-43-04.png" alt="2015-10-14_13-43-04" width="1087" height="240" srcset="/wp-content/uploads/2015/10/2015-10-14_13-43-04.png 1087w, /wp-content/uploads/2015/10/2015-10-14_13-43-04-300x66.png 300w, /wp-content/uploads/2015/10/2015-10-14_13-43-04-1024x226.png 1024w, /wp-content/uploads/2015/10/2015-10-14_13-43-04-768x170.png 768w" sizes="(max-width: 1087px) 100vw, 1087px" />][4]
 
 The beauty of doing it like this is that you can create any kind of output type just by changing the output type. I actually use this to create outputs of other types as well, for example vmwareHostNodeIdentity, vmwareClusterIdentity and so on. It's just easier for me to use powershell to put those kind of outputs together instead of using javascript since I really don't know javascript.
 
@@ -111,22 +111,22 @@ output.parsedString = parsedString;
 
 When using the custom task in a workflow I map the input to the output from the powershell task:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-740" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-32.png" alt="2015-10-14_13-43-32" width="946" height="397" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-32.png 946w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-32-300x126.png 300w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-32-768x322.png 768w" sizes="(max-width: 946px) 100vw, 946px" />][5]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-740" src="/wp-content/uploads/2015/10/2015-10-14_13-43-32.png" alt="2015-10-14_13-43-32" width="946" height="397" srcset="/wp-content/uploads/2015/10/2015-10-14_13-43-32.png 946w, /wp-content/uploads/2015/10/2015-10-14_13-43-32-300x126.png 300w, /wp-content/uploads/2015/10/2015-10-14_13-43-32-768x322.png 768w" sizes="(max-width: 946px) 100vw, 946px" />][5]
 
 And the output to the defined workflow user output:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-741" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-56.png" alt="2015-10-14_13-43-56" width="597" height="278" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-56.png 597w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-56-300x140.png 300w" sizes="(max-width: 597px) 100vw, 597px" />][6]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-741" src="/wp-content/uploads/2015/10/2015-10-14_13-43-56.png" alt="2015-10-14_13-43-56" width="597" height="278" srcset="/wp-content/uploads/2015/10/2015-10-14_13-43-56.png 597w, /wp-content/uploads/2015/10/2015-10-14_13-43-56-300x140.png 300w" sizes="(max-width: 597px) 100vw, 597px" />][6]
 
 Lastly, it's the send email task which is pretty simple:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-742" src="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-44-27.png" alt="2015-10-14_13-44-27" width="1087" height="625" srcset="http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-44-27.png 1087w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-44-27-300x172.png 300w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-44-27-1024x589.png 1024w, http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-44-27-768x442.png 768w" sizes="(max-width: 1087px) 100vw, 1087px" />][7]
+[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-742" src="/wp-content/uploads/2015/10/2015-10-14_13-44-27.png" alt="2015-10-14_13-44-27" width="1087" height="625" srcset="/wp-content/uploads/2015/10/2015-10-14_13-44-27.png 1087w, /wp-content/uploads/2015/10/2015-10-14_13-44-27-300x172.png 300w, /wp-content/uploads/2015/10/2015-10-14_13-44-27-1024x589.png 1024w, /wp-content/uploads/2015/10/2015-10-14_13-44-27-768x442.png 768w" sizes="(max-width: 1087px) 100vw, 1087px" />][7]
 
-If you want to test this yourself, you can download this example workflow here: <a href="http://4.234.145.218/wp-content/uploads/2015/10/getPowershellOutput.zip" target="_blank" rel="noopener">http://4.234.145.218/wp-content/uploads/2015/10/getPowershellOutput.zip</a>
+If you want to test this yourself, you can download this example workflow here: <a href="/wp-content/uploads/2015/10/getPowershellOutput.zip" target="_blank" rel="noopener">/wp-content/uploads/2015/10/getPowershellOutput.zip</a>
 
- [1]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-41-33.png
- [2]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_14-02-07.png
- [3]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-42-43.png
- [4]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-04.png
- [5]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-32.png
- [6]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-43-56.png
- [7]: http://4.234.145.218/wp-content/uploads/2015/10/2015-10-14_13-44-27.png
+ [1]: /wp-content/uploads/2015/10/2015-10-14_13-41-33.png
+ [2]: /wp-content/uploads/2015/10/2015-10-14_14-02-07.png
+ [3]: /wp-content/uploads/2015/10/2015-10-14_13-42-43.png
+ [4]: /wp-content/uploads/2015/10/2015-10-14_13-43-04.png
+ [5]: /wp-content/uploads/2015/10/2015-10-14_13-43-32.png
+ [6]: /wp-content/uploads/2015/10/2015-10-14_13-43-56.png
+ [7]: /wp-content/uploads/2015/10/2015-10-14_13-44-27.png
