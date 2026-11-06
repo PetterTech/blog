@@ -81,7 +81,7 @@ function Get-VMToolsStatus
 
 The function will create an output that look kinda like this:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-622" alt="get-vmtoolsstatues" src="/wp-content/uploads/2014/09/get-vmtoolsstatues1.png" width="1560" height="856" />][1]
+[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-622" alt="get-vmtoolsstatues" src="/wp-content/uploads/2014/09/get-vmtoolsstatues.png" width="1560" height="856" />][1]
 
 You can also use a basic filter on the function by specifying -Filter <filtername>. The different filters is documented in the help section.  
 For example, if you only want a list of VMs who need an upgrade of their VMware tools version:
@@ -117,6 +117,6 @@ Depending on the number of VMs in your environment, the list might now even fit 
 
 [<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-624" alt="get-vmtoolsstatus-script" src="/wp-content/uploads/2014/09/get-vmtoolsstatus-script.png" width="1016" height="520" srcset="/wp-content/uploads/2014/09/get-vmtoolsstatus-script.png 1016w, /wp-content/uploads/2014/09/get-vmtoolsstatus-script-300x154.png 300w, /wp-content/uploads/2014/09/get-vmtoolsstatus-script-768x393.png 768w" sizes="(max-width: 1016px) 100vw, 1016px" />][3]
 
- [1]: /wp-content/uploads/2014/09/get-vmtoolsstatues1.png
+ [1]: /wp-content/uploads/2014/09/get-vmtoolsstatues.png
  [2]: /wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png
  [3]: /wp-content/uploads/2014/09/get-vmtoolsstatus-script.png
