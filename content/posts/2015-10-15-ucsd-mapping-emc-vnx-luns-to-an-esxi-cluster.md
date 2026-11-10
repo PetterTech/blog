@@ -1,7 +1,5 @@
 ---
 title: 'UCSD: Mapping EMC VNX LUNs to an ESXi cluster'
-author: nerenther
- 
 date: 2015-10-15T13:05:07+00:00
 url: /index.php/2015/10/15/ucsd-mapping-emc-vnx-luns-to-an-esxi-cluster/
 categories:
@@ -14,10 +12,9 @@ tags:
   - Powershell agent
   - PSA
   - UCS Director
-
 ---
 I have been struggling for quite some time with mapping luns from our vnx 5600 to entire clusters in our vCenter. We used to utilize a custom workflow a consultant wrote for us, but that workflow got borked after an update to UCS Director nearly a year ago.  
-Revisiting the issue i found this example from Cisco: <a href="https://communities.cisco.com/docs/DOC-57382" target="_blank" rel="noopener">https://communities.cisco.com/docs/DOC-57382</a>
+Revisiting the issue i found this example from Cisco: <https://communities.cisco.com/docs/DOC-57382>
 
 That example seems to work for other people but in our case the custom task in it never gave the correct output, so I had to look for a way around it.
 
@@ -33,25 +30,25 @@ The solution I came up with is overly complicated and can surely be simplified, 
 
 Here's how I have set it up:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-755" src="/wp-content/uploads/2015/10/2015-10-15_14-48-58.png" alt="2015-10-15_14-48-58" width="578" height="609" srcset="/wp-content/uploads/2015/10/2015-10-15_14-48-58.png 578w, /wp-content/uploads/2015/10/2015-10-15_14-48-58-285x300.png 285w" sizes="(max-width: 578px) 100vw, 578px" />][1]
+[![2015-10-15_14-48-58](/wp-content/uploads/2015/10/2015-10-15_14-48-58.png)][1]
 
-The custom task I use to convert the output from the powershell task is built up the way I describe in this blogpost: <a href="http://cloud.kemta.net/cisco-network/ucsd-grabbing-a-string-returned-from-a-powershell-task/" target="_blank" rel="noopener">http://cloud.kemta.net/cisco-network/ucsd-grabbing-a-string-returned-from-a-powershell-task/</a>
+The custom task I use to convert the output from the powershell task is built up the way I describe in this blogpost: [https://pettertech.com/blog/index.php/2015/10/13/ucsd-grabbing-a-string-returned-from-a-powershell-task/](/index.php/2015/10/13/ucsd-grabbing-a-string-returned-from-a-powershell-task/)
 
 The only difference is the name and type of the output.
 
 Now, let's look at the workflow user inputs:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-756" src="/wp-content/uploads/2015/10/2015-10-15_14-17-37.png" alt="2015-10-15_14-17-37" width="947" height="339" />][2]
+[![2015-10-15_14-17-37](/wp-content/uploads/2015/10/2015-10-15_14-17-37.png)][2]
 
 In this workflow I haven't configured any outputs, so let's move along to the first task: the powershell task.
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-757" src="/wp-content/uploads/2015/10/2015-10-15_14-41-13.png" alt="2015-10-15_14-41-13" width="1213" height="580" />][3]
+[![2015-10-15_14-41-13](/wp-content/uploads/2015/10/2015-10-15_14-41-13.png)][3]
 
 The reason I have to do a split on the StorageAccount input is that in the script I only want the hostname of the storage system. I could just as well have done it within the script itself.
 
 The powershell script looks like this:
 
- ```
+ ```powershell
     Param (
     [Parameter(Mandatory=$True,Position=0)][string]$Pod,
     [Parameter(Mandatory=$True,Position=1)][string]$StorageAccount,
@@ -91,7 +88,7 @@ return $VMhostsArray -join ","
 
 On my test cluster with only two esxi hosts, the output looks like this:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-758" src="/wp-content/uploads/2015/10/2015-10-15_14-54-42.png" alt="2015-10-15_14-54-42" width="1154" height="104" />][4]
+[![2015-10-15_14-54-42](/wp-content/uploads/2015/10/2015-10-15_14-54-42.png)][4]
 
 After the custom task has converted the powershell output it looks like this in plain text:
 
@@ -101,11 +98,9 @@ After the custom task has converted the powershell output it looks like this in
 
 Since the output from the custom task is of the emcStorageGroupIdentity type I can simply map it to the builtin &#8220;add vnx lun to storage group&#8221; task:
 
-[<img decoding="async" loading="lazy" class="alignnone size-full wp-image-760" src="/wp-content/uploads/2015/10/2015-10-15_14-47-52.png" alt="2015-10-15_14-47-52" width="1004" height="654" />][5]
+[![2015-10-15_14-47-52](/wp-content/uploads/2015/10/2015-10-15_14-47-52.png)][5]
 
-And that's really all there is to it. If you want to download my example workflow, you can do so here: </wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip>
-
-&nbsp;
+And that's really all there is to it. If you want to download my example workflow, you can do so here: [mapVNXLunToESXiCluster.zip](/wp-content/uploads/2015/10/mapVNXLunToESXiCluster.zip)
 
  [1]: /wp-content/uploads/2015/10/2015-10-15_14-48-58.png
  [2]: /wp-content/uploads/2015/10/2015-10-15_14-17-37.png

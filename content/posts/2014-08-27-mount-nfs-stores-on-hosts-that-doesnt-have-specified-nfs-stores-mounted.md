@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: Mount NFS stores on multiple hosts'
-author: nerenther
- 
 date: 2014-08-27T07:26:32+00:00
 url: /index.php/2014/08/27/mount-nfs-stores-on-hosts-that-doesnt-have-specified-nfs-stores-mounted/
 categories:
@@ -13,14 +11,13 @@ tags:
   - Mount-NFSstores
   - powercli
   - Powershell
-
 ---
 Ever had a bunch of vmware hosts that you want to add a NFS datastore on? It can be quite time consuming to say the least.  
 In our environment we have a couple of NFS stores that should be available on all vmware hosts and I really don't want to browse around all 50 or so hosts and check if they have them and then mount them if they're not available.
 
 So, of course, I wrote a small powercli script to check if the NFS stores are mounted and then mount them if they're not mounted:
 
- ```
+ ```powershell
  $vmhosts = Get-View -ViewType HostSystem -Filter @{"Runtime.ConnectionState" = "connected"} -Property name
 
 $progress = 1
@@ -47,7 +44,7 @@ That's why I like to create functions of them and put them in the powershell pro
 
 If I were to create a function out of this script, it would look something like this (very basic):
 
- ```
+ ```powershell
  function Mount-NFSstores {
     $vmhosts = Get-View -ViewType HostSystem -Filter @{"Runtime.ConnectionState" = "connected"} -Property name
 
@@ -77,7 +74,7 @@ If I were to create a function out of this script, it would look something like 
   Mount-NFSstores
   Mounts MGMT-ISO and USER-ISO on vmhosts
  .Link
-  http://cloud.kemta.net
+  https://pettertech.com/blog/
  #>
     }
  ```

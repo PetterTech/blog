@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: Getting datastore alarms'
-author: nerenther
- 
 date: 2014-08-31T10:16:36+00:00
 url: /index.php/2014/08/31/powercli-getting-datastore-alarms/
 categories:
@@ -15,12 +13,11 @@ tags:
   - powercli
   - Powershell
   - vmware
-
 ---
 Next in the series on getting alarms is getting datastore alarms.  
 Again, the code is pretty similar:
 
- ```
+ ```powershell
 $Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyDatastores = $Datastores | Where-Object {$_.TriggeredAlarmState -ne "{}"}
 
@@ -47,11 +44,11 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
 And the output is pretty similar:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-615" alt="get-datastorealarms" src="http://cloud.kemta.net/wp-uploads/get-datastorealarms.png" width="714" height="250" />][1]
+[![get-datastorealarms](/wp-content/uploads/2014/08/get-datastorealarms.png)][1]
 
 The function code is this:
 
- ```
+ ```powershell
 function Get-DatastoreAlarms
 {
 $Datastores = Get-View -ViewType Datastore -Property Name,OverallStatus,TriggeredAlarmstate
@@ -86,11 +83,9 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
   Get-VMHostAlarms
   Outputs a list of Cluster and the unacknowledged alarms they have triggered
  .Link
-  http://cloud.kemta.net
+  https://pettertech.com/blog/
  #>
 } 
 ```
 
-&nbsp;
-
- [1]: http://cloud.kemta.net/wp-uploads/get-datastorealarms.png
+ [1]: /wp-content/uploads/2014/08/get-datastorealarms.png

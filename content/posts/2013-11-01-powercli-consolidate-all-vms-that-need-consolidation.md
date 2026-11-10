@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: Consolidate all VMs that need consolidation'
-author: nerenther
- 
 date: 2013-11-01T09:37:48+00:00
 url: /index.php/2013/11/01/powercli-consolidate-all-vms-that-need-consolidation/
 categories:
@@ -14,14 +12,13 @@ tags:
   - Start-Consolidation
   - vmware
   - vsphere
-
 ---
-Robert van den Nieuwendijk has a nice post on how to use PowerCLI to find VMs that need consolidation and then how to start consolidation. You can that post here: <a href="http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/" target="_blank" rel="noopener">http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/</a>
+Robert van den Nieuwendijk has a nice post on how to use PowerCLI to find VMs that need consolidation and then how to start consolidation. You can that post here: <http://rvdnieuwendijk.com/2012/09/26/use-powercli-to-consolidate-snapshots-in-vsphere-5/>
 
 But, as always, I prefer to make a function of these kind of things. A function is much easier to remember than a bunch of parameters and cmdlets.  
 So here's the code for a function that will search through the vCentre for VMs that need disk consolidation:
 
- ```
+ ```powershell
 function Start-Consolidation
 {
     [CmdletBinding()]
@@ -58,7 +55,7 @@ function Start-Consolidation
   Start-Consolidation -Location vApp01
   Searches through vApp01 for VMs that need consolidation and starts consolidation on them
  .Link
-  http://cloud.kemta.net
+  https://pettertech.com/blog/
  #>
  ```
 

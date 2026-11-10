@@ -1,7 +1,5 @@
 ---
 title: Cisco escape sequence
-author: nerenther
- 
 date: 2012-09-03T06:42:20+00:00
 url: /index.php/2012/09/03/cisco-escape-sequence/
 categories:
@@ -10,7 +8,6 @@ categories:
 tags:
   - cisco
   - escape sequence
-
 ---
 I better write this down before I forget it again: ctrl+shift+6 x
 

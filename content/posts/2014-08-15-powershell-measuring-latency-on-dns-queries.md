@@ -1,7 +1,5 @@
 ---
 title: 'Powershell: Measuring latency on DNS queries'
-author: nerenther
- 
 date: 2014-08-15T08:39:40+00:00
 url: /index.php/2014/08/15/powershell-measuring-latency-on-dns-queries/
 categories:
@@ -13,12 +11,11 @@ tags:
   - function
   - Measure-DNSLatency
   - Powershell
-
 ---
 A little while ago we have some issues with one of our Exchange environments. The symptoms was that basically everything was slow, opening address books, owa, sending mails and so on.  
 After some digging it occurred to me that this may be DNS related, so I used a one-liner in powershell to see how fast our DNS servers responded:
 
- ```
+ ```powershell
 Measure-Command {Resolve-DnsName google.com -DnsOnly -Type A -NoHostsFile -server x.x.x.x} 
 ```
 
@@ -30,7 +27,7 @@ The function resolves a few records from locally defined DNS servers and some pu
 
 Here's the code:
 
- ```
+ ```powershell
 function Measure-DNSLatency
 {
     [CmdletBinding()]
@@ -153,15 +150,13 @@ function Measure-DNSLatency
   Measure-DNSLatency 8.8.8.8,8.8.4.4
   Measures the DNS latency only on the DNS servers 8.8.8.8 and 8.8.4.4
  .Link
-  http://cloud.kemta.net
+  https://pettertech.com/blog/
  #>
 } 
 ```
 
 The different outputs will look something like this:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-579" alt="2014-08-15_10-25-49" src="http://cloud.kemta.net/wp-uploads/2014-08-15_10-25-491.png" width="1191" height="607" />][1]
+[![2014-08-15_10-25-49](/wp-content/uploads/2014/08/2014-08-15_10-25-491.png)][1]
 
-&nbsp;
-
- [1]: http://cloud.kemta.net/wp-uploads/2014-08-15_10-25-491.png
+ [1]: /wp-content/uploads/2014/08/2014-08-15_10-25-491.png

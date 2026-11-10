@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: Getting host alarms'
-author: nerenther
- 
 date: 2014-08-29T07:41:13+00:00
 url: /index.php/2014/08/29/powercli-get-host-alarms/
 categories:
@@ -15,12 +13,11 @@ tags:
   - powercli
   - Powershell
   - vmware
-
 ---
 Yesterday I wrote a post about getting vm alarms through PowerCLI. Today it's time for getting host alarms 🙂  
 The code is very similar to the one for getting vm alarms, since they both use get-view to grab all info:
 
- ```
+ ```powershell
 $VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyVMHosts = $VMHosts | Where-Object {$_.TriggeredAlarmState -ne "{}"}
 
@@ -46,11 +43,11 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
 The output will look something like this:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-602" alt="get-vmhostalarms" src="http://cloud.kemta.net/wp-uploads/get-vmhostalarms.png" width="920" height="73" />][1]
+[![get-vmhostalarms](/wp-content/uploads/2014/08/get-vmhostalarms.png)][1]
 
 And here's the function code:
 
- ```
+ ```powershell
 function Get-VMHostAlarms
 {
 $VMHosts = Get-View -ViewType HostSystem -Property Name,OverallStatus,TriggeredAlarmstate
@@ -84,11 +81,9 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
   Get-VMHostAlarms
   Outputs a list of VMHosts and the unacknowledged alarms they have triggered
  .Link
-  http://cloud.kemta.net
+  https://pettertech.com/blog/
  #>
 } 
 ```
 
-&nbsp;
-
- [1]: http://cloud.kemta.net/wp-uploads/get-vmhostalarms.png
+ [1]: /wp-content/uploads/2014/08/get-vmhostalarms.png

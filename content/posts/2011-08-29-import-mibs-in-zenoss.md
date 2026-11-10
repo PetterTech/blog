@@ -1,7 +1,5 @@
 ---
 title: Import MIBs in Zenoss
-author: nerenther
- 
 date: 2011-08-29T11:02:57+00:00
 url: /index.php/2011/08/29/import-mibs-in-zenoss/
 categories:
@@ -10,7 +8,6 @@ tags:
   - Linux
   - MIB
   - Zenoss
-
 ---
 If you are using Zenoss as a monitoring solution, chances are you are sending snmp traps to it, right?  
 In that case you should always remember to import the MIBs for the devices you are monitoring. Because if you don't it can be a real pain in the ass to figure what it is wrong when all you see is a &#8220;warning snmp trap enterprises.2.6.211.4.11&#8221;.
@@ -28,13 +25,13 @@ The last step is to import the MIB into Zenoss.
 To do this you first need to log in on the server running Zenoss, preferably as zenoss (default password is zenoss).  
 Then run the following command:
 
- ```
+ ```sh
  /usr/local/zenoss/zenoss/bin/zenmib run <path to MIB file> 
  ```
 
 Note: This example is for a default Debian installation, if you are using other distros you need to adapt the path. For the virtual appliance the command would be:
 
- ```
+ ```sh
  /opt/zenoss/bin/zenmib run <path to MIB file> 
  ```
 

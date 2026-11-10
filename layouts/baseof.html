@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ partial "csp.html" . }}
+<title>{{ if .IsHome }}{{ site.Title }}{{ else if eq .Kind "404" }}Not found · {{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+{{- $desc := site.Params.description }}
+{{- if .IsPage }}{{ with .Summary | plainify | htmlUnescape | strings.TrimSpace }}{{ $desc = . | truncate 160 }}{{ end }}{{ end }}
+<meta name="description" content="{{ $desc }}">
+{{- if eq .Kind "404" }}
+<meta name="robots" content="noindex">
+{{- else }}
+<link rel="canonical" href="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- end }}
+<meta name="theme-color" content="#232323">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="preload" href="{{ "fonts/Montserrat-ExtraBold.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- $css := slice (resources.Get "css/site.css") (resources.Get "css/chroma.css") | resources.Concat "css/site.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- $js := resources.Get "js/site.js" | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{- with site.Home.OutputFormats.Get "rss" }}
+<link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="{{ site.Title }}">
+{{- end }}
+</head>
+<body>
+<div class="page">
+  {{ partial "header.html" . }}
+  {{ partial "notice.html" . }}
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+</div>
+</body>
+</html>

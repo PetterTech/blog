@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{- $posts := where site.RegularPages "Section" "posts" }}
+{{- $byDate := $posts.ByDate }}
+<section class="hero">
+  <p class="overline"><span class="tiny-line"></span>{{ len $posts }} posts · {{ (index $byDate 0).Date.Year }}–{{ (index $byDate.Reverse 0).Date.Year }}</p>
+  <h1>Ye Olde<span><em>Blogge.</em></span></h1>
+  <p class="browse">
+    {{- with site.GetPage "/categories" }}<a href="{{ .RelPermalink }}">Categories</a>{{ end }}
+    {{- with site.GetPage "/tags" }} · <a href="{{ .RelPermalink }}">Tags</a>{{ end -}}
+  </p>
+</section>
+{{ partial "post-list.html" $posts }}
+{{ end }}

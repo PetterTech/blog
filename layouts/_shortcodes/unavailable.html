@@ -1,0 +1,5 @@
+{{- /*
+  A note in place of an image or a download whose host is gone (the Dropbox public links died in 2017).
+  Usage in a post: {{< unavailable "Image no longer available" >}} – styled by .unavailable in assets/css/site.css.
+*/ -}}
+{{- with .Get 0 }}<span class="unavailable">{{ . }}</span>{{ else }}{{ errorf "unavailable: missing text in %s" $.Position }}{{ end -}}

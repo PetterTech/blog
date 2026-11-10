@@ -1,7 +1,5 @@
 ---
 title: Deploying Microsoft Hyper-V Server 2008 R2 on USB Flash Drive
-author: nerenther
- 
 date: 2011-08-03T12:04:31+00:00
 url: /index.php/2011/08/03/deploying-microsoft-hyper-v-server-2008-r2-on-usb-flash-drive/
 categories:
@@ -10,7 +8,6 @@ categories:
 tags:
   - Hyper-V
   - microsoft
-
 ---
 Just thought I should share this link:
 

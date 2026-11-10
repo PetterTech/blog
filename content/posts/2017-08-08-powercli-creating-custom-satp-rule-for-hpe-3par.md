@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: Creating custom SATP rule for HPE 3PAR'
-author: nerenther
- 
 date: 2017-08-08T12:06:28+00:00
 url: /index.php/2017/08/08/powercli-creating-custom-satp-rule-for-hpe-3par/
 categories:
@@ -15,7 +13,6 @@ tags:
   - powercli
   - PSP
   - SATP
-
 ---
 A while back we migrated from our old EMC VNX to a new HPE 3PAR array. It all went fine but what kinda slipped our mind is that HPE's best practice is to create a custom SATP rule that uses RoudRobin as path selection policy and a IOPS limit to 1 in stead of the default 1000.
 
@@ -27,7 +24,7 @@ The script I wrote will loop through all esx hosts and if the custom rule doesn'
 
 Here's the script:
 
- ```
+ ```powershell
 $progress = 1
 $esxList = Get-View -ViewType hostsystem -Property name | Sort-Object name
 

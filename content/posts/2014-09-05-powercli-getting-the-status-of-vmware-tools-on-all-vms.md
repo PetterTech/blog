@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: Getting the status of vmware tools on all VMs'
-author: nerenther
- 
 date: 2014-09-05T12:06:17+00:00
 url: /index.php/2014/09/05/powercli-getting-the-status-of-vmware-tools-on-all-vms/
 categories:
@@ -15,14 +13,13 @@ tags:
   - Powershell
   - vmware
   - vmware tools
-
 ---
 I'm sure I don't need to explain to you guys why VMware tools is a good idea to have installed on your VMs, and probably not why it's a good idea to keep VMware tools updated.  
 However, I haven't found a good way to get a neat list of which VMs need to have their VMware tools upgraded. While working on my vCenter health check script I found that I had to make my own little script to get that list. And, in addition, I wanted the list to include the VM version.
 
 I ended up with creating a function to provide me with that list:
 
- ```
+ ```powershell
 function Get-VMToolsStatus
     {
         [CmdletBinding()]
@@ -74,23 +71,23 @@ function Get-VMToolsStatus
   Get-VMToolsStatus -Filter NeedUpgrade
   Show only VMs needing update of vm tools
  .Link
-  http://cloud.kemta.net
+  https://pettertech.com/blog/
  #>
 }
  ```
 
 The function will create an output that look kinda like this:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-622" alt="get-vmtoolsstatues" src="/wp-content/uploads/2014/09/get-vmtoolsstatues.png" width="1560" height="856" />][1]
+[![get-vmtoolsstatues](/wp-content/uploads/2014/09/get-vmtoolsstatues.png)][1]
 
-You can also use a basic filter on the function by specifying -Filter <filtername>. The different filters is documented in the help section.  
+You can also use a basic filter on the function by specifying -Filter &lt;filtername&gt;. The different filters is documented in the help section.  
 For example, if you only want a list of VMs who need an upgrade of their VMware tools version:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-623" alt="get-vmtoolsstatus-needupgrade" src="/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png" width="1560" height="856" srcset="/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png 1560w, /wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade-300x165.png 300w, /wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade-1024x562.png 1024w, /wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade-768x421.png 768w, /wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade-1536x843.png 1536w" sizes="(max-width: 1560px) 100vw, 1560px" />][2]
+[![get-vmtoolsstatus-needupgrade](/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png)][2]
 
 In case you don't want to use this as a function, here's the script version:
 
- ```
+ ```powershell
 $VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,runtime.PowerState
     $report = @()
     $progress = 1
@@ -115,7 +112,7 @@ $VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,run
 
 Depending on the number of VMs in your environment, the list might now even fit on the screen. So you should probably pipe it to where-object to filter it down further, like this:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-624" alt="get-vmtoolsstatus-script" src="/wp-content/uploads/2014/09/get-vmtoolsstatus-script.png" width="1016" height="520" srcset="/wp-content/uploads/2014/09/get-vmtoolsstatus-script.png 1016w, /wp-content/uploads/2014/09/get-vmtoolsstatus-script-300x154.png 300w, /wp-content/uploads/2014/09/get-vmtoolsstatus-script-768x393.png 768w" sizes="(max-width: 1016px) 100vw, 1016px" />][3]
+[![get-vmtoolsstatus-script](/wp-content/uploads/2014/09/get-vmtoolsstatus-script.png)][3]
 
  [1]: /wp-content/uploads/2014/09/get-vmtoolsstatues.png
  [2]: /wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png

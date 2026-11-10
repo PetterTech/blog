@@ -1,7 +1,5 @@
 ---
 title: Using remote desktop over an ssh tunnel
-author: nerenther
- 
 date: 2011-08-24T12:55:32+00:00
 url: /index.php/2011/08/24/using-remote-desktop-over-an-ssh-tunnel/
 categories:
@@ -11,7 +9,6 @@ tags:
   - PuTTY
   - remote desktop
   - ssh tunnel
-
 ---
 This is kinda the nerdy way of remoting a pc on a remote network. Usually a vpn connection would be preffered, but in my case I don't want to forward the rdp port of security reasons.
 
@@ -32,5 +29,5 @@ All done!
 
 Note: You don't have to have a linux server running at home to do this, any device running an ssh server will do. For example if you only have windows devices, you can use [MobaSSH][2]
 
- [1]: http://cloud.kemta.net/?p=24
+ [1]: /index.php/2011/06/24/putty-proxy-trick/
  [2]: http://mobassh.mobatek.net/

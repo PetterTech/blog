@@ -1,7 +1,5 @@
 ---
 title: Function for adding photo in Active Directory
-author: nerenther
- 
 date: 2012-08-24T13:16:30+00:00
 url: /index.php/2012/08/24/function-for-adding-photo-in-active-directory/
 categories:
@@ -13,7 +11,6 @@ tags:
   - microsoft
   - Powershell
   - Set-ADPhoto
-
 ---
 I have always been careful to avoid the really advanced and cool stuff in Powershell, like functions, arrays and such.
 
@@ -25,7 +22,7 @@ But since I already was at it I decided to to a little more, I added some argume
 
 Here is the result:
 
- ```
+ ```powershell
  function Set-ADPhoto ($user,$photopath) {
 Import-Module active*
 
@@ -54,9 +51,7 @@ Set-ADPhoto username p:photo.jpg
 Will set the thumbnailPhoto attribute for the user username to the content of p:photo.jpg
 .NOTES
 .LINK
-http://cloud.kemta.net/2012/08/function-for-adding-photo-in-active-directory
+https://pettertech.com/blog/index.php/2012/08/24/function-for-adding-photo-in-active-directory/
 #>
 }
  ```
-
-&nbsp;

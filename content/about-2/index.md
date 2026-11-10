@@ -1,9 +1,6 @@
 ---
 title: About
-author: nerenther
-type: page
 date: 2011-07-29T10:29:51+00:00
-
 ---
 ### The blog
 
@@ -22,4 +19,4 @@ I have mostly worked in environments with only Microsoft products, but I have al
 Because of the variety I have had I feel I have a basic knowledge of just about anything. I like to think of myself as experienced, though I am still somewhat young.
 
 Follow me on Twitter: @nerenther  
-See my Microsoft profile page: <a href="https://www.mcpvirtualbusinesscard.com/VBCServer/nerenther/profile" target="_blank" rel="noopener">https://www.mcpvirtualbusinesscard.com/VBCServer/nerenther/profile</a>
+See my Microsoft profile page: <https://www.mcpvirtualbusinesscard.com/VBCServer/nerenther/profile>

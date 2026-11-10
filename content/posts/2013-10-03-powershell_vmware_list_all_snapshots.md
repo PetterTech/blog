@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: List all snapshots'
-author: nerenther
- 
 date: 2013-10-03T10:27:41+00:00
 url: /index.php/2013/10/03/powershell_vmware_list_all_snapshots/
 categories:
@@ -17,7 +15,6 @@ tags:
   - size
   - snapshot
   - vmware
-
 ---
 It's been a while since last update, again, so I figured I should at least provide something..
 
@@ -27,13 +24,13 @@ The vsphere console doesn't provide this info so I had to turn to PowerCLI to ge
 
 After you start PowerCLI, you need to first connect to your vcenter server:
 
- ```
+ ```powershell
 Connect-VIServer <vcenter server> 
 ```
 
 You will be promted for username and password for vcenter. After powershell has connected to the vcenter server, all you need to is run this one-liner:
 
- ```
+ ```powershell
 Get-VM | Get-Snapshot | Select VM,Name,@{N="SizeGB";E={@([math]::Round($_.SizeGB))}},Created 
 ```
 

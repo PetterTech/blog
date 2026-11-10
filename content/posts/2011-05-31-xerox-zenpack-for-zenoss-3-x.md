@@ -1,7 +1,5 @@
 ---
 title: Xerox ZenPack for Zenoss 3.x
-author: nerenther
- 
 date: 2011-05-31T11:12:33+00:00
 url: /index.php/2011/05/31/xerox-zenpack-for-zenoss-3-x/
 categories:
@@ -11,7 +9,6 @@ tags:
   - Xerox
   - Zenoss
   - Zenpack
-
 ---
 At the company where I currently work we lease a bunch of Xerox copiers. Those leasing contracts are based on number of prints per device.  
 That means that once a month we have to gather pagecounts from all our printers (about 100 of them) and report them to our supplier, which takes a lot of time.
@@ -27,6 +24,6 @@ Feel free to use and distribute this ZenPack. Download [here][1] (rename to .egg
 
 **Update:**  
 Version 1.0 of this zenpack does not work with zenoss 3.2.1.  
-Version 1.1 works, download <a href="http://dl.dropbox.com/u/33041052/bloggting/zenoss/ZenPacks.nerenther.XeroxPageCounts-1.1-py2.6.egg" target="_blank" rel="noopener">here</a>
+Version 1.1 works, download {{< unavailable "File no longer available" >}}
 
- [1]: http://cloud.kemta.net/wp-uploads/2011/05/ZenPacks.nerenther.XeroxPageCounts-1.0-py2.6.egg
+ [1]: /wp-content/uploads/2011/05/ZenPacks.nerenther.XeroxPageCounts-1.0-py2.6.egg
