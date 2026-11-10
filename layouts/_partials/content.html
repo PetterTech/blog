@@ -1,0 +1,9 @@
+{{- /*
+  Renders post HTML. Posts link to site-root paths (/wp-content/uploads/…, /index.php/…). Prefix them with
+  the site's base path so they work under /blog/ – the explicit, render-time replacement for Hugo's legacy
+  canonifyURLs setting. Only src/href attribute values that start with a single "/" are touched; code blocks
+  are escaped HTML and stay as they are.
+  Context: dict "html" (rendered content) and "abs" (true = absolute URLs, for the RSS feed).
+*/ -}}
+{{- $base := strings.TrimSuffix "/" (cond .abs site.Home.Permalink site.Home.RelPermalink) -}}
+{{- replaceRE `(\s(?:src|href)=")/([^/])` (printf "${1}%s/${2}" $base) (string .html) | safeHTML -}}

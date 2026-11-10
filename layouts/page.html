@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{- $isPost := eq .Section "posts" }}
+<article class="post">
+  <header class="post-head">
+    {{- if $isPost }}
+    <p class="overline"><span class="tiny-line"></span><span><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+      {{- with .GetTerms "categories" }} · {{ range $i, $c := . }}{{ if $i }}, {{ end }}<a href="{{ $c.RelPermalink }}">{{ $c.LinkTitle }}</a>{{ end }}{{ end }}</span></p>
+    {{- end }}
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="prose">
+    {{ partial "content.html" (dict "html" .Content "abs" false) }}
+  </div>
+  {{- if $isPost }}
+  <footer class="post-foot">
+    {{- with .GetTerms "tags" }}
+    <ul class="tags" aria-label="Tags">
+      {{- range . }}
+      <li><a class="pill" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- /* Label by date instead of relying on Prev/Next semantics. */}}
+    {{- $older := "" }}{{ $newer := "" }}
+    {{- range slice .PrevInSection .NextInSection }}
+      {{- with . }}{{ if .Date.Before $.Date }}{{ $older = . }}{{ else }}{{ $newer = . }}{{ end }}{{ end }}
+    {{- end }}
+    <nav class="pager" aria-label="More posts">
+      {{- with $older }}
+      <a class="older" href="{{ .RelPermalink }}" rel="prev"><span class="dir">← Older</span><strong>{{ .LinkTitle }}</strong></a>
+      {{- end }}
+      {{- with $newer }}
+      <a class="newer" href="{{ .RelPermalink }}" rel="next"><span class="dir">Newer →</span><strong>{{ .LinkTitle }}</strong></a>
+      {{- end }}
+    </nav>
+  </footer>
+  {{- end }}
+</article>
+{{ end }}

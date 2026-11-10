@@ -1,7 +1,5 @@
 ---
 title: Motivational Powershell function
-author: nerenther
- 
 date: 2012-09-12T11:06:18+00:00
 url: /index.php/2012/09/12/motivational-powershell-function/
 categories:
@@ -11,11 +9,10 @@ tags:
   - function
   - Motivate-Me
   - Powershell
-
 ---
 If you are ever in need of some motivation, here is a very simple Powershell function for that:
 
- ```
+ ```powershell
 function Motivate-Me
  {
  $motivator = Get-Random -Minimum 1 -Maximum 5
@@ -38,7 +35,7 @@ function Motivate-Me
  Motivate-Me
  Show som motivational words on the screen
  .Link
- http://cloud.kemta.net
+ https://pettertech.com/blog/
  #>
  } 
 ```

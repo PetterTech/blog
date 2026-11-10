@@ -1,8 +1,37 @@
+# PetterTech · Ye Olde Blogge – archive of the old cloud.kemta.net WordPress blog (2011–2019).
+# No theme: the templates live in layouts/, CSS/JS in assets/, fonts and images in static/.
+# Hugo version: see HUGO_VERSION in .github/workflows/hugo.yml (use the same one locally).
 baseURL = 'https://pettertech.com/blog/'
-languageCode = 'en-us'
-title = 'PetterTech'
-theme = "PaperMod"
-canonifyURLs = true
+locale = 'en-US'
+title = 'PetterTech · Ye Olde Blogge'
+
+[params]
+  # Shown on every page (layouts/_partials/notice.html).
+  notice = 'Archived posts from 2011–2019, kept for posterity. Code and advice may be outdated.'
+  # Meta description for list pages (posts use the start of the post).
+  description = 'Archived posts from the old PetterTech blog, 2011–2019.'
+  # The logo and the "pettertech.com" link go here.
+  homeURL = 'https://pettertech.com/'
+
+[outputs]
+  home = ['html', 'rss']   # /blog/index.xml
+  section = ['html']
+  taxonomy = ['html']
+  term = ['html']
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
 
 [markup.goldmark.renderer]
-unsafe = true
+  # Posts are plain Markdown. Raw HTML in a post is dropped and Hugo warns, which fails the --panicOnWarning
+  # build in CI. Placeholders for lost files: {{< unavailable "…" >}} (layouts/_shortcodes/unavailable.html).
+  unsafe = false
+
+[markup.highlight]
+  noClasses = false   # CSS classes, colours in assets/css/chroma.css (dark + light, see tools/gen-chroma.sh)
+  guessSyntax = false # only fences with a language are highlighted
+
+[minify]
+  # Keep inline <script> byte-identical so its SHA-256 matches the hash in the CSP (layouts/_partials/csp.html).
+  disableJS = true

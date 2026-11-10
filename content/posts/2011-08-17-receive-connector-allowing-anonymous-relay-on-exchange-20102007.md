@@ -1,7 +1,5 @@
 ---
 title: Receive connector allowing anonymous relay on exchange 2010/2007
-author: nerenther
- 
 date: 2011-08-17T14:27:32+00:00
 url: /index.php/2011/08/17/receive-connector-allowing-anonymous-relay-on-exchange-20102007/
 categories:
@@ -12,7 +10,6 @@ tags:
   - Exchange
   - microsoft
   - Powershell
-
 ---
 Often it's a good idea to have a receive connector allowing certain devices to send mail through you exchange server without having to authenticate.
 
@@ -34,6 +31,6 @@ Then you are good to go. If you want to allow more ip-addresses to relay, you ca
 
 And, as always, here's the nerdy way of doing it in powershell:
 
- ```
+ ```powershell
  New-ReceiveConnector -Name "Anonymous" -Usage Custom -PermissionGroups AnonymousUsers -Bindings 0.0.0.0:25 -RemoteIpRanges <ip of printer> -server <name of your server> 
  ```

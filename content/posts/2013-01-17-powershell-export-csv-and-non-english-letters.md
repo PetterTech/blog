@@ -1,7 +1,5 @@
 ---
 title: 'Powershell: Export-Csv and non-English letters'
-author: nerenther
- 
 date: 2013-01-17T12:06:53+00:00
 url: /index.php/2013/01/17/powershell-export-csv-and-non-english-letters/
 categories:
@@ -12,7 +10,6 @@ tags:
   - Export-Csv
   - Powershell
   - Unicode
-
 ---
 The Export-Csv cmdlet is a really nice tool if you want to gather info from e.g. Active Directory that you later want to import to Excel. But as you might have noticed it doesn't play well with non-English letters.
 
@@ -20,18 +17,6 @@ Working in Norway with users from all the Nordic countries means that we have a 
 
 The magical switch to Export-Csv is -encoding. E.g. for us we would use unicode as encoding as this will export the Nordic letters:
 
- ```
+ ```powershell
 Export-Csv <filename> -Encoding unicode 
 ```
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;

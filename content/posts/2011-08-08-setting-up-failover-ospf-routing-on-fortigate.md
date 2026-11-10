@@ -1,7 +1,5 @@
 ---
 title: Setting up failover ospf routing on Fortigate
-author: nerenther
- 
 date: 2011-08-08T08:43:02+00:00
 url: /index.php/2011/08/08/setting-up-failover-ospf-routing-on-fortigate/
 categories:
@@ -11,12 +9,11 @@ tags:
   - Fortigate
   - Fortinet
   - ospf
-
 ---
 I've put together a small guide for setting up two Fortigates with failover ospf routing. This example is based on a small lab, but you can easily adapt it to your own environment.
 
 This is the scenario:  
-<a href="http://cloud.kemta.net/?attachment_id=70" rel="attachment wp-att-70"><img decoding="async" loading="lazy" class="aligncenter size-full wp-image-70" title="fgt_ospf" src="http://cloud.kemta.net/wp-uploads/fgt_ospf1.png" alt="" width="873" height="332" /></a>  
+{{< unavailable "Network diagram no longer available" >}}
 In this scenario we want the 100Mb line to be prioritized.
 
 Start of with setting up the two Fortigates with ip-adresses as shown. Also make sure to create firewall rules for traffic from internal to wan1 and wan2 and back (make sure not to enabel NAT).

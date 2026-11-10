@@ -1,7 +1,5 @@
 ---
 title: HP ACU cli quick guide
-author: nerenther
- 
 date: 2012-10-03T05:46:20+00:00
 url: /index.php/2012/10/03/hp-acu-cli-quick-guide/
 categories:
@@ -14,7 +12,6 @@ tags:
   - create
   - disk
   - HP
-
 ---
 Guess what? It's time for something different than powershell 😛
 
@@ -105,5 +102,3 @@ DISKPART> assign letter=e:
 DISKPART> EXIT
 C:UsersAdministrator> format E: /Q 
 ```
-
-&nbsp;

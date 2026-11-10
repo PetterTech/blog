@@ -1,7 +1,5 @@
 ---
 title: 'Powershell: Getting monitor info'
-author: nerenther
- 
 date: 2019-08-26T12:12:56+00:00
 url: /index.php/2019/08/26/powershell-getting-monitor-info/
 categories:
@@ -10,7 +8,6 @@ categories:
 tags:
   - Get-WmiObject
   - Powershell
-
 ---
 Today I got a request from a colleague of mine that was doing inventory: What are the make, model, serial number and purchase date of your monitors?
 
@@ -20,7 +17,7 @@ This information is stored in WMI, so all I had to do was to grab it using Get-W
 
 The powershell script I came up with isn't my most beautiful work, but here it is:
 
-```
+```powershell
 $progress = 1
 foreach ($monitor in (Get-WmiObject WmiMonitorID -Namespace root\wmi)) {
     Write-Host "Monitor #$($progress):" -ForegroundColor Green

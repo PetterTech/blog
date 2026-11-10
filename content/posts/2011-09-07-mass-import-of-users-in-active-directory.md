@@ -1,7 +1,5 @@
 ---
 title: Mass import of users in Active Directory
-author: nerenther
- 
 date: 2011-09-06T23:10:38+00:00
 url: /index.php/2011/09/07/mass-import-of-users-in-active-directory/
 categories:
@@ -14,7 +12,6 @@ tags:
   - import
   - microsoft
   - script
-
 ---
 Tried sleeping&#8230;&#8230;That obviously didn't work out, so here's a guide on how to import a number of users in Active Directory and then creating and sharing out their home folder.
 
@@ -32,7 +29,7 @@ In the OU called groups, there are a few groups with identical names to the rest
 
 Now that we have set the scenario heres the script:
 
-```
+```bat
 dsadd user "CN=<username>,OU=<department>,DC=test,DC=local" -samid <username> -upn <username>@test.local -fn <firstname> -ln <lastname> -pwd eeh7at3R -memberof "CN=<department>,OU=groups,DC=test,DC=local" -hmdir \file01<username>$ -hmdrv h:
 md e:users<username>
 net share <username>$=e:users<username> /grant:<username>,CHANGE /grant:"domain admins",FULL /grant:administrator,FULL
@@ -51,7 +48,7 @@ Cacls sets ntfs permissions on the users home folder for the user, administrator
 
 Now if you want to add say 1000 users, you might want to use something like Word's Mailings feature (that is, if you don't loove to sit and punch usernames and such all day long).
 
-For that I have created a couple of example files, you can download them here:  <a title="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip" href="http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip" target="_blank" rel="noopener">http://dl.dropbox.com/u/33041052/bloggting/scriptstuff/example.zip</a>
+For that I have created a couple of example files, you can download them here:  {{< unavailable "File no longer available" >}}
 
 The files you will find in that zip file are:  
 script.docx &#8211; The template used for the mailings process  

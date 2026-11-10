@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: Function for listing snapshots'
-author: nerenther
- 
 date: 2014-09-17T07:16:57+00:00
 url: /index.php/2014/09/17/powercli-function-for-listing-snapshots/
 categories:
@@ -17,10 +15,9 @@ tags:
   - Powershell
   - snapshots
   - vmware
-
 ---
 My very first PowerCLI related post was about this same topic: listing snapshot info using PowerCLI.  
-In my original post (which you can see <a href="http://cloud.kemta.net/2013/10/powershell_vmware_list_all_snapshots/" target="_blank" rel="noopener">here</a>) I only wrote a pretty simple one-liner. Which was kind of okay, but it was missing one crucial thing: who took the snapshot?
+In my original post (which you can see [here](/index.php/2013/10/03/powershell_vmware_list_all_snapshots/)) I only wrote a pretty simple one-liner. Which was kind of okay, but it was missing one crucial thing: who took the snapshot?
 
 Why vmware hasn't found a way to include a username in the get-snapshot cmdlet is something I just can't understand. There's really not much code needed to add this to the output, and there's several ways of doing so.
 
@@ -28,7 +25,7 @@ I found that using Get-Snapshot and Get-VIEvent together was the easiest way to 
 
 As usual I created a function for this, Get-Snapshots:
 
- ```
+ ```powershell
 function Get-Snapshots
 {
             [CmdletBinding()]
@@ -69,7 +66,7 @@ function Get-Snapshots
       Get-Snapshots
       Lists all snapshots in the vCenter
      .Link
-      http://cloud.kemta.net
+      https://pettertech.com/blog/
      #>
 }
 
@@ -77,15 +74,15 @@ function Get-Snapshots
 
 You can run the function as it is, without any parameters, or you can specify which vm you want to get the snapshots of:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-642" alt="get-snapshots" src="/wp-content/uploads/2014/09/get-snapshots.png" width="951" height="188" srcset="/wp-content/uploads/2014/09/get-snapshots.png 951w, /wp-content/uploads/2014/09/get-snapshots-300x59.png 300w, /wp-content/uploads/2014/09/get-snapshots-768x152.png 768w" sizes="(max-width: 951px) 100vw, 951px" />][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 As you can see, the output is a list. If you want it to be more readable for human eyes, I recommend piping it to Format-Table:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-643" alt="get-snapshots-ft" src="/wp-content/uploads/2014/09/get-snapshots-ft.png" width="1031" height="172" srcset="/wp-content/uploads/2014/09/get-snapshots-ft.png 1031w, /wp-content/uploads/2014/09/get-snapshots-ft-300x50.png 300w, /wp-content/uploads/2014/09/get-snapshots-ft-1024x171.png 1024w, /wp-content/uploads/2014/09/get-snapshots-ft-768x128.png 768w" sizes="(max-width: 1031px) 100vw, 1031px" />][2]
+{{< unavailable "Screenshot no longer available" >}}
 
 If you would rather run this as a script, instead of using the function, here's the code for that:
 
- ```
+ ```powershell
     $collection = @()
     $snapshots = Get-Snapshot -vm *
 
@@ -112,10 +109,4 @@ If you would rather run this as a script, instead of using the function, here's 
 
 The output, $collection, can be piped to Format-Table if you want a nice table of it:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-644" alt="get-snapshots-scripts" src="/wp-content/uploads/2014/09/get-snapshots-scripts.png" width="1039" height="125" srcset="/wp-content/uploads/2014/09/get-snapshots-scripts.png 1039w, /wp-content/uploads/2014/09/get-snapshots-scripts-300x36.png 300w, /wp-content/uploads/2014/09/get-snapshots-scripts-1024x123.png 1024w, /wp-content/uploads/2014/09/get-snapshots-scripts-768x92.png 768w" sizes="(max-width: 1039px) 100vw, 1039px" />][3]
-
-&nbsp;
-
- [1]: /wp-content/uploads/2014/09/get-snapshots.png
- [2]: /wp-content/uploads/2014/09/get-snapshots-ft.png
- [3]: /wp-content/uploads/2014/09/get-snapshots-scripts.png
+{{< unavailable "Screenshot no longer available" >}}

@@ -1,7 +1,5 @@
 ---
 title: 'PowerCLI: Getting vm alarms'
-author: nerenther
- 
 date: 2014-08-28T06:42:12+00:00
 url: /index.php/2014/08/28/powercli-getting-vm-alarms/
 categories:
@@ -15,13 +13,12 @@ tags:
   - powercli
   - Powershell
   - vmware
-
 ---
 A few weeks ago I started to put together a health check script for our vmware environments and the first thing I wanted to have in that report is a list of triggered alarms. To my surprise there was no native cmdlet to retrieve alarms using PowerCLI, instead I had to write a short script to retrieve alarms.
 
 So here's the the script for retrieving vm alarms:
 
- ```
+ ```powershell
 $VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate
 $FaultyVMs = $VMs | Where-Object {$_.OverallStatus -ne "Green"}
 
@@ -47,11 +44,11 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
 This will provide an output like this:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-598" alt="get-vmalarms" src="http://cloud.kemta.net/wp-uploads/get-vmalarms.png" width="1234" height="570" />][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 But, as always, to make it easier for my colleagues to use I make a function out of it:
 
- ```
+ ```powershell
 function Get-VMAlarms
 {
 $VMs = Get-View -ViewType VirtualMachine -Property Name,OverallStatus,TriggeredAlarmstate
@@ -85,14 +82,11 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
   Get-VMAlarms
   Outputs a list of VMs and the unacknowledged alarms they have triggered
  .Link
-  http://cloud.kemta.net
+  https://pettertech.com/blog/
  #>
 } 
 ```
 
 Beside the fact that a function is easier to use, it also makes it easier to manipulate the data further. For example if you only want alarms for vm whose name start with &#8220;smart&#8221;:
 
-[<img decoding="async" loading="lazy" class="aligncenter size-full wp-image-597" alt="get-vmalarms_filter" src="http://cloud.kemta.net/wp-uploads/get-vmalarms_filter.png" width="962" height="211" />][2]
-
- [1]: http://cloud.kemta.net/wp-uploads/get-vmalarms.png
- [2]: http://cloud.kemta.net/wp-uploads/get-vmalarms_filter.png
+{{< unavailable "Screenshot no longer available" >}}

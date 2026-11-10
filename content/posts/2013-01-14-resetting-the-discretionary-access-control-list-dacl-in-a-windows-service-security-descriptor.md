@@ -1,18 +1,7 @@
 ---
 title: Resetting the Discretionary Access Control List (DACL) in a Windows Service security descriptor
-author: ricmik
- 
 date: 2013-01-14T12:00:42+00:00
 url: /index.php/2013/01/14/resetting-the-discretionary-access-control-list-dacl-in-a-windows-service-security-descriptor/
-wp-syntax-cache-content:
-  - |
-    a:3:{i:1;s:273:"
-    <div class="wp_syntax" style="position:relative;"><table><tr><td class="code"><pre class="reg" style="font-family:monospace;">HKLMSYSTEMCurrentControlSetServices ```</td></tr></table><p class="theCode" style="display:none;">HKLMSYSTEMCurrentControlSetServices</p></div>
-    ";i:2;s:237:"
-    <div class="wp_syntax" style="position:relative;"><table><tr><td class="code"><pre class="dos" style="font-family:monospace;">PsExec.exe /s cmd ```</td></tr></table><p class="theCode" style="display:none;">PsExec.exe /s cmd</p></div>
-    ";i:3;s:654:"
-    <div class="wp_syntax" style="position:relative;"><table><tr><td class="code"><pre class="dos" style="font-family:monospace;">sc sdset service_name D:<span style="color: #33cc33;">(</span>A;;CCLCSWRPWPDTLOCRRC;;;SY<span style="color: #33cc33;">)(</span>A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA<span style="color: #33cc33;">)(</span>A;;CCLCSWLOCRRC;;;IU<span style="color: #33cc33;">)(</span>A;;CCLCSWLOCRRC;;;SU<span style="color: #33cc33;">)</span> ```</td></tr></table><p class="theCode" style="display:none;">sc sdset service_name D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)</p></div>
-    ";}
 categories:
   - Microsoft
 tags:
@@ -24,7 +13,6 @@ tags:
   - PsTools
   - registry
   - Windows Server
-
 ---
 #### OpenService FAILED 5: Access is denied. &#8212; &#8220;Oh crap!&#8221;
 
@@ -44,7 +32,7 @@ The real name (not the display name) of the service is the name of the key itsel
 Start a Command Prompt (cmd) window as administrator.  
 Start a new cmd session as the system account:
 
-```
+```bat
 PsExec.exe /s cmd 
 ```
 
@@ -52,15 +40,13 @@ Now it's time to set a new DACL, this is done by using the command &#8220;sc sds
 
 The command below will give access to Local System (SY), Built-in administrators (BA), Interactively logged-on user (IU) and Service logon user (SU).
 
-```
+```bat
 sc sdset service_name D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU) 
 ```
 
 You should be looking at the relieving message: [SC] SetServiceObjectSecurity SUCCESS
 
 Now, enjoy your coffee 😉
-
-&nbsp;
 
 &#8211;ricmik
 

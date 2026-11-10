@@ -1,7 +1,5 @@
 ---
 title: PuTTY proxy trick
-author: nerenther
- 
 date: 2011-06-24T08:35:16+00:00
 url: /index.php/2011/06/24/putty-proxy-trick/
 categories:
@@ -9,7 +7,6 @@ categories:
 tags:
   - proxy
   - PuTTY
-
 ---
 Did you know you use an SSH connection as a proxy using PuTTY? I didn't until today 🙂
 

@@ -1,3 +1,7 @@
+# Hugo build output and caches
 public/
 resources/_gen/
 .hugo_build.lock
+# local browser-test server root (symlinks, see tools/test/run-browser-tests.sh)
+tools/test/.serve/
+.DS_Store

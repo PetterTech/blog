@@ -1,7 +1,5 @@
 ---
 title: Powershell function for gathering users in groups
-author: nerenther
- 
 date: 2012-09-13T12:02:13+00:00
 url: /index.php/2012/09/13/powershell-function-for-gathering-users-in-groups/
 categories:
@@ -13,7 +11,6 @@ tags:
   - function
   - Get-MembersInADGroups
   - Powershell
-
 ---
 A friend of mine asked me a couple of days ago if I knew a way to gather users who are members of given groups. I thought to myself &#8220;Hmm, challenge accepted!&#8221; and started writing a small powershell script.
 
@@ -23,7 +20,7 @@ Rest of the function isn't that interesting, if you want to use it you can alway
 
 Heres the code:
 
-```
+```powershell
 function Get-MembersInADGroups
  {
  Param
@@ -66,7 +63,7 @@ function Get-MembersInADGroups
  Get-MembersInADGroups -GroupNames some_group* -Filelocation c:test
  This command will poll Active Directory for members of groups whose name begins with some_group and write a txt file for each of them in c:test
  .Link
- http://cloud.kemta.net
+ https://pettertech.com/blog/
  #>
  } 
 ```

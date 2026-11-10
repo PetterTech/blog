@@ -1,7 +1,5 @@
 ---
 title: Setting up Fortigate units in HA
-author: nerenther
- 
 date: 2011-08-05T12:45:25+00:00
 url: /index.php/2011/08/05/setting-up-fortigate-units-in-ha/
 categories:
@@ -10,7 +8,6 @@ tags:
   - Fortigate
   - Fortinet
   - HA
-
 ---
 Setting up an HA cluster on Fortigate devices is surprisingly easy, heres a short little guide:
 

@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="brand">
+    <a class="home" href="{{ site.Params.homeURL }}" title="pettertech.com" aria-label="PetterTech – home (pettertech.com)">
+      <img class="logo logo-dark" src="{{ "img/logo-white.png" | relURL }}" alt="PetterTech – Better tech" width="178" height="49">
+      <img class="logo logo-light" src="{{ "img/logo-black.png" | relURL }}" alt="PetterTech – Better tech" width="178" height="49">
+    </a>
+    <a class="olde" href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}>Ye Olde Blogge</a>
+  </div>
+  <div class="header-actions">
+    <nav class="site-nav" aria-label="Site">
+      <a class="pill" href="{{ site.Params.homeURL }}">pettertech.com</a>
+      {{- with site.GetPage "/about-2" }}
+      <a class="pill" href="{{ .RelPermalink }}"{{ if eq . $ }} aria-current="page"{{ end }}>About</a>
+      {{- end }}
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5 8.6 8.6 0 1 0 20.5 14.6z"/></svg>
+    </button>
+  </div>
+</header>

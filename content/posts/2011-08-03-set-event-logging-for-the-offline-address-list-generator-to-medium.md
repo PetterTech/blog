@@ -1,7 +1,5 @@
 ---
 title: Set event logging for the offline address list generator to medium
-author: nerenther
- 
 date: 2011-08-03T06:48:06+00:00
 url: /index.php/2011/08/03/set-event-logging-for-the-offline-address-list-generator-to-medium/
 categories:
@@ -14,7 +12,6 @@ tags:
   - microsoft
   - oab
   - Powershell
-
 ---
 In a default exchange 2007/2010 installation the logging level for OALGen is set to lowest. That means that if you have users who do not show up in the Global address list (GAL) or they are missing some info, you will only see the following events in the event log:
 
@@ -25,7 +22,7 @@ Event ID: 9320 Task Category: (13)
 Level: Warning  
 Keywords: Classic  
 User: N/A  
-Computer: <servername>  
+Computer: &lt;servername&gt;  
 Description:  
 OABGen could not generate full details for some entries in the offline address list for address list &#8216;Global Address List'. To see which entries are affected, set event logging for the offline address list generator to at least medium.
 
@@ -37,7 +34,7 @@ Task Category: (13)
 Level: Warning  
 Keywords: Classic  
 User: N/A  
-Computer: <servername>  
+Computer: &lt;servername&gt;  
 Description:  
 OALGen skipped some entries in the offline address list &#8216;Global Address List'. To see which entries are affected, event logging for the OAL Generator must be set to at least medium. &#8211; Default Offline Address Book
 

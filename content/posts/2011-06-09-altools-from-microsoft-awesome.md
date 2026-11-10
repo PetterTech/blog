@@ -1,7 +1,5 @@
 ---
 title: ALTools from Microsoft, awesome!
-author: nerenther
- 
 date: 2011-06-09T11:39:13+00:00
 url: /index.php/2011/06/09/altools-from-microsoft-awesome/
 categories:
@@ -11,7 +9,6 @@ tags:
   - active directory
   - microsoft
   - tools
-
 ---
 Stumbled upon a tool from Microsoft called ALTools that I thought were absolutely awesome. It's over 7 years old so I wonder why I haven't seen it before
 

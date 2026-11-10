@@ -1,0 +1,11 @@
+{{- /* Posts grouped by year, newest first. Context: a page collection. */ -}}
+{{- range .GroupByDate "2006" }}
+<section class="year" aria-labelledby="y{{ .Key }}">
+  <h2 class="label" id="y{{ .Key }}"><span class="tiny-line"></span>{{ .Key }}<span class="count">· {{ len .Pages }} {{ cond (eq (len .Pages) 1) "post" "posts" }}</span></h2>
+  <ul class="posts">
+    {{- range .Pages }}
+    <li><a href="{{ .RelPermalink }}"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan" }}</time><span class="t">{{ .LinkTitle }}</span></a></li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}

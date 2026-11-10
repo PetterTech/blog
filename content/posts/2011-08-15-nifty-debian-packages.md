@@ -1,7 +1,5 @@
 ---
 title: Nifty Debian packages
-author: nerenther
- 
 date: 2011-08-15T13:24:08+00:00
 url: /index.php/2011/08/15/nifty-debian-packages/
 categories:
@@ -10,7 +8,6 @@ tags:
   - Debian
   - Linux
   - Packages
-
 ---
 A little list of some nifty packages for Debian:
 
@@ -36,7 +33,7 @@ Oddly enough this isn't installed by default. Well known for most Linux users, b
 ** A package for webmail. Requires of course a webserver, for example apache
 
 **zenoss-stack  
-** A genius monitoring software, can monitor just about anything using smtp, ping, telnet and so on. For more information, check <a href="http://zenoss.org" target="_blank" rel="noopener">zenoss.org</a>
+** A genius monitoring software, can monitor just about anything using smtp, ping, telnet and so on. For more information, check [zenoss.org](http://zenoss.org)
 
 **vnstat  
 ** A network traffic monitor. It gathers statistics provided by the kernel and can present them to user either by text output or graphs.
@@ -63,7 +60,7 @@ Oddly enough this isn't installed by default. Well known for most Linux users, b
 ** File and print services for any client using smb/cifs, e.g. windows
 
 **open-vm-tools  
-** Opensource vmware tools. Follow the guide on this site: <a href="http://www.surlyjake.com/2011/02/install-open-vm-tools-on-debian-6-squeeze/" target="_blank" rel="noopener">http://www.surlyjake.com/2011/02/install-open-vm-tools-on-debian-6-squeeze/</a>**  
+** Opensource vmware tools. Follow the guide on this site: <http://www.surlyjake.com/2011/02/install-open-vm-tools-on-debian-6-squeeze/>**  
 ** 
 
 I will update this post with more as I remember them 😛

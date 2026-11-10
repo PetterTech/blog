@@ -1,7 +1,5 @@
 ---
 title: ProduKey – recover cd-keys
-author: nerenther
- 
 date: 2011-06-23T13:09:35+00:00
 url: /index.php/2011/06/23/produkey-recover-cd-keys/
 categories:
@@ -10,7 +8,6 @@ tags:
   - cd-key
   - licensekey
   - ProduKey
-
 ---
 From time to time you will want to reinstall you os right? And of course you have all your license keys documented right?
 
