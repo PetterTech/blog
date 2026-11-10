@@ -75,8 +75,6 @@ Anyways, here's the function I came up with:
 
 You can use it in a couple of different ways, as documented in its help section (get-help get-vmhostuptime -expamples). But if you provide no input to it, it will generate an output like this:
 
-[![get-vmhostuptime](/wp-content/uploads/2014/09/get-vmhostuptime.png)][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 Hopefully, you don't have an uptime as long as some of these hosts 🙂
-
- [1]: /wp-content/uploads/2014/09/get-vmhostuptime.png

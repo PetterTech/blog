@@ -20,7 +20,7 @@ For almost a year ago, I posted a simple one-liner to list all VMs who has ISOs 
 That post was written before I truly discovered the major advantages of using Get-View instead of Get-VM, Get-VMHost and so on. If used correctly, there's a major difference in speed when using Get-View over Get-VM.  
 When writing this post I checked the differences in speed when using the old way that I linked to above and my new function (which I'll get to in a second or two..), the result was as follows:
 
-[![get-isomounts_measured](/wp-content/uploads/2014/09/get-isomounts_measured.png)][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 As you can see, the difference is pretty clear. 5 seconds vs. 1.6 minutes&#8230;
 
@@ -80,7 +80,4 @@ function Get-ISOMounts
 
 I feel the help section should speak for itself, but I'll provide you a screenshot none the less. Just running Get-ISOMounts will provide you with an output looking like this:
 
-[![get-isomounts](/wp-content/uploads/2014/09/get-isomounts.png)][2]
-
- [1]: /wp-content/uploads/2014/09/get-isomounts_measured.png
- [2]: /wp-content/uploads/2014/09/get-isomounts.png
+{{< unavailable "Screenshot no longer available" >}}

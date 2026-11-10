@@ -57,7 +57,7 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
 And the output will look something like this:
 
-[![get-clusteralarms](/wp-content/uploads/2014/08/get-clusteralarms.png)][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 As you can see, this will also list vm alarms and host alarms. So you could argue that you only need this and not separate scripts/functions for getting vm alarms and host alarms.
 
@@ -117,7 +117,4 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
 The output will be the same, but since it's a function you can manipulate the data further. For example if you only want alarms related to the clusters themselves:
 
-[![get-clusteralarms-filter](/wp-content/uploads/2014/08/get-clusteralarms-filter.png)][2]
-
- [1]: /wp-content/uploads/2014/08/get-clusteralarms.png
- [2]: /wp-content/uploads/2014/08/get-clusteralarms-filter.png
+{{< unavailable "Screenshot no longer available" >}}

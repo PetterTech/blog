@@ -44,7 +44,7 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
 This will provide an output like this:
 
-[![get-vmalarms](/wp-content/uploads/2014/08/get-vmalarms.png)][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 But, as always, to make it easier for my colleagues to use I make a function out of it:
 
@@ -89,7 +89,4 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
 Beside the fact that a function is easier to use, it also makes it easier to manipulate the data further. For example if you only want alarms for vm whose name start with &#8220;smart&#8221;:
 
-[![get-vmalarms_filter](/wp-content/uploads/2014/08/get-vmalarms_filter.png)][2]
-
- [1]: /wp-content/uploads/2014/08/get-vmalarms.png
- [2]: /wp-content/uploads/2014/08/get-vmalarms_filter.png
+{{< unavailable "Screenshot no longer available" >}}

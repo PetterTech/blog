@@ -20,7 +20,7 @@ Get-VM -Location <name of folder/vApp/datacenter> | foreach {Get-HardDisk -VM $_
 ```
 
 That will give an output that looks something like this:  
-[![temp](/wp-content/uploads/2014/01/temp.png)](/wp-content/uploads/2014/01/temp.png)  
+{{< unavailable "Screenshot no longer available" >}}
 Meaning, in this case, that the folder named &#8220;Templates&#8221; has 2 VMs occupying 140GB of disk space
 
 You can also get a list per vm with this one-liner:

@@ -44,7 +44,7 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
 
 And the output is pretty similar:
 
-[![get-datastorealarms](/wp-content/uploads/2014/08/get-datastorealarms.png)][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 The function code is this:
 
@@ -87,5 +87,3 @@ $report | Where-Object {$_.TriggeredAlarms -ne ""}
  #>
 } 
 ```
-
- [1]: /wp-content/uploads/2014/08/get-datastorealarms.png

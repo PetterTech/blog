@@ -13,7 +13,7 @@ tags:
 I've put together a small guide for setting up two Fortigates with failover ospf routing. This example is based on a small lab, but you can easily adapt it to your own environment.
 
 This is the scenario:  
-[![](/wp-content/uploads/2011/08/fgt_ospf1.png)](/wp-content/uploads/2011/08/fgt_ospf1.png)  
+{{< unavailable "Network diagram no longer available" >}}
 In this scenario we want the 100Mb line to be prioritized.
 
 Start of with setting up the two Fortigates with ip-adresses as shown. Also make sure to create firewall rules for traffic from internal to wan1 and wan2 and back (make sure not to enabel NAT).

@@ -78,12 +78,12 @@ function Get-VMToolsStatus
 
 The function will create an output that look kinda like this:
 
-[![get-vmtoolsstatues](/wp-content/uploads/2014/09/get-vmtoolsstatues.png)][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 You can also use a basic filter on the function by specifying -Filter &lt;filtername&gt;. The different filters is documented in the help section.  
 For example, if you only want a list of VMs who need an upgrade of their VMware tools version:
 
-[![get-vmtoolsstatus-needupgrade](/wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png)][2]
+{{< unavailable "Screenshot no longer available" >}}
 
 In case you don't want to use this as a function, here's the script version:
 
@@ -112,8 +112,4 @@ $VMs = Get-View -ViewType VirtualMachine -Property name,guest,config.version,run
 
 Depending on the number of VMs in your environment, the list might now even fit on the screen. So you should probably pipe it to where-object to filter it down further, like this:
 
-[![get-vmtoolsstatus-script](/wp-content/uploads/2014/09/get-vmtoolsstatus-script.png)][3]
-
- [1]: /wp-content/uploads/2014/09/get-vmtoolsstatues.png
- [2]: /wp-content/uploads/2014/09/get-vmtoolsstatus-needupgrade.png
- [3]: /wp-content/uploads/2014/09/get-vmtoolsstatus-script.png
+{{< unavailable "Screenshot no longer available" >}}

@@ -74,11 +74,11 @@ function Get-Snapshots
 
 You can run the function as it is, without any parameters, or you can specify which vm you want to get the snapshots of:
 
-[![get-snapshots](/wp-content/uploads/2014/09/get-snapshots.png)][1]
+{{< unavailable "Screenshot no longer available" >}}
 
 As you can see, the output is a list. If you want it to be more readable for human eyes, I recommend piping it to Format-Table:
 
-[![get-snapshots-ft](/wp-content/uploads/2014/09/get-snapshots-ft.png)][2]
+{{< unavailable "Screenshot no longer available" >}}
 
 If you would rather run this as a script, instead of using the function, here's the code for that:
 
@@ -109,8 +109,4 @@ If you would rather run this as a script, instead of using the function, here's 
 
 The output, $collection, can be piped to Format-Table if you want a nice table of it:
 
-[![get-snapshots-scripts](/wp-content/uploads/2014/09/get-snapshots-scripts.png)][3]
-
- [1]: /wp-content/uploads/2014/09/get-snapshots.png
- [2]: /wp-content/uploads/2014/09/get-snapshots-ft.png
- [3]: /wp-content/uploads/2014/09/get-snapshots-scripts.png
+{{< unavailable "Screenshot no longer available" >}}

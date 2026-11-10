@@ -61,19 +61,19 @@ return $hostarray -join ","
 The comments should be pretty explanatory, but in essence it connects to vCenter, grabs the name of the esxi hosts in the given cluster and then returns them comma separated.  
 This works fine and dandy in a powershell console, but the output from the powershell task will look rather different, we'll look at that in a second. Secondly, the powershell task kicking off the script:
 
-[![2015-10-14_13-41-33](/wp-content/uploads/2015/10/2015-10-14_13-41-33.png)][1]
+{{< unavailable "Screenshot no longer available" >}}
 
-The output from this task will look something like this:[![2015-10-14_14-02-07](/wp-content/uploads/2015/10/2015-10-14_14-02-07.png)][2]
+The output from this task will look something like this: {{< unavailable "Screenshot no longer available" >}}
 
 If you're unfamiliar with how UCS Director handles powershell but familiar with powershell, then that's probably not what you expected at all.
 
 Now we need to parse that output and return only the string we want. I made a custom task for this, like in the example from Cisco:
 
 Required inputs:  
-[![2015-10-14_13-42-43](/wp-content/uploads/2015/10/2015-10-14_13-42-43.png)][3]
+{{< unavailable "Screenshot no longer available" >}}
 
 Outputs:  
-[![2015-10-14_13-43-04](/wp-content/uploads/2015/10/2015-10-14_13-43-04.png)][4]
+{{< unavailable "Screenshot no longer available" >}}
 
 The beauty of doing it like this is that you can create any kind of output type just by changing the output type. I actually use this to create outputs of other types as well, for example vmwareHostNodeIdentity, vmwareClusterIdentity and so on. It's just easier for me to use powershell to put those kind of outputs together instead of using javascript since I really don't know javascript.
 
@@ -108,22 +108,14 @@ output.parsedString = parsedString;
 
 When using the custom task in a workflow I map the input to the output from the powershell task:
 
-[![2015-10-14_13-43-32](/wp-content/uploads/2015/10/2015-10-14_13-43-32.png)][5]
+{{< unavailable "Screenshot no longer available" >}}
 
 And the output to the defined workflow user output:
 
-[![2015-10-14_13-43-56](/wp-content/uploads/2015/10/2015-10-14_13-43-56.png)][6]
+{{< unavailable "Screenshot no longer available" >}}
 
 Lastly, it's the send email task which is pretty simple:
 
-[![2015-10-14_13-44-27](/wp-content/uploads/2015/10/2015-10-14_13-44-27.png)][7]
+{{< unavailable "Screenshot no longer available" >}}
 
-If you want to test this yourself, you can download this example workflow here: [/wp-content/uploads/2015/10/getPowershellOutput.zip](/wp-content/uploads/2015/10/getPowershellOutput.zip)
-
- [1]: /wp-content/uploads/2015/10/2015-10-14_13-41-33.png
- [2]: /wp-content/uploads/2015/10/2015-10-14_14-02-07.png
- [3]: /wp-content/uploads/2015/10/2015-10-14_13-42-43.png
- [4]: /wp-content/uploads/2015/10/2015-10-14_13-43-04.png
- [5]: /wp-content/uploads/2015/10/2015-10-14_13-43-32.png
- [6]: /wp-content/uploads/2015/10/2015-10-14_13-43-56.png
- [7]: /wp-content/uploads/2015/10/2015-10-14_13-44-27.png
+If you want to test this yourself, you can download this example workflow here: getPowershellOutput.zip {{< unavailable "File no longer available" >}}

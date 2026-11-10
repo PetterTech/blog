@@ -157,6 +157,4 @@ function Measure-DNSLatency
 
 The different outputs will look something like this:
 
-[![2014-08-15_10-25-49](/wp-content/uploads/2014/08/2014-08-15_10-25-491.png)][1]
-
- [1]: /wp-content/uploads/2014/08/2014-08-15_10-25-491.png
+{{< unavailable "Screenshot no longer available" >}}

@@ -43,7 +43,7 @@ Write-Progress -Activity "Something" -Status "Something else" -CurrentOperation 
 
 That will create an output looking something like this:
 
-[![](/wp-content/uploads/2014/01/1.png)](/wp-content/uploads/2014/01/1.png)
+{{< unavailable "Screenshot no longer available" >}}
 
 It's also quite easy to create a child progress bar by using the Id and ParentId parameters:
 
