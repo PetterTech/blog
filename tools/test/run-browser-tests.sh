@@ -23,15 +23,28 @@ SERVER=$!
 trap 'kill "$SERVER"' EXIT
 sleep 1
 
-"$CHROME" --headless --no-sandbox --disable-gpu --force-dark-mode --blink-settings=preferredColorScheme=0 \
+if ! "$CHROME" --headless --no-sandbox --disable-gpu --force-dark-mode --blink-settings=preferredColorScheme=0 \
   --enable-logging=stderr --v=0 --virtual-time-budget=30000 \
-  --dump-dom "http://127.0.0.1:$PORT/theme-test.html" 2>"$SERVE/chrome.log" \
-  | sed 's/<pre id="out">//' | grep -E '^RESULT (PASS|FAIL)|^DONE$' || true
+  --dump-dom "http://127.0.0.1:$PORT/theme-test.html" >"$SERVE/dom.html" 2>"$SERVE/chrome.log"; then
+  echo "RESULT FAIL  Chrome did not complete successfully"
+  cat "$SERVE/chrome.log" >&2
+  exit 1
+fi
+sed 's/<pre id="out">//' "$SERVE/dom.html" | grep -E '^RESULT (PASS|FAIL)|^DONE$' >"$SERVE/results.log" || true
+cat "$SERVE/results.log"
+status=0
+if ! grep -qx 'DONE' "$SERVE/results.log"; then
+  echo "RESULT FAIL  browser tests did not finish"
+  status=1
+fi
+if grep -q '^RESULT FAIL' "$SERVE/results.log"; then status=1; fi
 
 # CSP violations show up as console messages in Chrome's log
 if grep -q 'Content Security Policy' "$SERVE/chrome.log"; then
   echo "RESULT FAIL  CSP violation(s):"
-  grep 'Content Security Policy' "$SERVE/chrome.log" | head -n 5
+  grep -m 5 'Content Security Policy' "$SERVE/chrome.log"
+  status=1
 else
   echo "RESULT PASS  no CSP violations in the browser log"
 fi
+exit "$status"
